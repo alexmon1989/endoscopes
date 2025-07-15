@@ -224,3 +224,5 @@ THUMBNAIL_ALIASES = {
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+
+CSRF_TRUSTED_ORIGINS = [f'https://{os.environ.get("LE_FQDN")}', ]
