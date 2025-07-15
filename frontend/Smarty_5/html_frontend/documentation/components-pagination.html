@@ -1,0 +1,1206 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">Pagination</h1>
+          <p class="lead text-gray-700">Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.</p>
+          <a class="small" href="https://getbootstrap.com/docs/5.1/components/pagination/" target="_blank" rel="noopener">https://getbootstrap.com/docs/5.1/components/pagination/</a>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Pagination <b class="text-gray-700">Basic</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-1">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-1-preview" id="nav-tab-1-preview-link" aria-controls="nav-tab-1-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-1-html" id="nav-tab-1-html-link" aria-controls="nav-tab-1-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-1-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-1-preview" aria-labelledby="nav-tab-1-preview-link" role="tabpanel">
+
+                  <div class="row g-4">
+
+                    <div class="col-12 col-lg-6">
+
+                      <!-- pagination : small -->
+                      <nav aria-label="pagination">
+                        <ul class="pagination pagination-sm justify-content-center justify-content-md-start">
+
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Prev</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link bg-primary-soft" href="#">2 <span class="visually-hidden">(current)</span></a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+
+                        </ul>
+                      </nav>
+                      <!-- /pagination : small -->
+
+
+                      <!-- pagination : medium -->
+                      <nav aria-label="pagination">
+                        <ul class="pagination justify-content-center justify-content-md-start">
+
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Prev</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link bg-primary-soft" href="#">2 <span class="visually-hidden">(current)</span></a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+
+                        </ul>
+                      </nav>
+                      <!-- /pagination : medium -->
+
+
+                      <!-- pagination : large -->
+                      <nav aria-label="pagination">
+                        <ul class="pagination pagination-lg justify-content-center justify-content-md-start">
+
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Prev</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link bg-primary-soft" href="#">2 <span class="visually-hidden">(current)</span></a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+
+                        </ul>
+                      </nav>
+                      <!-- /pagination : large -->
+
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+
+                      <!-- pagination : small -->
+                      <nav aria-label="pagination">
+                        <ul class="pagination pagination-pill pagination-sm justify-content-center justify-content-md-start">
+
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Prev</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link bg-primary-soft" href="#">2 <span class="visually-hidden">(current)</span></a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+
+                        </ul>
+                      </nav>
+                      <!-- /pagination : small -->
+
+
+                      <!-- pagination : medium -->
+                      <nav aria-label="pagination">
+                        <ul class="pagination pagination-pill justify-content-center justify-content-md-start">
+
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Prev</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link bg-primary-soft" href="#">2 <span class="visually-hidden">(current)</span></a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+
+                        </ul>
+                      </nav>
+                      <!-- /pagination : medium -->
+
+
+                      <!-- pagination : large -->
+                      <nav aria-label="pagination">
+                        <ul class="pagination pagination-pill pagination-lg justify-content-center justify-content-md-start">
+
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Prev</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link bg-primary-soft" href="#">2 <span class="visually-hidden">(current)</span></a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+
+                        </ul>
+                      </nav>
+                      <!-- /pagination : large -->
+
+                    </div>
+
+                  </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-1-html" aria-labelledby="nav-tab-1-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+
+                      Size (add to ul.pagination)
+                      .pagination-sm
+                      .pagination-lg
+
+                      Pill (add to ul.pagination)
+                      .pagination-pill
+                      
+                      Positioning (add to ul.pagination)
+                      .justify-content-start
+                      .justify-content-center
+                      .justify-content-end
+
+                    --&gt;
+                    &lt;nav aria-label="Page navigation example"&gt;
+                      &lt;ul class="pagination"&gt;
+                        &lt;li class="page-item disabled"&gt;&lt;a class="page-link" href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item active" aria-current="page"&gt;&lt;a class="page-link" href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/nav&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Pagination <b class="text-gray-700">Pills</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-2">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-2-preview" id="nav-tab-2-preview-link" aria-controls="nav-tab-2-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-2-html" id="nav-tab-2-html-link" aria-controls="nav-tab-2-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-2-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-2-preview" aria-labelledby="nav-tab-2-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6">
+
+                    <nav aria-label="Pagination">
+                      <ul class="nav nav-sm nav-invert">
+                        <li class="nav-item">
+                          <a class="nav-link px-3 disabled" href="#" tabindex="-1">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">1</a></li>
+                        <li class="nav-item" aria-current="page">
+                          <a class="nav-link px-3 active" href="#">2</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">3</a></li>
+                        <li class="nav-item disabled">
+                          <a class="nav-link px-3" href="#" tabindex="-1">...</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">86</a></li>
+                        <li class="nav-item">
+                          <a class="nav-link px-3" href="#">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <br>
+
+                    <nav aria-label="Pagination">
+                      <ul class="nav nav-invert">
+                        <li class="nav-item">
+                          <a class="nav-link px-3 disabled" href="#" tabindex="-1">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">1</a></li>
+                        <li class="nav-item" aria-current="page">
+                          <a class="nav-link px-3 active" href="#">2</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">3</a></li>
+                        <li class="nav-item disabled">
+                          <a class="nav-link px-3" href="#" tabindex="-1">...</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">86</a></li>
+                        <li class="nav-item">
+                          <a class="nav-link px-3" href="#">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+
+                  </div>
+
+                  <div class="col-12 col-lg-6">
+
+                    <nav aria-label="Pagination">
+                      <ul class="nav nav-sm nav-invert rounded-pill">
+                        <li class="nav-item">
+                          <a class="nav-link px-3 disabled" href="#" tabindex="-1">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">1</a></li>
+                        <li class="nav-item" aria-current="page">
+                          <a class="nav-link px-3 active" href="#">2</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">3</a></li>
+                        <li class="nav-item disabled">
+                          <a class="nav-link px-3" href="#" tabindex="-1">...</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">86</a></li>
+                        <li class="nav-item">
+                          <a class="nav-link px-3" href="#">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <br>
+
+                    <nav aria-label="Pagination">
+                      <ul class="nav nav-invert rounded-pill">
+                        <li class="nav-item">
+                          <a class="nav-link px-3 disabled" href="#" tabindex="-1">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">1</a></li>
+                        <li class="nav-item" aria-current="page">
+                          <a class="nav-link px-3 active" href="#">2</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">3</a></li>
+                        <li class="nav-item disabled">
+                          <a class="nav-link px-3" href="#" tabindex="-1">...</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#">86</a></li>
+                        <li class="nav-item">
+                          <a class="nav-link px-3" href="#">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-2-html" aria-labelledby="nav-tab-2-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+
+                      Size (add to ul.nav)
+                      .nav-sm
+                      .nav-lg
+
+                      Pill (add to ul.nav)
+                      .rounded-pill
+                      
+                      Positioning (add to nav tag)
+                      .d-flex .justify-content-start
+                      .d-flex .justify-content-center
+                      .d-flex .justify-content-end
+
+                    --&gt;
+                    &lt;nav aria-label="Pagination"&gt;
+                      &lt;ul class="nav nav-sm nav-invert rounded-pill"&gt;
+                        &lt;li class="nav-item"&gt;
+                          &lt;a class="nav-link px-3 disabled" href="#" tabindex="-1"&gt;
+                            &lt;span aria-hidden="true"&gt;&amp;laquo;&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item"&gt;&lt;a class="nav-link px-3" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="nav-item" aria-current="page"&gt;
+                          &lt;a class="nav-link px-3 active" href="#"&gt;2&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item"&gt;&lt;a class="nav-link px-3" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="nav-item disabled"&gt;
+                          &lt;a class="nav-link px-3" href="#" tabindex="-1"&gt;...&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item"&gt;&lt;a class="nav-link px-3" href="#"&gt;86&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="nav-item"&gt;
+                          &lt;a class="nav-link px-3" href="#"&gt;
+                            &lt;span aria-hidden="true"&gt;&amp;raquo;&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/nav&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Pagination <b class="text-gray-700">Prev/Next</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-3-preview" id="nav-tab-3-preview-link" aria-controls="nav-tab-3-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-3-html" id="nav-tab-3-html-link" aria-controls="nav-tab-3-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-3-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-3-preview" aria-labelledby="nav-tab-3-preview-link" role="tabpanel">
+
+                <nav aria-label="pagination">
+                  <ul class="list-inline d-flex justify-content-between">
+
+                    <li class="list-inline-item">
+                      <a href="#" class="btn btn-dark btn-sm rounded-pill px-4 disabled">
+                        <i class="fi fi-arrow-start smaller"></i> 
+                        <span>Prev</span><!-- if text is removed, add .m-0 to icon -->
+                      </a>
+                    </li>
+                    
+                    <li class="list-inline-item d-none d-lg-block">
+                      <span class="btn btn-sm text-gray-500">2 / 15</span>
+                    </li>
+                    
+                    <li class="list-inline-item">
+                      <a href="#" class="btn btn-dark btn-sm rounded-pill px-4">
+                        <span>Next</span><!-- if text is removed, add .m-0 to icon -->
+                        <i class="fi fi-arrow-end smaller"></i>
+                      </a>
+                    </li>
+
+                  </ul>
+                </nav>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-3-html" aria-labelledby="nav-tab-3-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;nav aria-label="pagination"&gt;
+                      &lt;ul class="list-inline d-flex justify-content-between"&gt;
+
+                        &lt;li class="list-inline-item"&gt;
+                          &lt;a href="#" class="btn btn-dark btn-sm rounded-pill px-4 disabled"&gt;
+                            &lt;i class="fi fi-arrow-start smaller"&gt;&lt;/i&gt; 
+                            &lt;span&gt;Prev&lt;/span&gt;&lt;!-- if text is removed, add .m-0 to icon --&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        
+                        &lt;li class="list-inline-item d-none d-lg-block"&gt;
+                          &lt;span class="btn btn-sm text-gray-500"&gt;2 / 15&lt;/span&gt;
+                        &lt;/li&gt;
+                        
+                        &lt;li class="list-inline-item"&gt;
+                          &lt;a href="#" class="btn btn-dark btn-sm rounded-pill px-4"&gt;
+                            &lt;span&gt;Next&lt;/span&gt;&lt;!-- if text is removed, add .m-0 to icon --&gt;
+                            &lt;i class="fi fi-arrow-end smaller"&gt;&lt;/i&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+
+                      &lt;/ul&gt;
+                    &lt;/nav&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Pagination <b class="text-gray-700">Button</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-4">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-4-preview" id="nav-tab-4-preview-link" aria-controls="nav-tab-4-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-4-html" id="nav-tab-4-html-link" aria-controls="nav-tab-4-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-4-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-4-preview" aria-labelledby="nav-tab-4-preview-link" role="tabpanel">
+
+                <nav aria-label="pagination">
+                  <div class="text-center px-3 mx-auto" style="max-width:350px">
+                    
+                    <div class="mb-3">
+                      <h6 class="small">You've viewed 21 of 210 products</h6>
+                      
+                      <div class="progress bg-light mt-3" style="height:2px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+
+                    <div class="d-grid">
+                      <a href="#" class="btn btn-outline-dark w-100">LOAD MORE</a>
+                    </div>
+
+                  </div>
+                </nav>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-4-html" aria-labelledby="nav-tab-4-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;nav aria-label="pagination"&gt;
+                      &lt;div class="text-center px-3 mx-auto" style="max-width:350px"&gt;
+                        
+                        &lt;div class="mb-3"&gt;
+                          &lt;h6 class="small"&gt;You've viewed 21 of 210 products&lt;/h6&gt;
+                          
+                          &lt;div class="progress bg-light mt-3" style="height:2px"&gt;
+                            &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="d-grid"&gt;
+                          &lt;a href="#" class="btn btn-outline-dark w-100"&gt;LOAD MORE&lt;/a&gt;
+                        &lt;/div&gt;
+
+                      &lt;/div&gt;
+                    &lt;/nav&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Pagination <b class="text-gray-700">+Progress</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-5">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-5-preview" id="nav-tab-5-preview-link" aria-controls="nav-tab-5-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-5-html" id="nav-tab-5-html-link" aria-controls="nav-tab-5-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-5-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-5-preview" aria-labelledby="nav-tab-5-preview-link" role="tabpanel">
+
+                <nav aria-label="pagination" class="d-inline-block">
+                  
+                  <!-- progressbar -->
+                  <span class="smaller d-inline-block me-1">10%</span>
+                  <div class="progress bg-light mb-2 me-1" style="height:2px">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+
+                  <ul class="pagination-custom list-unstyled">
+
+                    <li class="page-item d-inline-block me-1 disabled">
+                      <a class="page-link border-2" href="#" tabindex="-1">
+                        <i class="fi fi-arrow-start smaller"></i>
+                      </a>
+                    </li>
+                    
+                    <li class="page-item d-inline-block me-1">
+                      <a class="page-link border-2" href="#">1</a>
+                    </li>
+                    
+                    <li class="page-item d-inline-block mx-1 active" aria-current="page">
+                      <a class="page-link border-2" href="#">2 <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    
+                    <li class="page-item d-inline-block me-1" aria-current="page">
+                      <span class="page-link border-2">...</span>
+                    </li>
+
+                    <li class="page-item d-inline-block me-1">
+                      <a class="page-link border-2" href="#">322</a>
+                    </li>
+                    
+                    <li class="page-item d-inline-block me-1">
+                      <a class="page-link border-2" href="#">
+                        <i class="fi fi-arrow-end smaller"></i> 
+                      </a>
+                    </li>
+
+                  </ul>
+                </nav>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-5-html" aria-labelledby="nav-tab-5-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;nav aria-label="pagination" class="d-inline-block"&gt;
+                      
+                      &lt;!-- progressbar --&gt;
+                      &lt;span class="smaller d-inline-block me-1"&gt;10%&lt;/span&gt;
+                      &lt;div class="progress bg-light mb-2 me-1" style="height:2px"&gt;
+                        &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;ul class="pagination-custom list-unstyled"&gt;
+
+                        &lt;li class="page-item d-inline-block me-1 disabled"&gt;
+                          &lt;a class="page-link border-2" href="#" tabindex="-1"&gt;
+                            &lt;i class="fi fi-arrow-start smaller"&gt;&lt;/i&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        
+                        &lt;li class="page-item d-inline-block me-1"&gt;
+                          &lt;a class="page-link border-2" href="#"&gt;1&lt;/a&gt;
+                        &lt;/li&gt;
+                        
+                        &lt;li class="page-item d-inline-block mx-1 active" aria-current="page"&gt;
+                          &lt;a class="page-link border-2" href="#"&gt;2 &lt;span class="visually-hidden"&gt;(current)&lt;/span&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        
+                        &lt;li class="page-item d-inline-block me-1" aria-current="page"&gt;
+                          &lt;span class="page-link border-2"&gt;...&lt;/span&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class="page-item d-inline-block me-1"&gt;
+                          &lt;a class="page-link border-2" href="#"&gt;322&lt;/a&gt;
+                        &lt;/li&gt;
+                        
+                        &lt;li class="page-item d-inline-block me-1"&gt;
+                          &lt;a class="page-link border-2" href="#"&gt;
+                            &lt;i class="fi fi-arrow-end smaller"&gt;&lt;/i&gt; 
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+
+                      &lt;/ul&gt;
+                    &lt;/nav&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Pagination <b class="text-gray-700">Clean</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-6">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-6-preview" id="nav-tab-6-preview-link" aria-controls="nav-tab-6-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-6-html" id="nav-tab-6-html-link" aria-controls="nav-tab-6-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-6-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-6-preview" aria-labelledby="nav-tab-6-preview-link" role="tabpanel">
+
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link rounded border-0" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link rounded border-0" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link rounded border-0" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link rounded border-0" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link rounded border-0" href="#">Next</a></li>
+                  </ul>
+                </nav>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-6-html" aria-labelledby="nav-tab-6-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;nav aria-label="Page navigation example"&gt;
+                      &lt;ul class="pagination"&gt;
+                        &lt;li class="page-item"&gt;&lt;a class="page-link rounded border-0" href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item"&gt;&lt;a class="page-link rounded border-0" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item active"&gt;&lt;a class="page-link rounded border-0" href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item"&gt;&lt;a class="page-link rounded border-0" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="page-item"&gt;&lt;a class="page-link rounded border-0" href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/nav&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+    </div>
+
+  </body>
+</html>

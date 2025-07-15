@@ -1,0 +1,608 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">Introduction</h1>
+          <p class="lead text-gray-700">Get started with Bootstrap, the world’s most popular framework for building responsive, mobile-first sites.</p>
+          <div class="container-doc mt-4">
+            <div class="card">
+              <div class="card-body p-4 d-flex">
+
+                <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">  
+                  <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>  
+                  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
+                </svg>
+
+                <div class="ps-4">
+                  <h5>Smarty is a premium html template!</h5>
+                  <p class="mb-0 fw-medium">The only template which does not require javascript & css coding. All plugins are loaded dinamically, according to html classes & atributes.</p>
+                  <hr>
+                  <p class="mb-0">Smarty is now using the same major version as Bootstrap (Bootstrap 5 : Smarty 5).</p>
+                  <p class="mb-0"><span class="fw-bold">Smarty 5 include jQuery</span> because many plugins are still using it! You don' have to include it!</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-4 text-gray-600 doc-section-title doc-anchor">
+              <span>Folder Structure</span>
+            </h2>
+
+            <details open="">
+              <summary>
+                  <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                <strong>root-template</strong>
+              </summary>
+
+              <ul class="list-unstyled mb-0 px-4">
+                <li>
+                  <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                  <strong>dist</strong> &ndash; <span class="text-secondary">result of the built process goes here</span>
+                </li>
+                <li>
+                  <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                  <strong>_gulp</strong> &ndash; <span class="text-secondary">gulp micro-framework</span>
+                </li>
+                <li>
+                  <details open="">
+                    <summary>
+                      <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                      <strong>src</strong>
+                    </summary>
+                    <ul class="list-unstyled px-5">
+                      <li>
+                        <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                        <strong>js</strong> &ndash; <span class="text-secondary">SOW & Vendor Javascript files</span>
+                      </li>
+                      <li>
+                        <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                        <strong>scss</strong> &ndash; <span class="text-secondary">SASS source files</span>
+                      </li>
+                      <li>
+                        <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                        <strong>_starter</strong> &ndash; <span class="text-secondary">files used by "gulp :create"</span>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                  <strong>html_frontend</strong> &ndash; <span class="text-secondary">all Smarty html files (also used as official demo)</span>
+                </li>
+                <li>
+                  <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                  <strong>html_admin</strong> &ndash; <span class="text-secondary">all Smarty html files (also used as official demo)</span>
+                </li>
+                <li>
+                  <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                  <strong><del>node_modules</del></strong> &ndash; <span class="text-secondary">NPM dependencies (generated by "npm install")</span>
+                </li>
+                <li>
+                  <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"></path>  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path></svg>
+                  gulp.config.__plugins.js &ndash; <span class="text-secondary">enable/disable SOW plugins</span>
+                </li>
+                <li>
+                  <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"></path>  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path></svg>
+                  gulp.config.__vendors.js &ndash; <span class="text-secondary">enable/disable/add Vendor plugins</span>
+                </li>
+                <li>
+                  <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"></path>  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path></svg>
+                  gulp.config.settings &ndash; <span class="text-secondary">GULP settings - compile destination, etc</span>
+                </li>
+                <li>
+                  <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"></path>  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path></svg>
+                  package-lock.json
+                </li>
+                <li>
+                  <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"></path>  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path></svg>
+                  package.json
+                </li>
+                <li>
+                  <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"></path>  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path></svg>
+                  README_FIRST.html
+                </li>
+                <li>
+                  <details open="">
+                    <summary>
+                      <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                      <strong>SEED_PROJECT</strong>
+                    </summary>
+                    <ul class="list-unstyled px-5">
+                      <li>
+                        <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                        <strong>LTR</strong> &ndash; <span class="text-secondary">Prepared files to start your project in seconds!</span>
+                      </li>
+                      <li>
+                        <svg class="me-1" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"></path></svg>
+                        <strong>RTL</strong> &ndash; <span class="text-secondary">Prepared files to start your RTL (arabic) project in seconds!</span>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+
+            <hr class="bg-gray-500 my-3">
+
+            <p class="small">
+              * <b>LTR</b> = Left To Right (regular direction) <br>
+              * <b>RTL</b> = Right To Left (arabic direction)
+            </p>
+
+            <hr class="bg-gray-500 my-3">
+
+          </div>
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-4 text-gray-600 doc-section-title doc-anchor">
+              <span>Starter template</span>
+            </h2>
+
+            <pre class="rounded">
+              <code class="lang-html">
+                &lt;!doctype html&gt;
+                &lt;!-- &lt;html lang="ar" dir="rtl"&gt; --&gt;
+                &lt;html lang="en" dir="ltr"&gt;
+                  &lt;head&gt;
+
+                    &lt;title&gt;Page title&lt;/title&gt;
+                    &lt;meta name="description" content="..."&gt;
+
+                    &lt;meta charset="utf-8"&gt;
+                    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+
+                    &lt;!-- speed up external res --&gt;
+                    &lt;link rel="dns-prefetch" href="https://fonts.googleapis.com/"&gt;
+                    &lt;link rel="dns-prefetch" href="https://fonts.gstatic.com/"&gt;
+                    &lt;link rel="preconnect" href="https://fonts.googleapis.com/"&gt;
+                    &lt;link rel="preconnect" href="https://fonts.gstatic.com/"&gt;
+                    &lt;!-- preloading icon font is helping to speed up a little bit --&gt;
+                    &lt;link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin&gt;
+
+                    &lt;link rel="stylesheet" href="assets/css/core.min.css"&gt;
+                    &lt;link rel="stylesheet" href="assets/css/vendor_bundle.min.css"&gt;
+                    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet"&gt;
+
+                  &lt;/head&gt;
+                  &lt;body&gt;
+
+                    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+                    &lt;!-- Core javascripts --&gt;
+                    &lt;script src="assets/js/core.min.js"&gt;&lt;/script&gt;
+                    &lt;script src="assets/js/vendor_bundle.min.js"&gt;&lt;/script&gt;
+
+                    &lt;!-- Your custom javascripts --&gt;
+
+                  &lt;/body&gt;
+                &lt;/html&gt;
+              </code>
+            </pre>
+
+            <p class="small mt-3">
+              <b>Note:</b> if you don't add <code>vendor_bundle.min.js</code>, will be dynamically loaded by <code>core.min.js</code>! <br> 
+              If you need to create your own javascripts that access bootstrap js core, then you have to add it because bootstrap is packed inside of <code>vendor_bundle.min.js</code>! <br>
+              jQuery is packed inside of <code>core.min.js</code>, which is always loaded. 
+            </p>
+
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <!--
+      
+      Toast On Load
+
+        data-type       = '', success, danger, warning, info
+        data-title      = toast title   (optional)
+        data-body       = toast body  (required)
+        data-pos        = top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+        data-delay      = autoclose in ms
+        data-fill       = background color fill [true|false]
+
+    -->
+    <div class="hide toast-on-load" 
+      data-toast-type="secondary" 
+      data-toast-title="" 
+      data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+      data-toast-pos="bottom-center" 
+      data-toast-delay="4000" 
+      data-toast-fill="true"></div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+    </div>
+
+  </body>
+</html>

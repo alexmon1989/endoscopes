@@ -1,0 +1,1662 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">Dropdowns</h1>
+          <p class="lead text-gray-700">Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.</p>
+          <a class="small" href="https://getbootstrap.com/docs/5.1/components/dropdowns/" target="_blank" rel="noopener">https://getbootstrap.com/docs/5.1/components/dropdowns/</a>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              Basic
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-1">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-1-preview" id="nav-tab-1-preview-link" aria-controls="nav-tab-1-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-1-html" id="nav-tab-1-html-link" aria-controls="nav-tab-1-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-1-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-1-preview" aria-labelledby="nav-tab-1-preview-link" role="tabpanel">
+
+                <div class="d-flex">
+
+                  <div class="dropdown">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="exDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                  <span class="px-2"><!-- spacer --></span>
+
+                  <div class="dropup">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropup" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropup
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="exDropup">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                  <span class="px-2"><!-- spacer --></span>
+
+                  <div class="dropstart">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropstart" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropstart
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="exDropstart">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                  <span class="px-2"><!-- spacer --></span>
+
+                  <div class="dropend">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropend" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropend
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="exDropend">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+
+                  <span class="px-2"><!-- spacer --></span>
+
+                  <div class="dropdown">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exClickable" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                      Clickable
+                    </a>
+
+                    <div class="dropdown-menu p-4" style="width:350px" aria-labelledby="exClickable">
+                      <h6>Dropdown stays open on content click</h6>
+                      <hr class="bg-gray-600">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. 
+                      consequat. 
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-1-html" aria-labelledby="nav-tab-1-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- dropdown --&gt;
+                    &lt;div class="dropdown"&gt;
+                      &lt;a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropdown" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                        Dropdown
+                      &lt;/a&gt;
+
+                      &lt;ul class="dropdown-menu" aria-labelledby="exDropdown"&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- dropup --&gt;
+                    &lt;div class="dropup"&gt;
+                      &lt;a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropup" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                        Dropup
+                      &lt;/a&gt;
+
+                      &lt;ul class="dropdown-menu" aria-labelledby="exDropup"&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- dropstart --&gt;
+                    &lt;div class="dropstart"&gt;
+                      &lt;a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropstart" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                        Dropstart
+                      &lt;/a&gt;
+
+                      &lt;ul class="dropdown-menu" aria-labelledby="exDropstart"&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- dropend --&gt;
+                    &lt;div class="dropend"&gt;
+                      &lt;a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exDropend" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                        Dropend
+                      &lt;/a&gt;
+
+                      &lt;ul class="dropdown-menu" aria-labelledby="exDropend"&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- clickable --&gt;
+                    &lt;div class="dropdown"&gt;
+                      &lt;a class="btn btn-primary dropdown-toggle" href="#" role="button" id="exClickable" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"&gt;
+                        Clickable
+                      &lt;/a&gt;
+
+                      &lt;div class="dropdown-menu p-4" style="width:350px" aria-labelledby="dropdownMenuLink"&gt;
+                        &lt;h6&gt;Dropdown stays open on content click&lt;/h6&gt;
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. 
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+            <!-- /Tab Pills Content -->
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              Extended
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-2">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-2-preview" id="nav-tab-2-preview-link" aria-controls="nav-tab-2-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-2-html" id="nav-tab-2-html-link" aria-controls="nav-tab-2-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-2-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-2-preview" aria-labelledby="nav-tab-2-preview-link" role="tabpanel">
+
+                <!-- Ajax : html -->
+                <div class="dropdown d-inline-block">
+
+                  <!--
+                      
+                    Required Plugins:
+                      SOW : Dropdown
+                      SOW : Dropdown Ajax
+                      SOW : Dropdown Click Ignore
+                      * If SOW : Ajax Navigation used (like right now in the demo), 
+                      ajax links will be active inside dropdown. Just add .js-ajax to the valid links.
+
+                    Optional:
+                      data-dropdown-ajax-reload-always="true"
+                        Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+                        If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+
+                    More optional params if needed:
+                      data-dropdown-ajax-method="GET|POST"  (default is "GET")
+                      data-dropdown-ajax-contentType=""   (jQuery default)
+                      data-dropdown-ajax-dataType=""      (jQuery default)
+                      data-dropdown-ajax-loadicon=""      (default: "fi fi-circle-spin fi-spin")
+
+                  -->
+                  <a  href="#" id="ddAjax_demo1" 
+                    data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false" 
+                    aria-haspopup="true" 
+                    class="btn btn-sm btn-primary btn-pill">
+
+                    <span class="group-icon">
+                      <i class="fi fi-arrow-end-slim"></i>
+                      <i class="fi fi-arrow-down"></i>
+                    </span>
+                    <span>Ajax : Html</span>
+
+                  </a>
+
+                  <!--
+                    Required: 
+                      .dropdown-menu-block-md added to .dropdown-menu (mobile, if dropdown has multilevel)
+
+                    Optional:
+                      .dropdown-menu-hover
+                  -->
+                  <div aria-labelledby="ddAjax_demo1" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200">
+                    
+                    <!-- ajax content -->
+
+                  </div>
+
+                </div>
+
+
+
+                <span class="px-2"><!-- spacer --></span>
+
+
+                <!-- Ajax : json -->
+                <div class="dropdown d-inline-block">
+
+                  <!--
+                      
+                    1. Ajax Dropdown Content
+                      The dropdown content is loaded on user interaction only:
+                        - on mouse over (if dropdown is opening on mouse over (click on mobile device))
+                        - on mouse click
+                      ++ ++ ++
+                      Curently is set by config to work for links: a[data-bs-toggle="dropdown"]
+                      You can add to config for buttons (separated by comma): button[data-bs-toggle="dropdown"]
+                      Or simply by using a class. 
+                      Instead of autoinit by config, the plugin can also be called alone like this: 
+                        $.SOW.core.dropdown_ajax.init('a[data-bs-toggle="dropdown"]');
+
+
+                  -->
+                  <a  href="#" id="ddAjax_demo2" 
+                    data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+                    data-dropdown-ajax-mode="json"
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false" 
+                    aria-haspopup="true" 
+                    class="btn btn-sm btn-primary btn-pill">
+
+                    <span class="group-icon">
+                      <i class="fi fi-arrow-end-slim"></i>
+                      <i class="fi fi-arrow-down"></i>
+                    </span>
+                    <span>Ajax : Json</span>
+
+                  </a>
+
+                  <!--
+
+                    Required Plugins:
+                      SOW : Dropdown
+                      SOW : Dropdown Ajax
+                      SOW : Dropdown Click Ignore
+                      * If SOW : Ajax Navigation used (like right now in the demo), 
+                      ajax links will be active inside dropdown. Just add .js-ajax to dropdown links.
+
+                    Optional:
+                      data-dropdown-ajax-reload-always="true"
+                        Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+                        If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+
+                    More optional params if needed:
+                      data-dropdown-ajax-method="GET|POST"  (default is "GET")
+                      data-dropdown-ajax-contentType=""   (jQuery|config default)
+                      data-dropdown-ajax-dataType=""      (jQuery|config default)
+                      data-dropdown-ajax-loadicon=""      (default: "fi fi-circle-spin fi-spin")
+
+                      data-dropdown-ajax-mode="html|json"       html|json ; json = Build dropdown from json data
+                                  html structure: _ajax/dropdown_ajax.html
+                                  json structure: _ajax/dropdown_ajax.json
+                                  see also _ajax/dropdown_ajax.php (for a php example)
+
+
+                    Working examples
+                      data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+                      data-dropdown-ajax-mode="html"
+
+                      data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+                      data-dropdown-ajax-mode="json"
+
+                      data-dropdown-ajax-source="_ajax/dropdown_ajax.php"
+                      data-dropdown-ajax-mode="json"
+
+                  -->
+                  <div aria-labelledby="ddAjax_demo2" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200">
+                    
+                    <!-- ajax content -->
+
+                  </div>
+
+                </div>
+
+
+                <br><br>
+
+
+                <!-- Clean -->
+                <div class="dropdown d-inline-block">
+                  <a href="#" id="ddHClean_demo1" class="btn btn-sm btn-primary btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                    <span class="group-icon">
+                      <i class="fi fi-arrow-end-slim"></i>
+                      <i class="fi fi-arrow-down"></i>
+                    </span>
+                    <span>Clean</span>
+                  </a>
+
+                  <div aria-labelledby="ddHClean_demo1" class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200">
+                  
+                    <div class="dropdown-header">
+                      Clean
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <div class="scrollable-vertical max-vh-50">
+
+                      <a class="dropdown-item text-truncate active" href="#">
+                        Active
+                      </a>
+                      <a class="dropdown-item text-truncate disabled" href="#">
+                        Disabled
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        Link 1
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Link 2
+                      </a>
+                      <a class="dropdown-item max-w-250 text-truncate" href="#">
+                        A long text, very very very long text
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <span class="px-1"><!-- spacer --></span>
+
+
+                <!-- Bullets -->
+                <div class="dropdown d-inline-block">
+                  <a href="#" id="ddBullet_demo" class="btn btn-sm btn-primary btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                    <span class="group-icon">
+                      <i class="fi fi-arrow-end-slim"></i>
+                      <i class="fi fi-arrow-down"></i>
+                    </span>
+                    <span>Bullets</span>
+                  </a>
+
+                  <div aria-labelledby="ddBullet_demo" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200">
+                    
+                    <div class="dropdown-header">
+                      Bullets
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <div class="scrollable-vertical max-vh-50">
+
+                      <a class="dropdown-item text-truncate active" href="#">
+                        Active
+                      </a>
+                      <a class="dropdown-item text-truncate disabled" href="#">
+                        Disabled
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        Link 1
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Link 2
+                      </a>
+                      <a class="dropdown-item max-w-250 text-truncate" href="#">
+                        A long text, very very very long text
+                      </a>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <span class="px-1"><!-- spacer --></span>
+
+
+                <!-- Lines -->
+                <div class="dropdown d-inline-block">
+                  <a href="#" id="ddLine_demo" class="btn btn-sm btn-primary btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                    <span class="group-icon">
+                      <i class="fi fi-arrow-end-slim"></i>
+                      <i class="fi fi-arrow-down"></i>
+                    </span>
+                    <span>Lines</span>
+                  </a>
+
+                  <div aria-labelledby="ddLine_demo" class="prefix-link-icon prefix-icon-line dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200">
+                    
+                    <div class="dropdown-header">
+                      Lines
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <div class="scrollable-vertical max-vh-50">
+
+                      <a class="dropdown-item text-truncate active" href="#">
+                        Active
+                      </a>
+                      <a class="dropdown-item text-truncate disabled" href="#">
+                        Disabled
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Link 1
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Link 2
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item max-w-250 text-truncate" href="#">
+                        A long text, very very very long text
+                      </a>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <span class="px-1"><!-- spacer --></span>
+
+
+                <!-- Dark -->
+                <div class="dropdown d-inline-block">
+                  <a href="#" id="ddHClean_demo2" class="btn btn-sm btn-dark btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                    <span class="group-icon">
+                      <i class="fi fi-arrow-end-slim"></i>
+                      <i class="fi fi-arrow-down"></i>
+                    </span>
+                    <span>Dark</span>
+                  </a>
+
+                  <div aria-labelledby="ddHClean_demo2" class="dropdown-menu dropdown-menu-clean dropdown-menu-dark dropdown-click-ignore max-w-200">
+                  
+                    <div class="dropdown-header">
+                      Dark Dropdown
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <div class="scrollable-vertical max-vh-50">
+
+                      <a class="dropdown-item text-truncate active" href="#">
+                        Active
+                      </a>
+                      <a class="dropdown-item text-truncate disabled" href="#">
+                        Disabled
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        Link 1
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Link 2
+                      </a>
+                      <a class="dropdown-item max-w-250 text-truncate" href="#">
+                        A long text, very very very long text
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-2-html" aria-labelledby="nav-tab-2-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Ajax : html --&gt;
+                    &lt;div class="dropdown d-inline-block"&gt;
+
+                      &lt;!--
+                          
+                        Required Plugins:
+                          SOW : Dropdown
+                          SOW : Dropdown Ajax
+                          SOW : Dropdown Click Ignore
+                          * If SOW : Ajax Navigation used (like right now in the demo), 
+                          ajax links will be active inside dropdown. Just add .js-ajax to the valid links.
+
+                        Optional:
+                          data-dropdown-ajax-reload-always="true"
+                            Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+                            If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+
+                        More optional params if needed:
+                          data-dropdown-ajax-method="GET|POST"  (default is "GET")
+                          data-dropdown-ajax-contentType=""   (jQuery default)
+                          data-dropdown-ajax-dataType=""      (jQuery default)
+                          data-dropdown-ajax-loadicon=""      (default: "fi fi-circle-spin fi-spin")
+
+                      --&gt;
+                      &lt;a  href="#" id="ddAjax_demo1" 
+                        data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        aria-haspopup="true" 
+                        class="btn btn-sm btn-primary btn-pill"&gt;
+
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-end-slim"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-arrow-down"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Ajax : Html&lt;/span&gt;
+
+                      &lt;/a&gt;
+
+                      &lt;!--
+                        Required: 
+                          .dropdown-menu-block-md added to .dropdown-menu (mobile, if dropdown has multilevel)
+
+                        Optional:
+                          .dropdown-menu-hover
+                      --&gt;
+                      &lt;div aria-labelledby="ddAjax_demo1" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200"&gt;
+                        
+                        &lt;!-- ajax content --&gt;
+
+                      &lt;/div&gt;
+
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Ajax : json --&gt;
+                    &lt;div class="dropdown d-inline-block"&gt;
+
+                      &lt;!--
+                          
+                        1. Ajax Dropdown Content
+                          The dropdown content is loaded on user interaction only:
+                            - on mouse over (if dropdown is opening on mouse over (click on mobile device))
+                            - on mouse click
+                          ++ ++ ++
+                          Curently is set by config to work for links: a[data-bs-toggle="dropdown"]
+                          You can add to config for buttons (separated by comma): button[data-bs-toggle="dropdown"]
+                          Or simply by using a class. 
+                          Instead of autoinit by config, the plugin can also be called alone like this: 
+                            $.SOW.core.dropdown_ajax.init('a[data-bs-toggle="dropdown"]');
+
+
+                      --&gt;
+                      &lt;a  href="#" id="ddAjax_demo2" 
+                        data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+                        data-dropdown-ajax-mode="json"
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        aria-haspopup="true" 
+                        class="btn btn-sm btn-primary btn-pill"&gt;
+
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-end-slim"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-arrow-down"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Ajax : Json&lt;/span&gt;
+
+                      &lt;/a&gt;
+
+                      &lt;!--
+
+                        Required Plugins:
+                          SOW : Dropdown
+                          SOW : Dropdown Ajax
+                          SOW : Dropdown Click Ignore
+                          * If SOW : Ajax Navigation used (like right now in the demo), 
+                          ajax links will be active inside dropdown. Just add .js-ajax to dropdown links.
+
+                        Optional:
+                          data-dropdown-ajax-reload-always="true"
+                            Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+                            If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+
+                        More optional params if needed:
+                          data-dropdown-ajax-method="GET|POST"  (default is "GET")
+                          data-dropdown-ajax-contentType=""   (jQuery|config default)
+                          data-dropdown-ajax-dataType=""      (jQuery|config default)
+                          data-dropdown-ajax-loadicon=""      (default: "fi fi-circle-spin fi-spin")
+
+                          data-dropdown-ajax-mode="html|json"       html|json ; json = Build dropdown from json data
+                                      html structure: _ajax/dropdown_ajax.html
+                                      json structure: _ajax/dropdown_ajax.json
+                                      see also _ajax/dropdown_ajax.php (for a php example)
+
+
+                        Working examples
+                          data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+                          data-dropdown-ajax-mode="html"
+
+                          data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+                          data-dropdown-ajax-mode="json"
+
+                          data-dropdown-ajax-source="_ajax/dropdown_ajax.php"
+                          data-dropdown-ajax-mode="json"
+
+                      --&gt;
+                      &lt;div aria-labelledby="ddAjax_demo2" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200"&gt;
+                        
+                        &lt;!-- ajax content --&gt;
+
+                      &lt;/div&gt;
+
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Clean --&gt;
+                    &lt;div class="dropdown d-inline-block"&gt;
+                      &lt;a href="#" id="ddHClean_demo1" class="btn btn-sm btn-primary btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"&gt;
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-end-slim"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-arrow-down"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Clean&lt;/span&gt;
+                      &lt;/a&gt;
+
+                      &lt;div aria-labelledby="ddHClean_demo1" class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200"&gt;
+                      
+                        &lt;div class="dropdown-header"&gt;
+                          Clean
+                        &lt;/div&gt;
+
+                        &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+                        &lt;div class="scrollable-vertical max-vh-50"&gt;
+
+                          &lt;a class="dropdown-item text-truncate active" href="#"&gt;
+                            Active
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item text-truncate disabled" href="#"&gt;
+                            Disabled
+                          &lt;/a&gt;
+                          &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 1
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 2
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item max-w-250 text-truncate" href="#"&gt;
+                            A long text, very very very long text
+                          &lt;/a&gt;
+                        &lt;/div&gt;
+
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Bullets --&gt;
+                    &lt;div class="dropdown d-inline-block"&gt;
+                      &lt;a href="#" id="ddBullet_demo" class="btn btn-sm btn-primary btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"&gt;
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-end-slim"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-arrow-down"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Bullets&lt;/span&gt;
+                      &lt;/a&gt;
+
+                      &lt;div aria-labelledby="ddBullet_demo" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200"&gt;
+                        
+                        &lt;div class="dropdown-header"&gt;
+                          Bullets
+                        &lt;/div&gt;
+
+                        &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+                        &lt;div class="scrollable-vertical max-vh-50"&gt;
+
+                          &lt;a class="dropdown-item text-truncate active" href="#"&gt;
+                            Active
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item text-truncate disabled" href="#"&gt;
+                            Disabled
+                          &lt;/a&gt;
+                          &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 1
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 2
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item max-w-250 text-truncate" href="#"&gt;
+                            A long text, very very very long text
+                          &lt;/a&gt;
+
+                        &lt;/div&gt;
+
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Lines --&gt;
+                    &lt;div class="dropdown d-inline-block"&gt;
+                      &lt;a href="#" id="ddLine_demo" class="btn btn-sm btn-primary btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"&gt;
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-end-slim"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-arrow-down"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Lines&lt;/span&gt;
+                      &lt;/a&gt;
+
+                      &lt;div aria-labelledby="ddLine_demo" class="prefix-link-icon prefix-icon-line dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200"&gt;
+                        
+                        &lt;div class="dropdown-header"&gt;
+                          Lines
+                        &lt;/div&gt;
+
+                        &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+                        &lt;div class="scrollable-vertical max-vh-50"&gt;
+
+                          &lt;a class="dropdown-item text-truncate active" href="#"&gt;
+                            Active
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item text-truncate disabled" href="#"&gt;
+                            Disabled
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 1
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 2
+                          &lt;/a&gt;
+                          &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+                          &lt;a class="dropdown-item max-w-250 text-truncate" href="#"&gt;
+                            A long text, very very very long text
+                          &lt;/a&gt;
+
+                        &lt;/div&gt;
+
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Dark --&gt;
+                    &lt;div class="dropdown d-inline-block"&gt;
+                      &lt;a href="#" id="ddHClean_demo2" class="btn btn-sm btn-dark btn-pill" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"&gt;
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-end-slim"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-arrow-down"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                        &lt;span&gt;Dark&lt;/span&gt;
+                      &lt;/a&gt;
+
+                      &lt;div aria-labelledby="ddHClean_demo2" class="dropdown-menu dropdown-menu-clean dropdown-menu-dark dropdown-click-ignore max-w-200"&gt;
+                      
+                        &lt;div class="dropdown-header"&gt;
+                          Dark Dropdown
+                        &lt;/div&gt;
+
+                        &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+                        &lt;div class="scrollable-vertical max-vh-50"&gt;
+
+                          &lt;a class="dropdown-item text-truncate active" href="#"&gt;
+                            Active
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item text-truncate disabled" href="#"&gt;
+                            Disabled
+                          &lt;/a&gt;
+                          &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 1
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item" href="#"&gt;
+                            Link 2
+                          &lt;/a&gt;
+                          &lt;a class="dropdown-item max-w-250 text-truncate" href="#"&gt;
+                            A long text, very very very long text
+                          &lt;/a&gt;
+                        &lt;/div&gt;
+
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+            <!-- /Tab Pills Content -->
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+        
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span class="text-gray-500 fw-light">Dropdown</span> Form
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-4">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-4-preview" id="nav-tab-4-preview-link" aria-controls="nav-tab-4-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-4-html" id="nav-tab-4-html-link" aria-controls="nav-tab-4-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-4-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-4-preview" aria-labelledby="nav-tab-4-preview-link" role="tabpanel">
+                  
+                <form method="get" class="dropdown">
+                  
+                  <input type="text" class="dropdown-toggle form-control" data-bs-toggle="dropdown" placeholder="Product title / SKU">
+                  
+                  <div class="dropdown-menu dropdown-click-ignore dropdown-mega-lg p-4">
+                    <h6 class="mb-4">Filter products</h6>
+
+                    <div class="row g-3">
+                      <div class="col-md-6">
+
+                        <div class="form-floating mb-3">
+                          <select class="form-select" id="filter-category" aria-label="Category">
+                            <option value="" selected>Any</option>
+                            <option value="1">Shoes</option>
+                            <option value="2">Men tshirt</option>
+                            <option value="3">Women thisrt</option>
+                          </select>
+                          <label for="filter-category">Category</label>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6">
+          
+                        <div class="form-floating mb-3">
+                          <select class="form-select" id="filter-brand" aria-label="Brand">
+                            <option value="" selected>Any</option>
+                            <option value="1">Nike</option>
+                            <option value="2">Adidas</option>
+                            <option value="3">Loreal</option>
+                          </select>
+                          <label for="filter-brand">Brand</label>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="form-check d-block d-sm-inline-block me-2 mb-2">
+                      <input class="form-check-input form-check-input-primary" type="checkbox" value="1" id="filter-saleprice">
+                      <label class="form-check-label user-select-none" for="filter-saleprice">
+                        Sale price
+                      </label>
+                    </div>
+
+                    <div class="form-check d-block d-sm-inline-block me-2 mb-2">
+                      <input class="form-check-input form-check-input-primary" type="checkbox" value="1" id="filter-preorder">
+                      <label class="form-check-label user-select-none" for="filter-preorder">
+                        Allow preorders
+                      </label>
+                    </div>
+
+                    <div class="d-flex justify-content-between pt-2">
+                      <button type="submit" class="btn btn-sm btn-primary">Apply filter</button>
+                      <a href="#!" class="btn btn-sm btn-danger btn-soft float-end">Reset</a>
+                    </div>
+
+                  </div>
+                </form>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-4-html" aria-labelledby="nav-tab-4-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;form method="get" class="dropdown"&gt;
+                      
+                      &lt;input type="text" class="dropdown-toggle form-control" data-bs-toggle="dropdown" placeholder="Product title / SKU"&gt;
+                      
+                      &lt;div class="dropdown-menu dropdown-click-ignore dropdown-mega-lg p-4"&gt;
+                        &lt;h6 class="mb-4"&gt;Filter products&lt;/h6&gt;
+
+                        &lt;div class="row g-3"&gt;
+                          &lt;div class="col-md-6"&gt;
+
+                            &lt;div class="form-floating mb-3"&gt;
+                              &lt;select class="form-select" id="filter-category" aria-label="Category"&gt;
+                                &lt;option value="" selected&gt;Any&lt;/option&gt;
+                                &lt;option value="1"&gt;Shoes&lt;/option&gt;
+                                &lt;option value="2"&gt;Men tshirt&lt;/option&gt;
+                                &lt;option value="3"&gt;Women thisrt&lt;/option&gt;
+                              &lt;/select&gt;
+                              &lt;label for="filter-category"&gt;Category&lt;/label&gt;
+                            &lt;/div&gt;
+
+                          &lt;/div&gt;
+                          &lt;div class="col-md-6"&gt;
+              
+                            &lt;div class="form-floating mb-3"&gt;
+                              &lt;select class="form-select" id="filter-brand" aria-label="Brand"&gt;
+                                &lt;option value="" selected&gt;Any&lt;/option&gt;
+                                &lt;option value="1"&gt;Nike&lt;/option&gt;
+                                &lt;option value="2"&gt;Adidas&lt;/option&gt;
+                                &lt;option value="3"&gt;Loreal&lt;/option&gt;
+                              &lt;/select&gt;
+                              &lt;label for="filter-brand"&gt;Brand&lt;/label&gt;
+                            &lt;/div&gt;
+
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="form-check d-block d-sm-inline-block me-2 mb-2"&gt;
+                          &lt;input class="form-check-input form-check-input-primary" type="checkbox" value="1" id="filter-saleprice"&gt;
+                          &lt;label class="form-check-label user-select-none" for="filter-saleprice"&gt;
+                            Sale price
+                          &lt;/label&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="form-check d-block d-sm-inline-block me-2 mb-2"&gt;
+                          &lt;input class="form-check-input form-check-input-primary" type="checkbox" value="1" id="filter-preorder"&gt;
+                          &lt;label class="form-check-label user-select-none" for="filter-preorder"&gt;
+                            Allow preorders
+                          &lt;/label&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="d-flex justify-content-between pt-2"&gt;
+                          &lt;button type="submit" class="btn btn-sm btn-primary"&gt;Apply filter&lt;/button&gt;
+                          &lt;a href="#!" class="btn btn-sm btn-danger btn-soft float-end"&gt;Reset&lt;/a&gt;
+                        &lt;/div&gt;
+
+                      &lt;/div&gt;
+                    &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+            <!-- /Tab Pills Content -->
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span class="text-gray-500 fw-light">Dropdown</span> Icons
+            </h2>
+
+            <p>
+              Nothing special, svg icons added
+            </p>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-full">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-full-preview" id="nav-tab-full-preview-link" aria-controls="nav-tab-full-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-full-html" id="nav-tab-full-html-link" aria-controls="nav-tab-full-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-full-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-full-preview" aria-labelledby="nav-tab-full-preview-link" role="tabpanel">
+                  
+                <div class="dropdown">
+                  <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownIcons" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,6">
+                    Dropdown
+                    <span class="group-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </span>
+                  </a>
+
+                  <ul class="dropdown-menu shadow-lg p-1" aria-labelledby="dropdownIcons">
+                    <li>
+                      <a class="dropdown-item rounded" href="#">
+                        <svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>Add Item</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded" href="#">
+                        <svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Set active</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded" href="#">
+                        <svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        <span>Set inactive</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded" href="#">
+                        <svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 20h9"></path>
+                          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                        <span>Edit</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded" href="#">
+                        <svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                        <span>Archive</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded" href="#">
+                        <svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <span>Some option</span>
+                      </a>
+                    </li>
+                    <li class="dropdown-divider my-2"></li>
+                    <li>
+                      <a class="dropdown-item rounded" href="#">
+                        <svg class="text-danger" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                          <line x1="10" y1="11" x2="10" y2="17"></line>
+                          <line x1="14" y1="11" x2="14" y2="17"></line>
+                        </svg>
+                        <span>Delete</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-full-html" aria-labelledby="nav-tab-full-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;div class="dropdown"&gt;
+                      &lt;a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownIcons" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,6"&gt;
+                        Dropdown
+                        &lt;span class="group-icon"&gt;
+                          &lt;svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                            &lt;polyline points="6 9 12 15 18 9"&gt;&lt;/polyline&gt;
+                          &lt;/svg&gt;
+                          &lt;svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                            &lt;line x1="18" y1="6" x2="6" y2="18"&gt;&lt;/line&gt;
+                            &lt;line x1="6" y1="6" x2="18" y2="18"&gt;&lt;/line&gt;
+                          &lt;/svg&gt;
+                        &lt;/span&gt;
+                      &lt;/a&gt;
+
+                      &lt;ul class="dropdown-menu shadow-lg p-1" aria-labelledby="dropdownIcons"&gt;
+                        &lt;li&gt;
+                          &lt;a class="dropdown-item rounded" href="#"&gt;
+                            &lt;svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                              &lt;line x1="12" y1="5" x2="12" y2="19"&gt;&lt;/line&gt;
+                              &lt;line x1="5" y1="12" x2="19" y2="12"&gt;&lt;/line&gt;
+                            &lt;/svg&gt;
+                            &lt;span&gt;Add Item&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;a class="dropdown-item rounded" href="#"&gt;
+                            &lt;svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                              &lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;
+                            &lt;/svg&gt;
+                            &lt;span&gt;Set active&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;a class="dropdown-item rounded" href="#"&gt;
+                            &lt;svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                              &lt;line x1="18" y1="6" x2="6" y2="18"&gt;&lt;/line&gt;
+                              &lt;line x1="6" y1="6" x2="18" y2="18"&gt;&lt;/line&gt;
+                            &lt;/svg&gt;
+                            &lt;span&gt;Set inactive&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;a class="dropdown-item rounded" href="#"&gt;
+                            &lt;svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                              &lt;path d="M12 20h9"&gt;&lt;/path&gt;
+                              &lt;path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"&gt;&lt;/path&gt;
+                            &lt;/svg&gt;
+                            &lt;span&gt;Edit&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;a class="dropdown-item rounded" href="#"&gt;
+                            &lt;svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                              &lt;ellipse cx="12" cy="5" rx="9" ry="3"&gt;&lt;/ellipse&gt;
+                              &lt;path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"&gt;&lt;/path&gt;
+                              &lt;path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"&gt;&lt;/path&gt;
+                            &lt;/svg&gt;
+                            &lt;span&gt;Archive&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;a class="dropdown-item rounded" href="#"&gt;
+                            &lt;svg class="text-gray-600" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                              &lt;polyline points="9 18 15 12 9 6"&gt;&lt;/polyline&gt;
+                            &lt;/svg&gt;
+                            &lt;span&gt;Some option&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="dropdown-divider my-2"&gt;&lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;a class="dropdown-item rounded" href="#"&gt;
+                            &lt;svg class="text-danger" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                              &lt;polyline points="3 6 5 6 21 6"&gt;&lt;/polyline&gt;
+                              &lt;path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"&gt;&lt;/path&gt;
+                              &lt;line x1="10" y1="11" x2="10" y2="17"&gt;&lt;/line&gt;
+                              &lt;line x1="14" y1="11" x2="14" y2="17"&gt;&lt;/line&gt;
+                            &lt;/svg&gt;
+                            &lt;span&gt;Delete&lt;/span&gt;
+                          &lt;/a&gt;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+            <!-- /Tab Pills Content -->
+
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,216 @@
+    <div class="modal-header">
+      <h5 class="modal-title m-0">Create Event</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body p-5">
+
+      <!-- <form class="bs-validate" novalidate action="../demo.files/php/demo.ajax_request.php" method="POST"> -->
+      <form class="bs-validate js-ajax" novalidate 
+          method="post" 
+          action="../demo.files/php/demo.ajax_request.php" 
+          method="POST" 
+
+          data-modal-autoclose-on-success="true"
+          data-modal-autoclose-on-success-delay="800"
+
+          data-ajax-container="#ajax_response_container" 
+          data-ajax-update-url="false" 
+          data-ajax-show-loading-icon="true" 
+
+          data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+          data-error-toast-delay="3000" 
+          data-error-toast-position="top-center" 
+          data-error-scroll-up="true"
+
+          data-ajax-callback-function="">
+
+        <!-- nestable item id -->
+        <input type="hidden" name="action" value="add_event">
+        <input type="hidden" id="event_id" name="id" value=""><!-- database generated id -OR- populated by js (if empty = current timestamp)  -->
+
+        <div class="card mb-4">
+          <div class="card-body p-4">
+
+            <div class="row g-3">
+
+              <div class="col-12 col-lg-6">
+
+                <div class="form-floating">
+
+                  <input required autocomplete="off" type="text" class="form-control rangepicker" 
+                    data-load-delay="800" 
+                    data-single-datepicker="true" 
+                    data-timepicker="true" 
+                    data-timepicker-24h="false" 
+                    data-timepicker-show-seconds="false" 
+                    data-disable-auto-update-input="false" 
+                    data-date-start="" 
+                    data-date-format="YYYY-MM-DD HH:mm" 
+                    data-quick-locale='{
+                      "lang_apply"  : "Apply",
+                      "lang_cancel" : "Cancel",
+                      "lang_months"   : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                      "lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+                    }' placeholder="Event Date Start" name="start" id="start">
+
+                  <label for="start">Event Date Start</label>
+                  <a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 mt-1 z-index-2 fi fi-close"></a>
+
+                </div>
+
+                <label class="d-flex align-items-center mt-3">
+                  <input class="d-none-cloaked" type="checkbox" name="recurrent_enable" value="1" data-bs-toggle="collapse" data-target="#event_recurrency">
+                  <i class="switch-icon switch-icon-primary"></i>
+                  <span class="px-3 user-select-none">Primary</span>
+                </label>
+
+              </div>
+
+              <div class="col-12 col-lg-6">
+
+                <div class="form-floating">
+
+                  <input autocomplete="off" type="text" class="form-control rangepicker" 
+                    data-single-datepicker="true" 
+                    data-timepicker="true" 
+                    data-timepicker-24h="false" 
+                    data-timepicker-show-seconds="false" 
+                    data-disable-auto-update-input="true" 
+                    data-date-start="" 
+                    data-date-format="YYYY-MM-DD HH:mm" 
+                    data-quick-locale='{
+                      "lang_apply"  : "Apply",
+                      "lang_cancel" : "Cancel",
+                      "lang_months"   : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                      "lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+                    }' placeholder="Event Date End" name="end" id="end">
+
+                  <label for="end">Event Date End</label>
+                  <a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 mt-1 z-index-2 fi fi-close"></a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- recurrency -->
+            <div id="event_recurrency" class="collapse">
+              <div class="row">
+
+                <div class="col-12 col-lg-6 mb-3">
+
+                  <div class="form-floating">
+
+                    <input autocomplete="off" type="text" class="form-control rangepicker" 
+                      data-single-datepicker="true" 
+                      data-timepicker="true" 
+                      data-timepicker-24h="false" 
+                      data-timepicker-show-seconds="false" 
+                      data-disable-auto-update-input="true" 
+                      data-date-start="" 
+                      data-date-format="YYYY-MM-DD HH:mm" 
+                      data-quick-locale='{
+                        "lang_apply"  : "Apply",
+                        "lang_cancel" : "Cancel",
+                        "lang_months"   : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        "lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+                      }' placeholder="Recurrency Date Start" name="startRecur" id="startRecur">
+
+                    <label for="startRecur">Recurrency Date Start</label>
+                    <a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 z-index-2 fi fi-close"></a>
+
+                  </div>
+
+                </div>
+
+                <div class="col-12 col-lg-6 mb-3">
+
+                  <div class="form-floating">
+
+                    <input autocomplete="off" type="text" class="form-control rangepicker" 
+                      data-single-datepicker="true" 
+                      data-timepicker="true" 
+                      data-timepicker-24h="false" 
+                      data-timepicker-show-seconds="false" 
+                      data-disable-auto-update-input="true" 
+                      data-date-start="" 
+                      data-date-format="YYYY-MM-DD HH:mm" 
+                      data-quick-locale='{
+                        "lang_apply"  : "Apply",
+                        "lang_cancel" : "Cancel",
+                        "lang_months"   : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        "lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+                      }' placeholder="Recurrency Date End" name="endRecur" id="endRecur">
+
+                    <label for="endRecur">Recurrency Date End</label>
+                    <a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 z-index-2 fi fi-close"></a>
+
+                  </div>
+
+                </div>
+
+                <div class="col-12 mb-3">
+
+                  <select multiple class="form-control" id="daysOfWeek" name="daysOfWeek[]" title="Days to repeat">
+                    <option value="0">Sun</option>
+                    <option value="1">Mon</option>
+                    <option value="2">Tue</option>
+                    <option value="3">Wed</option>
+                    <option value="4">Thu</option>
+                    <option value="5">Fri</option>
+                    <option value="6">Sat</option>
+                  </select>
+
+                </div>
+
+              </div>
+            </div>
+            <!-- /recurrency -->
+
+          </div>
+        </div>
+
+        <div class="form-floating mb-2">
+          <input required placeholder="Event Name" id="title" name="title" type="text" value="" class="form-control">
+          <label for="title">Event Name</label>
+        </div>
+
+        <div class="form-floating mb-2">
+          <input placeholder="Event URL" id="url" name="url" type="text" value="" class="form-control">
+          <label for="url">Event URL</label>
+        </div>
+
+        <select class="form-control mb-3" id="className" name="className" title="Please Select...">
+          <option value="bg-primary border-primary text-white" selected="" data-content="<span class='bg-primary border-primary text-white p--3 pl--5 pr--5 rounded fs--14'>Primary</span>">Primary</option>
+          <option value="bg-secondary border-secondary text-white" data-content="<span class='bg-secondary border-secondary text-white p--3 pl--5 pr--5 rounded fs--14'>Secondary</span>">Secondary</option>
+          <option value="bg-dark border-dark text-white" data-content="<span class='bg-dark border-dark text-white p--3 pl--5 pr--5 rounded fs--14'>Dark</span>">Dark</option>
+          <option value="bg-light border-light text-dark" data-content="<span class='bg-light border-light text-dark p--3 pl--5 pr--5 rounded fs--14'>Light</span>">Light</option>
+          <option value="bg-success border-success text-white" data-content="<span class='bg-success border-success text-white p--3 pl--5 pr--5 rounded fs--14'>Success</span>">Success</option>
+          <option value="bg-warning border-warning text-dark" data-content="<span class='bg-warning border-warning text-dark p--3 pl--5 pr--5 rounded fs--14'>Warning</span>">Warning</option>
+          <option value="bg-danger border-danger text-white" data-content="<span class='bg-danger border-danger text-white p--3 pl--5 pr--5 rounded fs--14'>Danger</span>">Danger</option>
+          <option value="bg-info border-info text-white" data-content="<span class='bg-info border-info text-white p--3 pl--5 pr--5 rounded fs--14'>Info</span>">Info</option>
+          <option data-divider="true"></option>
+          <option value="bg-primary-soft border-primary-soft" data-content="<span class='bg-primary-soft border-primary-soft p--3 pl--5 pr--5 rounded fs--14'>Primary</span>">Primary Soft</option>
+          <option value="bg-secondary-soft border-secondary-soft" data-content="<span class='bg-secondary-soft border-secondary-soft p--3 pl--5 pr--5 rounded fs--14'>Secondary</span>">Secondary Soft</option>
+          <option value="bg-dark-soft border-dark-soft" data-content="<span class='bg-dark-soft border-dark-soft p--3 pl--5 pr--5 rounded fs--14'>Dark</span>">Dark Soft</option>
+          <option value="bg-success-soft border-success-soft" data-content="<span class='bg-success-soft border-success-soft p--3 pl--5 pr--5 rounded fs--14'>Success</span>">Success Soft</option>
+          <option value="bg-warning-soft border-warning-soft" data-content="<span class='bg-warning-soft border-warning-soft p--3 pl--5 pr--5 rounded fs--14'>Warning</span>">Warning Soft</option>
+          <option value="bg-danger-soft border-danger-soft" data-content="<span class='bg-danger-soft border-danger-soft p--3 pl--5 pr--5 rounded fs--14'>Danger</span>">Danger Soft</option>
+          <option value="bg-info-soft border-info-soft" data-content="<span class='bg-info-soft border-info-soft p--3 pl--5 pr--5 rounded fs--14'>Info</span>">Info Soft</option>
+        </select>
+
+        <div class="form-floating mb-2">
+          <textarea placeholder="Event Description" id="description" name="description" class="form-control" rows="3" style="min-height:120px"></textarea>
+          <label for="description">Event Description</label>
+        </div>
+
+        <button type="submit" class="btn-fullcalendar-add btn btn-primary shadow-none">
+          Create Event
+        </button>
+
+      </form>
+
+    </div>
+

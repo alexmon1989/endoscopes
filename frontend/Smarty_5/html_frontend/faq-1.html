@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>Smarty v5</title>
+		<meta name="description" content="...">
+
+		<meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- up to 10% speed up for external res -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/">
+		<!-- preloading icon font is helping to speed up a little bit -->
+		<link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="assets/css/core.min.css">
+		<link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+	</head>
+
+	<!--
+
+		Available Body Classes
+			.layout-boxed 					- boxed layout (ignored if any .header-* class is present)
+
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+			.header-sticky  				- header : always visible on top
+			.header-over  					- header : over slider|parallax|image (next section must contain a large image, else will be indistinguishable)
+
+				Possible header combinations:
+					.header-over + .header-scroll-reveal
+					.header-over + .header-sticky
+						* NOTE: if .header-sticky + .header-scroll-reveal are both used, .header-scroll-reveal is ignored
+
+
+			.bg-cover .bg-fixed 			- both classes used with .layout-boxed to set a background image via style="background-image:url(...)"
+	-->
+	<body class="header-sticky">
+
+		<div id="wrapper">
+
+
+			<!-- Header -->
+			<header id="header" class="shadow-xs">
+
+				<!-- Navbar -->
+				<div class="container position-relative">
+
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<!-- navbar : brand (logo) -->
+						<a class="navbar-brand" href="index.html">
+							<img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+						</a>
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler border-0 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<!--
+
+							Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+								.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+								.dropdown-menu-hover 		- open on hover
+								.dropdown-menu-clean 		- no background color on hover
+								.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+								.dropdown-menu-uppercase 	- uppercase text (font-size is scalled down to 13px)
+								.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+								Repositioning long dropdown childs (Example: Pages->Account)
+									.dropdown-menu-up-n100 		- open up with top: -100px
+									.dropdown-menu-up-n100 		- open up with top: -150px
+									.dropdown-menu-up-n180 		- open up with top: -180px
+									.dropdown-menu-up-n220 		- open up with top: -220px
+									.dropdown-menu-up-n250 		- open up with top: -250px
+									.dropdown-menu-up 			- open up without negative class
+
+
+								Dropdown prefix icon (optional, if enabled in variables.scss)
+									.prefix-link-icon .prefix-icon-dot 		- link prefix
+									.prefix-link-icon .prefix-icon-line 	- link prefix
+									.prefix-link-icon .prefix-icon-ico 		- link prefix
+									.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+								.nav-link.nav-link-caret-hide 	- no dropdown icon indicator on main link
+								.nav-item.dropdown-mega 		- required ONLY on fullwidth mega menu
+
+								Mobile animation - add to .navbar-collapse:
+								.navbar-animate-fadein
+								.navbar-animate-fadeinup
+								.navbar-animate-bouncein
+
+						-->
+						<div class="collapse navbar-collapse justify-content-end navbar-animate-fadein" id="navbarMainNav">
+
+
+							<!-- navbar : mobile menu -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+								</a>
+
+							</div>
+							<!-- /navbar : mobile menu -->
+
+
+
+							<!-- navbar : navigation -->
+							<ul class="navbar-nav">
+								<!-- Menu -->
+								<!--
+
+									Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+										.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+										.dropdown-menu-hover 		- open on hover
+										.dropdown-menu-clean 		- no background color on hover
+										.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+										.dropdown-menu-uppercase 	- uppercase text (font-size is scalled down to 13px)
+										.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+										Repositioning long dropdown childs (Example: Pages->Account)
+											.dropdown-menu-up-n100 		- open up with top: -100px
+											.dropdown-menu-up-n100 		- open up with top: -150px
+											.dropdown-menu-up-n180 		- open up with top: -180px
+											.dropdown-menu-up-n220 		- open up with top: -220px
+											.dropdown-menu-up-n250 		- open up with top: -250px
+											.dropdown-menu-up 			- open up without negative class
+
+
+										Dropdown prefix icon (optional, if enabled in variables.scss)
+											.prefix-link-icon .prefix-icon-dot 		- link prefix
+											.prefix-link-icon .prefix-icon-line 	- link prefix
+											.prefix-link-icon .prefix-icon-ico 		- link prefix
+											.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+										.nav-link.nav-link-caret-hide 	- no dropdown icon indicator on main link
+										.nav-item.dropdown-mega 		- required ONLY on fullwidth mega menu
+
+								-->
+								<!-- mobile only image + simple search (d-block d-sm-none) -->
+								<li class="nav-item d-block d-sm-none">
+
+									<!-- image -->
+									<div class="mb-4">
+										<img width="600" height="600" class="img-fluid" src="demo.files/svg/artworks/people_crossbrowser.svg" alt="...">
+									</div>
+
+									<!-- search -->
+									<form method="get" action="#!search" class="input-group-over mb-4 bg-light p-2 form-control-pill">
+										<input type="text" name="keyword" value="" placeholder="Quick search..." class="form-control border-dashed">
+										<button class="btn btn-sm fi fi-search mx-3"></button>
+									</form>
+
+								</li>
+
+
+                <!-- home -->
+                <li class="nav-item dropdown active">
+
+                  <a href="#" id="mainNavHome" class="nav-link dropdown-toggle" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Home
+                  </a>
+
+                  <div aria-labelledby="mainNavHome" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-mega-md dropdown-fadeinup">
+
+                    <!-- 
+                      optional line column separator 
+                      .col-border-lg 
+                    -->
+                    <div class="row">
+
+                      <div class="col-12 col-lg-6">
+                        <ul class="list-unstyled">
+                          <li class="dropdown-item">
+                            <h3 class="fs-6 text-muted py-3 px-lg-4">
+                              Niche pages
+                            </h3>
+                          </li>
+                          <li class="dropdown-item"><a href="niche.restaurant.html" class="dropdown-link">Restaurant</a></li>
+                          <li class="dropdown-item"><a href="niche.caffe.html" class="dropdown-link">Caffe</a></li>
+                          <li class="dropdown-item"><a href="niche.tattoo.html" class="dropdown-link">Tattoo</a></li>
+                          <li class="dropdown-item"><a href="niche.lawyer.html" class="dropdown-link">Lawyer</a></li>
+                          <li class="dropdown-item"><a href="niche.hosting.html" class="dropdown-link">Hosting</a></li>
+                          <li class="dropdown-item"><a href="niche.classifieds.html" class="dropdown-link">Classifieds</a></li>
+                          <li class="dropdown-item"><a href="niche.realestate.html" class="dropdown-link">Real Estate</a></li>
+                          <li class="dropdown-item"><a href="#" class="dropdown-link disabled">More soon</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="col-12 col-lg-6">
+                        <ul class="list-unstyled">
+                          <li class="dropdown-item">
+                            <h3 class="fs-6 text-muted py-3 px-lg-4">
+                              Landing pages
+                            </h3>
+                          </li>
+                          <li class="dropdown-item"><a href="landing-0.html" class="dropdown-link">Default</a></li>
+                          <li class="dropdown-item"><a href="landing-1.html" class="dropdown-link">Landing 1</a></li>
+                          <li class="dropdown-item"><a href="landing-2.html" class="dropdown-link">Landing 2</a></li>
+                          <li class="dropdown-item"><a href="landing-3.html" class="dropdown-link">Landing 3</a></li>
+                          <li class="dropdown-item"><a href="landing-4.html" class="dropdown-link">Landing 4</a></li>
+                          <li class="dropdown-item"><a href="landing-5.html" class="dropdown-link">Landing 5</a></li>
+                          <li class="dropdown-item"><a href="landing-6.html" class="dropdown-link">Landing 6</a></li>
+                          <li class="dropdown-item"><a href="landing-7.html" class="dropdown-link">Landing 7</a></li>
+                          <li class="dropdown-item"><a href="landing-8.html" class="dropdown-link">Landing 8</a></li>
+                        </ul>
+                      </div>
+
+                    </div>
+
+                    <ul class="list-unstyled">
+                      <li class="dropdown-divider"></li>
+                      <li class="dropdown-item pt-2">
+                        <a href="index-2.html" class="dropdown-link text-muted d-flex align-items-center">
+                          <span class="pe-2">All Demos</span>
+                          <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">  
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </li>
+
+
+								<!-- pages -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavPages" class="nav-link dropdown-toggle" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Pages
+									</a>
+
+									<div aria-labelledby="mainNavPages" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-fadeinup">
+									    <ul class="list-unstyled m-0 p-0">
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">About</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="about-us-1.html" class="dropdown-link">About Us 1</a></li>
+									                <li class="dropdown-item"><a href="about-us-2.html" class="dropdown-link">About Us 2</a></li>
+									                <li class="dropdown-item"><a href="about-us-3.html" class="dropdown-link">About Us 3</a></li>
+									                <li class="dropdown-item"><a href="about-us-4.html" class="dropdown-link">About Us 4</a></li>
+									                <li class="dropdown-item"><a href="about-us-5.html" class="dropdown-link">About Us 5</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="about-me-1.html" class="dropdown-link">About Me 1</a></li>
+									                <li class="dropdown-item"><a href="about-me-2.html" class="dropdown-link">About Me 2</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Services</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="services-1.html" class="dropdown-link">Services 1</a></li>
+									                <li class="dropdown-item"><a href="services-2.html" class="dropdown-link">Services 2</a></li>
+									                <li class="dropdown-item"><a href="services-3.html" class="dropdown-link">Services 3</a></li>
+									                <li class="dropdown-item"><a href="services-4.html" class="dropdown-link">Services 4</a></li>
+									                <li class="dropdown-item"><a href="services-5.html" class="dropdown-link">Services 5</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Contact</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="contact-1.html" class="dropdown-link">Contact 1</a></li>
+									                <li class="dropdown-item"><a href="contact-2.html" class="dropdown-link">Contact 2</a></li>
+									                <li class="dropdown-item"><a href="contact-3.html" class="dropdown-link">Contact 3</a></li>
+									                <li class="dropdown-item"><a href="contact-4.html" class="dropdown-link">Contact 4</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Pricing</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="pricing-1.html" class="dropdown-link">Pricing 1</a></li>
+									                <li class="dropdown-item"><a href="pricing-2.html" class="dropdown-link">Pricing 2</a></li>
+									                <li class="dropdown-item"><a href="pricing-3.html" class="dropdown-link">Pricing 3</a></li>
+									                <li class="dropdown-item"><a href="pricing-4.html" class="dropdown-link">Pricing 4</a></li>
+									                <li class="dropdown-item"><a href="pricing-5.html" class="dropdown-link">Pricing 5</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">FAQ</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="faq-1.html" class="dropdown-link">FAQ 1</a></li>
+									                <li class="dropdown-item"><a href="faq-2.html" class="dropdown-link">FAQ 2</a></li>
+									                <li class="dropdown-item"><a href="faq-3.html" class="dropdown-link">FAQ 3</a></li>
+									                <li class="dropdown-item"><a href="faq-4.html" class="dropdown-link">FAQ 4</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Team</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="team-1.html" class="dropdown-link">Team 1</a></li>
+									                <li class="dropdown-item"><a href="team-2.html" class="dropdown-link">Team 2</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Account</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="account-index.html" class="dropdown-link">Account pages (12)</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="account-full-signin-1.html" class="dropdown-link">Sign In/Up : Full 1</a></li>
+									                <li class="dropdown-item"><a href="account-full-signin-2.html" class="dropdown-link">Sign In/Up : Full 2</a></li>
+									                <li class="dropdown-item"><a href="account-onepage-signin.html" class="dropdown-link">Sign In/Up : Onepage</a></li>
+									                <li class="dropdown-item"><a href="account-simple-signin.html" class="dropdown-link">Sign In/Up : Simple</a></li>
+									                <li class="dropdown-item"><a href="account-modal-signin.html" class="dropdown-link">Sign In/Up : Modal</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Clients / Career</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="clients.html" class="dropdown-link">Clients</a></li>
+									                <li class="dropdown-item"><a href="career.html" class="dropdown-link">Career</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Portfolio</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="portfolio-columns-2.html" class="dropdown-link">2 Columns</a></li>
+									                <li class="dropdown-item"><a href="portfolio-columns-3.html" class="dropdown-link">3 Columns</a></li>
+									                <li class="dropdown-item"><a href="portfolio-columns-4.html" class="dropdown-link">4 Columns</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="portfolio-single-1.html" class="dropdown-link">Single Item 1</a></li>
+									                <li class="dropdown-item"><a href="portfolio-single-2.html" class="dropdown-link">Single Item 2</a></li>
+									                <li class="dropdown-item"><a href="portfolio-single-3.html" class="dropdown-link">Single Item 3</a></li>
+									                <li class="dropdown-item"><a href="portfolio-single-4.html" class="dropdown-link">Single Item 4</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Utility</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-up dropdown-menu-block-md shadow-lg border-0 m-0">
+									                <li class="dropdown-item"><a href="404-1.html" class="dropdown-link">Error 1</a></li>
+									                <li class="dropdown-item"><a href="404-2.html" class="dropdown-link">Error 2</a></li>
+									                <li class="dropdown-item"><a href="404-3.html" class="dropdown-link">Error 3</a></li>
+									                <li class="dropdown-item"><a href="invoice.html" class="dropdown-link">Invoice</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="maintenance-1.html" class="dropdown-link">Maintenance 1</a></li>
+									                <li class="dropdown-item"><a href="maintenance-2.html" class="dropdown-link">Maintenance 2</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="comingsoon-1.html" class="dropdown-link">Coming Soon 1</a></li>
+									                <li class="dropdown-item"><a href="comingsoon-2.html" class="dropdown-link">Coming Soon 2</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="page-cookie.html" class="dropdown-link">GDPR Page &amp; Cookie Window</a></li>
+									            </ul>
+									        </li>
+									    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- features -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavFeatures" class="nav-link dropdown-toggle" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Features
+									</a>
+
+									<div aria-labelledby="mainNavFeatures" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-fadeinup">
+									    <ul class="list-unstyled m-0 p-0">
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Header</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item dropdown"><a href="#" class="dropdown-link fw-bold" data-bs-toggle="dropdown">Variants</a>
+									                    <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                        <li class="dropdown-item"><a href="header-variant-1.html" class="dropdown-link">Header : Variant : 1</a></li>
+									                        <li class="dropdown-item"><a href="header-variant-2.html" class="dropdown-link">Header : Variant : 2</a></li>
+									                        <li class="dropdown-item"><a href="header-variant-3.html" class="dropdown-link">Header : Variant : 3</a></li>
+									                        <li class="dropdown-item"><a href="header-variant-4.html" class="dropdown-link">Header : Variant : 4</a></li>
+									                        <li class="dropdown-item"><a href="header-variant-5.html" class="dropdown-link">Header : Variant : 5</a></li>
+									                        <li class="dropdown-item"><a href="header-variant-6.html" class="dropdown-link">Header : Variant : 6</a></li>
+									                    </ul>
+									                </li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-light.html" class="dropdown-link">Header : Light <small class="text-muted">(default)</small></a></li>
+									                <li class="dropdown-item"><a href="header-option-dark.html" class="dropdown-link">Header : Dark</a></li>
+									                <li class="dropdown-item"><a href="header-option-color.html" class="dropdown-link">Header : Color</a></li>
+									                <li class="dropdown-item"><a href="header-option-transparent.html" class="dropdown-link">Header : Transparent</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-centered.html" class="dropdown-link">Header : Centered</a></li>
+									                <li class="dropdown-item"><a href="header-option-bottom.html" class="dropdown-link">Header : Bottom</a></li>
+									                <li class="dropdown-item"><a href="header-option-floating.html" class="dropdown-link">Header : Floating</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-fixed.html" class="dropdown-link">Header : Fixed</a></li>
+									                <li class="dropdown-item"><a href="header-option-reveal.html" class="dropdown-link">Header : Reveal on Scroll</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-ajax-search-json.html" class="dropdown-link">Ajax Search : Json</a></li>
+									                <li class="dropdown-item"><a href="header-option-ajax-search-html.html" class="dropdown-link">Ajax Search : Html</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Footer</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item dropdown"><a href="#" class="dropdown-link fw-bold" data-bs-toggle="dropdown">Variants</a>
+									                    <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                        <li class="dropdown-item"><a href="footer-variant-1.html#footer" class="dropdown-link">Footer : Variant : 1</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-2.html#footer" class="dropdown-link">Footer : Variant : 2</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-3.html#footer" class="dropdown-link">Footer : Variant : 3</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-4.html#footer" class="dropdown-link">Footer : Variant : 4</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-5.html#footer" class="dropdown-link">Footer : Variant : 5</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-6.html#footer" class="dropdown-link">Footer : Variant : 6</a></li>
+									                    </ul>
+									                </li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="footer-option-light.html" class="dropdown-link">Footer : Light</a></li>
+									                <li class="dropdown-item"><a href="footer-option-dark.html" class="dropdown-link">Footer : Dark <small class="text-muted">(default)</small></a></li>
+									                <li class="dropdown-item"><a href="footer-option-image.html" class="dropdown-link">Footer : Image</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Sliders</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="slider-swiper.html" class="dropdown-link">Swiper Slider</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Page Title</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="page-title-classic.html" class="dropdown-link">Page Title : Classic</a></li>
+									                <li class="dropdown-item"><a href="page-title-alternate.html" class="dropdown-link">Page Title : Alternate</a></li>
+									                <li class="dropdown-item"><a href="page-title-color.html" class="dropdown-link">Page Title : Color + Nav</a></li>
+									                <li class="dropdown-item"><a href="page-title-clean.html" class="dropdown-link">Page Title : Clean</a></li>
+									                <li class="dropdown-item"><a href="page-title-parallax-1.html" class="dropdown-link">Page Title : Parallax 1</a></li>
+									                <li class="dropdown-item"><a href="page-title-parallax-2.html" class="dropdown-link">Page Title : Parallax 2</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Sidebar</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+									                <li class="dropdown-item"><a href="sidebar-float-cart.html" class="dropdown-link">Sidebar : Cart</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="sidebar-float-dark.html" class="dropdown-link">Sidebar : Float : Dark</a></li>
+									                <li class="dropdown-item"><a href="sidebar-float-light.html" class="dropdown-link">Sidebar : Float : Light</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="sidebar-static-dark.html" class="dropdown-link">Sidebar : Static : Dark</a></li>
+									                <li class="dropdown-item"><a href="sidebar-static-light.html" class="dropdown-link">Sidebar : Static : Light</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><span class="d-block text-muted py-2 px-4 small fw-bold">Same as admin</span></li>
+									                <li class="dropdown-item"><a href="sidebar-float-admin-color.html" class="dropdown-link">Sidebar : Float</a></li>
+									                <li class="dropdown-item"><a href="sidebar-static-admin-color.html" class="dropdown-link">Sidebar : Static</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item">
+									        	<a href="header-dropdown.html" class="dropdown-link fw-medium">
+									        		Menu Dropdowns
+									        	</a>
+									        </li>
+									        <li class="dropdown-divider"></li>
+									        <li class="dropdown-item"><a href="layout-boxed-1.html" class="dropdown-link">Boxed Layout</a></li>
+									        <li class="dropdown-item"><a href="layout-boxed-0.html" class="dropdown-link">Boxed + Header Over</a></li>
+									        <li class="dropdown-item"><a href="layout-boxed-2.html" class="dropdown-link">Boxed + Background</a></li>
+									    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- blog -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavBlog" class="nav-link dropdown-toggle" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Blog
+									</a>
+
+									<div aria-labelledby="mainNavBlog" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-fadeinup">
+								    <ul class="list-unstyled m-0 p-0">
+                      <li class="dropdown-item"><a class="dropdown-link" href="blog-page-sidebar.html">With Sidebar</a></li>
+                      <li class="dropdown-item"><a class="dropdown-link" href="blog-page-sidebar-no.html">Without Sidebar</a></li>
+                      <li class="dropdown-item"><a class="dropdown-link" href="blog-page-article-sidebar.html">Article With Sidebar</a></li>
+                      <li class="dropdown-item"><a class="dropdown-link" href="blog-page-article-sidebar-no.html">Article Without Sidebar</a></li>
+								    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- demos -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="mainNavDemo" class="nav-link dropdown-toggle" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Demos
+									</a>
+
+									<div aria-labelledby="mainNavDemo" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover end-0 dropdown-fadeinup">
+								    <ul class="list-unstyled m-0 p-0">
+							        <li class="dropdown-item dropdown">
+							        	<a href="#" class="dropdown-link" data-bs-toggle="dropdown">Admin <span class="small text-muted">(2 layouts)</span></a>
+						            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+					                <li class="dropdown-item"><a href="../html_admin/index.html" target="_blank" rel="noopener" class="dropdown-link">Layout 1</a></li>
+					                <li class="dropdown-item"><a href="../html_admin/layout-2.html" target="_blank" rel="noopener" class="dropdown-link">Layout 2</a></li>
+						            </ul>
+							        </li>
+							        <li class="dropdown-item"><a href="shop-index-1.html" target="_blank" rel="noopener" class="dropdown-link">Ecommerce <span class="small text-muted">(44 pages)</span></a></li>
+							        <li class="dropdown-item"><a href="niche.realestate.html" target="_blank" rel="noopener" class="dropdown-link">Real estate <span class="small text-muted">(5 pages)</span></a></li>
+							        <li class="dropdown-item"><a href="niche.classifieds.html" target="_blank" rel="noopener" class="dropdown-link">Classifieds <span class="small text-muted">(3 pages)</span></a></li>
+							        <li class="dropdown-item"><a href="fullajax-index.html" target="_blank" rel="noopener" class="dropdown-link">Full Ajax <span class="small text-muted">(14 pages)</span></a></li>
+							        <li class="dropdown-item"><a href="forum-index.html" rel="noopener" class="dropdown-link">Forum <span class="small text-muted">(3 pages)</span></a></li>
+							        <li class="dropdown-item dropdown">
+							        	<a href="#" class="dropdown-link" data-bs-toggle="dropdown">Help center <span class="small text-muted">(2 layouts)</span></a>
+						            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+					                <li class="dropdown-item"><a href="help-center-1-index.html" class="dropdown-link">Layout 1 <span class="small text-muted">(2 pages)</span></a></li>
+					                <li class="dropdown-item"><a href="help-center-2-index.html" class="dropdown-link">Layout 2 <span class="small text-muted">(3 pages)</span></a></li>
+						            </ul>
+							        </li>
+								    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- documentation -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavDocumentation" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										<span>Documentation</span>
+									</a>
+
+									<div aria-labelledby="mainNavDocumentation" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover end-0 w-300 dropdown-fadeinup">										
+										
+										<a href="documentation/index.html" class="dropdown-item py-4 d-flex">
+
+											<span class="flex-none">
+												<svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-earmark-medical" viewBox="0 0 16 16">  
+												  <path d="M7.5 5.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L6 7l-.549.317a.5.5 0 1 0 .5.866l.549-.317V8.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L8 7l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V5.5zm-2 4.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"></path>  
+												  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"></path>
+												</svg>
+											</span>
+
+											<span class="ps-3">
+												<span class="d-block mb-1">Documentation</span>
+												<small class="d-block text-muted text-wrap">
+													Your development guide to work with Smarty
+												</small>
+											</span>
+										</a>
+
+										<a href="documentation/changelog.html" class="dropdown-item py-4 d-flex border-top">
+
+											<span class="flex-none">
+												<svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-files-alt" viewBox="0 0 16 16">  
+												  <path d="M11 0H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2 2 2 0 0 0 2-2V4a2 2 0 0 0-2-2 2 2 0 0 0-2-2zm2 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1V3zM2 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2z"></path>
+												</svg>
+											</span>
+
+											<span class="ps-3">Changelog</span>
+										</a>
+
+										<a href="__elements.html" target="_blank" rel="noopener" class="dropdown-item py-4 d-flex border-top">
+
+											<span class="flex-none">
+												<svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-layout-wtf" viewBox="0 0 16 16">  
+												  <path d="M5 1v8H1V1h4zM1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm13 2v5H9V2h5zM9 1a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9zM5 13v2H3v-2h2zm-2-1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3zm12-1v2H9v-2h6zm-6-1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H9z"></path>
+												</svg>
+											</span>
+
+											<span class="ps-3">
+												<span class="d-block mb-1">Uncategorized Elements</span>
+												<small class="d-block text-muted text-wrap">
+													Various uncategorized elements ready to use
+												</small>
+											</span>
+										</a>
+
+									</div>
+
+								</li>
+
+
+
+
+								<!-- social icons : mobile only -->
+								<li class="nav-item d-block d-sm-none text-center mb-4">
+
+									<h3 class="h6 text-muted">Follow Us</h3>
+
+										<!-- facebook -->
+									<a href="#" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-facebook"></i> 
+									</a>
+
+									<!-- twitter -->
+									<a href="#" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-twitter"></i> 
+									</a>
+
+									<!-- linkedin -->
+									<a href="#" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-linkedin"></i> 
+									</a>
+
+									<!-- youtube -->
+									<a href="#" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-youtube"></i> 
+									</a>
+
+								</li>
+
+
+
+								<!-- Get Smarty : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none">
+									<a target="_blank" rel="noopener" href="#buy_now" class="btn w-100 btn-primary shadow-none text-white m-0">
+										Get Smarty
+									</a>
+								</li>
+
+							</ul>
+							<!-- /navbar : navigation -->
+
+
+						</div>
+
+					</nav>
+
+				</div>
+				<!-- /Navbar -->
+
+			</header>
+			<!-- /Header -->
+
+
+		
+
+			<!-- PAGE TITLE -->
+			<div class="container pt-7">
+
+				<h1 class="display-5 fw-bold">
+					Frequent questions
+				</h1>
+
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb fs-6">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">FAQ</li>
+					</ol>
+				</nav>
+
+			</div>
+			<!-- /PAGE TITLE -->
+
+
+
+
+			<!-- faq + boxes -->
+			<div class="section">
+				<div class="container">
+
+					
+					<!-- boxes -->
+					<div class="row">
+
+						<div class="col-12 col-md-4 mb-5">
+
+							<div class="card h-100">
+								<div class="card-body p-4 py-lg-5 d-flex align-items-center">
+
+									<a href="#" class="d-block text-dark text-center transition-hover-top transition-all-ease-250">
+										<i class="fi fi-truck-speed fs-1"></i>
+										<h3 class="fs-4 mt-3">Delivery</h3>
+										<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus</p>
+									</a>
+
+								</div>
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-md-4 mb-5">
+
+							<div class="card h-100">
+								<div class="card-body p-4 py-lg-5 d-flex align-items-center">
+
+									<a href="#" class="d-block text-dark text-center transition-hover-top transition-all-ease-250">
+										<i class="fi fi-reload fs-1"></i>
+										<h3 class="fs-4 mt-3">Return Policy</h3>
+										<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus</p>
+									</a>
+
+								</div>
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-md-4 mb-5">
+
+							<div class="card h-100">
+								<div class="card-body p-4 py-lg-5 d-flex align-items-center">
+
+									<a href="#" class="d-block text-dark text-center transition-hover-top transition-all-ease-250">
+										<i class="fi fi-shield-ok fs-1"></i>
+										<h3 class="fs-4 mt-3">Data Protection</h3>
+										<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus</p>
+									</a>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+
+					<h2 class="fw-bold my-5">
+						Answered Questions
+					</h2>
+
+					<p class="lead mb-5">
+						In the last three years, We've transitioned from being an auditor at a public accounting firm to a successful franchise owner of a million-dollar business.
+					</p>
+
+
+					<!--
+						Accordion
+					-->
+					<div class="accordion" id="accordionBottomBorder" data-aos="fade-in" data-aos-delay="250">
+
+						<div class="card mb-4">
+							
+							<div class="card-header border-0 p-0 border bg-transparent" id="cleanHeadingBorder1">
+								<h2 class="mb-0">
+									<button class="fs-5 btn btn-link w-100 btn-lg text-align-start text-decoration-none text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#borderCollapse1" aria-expanded="true" aria-controls="borderCollapse1">
+										Do I have a business email address?
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-start-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+									</button>
+								</h2>
+							</div>
+
+							<div id="borderCollapse1" class="collapse show" aria-labelledby="cleanHeadingBorder1" data-bs-parent="#accordionBottomBorder">
+								<div class="card-body">
+									<p class="lead">
+										We are not able to offer you a dedicated email service for a custom email address like office@mydomain.com at this time. 
+										An easy way to create your own business email address is using a cheap hosting plan. <a href="#">Here is an informative guide</a>.
+									</p>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="card mb-4">
+							<div class="card-header border-0 p-0 border bg-transparent" id="cleanHeadingBorder2">
+								<h2 class="mb-0">
+									<button class="fs-5 btn btn-link w-100 btn-lg text-align-start text-decoration-none text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#borderCollapse2" aria-expanded="false" aria-controls="borderCollapse2">
+										Do I have a traffic limit?
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-start-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+									</button>
+								</h2>
+							</div>
+
+							<div id="borderCollapse2" class="collapse" aria-labelledby="cleanHeadingBorder2" data-bs-parent="#accordionBottomBorder">
+								<div class="card-body">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="card mb-4">
+							<div class="card-header border-0 p-0 border bg-transparent" id="cleanHeadingBorder3">
+								<h2 class="mb-0">
+									<button class="fs-5 btn btn-link w-100 btn-lg text-align-start text-decoration-none text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shadowCollapse3" aria-expanded="false" aria-controls="shadowCollapse3">
+										Can I upgrade my plan later?
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-start-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+									</button>
+								</h2>
+							</div>
+
+							<div id="shadowCollapse3" class="collapse" aria-labelledby="cleanHeadingBorder3" data-bs-parent="#accordionBottomBorder">
+								<div class="card-body">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="card mb-4">
+							<div class="card-header border-0 p-0 border bg-transparent" id="cleanHeadingBorder4">
+								<h2 class="mb-0">
+									<button class="fs-5 btn btn-link w-100 btn-lg text-align-start text-decoration-none text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shadowCollapse4" aria-expanded="false" aria-controls="shadowCollapse4">
+										Can I upgrade my plan later?
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-start-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+									</button>
+								</h2>
+							</div>
+
+							<div id="shadowCollapse4" class="collapse" aria-labelledby="cleanHeadingBorder4" data-bs-parent="#accordionBottomBorder">
+								<div class="card-body">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="card mb-4">
+							<div class="card-header border-0 p-0 border bg-transparent" id="cleanHeadingBorder5">
+								<h2 class="mb-0">
+									<button class="fs-5 btn btn-link w-100 btn-lg text-align-start text-decoration-none text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shadowCollapse5" aria-expanded="false" aria-controls="shadowCollapse5">
+										What happens if prices goes up?
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-start-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+									</button>
+								</h2>
+							</div>
+
+							<div id="shadowCollapse5" class="collapse" aria-labelledby="cleanHeadingBorder5" data-bs-parent="#accordionBottomBorder">
+								<div class="card-body">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="card mb-4">
+							<div class="card-header border-0 p-0 border bg-transparent" id="cleanHeadingBorder6">
+								<h2 class="mb-0">
+									<button class="fs-5 btn btn-link w-100 btn-lg text-align-start text-decoration-none text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shadowCollapse6" aria-expanded="false" aria-controls="shadowCollapse6">
+										Can I transfer/sell my account?
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-start-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+									</button>
+								</h2>
+							</div>
+
+							<div id="shadowCollapse6" class="collapse" aria-labelledby="cleanHeadingBorder6" data-bs-parent="#accordionBottomBorder">
+								<div class="card-body">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="mt-5" data-aos="fade-in" data-aos-delay="250">
+						If you have more questions, call us: <a class="link-muted" href="tel:7853889450">785-388-9450</a>
+						<small class="d-block">We truly care about our users and our product.</small>
+					</div>
+
+				</div>
+			</div>
+			<!-- /faq + boxes -->
+
+
+
+
+
+			<!-- INFO BOX -->
+			<div class="container py-3">
+
+        <div class="row g-4">
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4" data-aos="fade-in" data-aos-delay="0" data-aos-offset="0">
+
+            <img width="60" height="60" class="lazy" data-src="demo.files/svg/various/trendy.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+            <div class="ps-3">
+              <h3 class="fs-5 mb-1">Trendy & Modern</h3>
+              <p class="m-0">Love it! Use it! Reuse it!</p>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4" data-aos="fade-in" data-aos-delay="150" data-aos-offset="0">
+
+            <img width="60" height="60" class="lazy" data-src="demo.files/svg/various/hot_deal.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+            <div class="ps-3">
+              <h3 class="fs-5 mb-1">Free Updates</h3>
+              <p class="m-0">Lifetime <b>free</b> updates!</p>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4" data-aos="fade-in" data-aos-delay="250" data-aos-offset="0">
+
+            <img width="60" height="60" class="lazy" data-src="demo.files/svg/various/new.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+            <div class="ps-3">
+              <h3 class="fs-5 mb-1">Frontend & Admin</h3>
+              <p class="m-0">Sharing the same core!</p>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4" data-aos="fade-in" data-aos-delay="350" data-aos-offset="0">
+
+            <!-- link example -->
+            <a href="#" class="text-dark text-decoration-none d-flex">
+
+              <img width="60" height="60" class="lazy" data-src="demo.files/svg/various/ok_like.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+              <div class="ps-3">
+                <h3 class="fs-5 mb-1">You're Covered</h3>
+                <p class="m-0">Frontend + Admin</p>
+              </div>
+
+            </a>
+
+          </div>
+
+        </div>
+
+			</div>
+			<!-- /INFO BOX -->
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="bg-gray-900 text-white">
+
+				<!-- footer cta -->
+				<div class="container tet-white py-5 d-lg-flex flex-row align-items-lg-center">
+
+					<div class="row g-4 align-items-center">
+						<h3 class="col-lg-6 h2 mb-0">
+							Join our community by using our services and grow your business.
+						</h3>
+						<div class="col text-lg-end">
+							<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="_blank" rel="noopener" class="btn btn-warning rounded-pill d-inline-flex align-items-center px-4">
+								<span class="text-dark me-2">Start now</span>
+								<svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">  
+								  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+				</div>
+				<!-- /footer cta -->
+
+				<!-- line divider -->
+				<hr class="bg-gray-500 my-0 container">
+				
+				<div class="container py-5">
+
+					<div class="row g-4">
+						
+						<div class="col-12 col-lg-4 mb-4">
+
+							<!-- logo -->
+							<img width="110" height="38" src="assets/images/logo/logo_light.svg" alt="...">
+
+							<div class="my-4"><!-- copyright -->
+								<p class="small mb-0">&copy; 2022 My Company Inc.</p>
+								<p class="small mb-0">All rights reserved.</p>
+							</div>
+
+							<!-- social icons -->
+							<a href="#" class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700" rel="noopener" aria-label="facebook page">
+								<i class="fi fi-social-facebook"></i> 
+							</a>
+
+							<a href="#" class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700" rel="noopener" aria-label="twitter page">
+								<i class="fi fi-social-twitter"></i> 
+							</a>
+
+							<a href="#" class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700" rel="noopener" aria-label="linkedin page">
+								<i class="fi fi-social-linkedin"></i> 
+							</a>
+
+							<a href="#" class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700" rel="noopener" aria-label="youtube page">
+								<i class="fi fi-social-youtube"></i> 
+							</a>
+
+						</div>
+
+						<div class="col-12 col-lg-4 mb-4">
+
+							<h3 class="small mb-4">GET IN TOUCH</h3>
+
+							<p class="small col-md-10">
+								Smarty is a responsive multipurpose template, created to help you build new projects in no time! Clean, fast, simple!
+							</p>
+
+	            <div class="small d-flex align-items-start my-3">
+	              <svg class="me-3 flex-none my-1" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+	                <circle cx="12" cy="10" r="3"></circle>
+	              </svg>
+	              <ul class="list-unstyled p-0 m-0 w-100">
+	                <li>PO Box 21132</li>
+	                <li>Here Weare St, Melbourne</li>
+	                <li>Vivas 2355 Australia</li>
+	              </ul>
+	            </div>
+
+	            <div class="small d-flex align-items-start my-3">
+	              <svg class="me-3 flex-none my-1" height="24px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">  
+	                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+	              </svg>
+	              <ul class="list-unstyled p-0 m-0 w-100">
+	                <li>Phone: <a href="tel:18005652390" class="text-white text-dashed">1-800-565-2390</a></li>
+	                <li>Email: <a href="mail:myemail@gmail.com" class="text-white text-dashed">myemail@gmail.com</a></li>
+	              </ul>
+	            </div>
+
+						</div>
+
+
+						<div class="col-12 col-lg-4 mb-4">
+
+							<h3 class="small mb-4">LEARN MORE</h3>
+
+							<ul class="list-unstyled"> 
+								<li class="list-item mb-2">
+									<i class="fi fi-arrow-end me-2 smaller"></i>
+									<a class="text-gray-400" href="contact-1.html">Contact</a>
+								</li> 
+								<li class="list-item mb-2">
+									<i class="fi fi-arrow-end me-2 smaller"></i>
+									<a class="text-gray-400" href="about-us-1.html">About Us</a>
+								</li> 
+								<li class="list-item mb-2">
+									<i class="fi fi-arrow-end me-2 smaller"></i>
+									<a class="text-gray-400" href="page-terms-and-conditions.html">Terms & Conditions</a>
+								</li> 
+								<li class="list-item mb-2">
+									<i class="fi fi-arrow-end me-2 smaller"></i>
+									<a class="text-gray-400" href="page-cookie.html">GDPR & Cookies</a>
+								</li> 
+							</ul>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

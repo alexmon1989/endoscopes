@@ -1,0 +1,2815 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">Flags</h1>
+          <p class="lead text-gray-700">Country flags pictures in single CSS sprite icon</p>
+          <a class="small" href="https://flag-sprites.com/" target="_blank" rel="noopener">https://flag-sprites.com/</a>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <pre class="mb-5" style="height:70px">
+            <code class="lang-html">
+              &lt;!-- example --&gt;
+              &lt;i class="flag flag-us"&gt;&lt;/i&gt;
+            </code>
+          </pre>
+
+
+          <div id="container-icon">
+
+            <!-- Inline Search -->
+            <form class="subnav-search d-flex flex-nowrap ms-auto mt-0 sticky-top">
+              <input class="form-control form-control-lg search mb-0 border-light shadow-lg mt-1" id="search" placeholder="Icon search..." autocomplete="off">
+            </form>
+
+            <ul class="list doc-icon-preview" data-vendor-available="webfont" data-vendor-webfont-prefix="flag "><!-- space ending -->
+
+
+              <li data-icon="flag-ad">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ad"></i>
+                </span>
+                <p>flag-ad</p>
+              </li>
+              <li data-icon="flag-ae">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ae"></i>
+                </span>
+                <p>flag-ae</p>
+              </li>
+              <li data-icon="flag-af">
+                <span class="svg-wrapper">
+                  <i class="flag flag-af"></i>
+                </span>
+                <p>flag-af</p>
+              </li>
+              <li data-icon="flag-ag">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ag"></i>
+                </span>
+                <p>flag-ag</p>
+              </li>
+              <li data-icon="flag-ai">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ai"></i>
+                </span>
+                <p>flag-ai</p>
+              </li>
+              <li data-icon="flag-al">
+                <span class="svg-wrapper">
+                  <i class="flag flag-al"></i>
+                </span>
+                <p>flag-al</p>
+              </li>
+              <li data-icon="flag-am">
+                <span class="svg-wrapper">
+                  <i class="flag flag-am"></i>
+                </span>
+                <p>flag-am</p>
+              </li>
+              <li data-icon="flag-an">
+                <span class="svg-wrapper">
+                  <i class="flag flag-an"></i>
+                </span>
+                <p>flag-an</p>
+              </li>
+              <li data-icon="flag-ao">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ao"></i>
+                </span>
+                <p>flag-ao</p>
+              </li>
+              <li data-icon="flag-ar">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ar"></i>
+                </span>
+                <p>flag-ar</p>
+              </li>
+              <li data-icon="flag-as">
+                <span class="svg-wrapper">
+                  <i class="flag flag-as"></i>
+                </span>
+                <p>flag-as</p>
+              </li>
+              <li data-icon="flag-at">
+                <span class="svg-wrapper">
+                  <i class="flag flag-at"></i>
+                </span>
+                <p>flag-at</p>
+              </li>
+              <li data-icon="flag-au">
+                <span class="svg-wrapper">
+                  <i class="flag flag-au"></i>
+                </span>
+                <p>flag-au</p>
+              </li>
+              <li data-icon="flag-aw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-aw"></i>
+                </span>
+                <p>flag-aw</p>
+              </li>
+              <li data-icon="flag-az">
+                <span class="svg-wrapper">
+                  <i class="flag flag-az"></i>
+                </span>
+                <p>flag-az</p>
+              </li>
+              <li data-icon="flag-ba">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ba"></i>
+                </span>
+                <p>flag-ba</p>
+              </li>
+              <li data-icon="flag-bb">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bb"></i>
+                </span>
+                <p>flag-bb</p>
+              </li>
+              <li data-icon="flag-bd">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bd"></i>
+                </span>
+                <p>flag-bd</p>
+              </li>
+              <li data-icon="flag-be">
+                <span class="svg-wrapper">
+                  <i class="flag flag-be"></i>
+                </span>
+                <p>flag-be</p>
+              </li>
+              <li data-icon="flag-bf">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bf"></i>
+                </span>
+                <p>flag-bf</p>
+              </li>
+              <li data-icon="flag-bg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bg"></i>
+                </span>
+                <p>flag-bg</p>
+              </li>
+              <li data-icon="flag-bh">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bh"></i>
+                </span>
+                <p>flag-bh</p>
+              </li>
+              <li data-icon="flag-bi">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bi"></i>
+                </span>
+                <p>flag-bi</p>
+              </li>
+              <li data-icon="flag-bj">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bj"></i>
+                </span>
+                <p>flag-bj</p>
+              </li>
+              <li data-icon="flag-bm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bm"></i>
+                </span>
+                <p>flag-bm</p>
+              </li>
+              <li data-icon="flag-bn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bn"></i>
+                </span>
+                <p>flag-bn</p>
+              </li>
+              <li data-icon="flag-bo">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bo"></i>
+                </span>
+                <p>flag-bo</p>
+              </li>
+              <li data-icon="flag-br">
+                <span class="svg-wrapper">
+                  <i class="flag flag-br"></i>
+                </span>
+                <p>flag-br</p>
+              </li>
+              <li data-icon="flag-bs">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bs"></i>
+                </span>
+                <p>flag-bs</p>
+              </li>
+              <li data-icon="flag-bt">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bt"></i>
+                </span>
+                <p>flag-bt</p>
+              </li>
+              <li data-icon="flag-bv">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bv"></i>
+                </span>
+                <p>flag-bv</p>
+              </li>
+              <li data-icon="flag-bw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bw"></i>
+                </span>
+                <p>flag-bw</p>
+              </li>
+              <li data-icon="flag-by">
+                <span class="svg-wrapper">
+                  <i class="flag flag-by"></i>
+                </span>
+                <p>flag-by</p>
+              </li>
+              <li data-icon="flag-bz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-bz"></i>
+                </span>
+                <p>flag-bz</p>
+              </li>
+              <li data-icon="flag-ca">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ca"></i>
+                </span>
+                <p>flag-ca</p>
+              </li>
+              <li data-icon="flag-catalonia">
+                <span class="svg-wrapper">
+                  <i class="flag flag-catalonia"></i>
+                </span>
+                <p>flag-catalonia</p>
+              </li>
+              <li data-icon="flag-cd">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cd"></i>
+                </span>
+                <p>flag-cd</p>
+              </li>
+              <li data-icon="flag-cf">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cf"></i>
+                </span>
+                <p>flag-cf</p>
+              </li>
+              <li data-icon="flag-cg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cg"></i>
+                </span>
+                <p>flag-cg</p>
+              </li>
+              <li data-icon="flag-ch">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ch"></i>
+                </span>
+                <p>flag-ch</p>
+              </li>
+              <li data-icon="flag-ci">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ci"></i>
+                </span>
+                <p>flag-ci</p>
+              </li>
+              <li data-icon="flag-ck">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ck"></i>
+                </span>
+                <p>flag-ck</p>
+              </li>
+              <li data-icon="flag-cl">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cl"></i>
+                </span>
+                <p>flag-cl</p>
+              </li>
+              <li data-icon="flag-cm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cm"></i>
+                </span>
+                <p>flag-cm</p>
+              </li>
+              <li data-icon="flag-cn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cn"></i>
+                </span>
+                <p>flag-cn</p>
+              </li>
+              <li data-icon="flag-co">
+                <span class="svg-wrapper">
+                  <i class="flag flag-co"></i>
+                </span>
+                <p>flag-co</p>
+              </li>
+              <li data-icon="flag-cr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cr"></i>
+                </span>
+                <p>flag-cr</p>
+              </li>
+              <li data-icon="flag-cu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cu"></i>
+                </span>
+                <p>flag-cu</p>
+              </li>
+              <li data-icon="flag-cv">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cv"></i>
+                </span>
+                <p>flag-cv</p>
+              </li>
+              <li data-icon="flag-cw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cw"></i>
+                </span>
+                <p>flag-cw</p>
+              </li>
+              <li data-icon="flag-cy">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cy"></i>
+                </span>
+                <p>flag-cy</p>
+              </li>
+              <li data-icon="flag-cz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-cz"></i>
+                </span>
+                <p>flag-cz</p>
+              </li>
+              <li data-icon="flag-de">
+                <span class="svg-wrapper">
+                  <i class="flag flag-de"></i>
+                </span>
+                <p>flag-de</p>
+              </li>
+              <li data-icon="flag-dj">
+                <span class="svg-wrapper">
+                  <i class="flag flag-dj"></i>
+                </span>
+                <p>flag-dj</p>
+              </li>
+              <li data-icon="flag-dk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-dk"></i>
+                </span>
+                <p>flag-dk</p>
+              </li>
+              <li data-icon="flag-dm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-dm"></i>
+                </span>
+                <p>flag-dm</p>
+              </li>
+              <li data-icon="flag-do">
+                <span class="svg-wrapper">
+                  <i class="flag flag-do"></i>
+                </span>
+                <p>flag-do</p>
+              </li>
+              <li data-icon="flag-dz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-dz"></i>
+                </span>
+                <p>flag-dz</p>
+              </li>
+              <li data-icon="flag-ec">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ec"></i>
+                </span>
+                <p>flag-ec</p>
+              </li>
+              <li data-icon="flag-ee">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ee"></i>
+                </span>
+                <p>flag-ee</p>
+              </li>
+              <li data-icon="flag-eg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-eg"></i>
+                </span>
+                <p>flag-eg</p>
+              </li>
+              <li data-icon="flag-eh">
+                <span class="svg-wrapper">
+                  <i class="flag flag-eh"></i>
+                </span>
+                <p>flag-eh</p>
+              </li>
+              <li data-icon="flag-england">
+                <span class="svg-wrapper">
+                  <i class="flag flag-england"></i>
+                </span>
+                <p>flag-england</p>
+              </li>
+              <li data-icon="flag-er">
+                <span class="svg-wrapper">
+                  <i class="flag flag-er"></i>
+                </span>
+                <p>flag-er</p>
+              </li>
+              <li data-icon="flag-es">
+                <span class="svg-wrapper">
+                  <i class="flag flag-es"></i>
+                </span>
+                <p>flag-es</p>
+              </li>
+              <li data-icon="flag-et">
+                <span class="svg-wrapper">
+                  <i class="flag flag-et"></i>
+                </span>
+                <p>flag-et</p>
+              </li>
+              <li data-icon="flag-eu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-eu"></i>
+                </span>
+                <p>flag-eu</p>
+              </li>
+              <li data-icon="flag-fi">
+                <span class="svg-wrapper">
+                  <i class="flag flag-fi"></i>
+                </span>
+                <p>flag-fi</p>
+              </li>
+              <li data-icon="flag-fj">
+                <span class="svg-wrapper">
+                  <i class="flag flag-fj"></i>
+                </span>
+                <p>flag-fj</p>
+              </li>
+              <li data-icon="flag-fk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-fk"></i>
+                </span>
+                <p>flag-fk</p>
+              </li>
+              <li data-icon="flag-fm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-fm"></i>
+                </span>
+                <p>flag-fm</p>
+              </li>
+              <li data-icon="flag-fo">
+                <span class="svg-wrapper">
+                  <i class="flag flag-fo"></i>
+                </span>
+                <p>flag-fo</p>
+              </li>
+              <li data-icon="flag-fr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-fr"></i>
+                </span>
+                <p>flag-fr</p>
+              </li>
+              <li data-icon="flag-ga">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ga"></i>
+                </span>
+                <p>flag-ga</p>
+              </li>
+              <li data-icon="flag-gb">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gb"></i>
+                </span>
+                <p>flag-gb</p>
+              </li>
+              <li data-icon="flag-gd">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gd"></i>
+                </span>
+                <p>flag-gd</p>
+              </li>
+              <li data-icon="flag-ge">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ge"></i>
+                </span>
+                <p>flag-ge</p>
+              </li>
+              <li data-icon="flag-gf">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gf"></i>
+                </span>
+                <p>flag-gf</p>
+              </li>
+              <li data-icon="flag-gg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gg"></i>
+                </span>
+                <p>flag-gg</p>
+              </li>
+              <li data-icon="flag-gh">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gh"></i>
+                </span>
+                <p>flag-gh</p>
+              </li>
+              <li data-icon="flag-gi">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gi"></i>
+                </span>
+                <p>flag-gi</p>
+              </li>
+              <li data-icon="flag-gl">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gl"></i>
+                </span>
+                <p>flag-gl</p>
+              </li>
+              <li data-icon="flag-gm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gm"></i>
+                </span>
+                <p>flag-gm</p>
+              </li>
+              <li data-icon="flag-gn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gn"></i>
+                </span>
+                <p>flag-gn</p>
+              </li>
+              <li data-icon="flag-gp">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gp"></i>
+                </span>
+                <p>flag-gp</p>
+              </li>
+              <li data-icon="flag-gq">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gq"></i>
+                </span>
+                <p>flag-gq</p>
+              </li>
+              <li data-icon="flag-gr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gr"></i>
+                </span>
+                <p>flag-gr</p>
+              </li>
+              <li data-icon="flag-gs">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gs"></i>
+                </span>
+                <p>flag-gs</p>
+              </li>
+              <li data-icon="flag-gt">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gt"></i>
+                </span>
+                <p>flag-gt</p>
+              </li>
+              <li data-icon="flag-gu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gu"></i>
+                </span>
+                <p>flag-gu</p>
+              </li>
+              <li data-icon="flag-gw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gw"></i>
+                </span>
+                <p>flag-gw</p>
+              </li>
+              <li data-icon="flag-gy">
+                <span class="svg-wrapper">
+                  <i class="flag flag-gy"></i>
+                </span>
+                <p>flag-gy</p>
+              </li>
+              <li data-icon="flag-hk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-hk"></i>
+                </span>
+                <p>flag-hk</p>
+              </li>
+              <li data-icon="flag-hm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-hm"></i>
+                </span>
+                <p>flag-hm</p>
+              </li>
+              <li data-icon="flag-hn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-hn"></i>
+                </span>
+                <p>flag-hn</p>
+              </li>
+              <li data-icon="flag-hr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-hr"></i>
+                </span>
+                <p>flag-hr</p>
+              </li>
+              <li data-icon="flag-ht">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ht"></i>
+                </span>
+                <p>flag-ht</p>
+              </li>
+              <li data-icon="flag-hu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-hu"></i>
+                </span>
+                <p>flag-hu</p>
+              </li>
+              <li data-icon="flag-ic">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ic"></i>
+                </span>
+                <p>flag-ic</p>
+              </li>
+              <li data-icon="flag-id">
+                <span class="svg-wrapper">
+                  <i class="flag flag-id"></i>
+                </span>
+                <p>flag-id</p>
+              </li>
+              <li data-icon="flag-ie">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ie"></i>
+                </span>
+                <p>flag-ie</p>
+              </li>
+              <li data-icon="flag-il">
+                <span class="svg-wrapper">
+                  <i class="flag flag-il"></i>
+                </span>
+                <p>flag-il</p>
+              </li>
+              <li data-icon="flag-im">
+                <span class="svg-wrapper">
+                  <i class="flag flag-im"></i>
+                </span>
+                <p>flag-im</p>
+              </li>
+              <li data-icon="flag-in">
+                <span class="svg-wrapper">
+                  <i class="flag flag-in"></i>
+                </span>
+                <p>flag-in</p>
+              </li>
+              <li data-icon="flag-io">
+                <span class="svg-wrapper">
+                  <i class="flag flag-io"></i>
+                </span>
+                <p>flag-io</p>
+              </li>
+              <li data-icon="flag-iq">
+                <span class="svg-wrapper">
+                  <i class="flag flag-iq"></i>
+                </span>
+                <p>flag-iq</p>
+              </li>
+              <li data-icon="flag-ir">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ir"></i>
+                </span>
+                <p>flag-ir</p>
+              </li>
+              <li data-icon="flag-is">
+                <span class="svg-wrapper">
+                  <i class="flag flag-is"></i>
+                </span>
+                <p>flag-is</p>
+              </li>
+              <li data-icon="flag-it">
+                <span class="svg-wrapper">
+                  <i class="flag flag-it"></i>
+                </span>
+                <p>flag-it</p>
+              </li>
+              <li data-icon="flag-je">
+                <span class="svg-wrapper">
+                  <i class="flag flag-je"></i>
+                </span>
+                <p>flag-je</p>
+              </li>
+              <li data-icon="flag-jm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-jm"></i>
+                </span>
+                <p>flag-jm</p>
+              </li>
+              <li data-icon="flag-jo">
+                <span class="svg-wrapper">
+                  <i class="flag flag-jo"></i>
+                </span>
+                <p>flag-jo</p>
+              </li>
+              <li data-icon="flag-jp">
+                <span class="svg-wrapper">
+                  <i class="flag flag-jp"></i>
+                </span>
+                <p>flag-jp</p>
+              </li>
+              <li data-icon="flag-ke">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ke"></i>
+                </span>
+                <p>flag-ke</p>
+              </li>
+              <li data-icon="flag-kg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kg"></i>
+                </span>
+                <p>flag-kg</p>
+              </li>
+              <li data-icon="flag-kh">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kh"></i>
+                </span>
+                <p>flag-kh</p>
+              </li>
+              <li data-icon="flag-ki">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ki"></i>
+                </span>
+                <p>flag-ki</p>
+              </li>
+              <li data-icon="flag-km">
+                <span class="svg-wrapper">
+                  <i class="flag flag-km"></i>
+                </span>
+                <p>flag-km</p>
+              </li>
+              <li data-icon="flag-kn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kn"></i>
+                </span>
+                <p>flag-kn</p>
+              </li>
+              <li data-icon="flag-kp">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kp"></i>
+                </span>
+                <p>flag-kp</p>
+              </li>
+              <li data-icon="flag-kr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kr"></i>
+                </span>
+                <p>flag-kr</p>
+              </li>
+              <li data-icon="flag-kurdistan">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kurdistan"></i>
+                </span>
+                <p>flag-kurdistan</p>
+              </li>
+              <li data-icon="flag-kw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kw"></i>
+                </span>
+                <p>flag-kw</p>
+              </li>
+              <li data-icon="flag-ky">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ky"></i>
+                </span>
+                <p>flag-ky</p>
+              </li>
+              <li data-icon="flag-kz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-kz"></i>
+                </span>
+                <p>flag-kz</p>
+              </li>
+              <li data-icon="flag-la">
+                <span class="svg-wrapper">
+                  <i class="flag flag-la"></i>
+                </span>
+                <p>flag-la</p>
+              </li>
+              <li data-icon="flag-lb">
+                <span class="svg-wrapper">
+                  <i class="flag flag-lb"></i>
+                </span>
+                <p>flag-lb</p>
+              </li>
+              <li data-icon="flag-lc">
+                <span class="svg-wrapper">
+                  <i class="flag flag-lc"></i>
+                </span>
+                <p>flag-lc</p>
+              </li>
+              <li data-icon="flag-li">
+                <span class="svg-wrapper">
+                  <i class="flag flag-li"></i>
+                </span>
+                <p>flag-li</p>
+              </li>
+              <li data-icon="flag-lk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-lk"></i>
+                </span>
+                <p>flag-lk</p>
+              </li>
+              <li data-icon="flag-lr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-lr"></i>
+                </span>
+                <p>flag-lr</p>
+              </li>
+              <li data-icon="flag-ls">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ls"></i>
+                </span>
+                <p>flag-ls</p>
+              </li>
+              <li data-icon="flag-lt">
+                <span class="svg-wrapper">
+                  <i class="flag flag-lt"></i>
+                </span>
+                <p>flag-lt</p>
+              </li>
+              <li data-icon="flag-lu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-lu"></i>
+                </span>
+                <p>flag-lu</p>
+              </li>
+              <li data-icon="flag-lv">
+                <span class="svg-wrapper">
+                  <i class="flag flag-lv"></i>
+                </span>
+                <p>flag-lv</p>
+              </li>
+              <li data-icon="flag-ly">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ly"></i>
+                </span>
+                <p>flag-ly</p>
+              </li>
+              <li data-icon="flag-ma">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ma"></i>
+                </span>
+                <p>flag-ma</p>
+              </li>
+              <li data-icon="flag-mc">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mc"></i>
+                </span>
+                <p>flag-mc</p>
+              </li>
+              <li data-icon="flag-md">
+                <span class="svg-wrapper">
+                  <i class="flag flag-md"></i>
+                </span>
+                <p>flag-md</p>
+              </li>
+              <li data-icon="flag-me">
+                <span class="svg-wrapper">
+                  <i class="flag flag-me"></i>
+                </span>
+                <p>flag-me</p>
+              </li>
+              <li data-icon="flag-mg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mg"></i>
+                </span>
+                <p>flag-mg</p>
+              </li>
+              <li data-icon="flag-mh">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mh"></i>
+                </span>
+                <p>flag-mh</p>
+              </li>
+              <li data-icon="flag-mk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mk"></i>
+                </span>
+                <p>flag-mk</p>
+              </li>
+              <li data-icon="flag-ml">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ml"></i>
+                </span>
+                <p>flag-ml</p>
+              </li>
+              <li data-icon="flag-mm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mm"></i>
+                </span>
+                <p>flag-mm</p>
+              </li>
+              <li data-icon="flag-mn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mn"></i>
+                </span>
+                <p>flag-mn</p>
+              </li>
+              <li data-icon="flag-mo">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mo"></i>
+                </span>
+                <p>flag-mo</p>
+              </li>
+              <li data-icon="flag-mp">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mp"></i>
+                </span>
+                <p>flag-mp</p>
+              </li>
+              <li data-icon="flag-mq">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mq"></i>
+                </span>
+                <p>flag-mq</p>
+              </li>
+              <li data-icon="flag-mr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mr"></i>
+                </span>
+                <p>flag-mr</p>
+              </li>
+              <li data-icon="flag-ms">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ms"></i>
+                </span>
+                <p>flag-ms</p>
+              </li>
+              <li data-icon="flag-mt">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mt"></i>
+                </span>
+                <p>flag-mt</p>
+              </li>
+              <li data-icon="flag-mu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mu"></i>
+                </span>
+                <p>flag-mu</p>
+              </li>
+              <li data-icon="flag-mv">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mv"></i>
+                </span>
+                <p>flag-mv</p>
+              </li>
+              <li data-icon="flag-mw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mw"></i>
+                </span>
+                <p>flag-mw</p>
+              </li>
+              <li data-icon="flag-mx">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mx"></i>
+                </span>
+                <p>flag-mx</p>
+              </li>
+              <li data-icon="flag-my">
+                <span class="svg-wrapper">
+                  <i class="flag flag-my"></i>
+                </span>
+                <p>flag-my</p>
+              </li>
+              <li data-icon="flag-mz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-mz"></i>
+                </span>
+                <p>flag-mz</p>
+              </li>
+              <li data-icon="flag-na">
+                <span class="svg-wrapper">
+                  <i class="flag flag-na"></i>
+                </span>
+                <p>flag-na</p>
+              </li>
+              <li data-icon="flag-nc">
+                <span class="svg-wrapper">
+                  <i class="flag flag-nc"></i>
+                </span>
+                <p>flag-nc</p>
+              </li>
+              <li data-icon="flag-ne">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ne"></i>
+                </span>
+                <p>flag-ne</p>
+              </li>
+              <li data-icon="flag-nf">
+                <span class="svg-wrapper">
+                  <i class="flag flag-nf"></i>
+                </span>
+                <p>flag-nf</p>
+              </li>
+              <li data-icon="flag-ng">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ng"></i>
+                </span>
+                <p>flag-ng</p>
+              </li>
+              <li data-icon="flag-ni">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ni"></i>
+                </span>
+                <p>flag-ni</p>
+              </li>
+              <li data-icon="flag-nl">
+                <span class="svg-wrapper">
+                  <i class="flag flag-nl"></i>
+                </span>
+                <p>flag-nl</p>
+              </li>
+              <li data-icon="flag-no">
+                <span class="svg-wrapper">
+                  <i class="flag flag-no"></i>
+                </span>
+                <p>flag-no</p>
+              </li>
+              <li data-icon="flag-np">
+                <span class="svg-wrapper">
+                  <i class="flag flag-np"></i>
+                </span>
+                <p>flag-np</p>
+              </li>
+              <li data-icon="flag-nr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-nr"></i>
+                </span>
+                <p>flag-nr</p>
+              </li>
+              <li data-icon="flag-nu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-nu"></i>
+                </span>
+                <p>flag-nu</p>
+              </li>
+              <li data-icon="flag-nz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-nz"></i>
+                </span>
+                <p>flag-nz</p>
+              </li>
+              <li data-icon="flag-om">
+                <span class="svg-wrapper">
+                  <i class="flag flag-om"></i>
+                </span>
+                <p>flag-om</p>
+              </li>
+              <li data-icon="flag-pa">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pa"></i>
+                </span>
+                <p>flag-pa</p>
+              </li>
+              <li data-icon="flag-pe">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pe"></i>
+                </span>
+                <p>flag-pe</p>
+              </li>
+              <li data-icon="flag-pf">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pf"></i>
+                </span>
+                <p>flag-pf</p>
+              </li>
+              <li data-icon="flag-pg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pg"></i>
+                </span>
+                <p>flag-pg</p>
+              </li>
+              <li data-icon="flag-ph">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ph"></i>
+                </span>
+                <p>flag-ph</p>
+              </li>
+              <li data-icon="flag-pk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pk"></i>
+                </span>
+                <p>flag-pk</p>
+              </li>
+              <li data-icon="flag-pl">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pl"></i>
+                </span>
+                <p>flag-pl</p>
+              </li>
+              <li data-icon="flag-pm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pm"></i>
+                </span>
+                <p>flag-pm</p>
+              </li>
+              <li data-icon="flag-pn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pn"></i>
+                </span>
+                <p>flag-pn</p>
+              </li>
+              <li data-icon="flag-pr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pr"></i>
+                </span>
+                <p>flag-pr</p>
+              </li>
+              <li data-icon="flag-ps">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ps"></i>
+                </span>
+                <p>flag-ps</p>
+              </li>
+              <li data-icon="flag-pt">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pt"></i>
+                </span>
+                <p>flag-pt</p>
+              </li>
+              <li data-icon="flag-pw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-pw"></i>
+                </span>
+                <p>flag-pw</p>
+              </li>
+              <li data-icon="flag-py">
+                <span class="svg-wrapper">
+                  <i class="flag flag-py"></i>
+                </span>
+                <p>flag-py</p>
+              </li>
+              <li data-icon="flag-qa">
+                <span class="svg-wrapper">
+                  <i class="flag flag-qa"></i>
+                </span>
+                <p>flag-qa</p>
+              </li>
+              <li data-icon="flag-re">
+                <span class="svg-wrapper">
+                  <i class="flag flag-re"></i>
+                </span>
+                <p>flag-re</p>
+              </li>
+              <li data-icon="flag-ro">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ro"></i>
+                </span>
+                <p>flag-ro</p>
+              </li>
+              <li data-icon="flag-rs">
+                <span class="svg-wrapper">
+                  <i class="flag flag-rs"></i>
+                </span>
+                <p>flag-rs</p>
+              </li>
+              <li data-icon="flag-ru">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ru"></i>
+                </span>
+                <p>flag-ru</p>
+              </li>
+              <li data-icon="flag-rw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-rw"></i>
+                </span>
+                <p>flag-rw</p>
+              </li>
+              <li data-icon="flag-sa">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sa"></i>
+                </span>
+                <p>flag-sa</p>
+              </li>
+              <li data-icon="flag-sb">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sb"></i>
+                </span>
+                <p>flag-sb</p>
+              </li>
+              <li data-icon="flag-sc">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sc"></i>
+                </span>
+                <p>flag-sc</p>
+              </li>
+              <li data-icon="flag-scotland">
+                <span class="svg-wrapper">
+                  <i class="flag flag-scotland"></i>
+                </span>
+                <p>flag-scotland</p>
+              </li>
+              <li data-icon="flag-sd">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sd"></i>
+                </span>
+                <p>flag-sd</p>
+              </li>
+              <li data-icon="flag-se">
+                <span class="svg-wrapper">
+                  <i class="flag flag-se"></i>
+                </span>
+                <p>flag-se</p>
+              </li>
+              <li data-icon="flag-sg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sg"></i>
+                </span>
+                <p>flag-sg</p>
+              </li>
+              <li data-icon="flag-sh">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sh"></i>
+                </span>
+                <p>flag-sh</p>
+              </li>
+              <li data-icon="flag-si">
+                <span class="svg-wrapper">
+                  <i class="flag flag-si"></i>
+                </span>
+                <p>flag-si</p>
+              </li>
+              <li data-icon="flag-sk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sk"></i>
+                </span>
+                <p>flag-sk</p>
+              </li>
+              <li data-icon="flag-sl">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sl"></i>
+                </span>
+                <p>flag-sl</p>
+              </li>
+              <li data-icon="flag-sm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sm"></i>
+                </span>
+                <p>flag-sm</p>
+              </li>
+              <li data-icon="flag-sn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sn"></i>
+                </span>
+                <p>flag-sn</p>
+              </li>
+              <li data-icon="flag-so">
+                <span class="svg-wrapper">
+                  <i class="flag flag-so"></i>
+                </span>
+                <p>flag-so</p>
+              </li>
+              <li data-icon="flag-somaliland">
+                <span class="svg-wrapper">
+                  <i class="flag flag-somaliland"></i>
+                </span>
+                <p>flag-somaliland</p>
+              </li>
+              <li data-icon="flag-sr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sr"></i>
+                </span>
+                <p>flag-sr</p>
+              </li>
+              <li data-icon="flag-ss">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ss"></i>
+                </span>
+                <p>flag-ss</p>
+              </li>
+              <li data-icon="flag-st">
+                <span class="svg-wrapper">
+                  <i class="flag flag-st"></i>
+                </span>
+                <p>flag-st</p>
+              </li>
+              <li data-icon="flag-sv">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sv"></i>
+                </span>
+                <p>flag-sv</p>
+              </li>
+              <li data-icon="flag-sx">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sx"></i>
+                </span>
+                <p>flag-sx</p>
+              </li>
+              <li data-icon="flag-sy">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sy"></i>
+                </span>
+                <p>flag-sy</p>
+              </li>
+              <li data-icon="flag-sz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-sz"></i>
+                </span>
+                <p>flag-sz</p>
+              </li>
+              <li data-icon="flag-tc">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tc"></i>
+                </span>
+                <p>flag-tc</p>
+              </li>
+              <li data-icon="flag-td">
+                <span class="svg-wrapper">
+                  <i class="flag flag-td"></i>
+                </span>
+                <p>flag-td</p>
+              </li>
+              <li data-icon="flag-tf">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tf"></i>
+                </span>
+                <p>flag-tf</p>
+              </li>
+              <li data-icon="flag-tg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tg"></i>
+                </span>
+                <p>flag-tg</p>
+              </li>
+              <li data-icon="flag-th">
+                <span class="svg-wrapper">
+                  <i class="flag flag-th"></i>
+                </span>
+                <p>flag-th</p>
+              </li>
+              <li data-icon="flag-tibet">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tibet"></i>
+                </span>
+                <p>flag-tibet</p>
+              </li>
+              <li data-icon="flag-tj">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tj"></i>
+                </span>
+                <p>flag-tj</p>
+              </li>
+              <li data-icon="flag-tk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tk"></i>
+                </span>
+                <p>flag-tk</p>
+              </li>
+              <li data-icon="flag-tl">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tl"></i>
+                </span>
+                <p>flag-tl</p>
+              </li>
+              <li data-icon="flag-tm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tm"></i>
+                </span>
+                <p>flag-tm</p>
+              </li>
+              <li data-icon="flag-tn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tn"></i>
+                </span>
+                <p>flag-tn</p>
+              </li>
+              <li data-icon="flag-to">
+                <span class="svg-wrapper">
+                  <i class="flag flag-to"></i>
+                </span>
+                <p>flag-to</p>
+              </li>
+              <li data-icon="flag-tr">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tr"></i>
+                </span>
+                <p>flag-tr</p>
+              </li>
+              <li data-icon="flag-tt">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tt"></i>
+                </span>
+                <p>flag-tt</p>
+              </li>
+              <li data-icon="flag-tv">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tv"></i>
+                </span>
+                <p>flag-tv</p>
+              </li>
+              <li data-icon="flag-tw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tw"></i>
+                </span>
+                <p>flag-tw</p>
+              </li>
+              <li data-icon="flag-tz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-tz"></i>
+                </span>
+                <p>flag-tz</p>
+              </li>
+              <li data-icon="flag-ua">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ua"></i>
+                </span>
+                <p>flag-ua</p>
+              </li>
+              <li data-icon="flag-ug">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ug"></i>
+                </span>
+                <p>flag-ug</p>
+              </li>
+              <li data-icon="flag-um">
+                <span class="svg-wrapper">
+                  <i class="flag flag-um"></i>
+                </span>
+                <p>flag-um</p>
+              </li>
+              <li data-icon="flag-us">
+                <span class="svg-wrapper">
+                  <i class="flag flag-us"></i>
+                </span>
+                <p>flag-us</p>
+              </li>
+              <li data-icon="flag-uy">
+                <span class="svg-wrapper">
+                  <i class="flag flag-uy"></i>
+                </span>
+                <p>flag-uy</p>
+              </li>
+              <li data-icon="flag-uz">
+                <span class="svg-wrapper">
+                  <i class="flag flag-uz"></i>
+                </span>
+                <p>flag-uz</p>
+              </li>
+              <li data-icon="flag-va">
+                <span class="svg-wrapper">
+                  <i class="flag flag-va"></i>
+                </span>
+                <p>flag-va</p>
+              </li>
+              <li data-icon="flag-vc">
+                <span class="svg-wrapper">
+                  <i class="flag flag-vc"></i>
+                </span>
+                <p>flag-vc</p>
+              </li>
+              <li data-icon="flag-ve">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ve"></i>
+                </span>
+                <p>flag-ve</p>
+              </li>
+              <li data-icon="flag-vg">
+                <span class="svg-wrapper">
+                  <i class="flag flag-vg"></i>
+                </span>
+                <p>flag-vg</p>
+              </li>
+              <li data-icon="flag-vi">
+                <span class="svg-wrapper">
+                  <i class="flag flag-vi"></i>
+                </span>
+                <p>flag-vi</p>
+              </li>
+              <li data-icon="flag-vn">
+                <span class="svg-wrapper">
+                  <i class="flag flag-vn"></i>
+                </span>
+                <p>flag-vn</p>
+              </li>
+              <li data-icon="flag-vu">
+                <span class="svg-wrapper">
+                  <i class="flag flag-vu"></i>
+                </span>
+                <p>flag-vu</p>
+              </li>
+              <li data-icon="flag-wales">
+                <span class="svg-wrapper">
+                  <i class="flag flag-wales"></i>
+                </span>
+                <p>flag-wales</p>
+              </li>
+              <li data-icon="flag-wf">
+                <span class="svg-wrapper">
+                  <i class="flag flag-wf"></i>
+                </span>
+                <p>flag-wf</p>
+              </li>
+              <li data-icon="flag-ws">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ws"></i>
+                </span>
+                <p>flag-ws</p>
+              </li>
+              <li data-icon="flag-xk">
+                <span class="svg-wrapper">
+                  <i class="flag flag-xk"></i>
+                </span>
+                <p>flag-xk</p>
+              </li>
+              <li data-icon="flag-ye">
+                <span class="svg-wrapper">
+                  <i class="flag flag-ye"></i>
+                </span>
+                <p>flag-ye</p>
+              </li>
+              <li data-icon="flag-yt">
+                <span class="svg-wrapper">
+                  <i class="flag flag-yt"></i>
+                </span>
+                <p>flag-yt</p>
+              </li>
+              <li data-icon="flag-za">
+                <span class="svg-wrapper">
+                  <i class="flag flag-za"></i>
+                </span>
+                <p>flag-za</p>
+              </li>
+              <li data-icon="flag-zanzibar">
+                <span class="svg-wrapper">
+                  <i class="flag flag-zanzibar"></i>
+                </span>
+                <p>flag-zanzibar</p>
+              </li>
+              <li data-icon="flag-zm">
+                <span class="svg-wrapper">
+                  <i class="flag flag-zm"></i>
+                </span>
+                <p>flag-zm</p>
+              </li>
+              <li data-icon="flag-zw">
+                <span class="svg-wrapper">
+                  <i class="flag flag-zw"></i>
+                </span>
+                <p>flag-zw</p>
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Modal : Icon -->
+          <div class="modal fade" id="modal-icon" data-bs-keyboard="true" tabindex="-1" aria-labelledby="mdlTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header border-0">
+                  <h5 class="fs-6 modal-title" id="mdlTitle"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body user-select-all pt-0">
+                  <pre class="text-gray-700 bg-gray-200 my-0"></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Flags <b class="text-gray-700">Example</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-2">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-2-preview" id="nav-tab-2-preview-link" aria-controls="nav-tab-2-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-2-html" id="nav-tab-2-html-link" aria-controls="nav-tab-2-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-2-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-2-preview" aria-labelledby="nav-tab-2-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6">
+
+                    <select class="form-control" data-live-search="true">
+
+                      <option value="ad" data-icon="flag flag-ad">ad</option>
+                      <option value="ae" data-icon="flag flag-ae">ae</option>
+                      <option value="af" data-icon="flag flag-af">af</option>
+                      <option value="ag" data-icon="flag flag-ag">ag</option>
+                      <option value="ai" data-icon="flag flag-ai">ai</option>
+                      <option value="al" data-icon="flag flag-al">al</option>
+                      <option value="am" data-icon="flag flag-am">am</option>
+                      <option value="an" data-icon="flag flag-an">an</option>
+                      <option value="ao" data-icon="flag flag-ao">ao</option>
+                      <option value="ar" data-icon="flag flag-ar">ar</option>
+                      <option value="as" data-icon="flag flag-as">as</option>
+                      <option value="at" data-icon="flag flag-at">at</option>
+                      <option value="au" data-icon="flag flag-au">au</option>
+                      <option value="aw" data-icon="flag flag-aw">aw</option>
+                      <option value="az" data-icon="flag flag-az">az</option>
+                      <option value="ba" data-icon="flag flag-ba">ba</option>
+                      <option value="bb" data-icon="flag flag-bb">bb</option>
+                      <option value="bd" data-icon="flag flag-bd">bd</option>
+                      <option value="be" data-icon="flag flag-be">be</option>
+                      <option value="bf" data-icon="flag flag-bf">bf</option>
+                      <option value="bg" data-icon="flag flag-bg">bg</option>
+                      <option value="bh" data-icon="flag flag-bh">bh</option>
+                      <option value="bi" data-icon="flag flag-bi">bi</option>
+                      <option value="bj" data-icon="flag flag-bj">bj</option>
+                      <option value="bm" data-icon="flag flag-bm">bm</option>
+                      <option value="bn" data-icon="flag flag-bn">bn</option>
+                      <option value="bo" data-icon="flag flag-bo">bo</option>
+                      <option value="br" data-icon="flag flag-br">br</option>
+                      <option value="bs" data-icon="flag flag-bs">bs</option>
+                      <option value="bt" data-icon="flag flag-bt">bt</option>
+                      <option value="bv" data-icon="flag flag-bv">bv</option>
+                      <option value="bw" data-icon="flag flag-bw">bw</option>
+                      <option value="by" data-icon="flag flag-by">by</option>
+                      <option value="bz" data-icon="flag flag-bz">bz</option>
+                      <option value="ca" data-icon="flag flag-ca">ca</option>
+                      <option value="catalonia" data-icon="flag flag-catalonia">catalonia</option>
+                      <option value="cd" data-icon="flag flag-cd">cd</option>
+                      <option value="cf" data-icon="flag flag-cf">cf</option>
+                      <option value="cg" data-icon="flag flag-cg">cg</option>
+                      <option value="ch" data-icon="flag flag-ch">ch</option>
+                      <option value="ci" data-icon="flag flag-ci">ci</option>
+                      <option value="ck" data-icon="flag flag-ck">ck</option>
+                      <option value="cl" data-icon="flag flag-cl">cl</option>
+                      <option value="cm" data-icon="flag flag-cm">cm</option>
+                      <option value="cn" data-icon="flag flag-cn">cn</option>
+                      <option value="co" data-icon="flag flag-co">co</option>
+                      <option value="cr" data-icon="flag flag-cr">cr</option>
+                      <option value="cu" data-icon="flag flag-cu">cu</option>
+                      <option value="cv" data-icon="flag flag-cv">cv</option>
+                      <option value="cw" data-icon="flag flag-cw">cw</option>
+                      <option value="cy" data-icon="flag flag-cy">cy</option>
+                      <option value="cz" data-icon="flag flag-cz">cz</option>
+                      <option value="de" data-icon="flag flag-de">de</option>
+                      <option value="dj" data-icon="flag flag-dj">dj</option>
+                      <option value="dk" data-icon="flag flag-dk">dk</option>
+                      <option value="dm" data-icon="flag flag-dm">dm</option>
+                      <option value="do" data-icon="flag flag-do">do</option>
+                      <option value="dz" data-icon="flag flag-dz">dz</option>
+                      <option value="ec" data-icon="flag flag-ec">ec</option>
+                      <option value="ee" data-icon="flag flag-ee">ee</option>
+                      <option value="eg" data-icon="flag flag-eg">eg</option>
+                      <option value="eh" data-icon="flag flag-eh">eh</option>
+                      <option value="england" data-icon="flag flag-england">england</option>
+                      <option value="er" data-icon="flag flag-er">er</option>
+                      <option value="es" data-icon="flag flag-es">es</option>
+                      <option value="et" data-icon="flag flag-et">et</option>
+                      <option value="eu" data-icon="flag flag-eu">eu</option>
+                      <option value="fi" data-icon="flag flag-fi">fi</option>
+                      <option value="fj" data-icon="flag flag-fj">fj</option>
+                      <option value="fk" data-icon="flag flag-fk">fk</option>
+                      <option value="fm" data-icon="flag flag-fm">fm</option>
+                      <option value="fo" data-icon="flag flag-fo">fo</option>
+                      <option value="fr" data-icon="flag flag-fr">fr</option>
+                      <option value="ga" data-icon="flag flag-ga">ga</option>
+                      <option value="gb" data-icon="flag flag-gb">gb</option>
+                      <option value="gd" data-icon="flag flag-gd">gd</option>
+                      <option value="ge" data-icon="flag flag-ge">ge</option>
+                      <option value="gf" data-icon="flag flag-gf">gf</option>
+                      <option value="gg" data-icon="flag flag-gg">gg</option>
+                      <option value="gh" data-icon="flag flag-gh">gh</option>
+                      <option value="gi" data-icon="flag flag-gi">gi</option>
+                      <option value="gl" data-icon="flag flag-gl">gl</option>
+                      <option value="gm" data-icon="flag flag-gm">gm</option>
+                      <option value="gn" data-icon="flag flag-gn">gn</option>
+                      <option value="gp" data-icon="flag flag-gp">gp</option>
+                      <option value="gq" data-icon="flag flag-gq">gq</option>
+                      <option value="gr" data-icon="flag flag-gr">gr</option>
+                      <option value="gs" data-icon="flag flag-gs">gs</option>
+                      <option value="gt" data-icon="flag flag-gt">gt</option>
+                      <option value="gu" data-icon="flag flag-gu">gu</option>
+                      <option value="gw" data-icon="flag flag-gw">gw</option>
+                      <option value="gy" data-icon="flag flag-gy">gy</option>
+                      <option value="hk" data-icon="flag flag-hk">hk</option>
+                      <option value="hm" data-icon="flag flag-hm">hm</option>
+                      <option value="hn" data-icon="flag flag-hn">hn</option>
+                      <option value="hr" data-icon="flag flag-hr">hr</option>
+                      <option value="ht" data-icon="flag flag-ht">ht</option>
+                      <option value="hu" data-icon="flag flag-hu">hu</option>
+                      <option value="ic" data-icon="flag flag-ic">ic</option>
+                      <option value="id" data-icon="flag flag-id">id</option>
+                      <option value="ie" data-icon="flag flag-ie">ie</option>
+                      <option value="il" data-icon="flag flag-il">il</option>
+                      <option value="im" data-icon="flag flag-im">im</option>
+                      <option value="in" data-icon="flag flag-in">in</option>
+                      <option value="io" data-icon="flag flag-io">io</option>
+                      <option value="iq" data-icon="flag flag-iq">iq</option>
+                      <option value="ir" data-icon="flag flag-ir">ir</option>
+                      <option value="is" data-icon="flag flag-is">is</option>
+                      <option value="it" data-icon="flag flag-it">it</option>
+                      <option value="je" data-icon="flag flag-je">je</option>
+                      <option value="jm" data-icon="flag flag-jm">jm</option>
+                      <option value="jo" data-icon="flag flag-jo">jo</option>
+                      <option value="jp" data-icon="flag flag-jp">jp</option>
+                      <option value="ke" data-icon="flag flag-ke">ke</option>
+                      <option value="kg" data-icon="flag flag-kg">kg</option>
+                      <option value="kh" data-icon="flag flag-kh">kh</option>
+                      <option value="ki" data-icon="flag flag-ki">ki</option>
+                      <option value="km" data-icon="flag flag-km">km</option>
+                      <option value="kn" data-icon="flag flag-kn">kn</option>
+                      <option value="kp" data-icon="flag flag-kp">kp</option>
+                      <option value="kr" data-icon="flag flag-kr">kr</option>
+                      <option value="kurdistan" data-icon="flag flag-kurdistan">kurdistan</option>
+                      <option value="kw" data-icon="flag flag-kw">kw</option>
+                      <option value="ky" data-icon="flag flag-ky">ky</option>
+                      <option value="kz" data-icon="flag flag-kz">kz</option>
+                      <option value="la" data-icon="flag flag-la">la</option>
+                      <option value="lb" data-icon="flag flag-lb">lb</option>
+                      <option value="lc" data-icon="flag flag-lc">lc</option>
+                      <option value="li" data-icon="flag flag-li">li</option>
+                      <option value="lk" data-icon="flag flag-lk">lk</option>
+                      <option value="lr" data-icon="flag flag-lr">lr</option>
+                      <option value="ls" data-icon="flag flag-ls">ls</option>
+                      <option value="lt" data-icon="flag flag-lt">lt</option>
+                      <option value="lu" data-icon="flag flag-lu">lu</option>
+                      <option value="lv" data-icon="flag flag-lv">lv</option>
+                      <option value="ly" data-icon="flag flag-ly">ly</option>
+                      <option value="ma" data-icon="flag flag-ma">ma</option>
+                      <option value="mc" data-icon="flag flag-mc">mc</option>
+                      <option value="md" data-icon="flag flag-md">md</option>
+                      <option value="me" data-icon="flag flag-me">me</option>
+                      <option value="mg" data-icon="flag flag-mg">mg</option>
+                      <option value="mh" data-icon="flag flag-mh">mh</option>
+                      <option value="mk" data-icon="flag flag-mk">mk</option>
+                      <option value="ml" data-icon="flag flag-ml">ml</option>
+                      <option value="mm" data-icon="flag flag-mm">mm</option>
+                      <option value="mn" data-icon="flag flag-mn">mn</option>
+                      <option value="mo" data-icon="flag flag-mo">mo</option>
+                      <option value="mp" data-icon="flag flag-mp">mp</option>
+                      <option value="mq" data-icon="flag flag-mq">mq</option>
+                      <option value="mr" data-icon="flag flag-mr">mr</option>
+                      <option value="ms" data-icon="flag flag-ms">ms</option>
+                      <option value="mt" data-icon="flag flag-mt">mt</option>
+                      <option value="mu" data-icon="flag flag-mu">mu</option>
+                      <option value="mv" data-icon="flag flag-mv">mv</option>
+                      <option value="mw" data-icon="flag flag-mw">mw</option>
+                      <option value="mx" data-icon="flag flag-mx">mx</option>
+                      <option value="my" data-icon="flag flag-my">my</option>
+                      <option value="mz" data-icon="flag flag-mz">mz</option>
+                      <option value="na" data-icon="flag flag-na">na</option>
+                      <option value="nc" data-icon="flag flag-nc">nc</option>
+                      <option value="ne" data-icon="flag flag-ne">ne</option>
+                      <option value="nf" data-icon="flag flag-nf">nf</option>
+                      <option value="ng" data-icon="flag flag-ng">ng</option>
+                      <option value="ni" data-icon="flag flag-ni">ni</option>
+                      <option value="nl" data-icon="flag flag-nl">nl</option>
+                      <option value="no" data-icon="flag flag-no">no</option>
+                      <option value="np" data-icon="flag flag-np">np</option>
+                      <option value="nr" data-icon="flag flag-nr">nr</option>
+                      <option value="nu" data-icon="flag flag-nu">nu</option>
+                      <option value="nz" data-icon="flag flag-nz">nz</option>
+                      <option value="om" data-icon="flag flag-om">om</option>
+                      <option value="pa" data-icon="flag flag-pa">pa</option>
+                      <option value="pe" data-icon="flag flag-pe">pe</option>
+                      <option value="pf" data-icon="flag flag-pf">pf</option>
+                      <option value="pg" data-icon="flag flag-pg">pg</option>
+                      <option value="ph" data-icon="flag flag-ph">ph</option>
+                      <option value="pk" data-icon="flag flag-pk">pk</option>
+                      <option value="pl" data-icon="flag flag-pl">pl</option>
+                      <option value="pm" data-icon="flag flag-pm">pm</option>
+                      <option value="pn" data-icon="flag flag-pn">pn</option>
+                      <option value="pr" data-icon="flag flag-pr">pr</option>
+                      <option value="ps" data-icon="flag flag-ps">ps</option>
+                      <option value="pt" data-icon="flag flag-pt">pt</option>
+                      <option value="pw" data-icon="flag flag-pw">pw</option>
+                      <option value="py" data-icon="flag flag-py">py</option>
+                      <option value="qa" data-icon="flag flag-qa">qa</option>
+                      <option value="re" data-icon="flag flag-re">re</option>
+                      <option value="ro" data-icon="flag flag-ro">ro</option>
+                      <option value="rs" data-icon="flag flag-rs">rs</option>
+                      <option value="ru" data-icon="flag flag-ru">ru</option>
+                      <option value="rw" data-icon="flag flag-rw">rw</option>
+                      <option value="sa" data-icon="flag flag-sa">sa</option>
+                      <option value="sb" data-icon="flag flag-sb">sb</option>
+                      <option value="sc" data-icon="flag flag-sc">sc</option>
+                      <option value="scotland" data-icon="flag flag-scotland">scotland</option>
+                      <option value="sd" data-icon="flag flag-sd">sd</option>
+                      <option value="se" data-icon="flag flag-se">se</option>
+                      <option value="sg" data-icon="flag flag-sg">sg</option>
+                      <option value="sh" data-icon="flag flag-sh">sh</option>
+                      <option value="si" data-icon="flag flag-si">si</option>
+                      <option value="sk" data-icon="flag flag-sk">sk</option>
+                      <option value="sl" data-icon="flag flag-sl">sl</option>
+                      <option value="sm" data-icon="flag flag-sm">sm</option>
+                      <option value="sn" data-icon="flag flag-sn">sn</option>
+                      <option value="so" data-icon="flag flag-so">so</option>
+                      <option value="somaliland" data-icon="flag flag-somaliland">somaliland</option>
+                      <option value="sr" data-icon="flag flag-sr">sr</option>
+                      <option value="ss" data-icon="flag flag-ss">ss</option>
+                      <option value="st" data-icon="flag flag-st">st</option>
+                      <option value="sv" data-icon="flag flag-sv">sv</option>
+                      <option value="sx" data-icon="flag flag-sx">sx</option>
+                      <option value="sy" data-icon="flag flag-sy">sy</option>
+                      <option value="sz" data-icon="flag flag-sz">sz</option>
+                      <option value="tc" data-icon="flag flag-tc">tc</option>
+                      <option value="td" data-icon="flag flag-td">td</option>
+                      <option value="tf" data-icon="flag flag-tf">tf</option>
+                      <option value="tg" data-icon="flag flag-tg">tg</option>
+                      <option value="th" data-icon="flag flag-th">th</option>
+                      <option value="tibet" data-icon="flag flag-tibet">tibet</option>
+                      <option value="tj" data-icon="flag flag-tj">tj</option>
+                      <option value="tk" data-icon="flag flag-tk">tk</option>
+                      <option value="tl" data-icon="flag flag-tl">tl</option>
+                      <option value="tm" data-icon="flag flag-tm">tm</option>
+                      <option value="tn" data-icon="flag flag-tn">tn</option>
+                      <option value="to" data-icon="flag flag-to">to</option>
+                      <option value="tr" data-icon="flag flag-tr">tr</option>
+                      <option value="tt" data-icon="flag flag-tt">tt</option>
+                      <option value="tv" data-icon="flag flag-tv">tv</option>
+                      <option value="tw" data-icon="flag flag-tw">tw</option>
+                      <option value="tz" data-icon="flag flag-tz">tz</option>
+                      <option value="ua" data-icon="flag flag-ua">ua</option>
+                      <option value="ug" data-icon="flag flag-ug">ug</option>
+                      <option value="um" data-icon="flag flag-um">um</option>
+                      <option value="us" data-icon="flag flag-us">us</option>
+                      <option value="uy" data-icon="flag flag-uy">uy</option>
+                      <option value="uz" data-icon="flag flag-uz">uz</option>
+                      <option value="va" data-icon="flag flag-va">va</option>
+                      <option value="vc" data-icon="flag flag-vc">vc</option>
+                      <option value="ve" data-icon="flag flag-ve">ve</option>
+                      <option value="vg" data-icon="flag flag-vg">vg</option>
+                      <option value="vi" data-icon="flag flag-vi">vi</option>
+                      <option value="vn" data-icon="flag flag-vn">vn</option>
+                      <option value="vu" data-icon="flag flag-vu">vu</option>
+                      <option value="wales" data-icon="flag flag-wales">wales</option>
+                      <option value="wf" data-icon="flag flag-wf">wf</option>
+                      <option value="ws" data-icon="flag flag-ws">ws</option>
+                      <option value="xk" data-icon="flag flag-xk">xk</option>
+                      <option value="ye" data-icon="flag flag-ye">ye</option>
+                      <option value="yt" data-icon="flag flag-yt">yt</option>
+                      <option value="za" data-icon="flag flag-za">za</option>
+                      <option value="zanzibar" data-icon="flag flag-zanzibar">zanzibar</option>
+                      <option value="zm" data-icon="flag flag-zm">zm</option>
+                      <option value="zw" data-icon="flag flag-zw">zw</option>
+
+                    </select>
+
+                  </div>
+
+                  <div class="col-12 col-lg-6">
+
+                    <!-- flag icon only -->
+                    <a href="#" class="btn btn-primary btn-soft">
+                      <i class="flag flag-us m-0"></i>
+                    </a>
+
+                    <!-- flag icon only : rounded -->
+                    <a href="#" class="btn btn-primary btn-soft rounded-circle">
+                      <i>
+                        <span class="flag flag-us"></span>
+                      </i>
+                    </a>
+
+                    <!-- dropdown -->
+                    <a href="#" class="btn btn-primary btn-soft" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                      <i>
+                        <span class="flag flag-us"></span>
+                      </i>
+                      <span>dropdown</span>
+                    </a>
+
+                    <div class="dropdown-menu max-vh-50 scrollable-vertical">
+                      <a href="#?lang=ad" class="dropdown-item"><i><span class="flag flag-ad"></span></i> ad</a>
+                      <a href="#?lang=ae" class="dropdown-item"><i><span class="flag flag-ae"></span></i> ae</a>
+                      <a href="#?lang=af" class="dropdown-item"><i><span class="flag flag-af"></span></i> af</a>
+                      <a href="#?lang=ag" class="dropdown-item"><i><span class="flag flag-ag"></span></i> ag</a>
+                      <a href="#?lang=ai" class="dropdown-item"><i><span class="flag flag-ai"></span></i> ai</a>
+                      <a href="#?lang=al" class="dropdown-item"><i><span class="flag flag-al"></span></i> al</a>
+                      <a href="#?lang=am" class="dropdown-item"><i><span class="flag flag-am"></span></i> am</a>
+                      <a href="#?lang=an" class="dropdown-item"><i><span class="flag flag-an"></span></i> an</a>
+                      <a href="#?lang=ao" class="dropdown-item"><i><span class="flag flag-ao"></span></i> ao</a>
+                      <a href="#?lang=ar" class="dropdown-item"><i><span class="flag flag-ar"></span></i> ar</a>
+                      <a href="#?lang=as" class="dropdown-item"><i><span class="flag flag-as"></span></i> as</a>
+                      <a href="#?lang=at" class="dropdown-item"><i><span class="flag flag-at"></span></i> at</a>
+                      <a href="#?lang=au" class="dropdown-item"><i><span class="flag flag-au"></span></i> au</a>
+                      <a href="#?lang=aw" class="dropdown-item"><i><span class="flag flag-aw"></span></i> aw</a>
+                      <a href="#?lang=az" class="dropdown-item"><i><span class="flag flag-az"></span></i> az</a>
+                      <a href="#?lang=ba" class="dropdown-item"><i><span class="flag flag-ba"></span></i> ba</a>
+                      <a href="#?lang=bb" class="dropdown-item"><i><span class="flag flag-bb"></span></i> bb</a>
+                      <a href="#?lang=bd" class="dropdown-item"><i><span class="flag flag-bd"></span></i> bd</a>
+                      <a href="#?lang=be" class="dropdown-item"><i><span class="flag flag-be"></span></i> be</a>
+                      <a href="#?lang=bf" class="dropdown-item"><i><span class="flag flag-bf"></span></i> bf</a>
+                      <a href="#?lang=bg" class="dropdown-item"><i><span class="flag flag-bg"></span></i> bg</a>
+                      <a href="#?lang=bh" class="dropdown-item"><i><span class="flag flag-bh"></span></i> bh</a>
+                      <a href="#?lang=bi" class="dropdown-item"><i><span class="flag flag-bi"></span></i> bi</a>
+                      <a href="#?lang=bj" class="dropdown-item"><i><span class="flag flag-bj"></span></i> bj</a>
+                      <a href="#?lang=bm" class="dropdown-item"><i><span class="flag flag-bm"></span></i> bm</a>
+                      <a href="#?lang=bn" class="dropdown-item"><i><span class="flag flag-bn"></span></i> bn</a>
+                      <a href="#?lang=bo" class="dropdown-item"><i><span class="flag flag-bo"></span></i> bo</a>
+                      <a href="#?lang=br" class="dropdown-item"><i><span class="flag flag-br"></span></i> br</a>
+                      <a href="#?lang=bs" class="dropdown-item"><i><span class="flag flag-bs"></span></i> bs</a>
+                      <a href="#?lang=bt" class="dropdown-item"><i><span class="flag flag-bt"></span></i> bt</a>
+                      <a href="#?lang=bv" class="dropdown-item"><i><span class="flag flag-bv"></span></i> bv</a>
+                      <a href="#?lang=bw" class="dropdown-item"><i><span class="flag flag-bw"></span></i> bw</a>
+                      <a href="#?lang=by" class="dropdown-item"><i><span class="flag flag-by"></span></i> by</a>
+                      <a href="#?lang=bz" class="dropdown-item"><i><span class="flag flag-bz"></span></i> bz</a>
+                      <a href="#?lang=ca" class="dropdown-item"><i><span class="flag flag-ca"></span></i> ca</a>
+                      <a href="#?lang=catalonia" class="dropdown-item"><i><span class="flag flag-catalonia"></span></i> catalonia</a>
+                      <a href="#?lang=cd" class="dropdown-item"><i><span class="flag flag-cd"></span></i> cd</a>
+                      <a href="#?lang=cf" class="dropdown-item"><i><span class="flag flag-cf"></span></i> cf</a>
+                      <a href="#?lang=cg" class="dropdown-item"><i><span class="flag flag-cg"></span></i> cg</a>
+                      <a href="#?lang=ch" class="dropdown-item"><i><span class="flag flag-ch"></span></i> ch</a>
+                      <a href="#?lang=ci" class="dropdown-item"><i><span class="flag flag-ci"></span></i> ci</a>
+                      <a href="#?lang=ck" class="dropdown-item"><i><span class="flag flag-ck"></span></i> ck</a>
+                      <a href="#?lang=cl" class="dropdown-item"><i><span class="flag flag-cl"></span></i> cl</a>
+                      <a href="#?lang=cm" class="dropdown-item"><i><span class="flag flag-cm"></span></i> cm</a>
+                      <a href="#?lang=cn" class="dropdown-item"><i><span class="flag flag-cn"></span></i> cn</a>
+                      <a href="#?lang=co" class="dropdown-item"><i><span class="flag flag-co"></span></i> co</a>
+                      <a href="#?lang=cr" class="dropdown-item"><i><span class="flag flag-cr"></span></i> cr</a>
+                      <a href="#?lang=cu" class="dropdown-item"><i><span class="flag flag-cu"></span></i> cu</a>
+                      <a href="#?lang=cv" class="dropdown-item"><i><span class="flag flag-cv"></span></i> cv</a>
+                      <a href="#?lang=cw" class="dropdown-item"><i><span class="flag flag-cw"></span></i> cw</a>
+                      <a href="#?lang=cy" class="dropdown-item"><i><span class="flag flag-cy"></span></i> cy</a>
+                      <a href="#?lang=cz" class="dropdown-item"><i><span class="flag flag-cz"></span></i> cz</a>
+                      <a href="#?lang=de" class="dropdown-item"><i><span class="flag flag-de"></span></i> de</a>
+                      <a href="#?lang=dj" class="dropdown-item"><i><span class="flag flag-dj"></span></i> dj</a>
+                      <a href="#?lang=dk" class="dropdown-item"><i><span class="flag flag-dk"></span></i> dk</a>
+                      <a href="#?lang=dm" class="dropdown-item"><i><span class="flag flag-dm"></span></i> dm</a>
+                      <a href="#?lang=do" class="dropdown-item"><i><span class="flag flag-do"></span></i> do</a>
+                      <a href="#?lang=dz" class="dropdown-item"><i><span class="flag flag-dz"></span></i> dz</a>
+                      <a href="#?lang=ec" class="dropdown-item"><i><span class="flag flag-ec"></span></i> ec</a>
+                      <a href="#?lang=ee" class="dropdown-item"><i><span class="flag flag-ee"></span></i> ee</a>
+                      <a href="#?lang=eg" class="dropdown-item"><i><span class="flag flag-eg"></span></i> eg</a>
+                      <a href="#?lang=eh" class="dropdown-item"><i><span class="flag flag-eh"></span></i> eh</a>
+                      <a href="#?lang=england" class="dropdown-item"><i><span class="flag flag-england"></span></i> england</a>
+                      <a href="#?lang=er" class="dropdown-item"><i><span class="flag flag-er"></span></i> er</a>
+                      <a href="#?lang=es" class="dropdown-item"><i><span class="flag flag-es"></span></i> es</a>
+                      <a href="#?lang=et" class="dropdown-item"><i><span class="flag flag-et"></span></i> et</a>
+                      <a href="#?lang=eu" class="dropdown-item"><i><span class="flag flag-eu"></span></i> eu</a>
+                      <a href="#?lang=fi" class="dropdown-item"><i><span class="flag flag-fi"></span></i> fi</a>
+                      <a href="#?lang=fj" class="dropdown-item"><i><span class="flag flag-fj"></span></i> fj</a>
+                      <a href="#?lang=fk" class="dropdown-item"><i><span class="flag flag-fk"></span></i> fk</a>
+                      <a href="#?lang=fm" class="dropdown-item"><i><span class="flag flag-fm"></span></i> fm</a>
+                      <a href="#?lang=fo" class="dropdown-item"><i><span class="flag flag-fo"></span></i> fo</a>
+                      <a href="#?lang=fr" class="dropdown-item"><i><span class="flag flag-fr"></span></i> fr</a>
+                      <a href="#?lang=ga" class="dropdown-item"><i><span class="flag flag-ga"></span></i> ga</a>
+                      <a href="#?lang=gb" class="dropdown-item"><i><span class="flag flag-gb"></span></i> gb</a>
+                      <a href="#?lang=gd" class="dropdown-item"><i><span class="flag flag-gd"></span></i> gd</a>
+                      <a href="#?lang=ge" class="dropdown-item"><i><span class="flag flag-ge"></span></i> ge</a>
+                      <a href="#?lang=gf" class="dropdown-item"><i><span class="flag flag-gf"></span></i> gf</a>
+                      <a href="#?lang=gg" class="dropdown-item"><i><span class="flag flag-gg"></span></i> gg</a>
+                      <a href="#?lang=gh" class="dropdown-item"><i><span class="flag flag-gh"></span></i> gh</a>
+                      <a href="#?lang=gi" class="dropdown-item"><i><span class="flag flag-gi"></span></i> gi</a>
+                      <a href="#?lang=gl" class="dropdown-item"><i><span class="flag flag-gl"></span></i> gl</a>
+                      <a href="#?lang=gm" class="dropdown-item"><i><span class="flag flag-gm"></span></i> gm</a>
+                      <a href="#?lang=gn" class="dropdown-item"><i><span class="flag flag-gn"></span></i> gn</a>
+                      <a href="#?lang=gp" class="dropdown-item"><i><span class="flag flag-gp"></span></i> gp</a>
+                      <a href="#?lang=gq" class="dropdown-item"><i><span class="flag flag-gq"></span></i> gq</a>
+                      <a href="#?lang=gr" class="dropdown-item"><i><span class="flag flag-gr"></span></i> gr</a>
+                      <a href="#?lang=gs" class="dropdown-item"><i><span class="flag flag-gs"></span></i> gs</a>
+                      <a href="#?lang=gt" class="dropdown-item"><i><span class="flag flag-gt"></span></i> gt</a>
+                      <a href="#?lang=gu" class="dropdown-item"><i><span class="flag flag-gu"></span></i> gu</a>
+                      <a href="#?lang=gw" class="dropdown-item"><i><span class="flag flag-gw"></span></i> gw</a>
+                      <a href="#?lang=gy" class="dropdown-item"><i><span class="flag flag-gy"></span></i> gy</a>
+                      <a href="#?lang=hk" class="dropdown-item"><i><span class="flag flag-hk"></span></i> hk</a>
+                      <a href="#?lang=hm" class="dropdown-item"><i><span class="flag flag-hm"></span></i> hm</a>
+                      <a href="#?lang=hn" class="dropdown-item"><i><span class="flag flag-hn"></span></i> hn</a>
+                      <a href="#?lang=hr" class="dropdown-item"><i><span class="flag flag-hr"></span></i> hr</a>
+                      <a href="#?lang=ht" class="dropdown-item"><i><span class="flag flag-ht"></span></i> ht</a>
+                      <a href="#?lang=hu" class="dropdown-item"><i><span class="flag flag-hu"></span></i> hu</a>
+                      <a href="#?lang=ic" class="dropdown-item"><i><span class="flag flag-ic"></span></i> ic</a>
+                      <a href="#?lang=id" class="dropdown-item"><i><span class="flag flag-id"></span></i> id</a>
+                      <a href="#?lang=ie" class="dropdown-item"><i><span class="flag flag-ie"></span></i> ie</a>
+                      <a href="#?lang=il" class="dropdown-item"><i><span class="flag flag-il"></span></i> il</a>
+                      <a href="#?lang=im" class="dropdown-item"><i><span class="flag flag-im"></span></i> im</a>
+                      <a href="#?lang=in" class="dropdown-item"><i><span class="flag flag-in"></span></i> in</a>
+                      <a href="#?lang=io" class="dropdown-item"><i><span class="flag flag-io"></span></i> io</a>
+                      <a href="#?lang=iq" class="dropdown-item"><i><span class="flag flag-iq"></span></i> iq</a>
+                      <a href="#?lang=ir" class="dropdown-item"><i><span class="flag flag-ir"></span></i> ir</a>
+                      <a href="#?lang=is" class="dropdown-item"><i><span class="flag flag-is"></span></i> is</a>
+                      <a href="#?lang=it" class="dropdown-item"><i><span class="flag flag-it"></span></i> it</a>
+                      <a href="#?lang=je" class="dropdown-item"><i><span class="flag flag-je"></span></i> je</a>
+                      <a href="#?lang=jm" class="dropdown-item"><i><span class="flag flag-jm"></span></i> jm</a>
+                      <a href="#?lang=jo" class="dropdown-item"><i><span class="flag flag-jo"></span></i> jo</a>
+                      <a href="#?lang=jp" class="dropdown-item"><i><span class="flag flag-jp"></span></i> jp</a>
+                      <a href="#?lang=ke" class="dropdown-item"><i><span class="flag flag-ke"></span></i> ke</a>
+                      <a href="#?lang=kg" class="dropdown-item"><i><span class="flag flag-kg"></span></i> kg</a>
+                      <a href="#?lang=kh" class="dropdown-item"><i><span class="flag flag-kh"></span></i> kh</a>
+                      <a href="#?lang=ki" class="dropdown-item"><i><span class="flag flag-ki"></span></i> ki</a>
+                      <a href="#?lang=km" class="dropdown-item"><i><span class="flag flag-km"></span></i> km</a>
+                      <a href="#?lang=kn" class="dropdown-item"><i><span class="flag flag-kn"></span></i> kn</a>
+                      <a href="#?lang=kp" class="dropdown-item"><i><span class="flag flag-kp"></span></i> kp</a>
+                      <a href="#?lang=kr" class="dropdown-item"><i><span class="flag flag-kr"></span></i> kr</a>
+                      <a href="#?lang=kurdistan" class="dropdown-item"><i><span class="flag flag-kurdistan"></span></i> kurdistan</a>
+                      <a href="#?lang=kw" class="dropdown-item"><i><span class="flag flag-kw"></span></i> kw</a>
+                      <a href="#?lang=ky" class="dropdown-item"><i><span class="flag flag-ky"></span></i> ky</a>
+                      <a href="#?lang=kz" class="dropdown-item"><i><span class="flag flag-kz"></span></i> kz</a>
+                      <a href="#?lang=la" class="dropdown-item"><i><span class="flag flag-la"></span></i> la</a>
+                      <a href="#?lang=lb" class="dropdown-item"><i><span class="flag flag-lb"></span></i> lb</a>
+                      <a href="#?lang=lc" class="dropdown-item"><i><span class="flag flag-lc"></span></i> lc</a>
+                      <a href="#?lang=li" class="dropdown-item"><i><span class="flag flag-li"></span></i> li</a>
+                      <a href="#?lang=lk" class="dropdown-item"><i><span class="flag flag-lk"></span></i> lk</a>
+                      <a href="#?lang=lr" class="dropdown-item"><i><span class="flag flag-lr"></span></i> lr</a>
+                      <a href="#?lang=ls" class="dropdown-item"><i><span class="flag flag-ls"></span></i> ls</a>
+                      <a href="#?lang=lt" class="dropdown-item"><i><span class="flag flag-lt"></span></i> lt</a>
+                      <a href="#?lang=lu" class="dropdown-item"><i><span class="flag flag-lu"></span></i> lu</a>
+                      <a href="#?lang=lv" class="dropdown-item"><i><span class="flag flag-lv"></span></i> lv</a>
+                      <a href="#?lang=ly" class="dropdown-item"><i><span class="flag flag-ly"></span></i> ly</a>
+                      <a href="#?lang=ma" class="dropdown-item"><i><span class="flag flag-ma"></span></i> ma</a>
+                      <a href="#?lang=mc" class="dropdown-item"><i><span class="flag flag-mc"></span></i> mc</a>
+                      <a href="#?lang=md" class="dropdown-item"><i><span class="flag flag-md"></span></i> md</a>
+                      <a href="#?lang=me" class="dropdown-item"><i><span class="flag flag-me"></span></i> me</a>
+                      <a href="#?lang=mg" class="dropdown-item"><i><span class="flag flag-mg"></span></i> mg</a>
+                      <a href="#?lang=mh" class="dropdown-item"><i><span class="flag flag-mh"></span></i> mh</a>
+                      <a href="#?lang=mk" class="dropdown-item"><i><span class="flag flag-mk"></span></i> mk</a>
+                      <a href="#?lang=ml" class="dropdown-item"><i><span class="flag flag-ml"></span></i> ml</a>
+                      <a href="#?lang=mm" class="dropdown-item"><i><span class="flag flag-mm"></span></i> mm</a>
+                      <a href="#?lang=mn" class="dropdown-item"><i><span class="flag flag-mn"></span></i> mn</a>
+                      <a href="#?lang=mo" class="dropdown-item"><i><span class="flag flag-mo"></span></i> mo</a>
+                      <a href="#?lang=mp" class="dropdown-item"><i><span class="flag flag-mp"></span></i> mp</a>
+                      <a href="#?lang=mq" class="dropdown-item"><i><span class="flag flag-mq"></span></i> mq</a>
+                      <a href="#?lang=mr" class="dropdown-item"><i><span class="flag flag-mr"></span></i> mr</a>
+                      <a href="#?lang=ms" class="dropdown-item"><i><span class="flag flag-ms"></span></i> ms</a>
+                      <a href="#?lang=mt" class="dropdown-item"><i><span class="flag flag-mt"></span></i> mt</a>
+                      <a href="#?lang=mu" class="dropdown-item"><i><span class="flag flag-mu"></span></i> mu</a>
+                      <a href="#?lang=mv" class="dropdown-item"><i><span class="flag flag-mv"></span></i> mv</a>
+                      <a href="#?lang=mw" class="dropdown-item"><i><span class="flag flag-mw"></span></i> mw</a>
+                      <a href="#?lang=mx" class="dropdown-item"><i><span class="flag flag-mx"></span></i> mx</a>
+                      <a href="#?lang=my" class="dropdown-item"><i><span class="flag flag-my"></span></i> my</a>
+                      <a href="#?lang=mz" class="dropdown-item"><i><span class="flag flag-mz"></span></i> mz</a>
+                      <a href="#?lang=na" class="dropdown-item"><i><span class="flag flag-na"></span></i> na</a>
+                      <a href="#?lang=nc" class="dropdown-item"><i><span class="flag flag-nc"></span></i> nc</a>
+                      <a href="#?lang=ne" class="dropdown-item"><i><span class="flag flag-ne"></span></i> ne</a>
+                      <a href="#?lang=nf" class="dropdown-item"><i><span class="flag flag-nf"></span></i> nf</a>
+                      <a href="#?lang=ng" class="dropdown-item"><i><span class="flag flag-ng"></span></i> ng</a>
+                      <a href="#?lang=ni" class="dropdown-item"><i><span class="flag flag-ni"></span></i> ni</a>
+                      <a href="#?lang=nl" class="dropdown-item"><i><span class="flag flag-nl"></span></i> nl</a>
+                      <a href="#?lang=no" class="dropdown-item"><i><span class="flag flag-no"></span></i> no</a>
+                      <a href="#?lang=np" class="dropdown-item"><i><span class="flag flag-np"></span></i> np</a>
+                      <a href="#?lang=nr" class="dropdown-item"><i><span class="flag flag-nr"></span></i> nr</a>
+                      <a href="#?lang=nu" class="dropdown-item"><i><span class="flag flag-nu"></span></i> nu</a>
+                      <a href="#?lang=nz" class="dropdown-item"><i><span class="flag flag-nz"></span></i> nz</a>
+                      <a href="#?lang=om" class="dropdown-item"><i><span class="flag flag-om"></span></i> om</a>
+                      <a href="#?lang=pa" class="dropdown-item"><i><span class="flag flag-pa"></span></i> pa</a>
+                      <a href="#?lang=pe" class="dropdown-item"><i><span class="flag flag-pe"></span></i> pe</a>
+                      <a href="#?lang=pf" class="dropdown-item"><i><span class="flag flag-pf"></span></i> pf</a>
+                      <a href="#?lang=pg" class="dropdown-item"><i><span class="flag flag-pg"></span></i> pg</a>
+                      <a href="#?lang=ph" class="dropdown-item"><i><span class="flag flag-ph"></span></i> ph</a>
+                      <a href="#?lang=pk" class="dropdown-item"><i><span class="flag flag-pk"></span></i> pk</a>
+                      <a href="#?lang=pl" class="dropdown-item"><i><span class="flag flag-pl"></span></i> pl</a>
+                      <a href="#?lang=pm" class="dropdown-item"><i><span class="flag flag-pm"></span></i> pm</a>
+                      <a href="#?lang=pn" class="dropdown-item"><i><span class="flag flag-pn"></span></i> pn</a>
+                      <a href="#?lang=pr" class="dropdown-item"><i><span class="flag flag-pr"></span></i> pr</a>
+                      <a href="#?lang=ps" class="dropdown-item"><i><span class="flag flag-ps"></span></i> ps</a>
+                      <a href="#?lang=pt" class="dropdown-item"><i><span class="flag flag-pt"></span></i> pt</a>
+                      <a href="#?lang=pw" class="dropdown-item"><i><span class="flag flag-pw"></span></i> pw</a>
+                      <a href="#?lang=py" class="dropdown-item"><i><span class="flag flag-py"></span></i> py</a>
+                      <a href="#?lang=qa" class="dropdown-item"><i><span class="flag flag-qa"></span></i> qa</a>
+                      <a href="#?lang=re" class="dropdown-item"><i><span class="flag flag-re"></span></i> re</a>
+                      <a href="#?lang=ro" class="dropdown-item"><i><span class="flag flag-ro"></span></i> ro</a>
+                      <a href="#?lang=rs" class="dropdown-item"><i><span class="flag flag-rs"></span></i> rs</a>
+                      <a href="#?lang=ru" class="dropdown-item"><i><span class="flag flag-ru"></span></i> ru</a>
+                      <a href="#?lang=rw" class="dropdown-item"><i><span class="flag flag-rw"></span></i> rw</a>
+                      <a href="#?lang=sa" class="dropdown-item"><i><span class="flag flag-sa"></span></i> sa</a>
+                      <a href="#?lang=sb" class="dropdown-item"><i><span class="flag flag-sb"></span></i> sb</a>
+                      <a href="#?lang=sc" class="dropdown-item"><i><span class="flag flag-sc"></span></i> sc</a>
+                      <a href="#?lang=scotland" class="dropdown-item"><i><span class="flag flag-scotland"></span></i> scotland</a>
+                      <a href="#?lang=sd" class="dropdown-item"><i><span class="flag flag-sd"></span></i> sd</a>
+                      <a href="#?lang=se" class="dropdown-item"><i><span class="flag flag-se"></span></i> se</a>
+                      <a href="#?lang=sg" class="dropdown-item"><i><span class="flag flag-sg"></span></i> sg</a>
+                      <a href="#?lang=sh" class="dropdown-item"><i><span class="flag flag-sh"></span></i> sh</a>
+                      <a href="#?lang=si" class="dropdown-item"><i><span class="flag flag-si"></span></i> si</a>
+                      <a href="#?lang=sk" class="dropdown-item"><i><span class="flag flag-sk"></span></i> sk</a>
+                      <a href="#?lang=sl" class="dropdown-item"><i><span class="flag flag-sl"></span></i> sl</a>
+                      <a href="#?lang=sm" class="dropdown-item"><i><span class="flag flag-sm"></span></i> sm</a>
+                      <a href="#?lang=sn" class="dropdown-item"><i><span class="flag flag-sn"></span></i> sn</a>
+                      <a href="#?lang=so" class="dropdown-item"><i><span class="flag flag-so"></span></i> so</a>
+                      <a href="#?lang=somaliland" class="dropdown-item"><i><span class="flag flag-somaliland"></span></i> somaliland</a>
+                      <a href="#?lang=sr" class="dropdown-item"><i><span class="flag flag-sr"></span></i> sr</a>
+                      <a href="#?lang=ss" class="dropdown-item"><i><span class="flag flag-ss"></span></i> ss</a>
+                      <a href="#?lang=st" class="dropdown-item"><i><span class="flag flag-st"></span></i> st</a>
+                      <a href="#?lang=sv" class="dropdown-item"><i><span class="flag flag-sv"></span></i> sv</a>
+                      <a href="#?lang=sx" class="dropdown-item"><i><span class="flag flag-sx"></span></i> sx</a>
+                      <a href="#?lang=sy" class="dropdown-item"><i><span class="flag flag-sy"></span></i> sy</a>
+                      <a href="#?lang=sz" class="dropdown-item"><i><span class="flag flag-sz"></span></i> sz</a>
+                      <a href="#?lang=tc" class="dropdown-item"><i><span class="flag flag-tc"></span></i> tc</a>
+                      <a href="#?lang=td" class="dropdown-item"><i><span class="flag flag-td"></span></i> td</a>
+                      <a href="#?lang=tf" class="dropdown-item"><i><span class="flag flag-tf"></span></i> tf</a>
+                      <a href="#?lang=tg" class="dropdown-item"><i><span class="flag flag-tg"></span></i> tg</a>
+                      <a href="#?lang=th" class="dropdown-item"><i><span class="flag flag-th"></span></i> th</a>
+                      <a href="#?lang=tibet" class="dropdown-item"><i><span class="flag flag-tibet"></span></i> tibet</a>
+                      <a href="#?lang=tj" class="dropdown-item"><i><span class="flag flag-tj"></span></i> tj</a>
+                      <a href="#?lang=tk" class="dropdown-item"><i><span class="flag flag-tk"></span></i> tk</a>
+                      <a href="#?lang=tl" class="dropdown-item"><i><span class="flag flag-tl"></span></i> tl</a>
+                      <a href="#?lang=tm" class="dropdown-item"><i><span class="flag flag-tm"></span></i> tm</a>
+                      <a href="#?lang=tn" class="dropdown-item"><i><span class="flag flag-tn"></span></i> tn</a>
+                      <a href="#?lang=to" class="dropdown-item"><i><span class="flag flag-to"></span></i> to</a>
+                      <a href="#?lang=tr" class="dropdown-item"><i><span class="flag flag-tr"></span></i> tr</a>
+                      <a href="#?lang=tt" class="dropdown-item"><i><span class="flag flag-tt"></span></i> tt</a>
+                      <a href="#?lang=tv" class="dropdown-item"><i><span class="flag flag-tv"></span></i> tv</a>
+                      <a href="#?lang=tw" class="dropdown-item"><i><span class="flag flag-tw"></span></i> tw</a>
+                      <a href="#?lang=tz" class="dropdown-item"><i><span class="flag flag-tz"></span></i> tz</a>
+                      <a href="#?lang=ua" class="dropdown-item"><i><span class="flag flag-ua"></span></i> ua</a>
+                      <a href="#?lang=ug" class="dropdown-item"><i><span class="flag flag-ug"></span></i> ug</a>
+                      <a href="#?lang=um" class="dropdown-item"><i><span class="flag flag-um"></span></i> um</a>
+                      <a href="#?lang=us" class="dropdown-item"><i><span class="flag flag-us"></span></i> us</a>
+                      <a href="#?lang=uy" class="dropdown-item"><i><span class="flag flag-uy"></span></i> uy</a>
+                      <a href="#?lang=uz" class="dropdown-item"><i><span class="flag flag-uz"></span></i> uz</a>
+                      <a href="#?lang=va" class="dropdown-item"><i><span class="flag flag-va"></span></i> va</a>
+                      <a href="#?lang=vc" class="dropdown-item"><i><span class="flag flag-vc"></span></i> vc</a>
+                      <a href="#?lang=ve" class="dropdown-item"><i><span class="flag flag-ve"></span></i> ve</a>
+                      <a href="#?lang=vg" class="dropdown-item"><i><span class="flag flag-vg"></span></i> vg</a>
+                      <a href="#?lang=vi" class="dropdown-item"><i><span class="flag flag-vi"></span></i> vi</a>
+                      <a href="#?lang=vn" class="dropdown-item"><i><span class="flag flag-vn"></span></i> vn</a>
+                      <a href="#?lang=vu" class="dropdown-item"><i><span class="flag flag-vu"></span></i> vu</a>
+                      <a href="#?lang=wales" class="dropdown-item"><i><span class="flag flag-wales"></span></i> wales</a>
+                      <a href="#?lang=wf" class="dropdown-item"><i><span class="flag flag-wf"></span></i> wf</a>
+                      <a href="#?lang=ws" class="dropdown-item"><i><span class="flag flag-ws"></span></i> ws</a>
+                      <a href="#?lang=xk" class="dropdown-item"><i><span class="flag flag-xk"></span></i> xk</a>
+                      <a href="#?lang=ye" class="dropdown-item"><i><span class="flag flag-ye"></span></i> ye</a>
+                      <a href="#?lang=yt" class="dropdown-item"><i><span class="flag flag-yt"></span></i> yt</a>
+                      <a href="#?lang=za" class="dropdown-item"><i><span class="flag flag-za"></span></i> za</a>
+                      <a href="#?lang=zanzibar" class="dropdown-item"><i><span class="flag flag-zanzibar"></span></i> zanzibar</a>
+                      <a href="#?lang=zm" class="dropdown-item"><i><span class="flag flag-zm"></span></i> zm</a>
+                      <a href="#?lang=zw" class="dropdown-item"><i><span class="flag flag-zw"></span></i> zw</a>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-2-html" aria-labelledby="nav-tab-2-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;select class="form-control" data-live-search="true">
+
+                      &lt;option value="ad" data-icon="flag flag-ad">ad&lt;/option>
+                      &lt;option value="ae" data-icon="flag flag-ae">ae&lt;/option>
+                      &lt;option value="af" data-icon="flag flag-af">af&lt;/option>
+                      &lt;option value="ag" data-icon="flag flag-ag">ag&lt;/option>
+                      &lt;option value="ai" data-icon="flag flag-ai">ai&lt;/option>
+                      &lt;option value="al" data-icon="flag flag-al">al&lt;/option>
+                      &lt;option value="am" data-icon="flag flag-am">am&lt;/option>
+                      &lt;option value="an" data-icon="flag flag-an">an&lt;/option>
+                      &lt;option value="ao" data-icon="flag flag-ao">ao&lt;/option>
+                      &lt;option value="ar" data-icon="flag flag-ar">ar&lt;/option>
+                      &lt;option value="as" data-icon="flag flag-as">as&lt;/option>
+                      &lt;option value="at" data-icon="flag flag-at">at&lt;/option>
+                      &lt;option value="au" data-icon="flag flag-au">au&lt;/option>
+                      &lt;option value="aw" data-icon="flag flag-aw">aw&lt;/option>
+                      &lt;option value="az" data-icon="flag flag-az">az&lt;/option>
+                      &lt;option value="ba" data-icon="flag flag-ba">ba&lt;/option>
+                      &lt;option value="bb" data-icon="flag flag-bb">bb&lt;/option>
+                      &lt;option value="bd" data-icon="flag flag-bd">bd&lt;/option>
+                      &lt;option value="be" data-icon="flag flag-be">be&lt;/option>
+                      &lt;option value="bf" data-icon="flag flag-bf">bf&lt;/option>
+                      &lt;option value="bg" data-icon="flag flag-bg">bg&lt;/option>
+                      &lt;option value="bh" data-icon="flag flag-bh">bh&lt;/option>
+                      &lt;option value="bi" data-icon="flag flag-bi">bi&lt;/option>
+                      &lt;option value="bj" data-icon="flag flag-bj">bj&lt;/option>
+                      &lt;option value="bm" data-icon="flag flag-bm">bm&lt;/option>
+                      &lt;option value="bn" data-icon="flag flag-bn">bn&lt;/option>
+                      &lt;option value="bo" data-icon="flag flag-bo">bo&lt;/option>
+                      &lt;option value="br" data-icon="flag flag-br">br&lt;/option>
+                      &lt;option value="bs" data-icon="flag flag-bs">bs&lt;/option>
+                      &lt;option value="bt" data-icon="flag flag-bt">bt&lt;/option>
+                      &lt;option value="bv" data-icon="flag flag-bv">bv&lt;/option>
+                      &lt;option value="bw" data-icon="flag flag-bw">bw&lt;/option>
+                      &lt;option value="by" data-icon="flag flag-by">by&lt;/option>
+                      &lt;option value="bz" data-icon="flag flag-bz">bz&lt;/option>
+                      &lt;option value="ca" data-icon="flag flag-ca">ca&lt;/option>
+                      &lt;option value="catalonia" data-icon="flag flag-catalonia">catalonia&lt;/option>
+                      &lt;option value="cd" data-icon="flag flag-cd">cd&lt;/option>
+                      &lt;option value="cf" data-icon="flag flag-cf">cf&lt;/option>
+                      &lt;option value="cg" data-icon="flag flag-cg">cg&lt;/option>
+                      &lt;option value="ch" data-icon="flag flag-ch">ch&lt;/option>
+                      &lt;option value="ci" data-icon="flag flag-ci">ci&lt;/option>
+                      &lt;option value="ck" data-icon="flag flag-ck">ck&lt;/option>
+                      &lt;option value="cl" data-icon="flag flag-cl">cl&lt;/option>
+                      &lt;option value="cm" data-icon="flag flag-cm">cm&lt;/option>
+                      &lt;option value="cn" data-icon="flag flag-cn">cn&lt;/option>
+                      &lt;option value="co" data-icon="flag flag-co">co&lt;/option>
+                      &lt;option value="cr" data-icon="flag flag-cr">cr&lt;/option>
+                      &lt;option value="cu" data-icon="flag flag-cu">cu&lt;/option>
+                      &lt;option value="cv" data-icon="flag flag-cv">cv&lt;/option>
+                      &lt;option value="cw" data-icon="flag flag-cw">cw&lt;/option>
+                      &lt;option value="cy" data-icon="flag flag-cy">cy&lt;/option>
+                      &lt;option value="cz" data-icon="flag flag-cz">cz&lt;/option>
+                      &lt;option value="de" data-icon="flag flag-de">de&lt;/option>
+                      &lt;option value="dj" data-icon="flag flag-dj">dj&lt;/option>
+                      &lt;option value="dk" data-icon="flag flag-dk">dk&lt;/option>
+                      &lt;option value="dm" data-icon="flag flag-dm">dm&lt;/option>
+                      &lt;option value="do" data-icon="flag flag-do">do&lt;/option>
+                      &lt;option value="dz" data-icon="flag flag-dz">dz&lt;/option>
+                      &lt;option value="ec" data-icon="flag flag-ec">ec&lt;/option>
+                      &lt;option value="ee" data-icon="flag flag-ee">ee&lt;/option>
+                      &lt;option value="eg" data-icon="flag flag-eg">eg&lt;/option>
+                      &lt;option value="eh" data-icon="flag flag-eh">eh&lt;/option>
+                      &lt;option value="england" data-icon="flag flag-england">england&lt;/option>
+                      &lt;option value="er" data-icon="flag flag-er">er&lt;/option>
+                      &lt;option value="es" data-icon="flag flag-es">es&lt;/option>
+                      &lt;option value="et" data-icon="flag flag-et">et&lt;/option>
+                      &lt;option value="eu" data-icon="flag flag-eu">eu&lt;/option>
+                      &lt;option value="fi" data-icon="flag flag-fi">fi&lt;/option>
+                      &lt;option value="fj" data-icon="flag flag-fj">fj&lt;/option>
+                      &lt;option value="fk" data-icon="flag flag-fk">fk&lt;/option>
+                      &lt;option value="fm" data-icon="flag flag-fm">fm&lt;/option>
+                      &lt;option value="fo" data-icon="flag flag-fo">fo&lt;/option>
+                      &lt;option value="fr" data-icon="flag flag-fr">fr&lt;/option>
+                      &lt;option value="ga" data-icon="flag flag-ga">ga&lt;/option>
+                      &lt;option value="gb" data-icon="flag flag-gb">gb&lt;/option>
+                      &lt;option value="gd" data-icon="flag flag-gd">gd&lt;/option>
+                      &lt;option value="ge" data-icon="flag flag-ge">ge&lt;/option>
+                      &lt;option value="gf" data-icon="flag flag-gf">gf&lt;/option>
+                      &lt;option value="gg" data-icon="flag flag-gg">gg&lt;/option>
+                      &lt;option value="gh" data-icon="flag flag-gh">gh&lt;/option>
+                      &lt;option value="gi" data-icon="flag flag-gi">gi&lt;/option>
+                      &lt;option value="gl" data-icon="flag flag-gl">gl&lt;/option>
+                      &lt;option value="gm" data-icon="flag flag-gm">gm&lt;/option>
+                      &lt;option value="gn" data-icon="flag flag-gn">gn&lt;/option>
+                      &lt;option value="gp" data-icon="flag flag-gp">gp&lt;/option>
+                      &lt;option value="gq" data-icon="flag flag-gq">gq&lt;/option>
+                      &lt;option value="gr" data-icon="flag flag-gr">gr&lt;/option>
+                      &lt;option value="gs" data-icon="flag flag-gs">gs&lt;/option>
+                      &lt;option value="gt" data-icon="flag flag-gt">gt&lt;/option>
+                      &lt;option value="gu" data-icon="flag flag-gu">gu&lt;/option>
+                      &lt;option value="gw" data-icon="flag flag-gw">gw&lt;/option>
+                      &lt;option value="gy" data-icon="flag flag-gy">gy&lt;/option>
+                      &lt;option value="hk" data-icon="flag flag-hk">hk&lt;/option>
+                      &lt;option value="hm" data-icon="flag flag-hm">hm&lt;/option>
+                      &lt;option value="hn" data-icon="flag flag-hn">hn&lt;/option>
+                      &lt;option value="hr" data-icon="flag flag-hr">hr&lt;/option>
+                      &lt;option value="ht" data-icon="flag flag-ht">ht&lt;/option>
+                      &lt;option value="hu" data-icon="flag flag-hu">hu&lt;/option>
+                      &lt;option value="ic" data-icon="flag flag-ic">ic&lt;/option>
+                      &lt;option value="id" data-icon="flag flag-id">id&lt;/option>
+                      &lt;option value="ie" data-icon="flag flag-ie">ie&lt;/option>
+                      &lt;option value="il" data-icon="flag flag-il">il&lt;/option>
+                      &lt;option value="im" data-icon="flag flag-im">im&lt;/option>
+                      &lt;option value="in" data-icon="flag flag-in">in&lt;/option>
+                      &lt;option value="io" data-icon="flag flag-io">io&lt;/option>
+                      &lt;option value="iq" data-icon="flag flag-iq">iq&lt;/option>
+                      &lt;option value="ir" data-icon="flag flag-ir">ir&lt;/option>
+                      &lt;option value="is" data-icon="flag flag-is">is&lt;/option>
+                      &lt;option value="it" data-icon="flag flag-it">it&lt;/option>
+                      &lt;option value="je" data-icon="flag flag-je">je&lt;/option>
+                      &lt;option value="jm" data-icon="flag flag-jm">jm&lt;/option>
+                      &lt;option value="jo" data-icon="flag flag-jo">jo&lt;/option>
+                      &lt;option value="jp" data-icon="flag flag-jp">jp&lt;/option>
+                      &lt;option value="ke" data-icon="flag flag-ke">ke&lt;/option>
+                      &lt;option value="kg" data-icon="flag flag-kg">kg&lt;/option>
+                      &lt;option value="kh" data-icon="flag flag-kh">kh&lt;/option>
+                      &lt;option value="ki" data-icon="flag flag-ki">ki&lt;/option>
+                      &lt;option value="km" data-icon="flag flag-km">km&lt;/option>
+                      &lt;option value="kn" data-icon="flag flag-kn">kn&lt;/option>
+                      &lt;option value="kp" data-icon="flag flag-kp">kp&lt;/option>
+                      &lt;option value="kr" data-icon="flag flag-kr">kr&lt;/option>
+                      &lt;option value="kurdistan" data-icon="flag flag-kurdistan">kurdistan&lt;/option>
+                      &lt;option value="kw" data-icon="flag flag-kw">kw&lt;/option>
+                      &lt;option value="ky" data-icon="flag flag-ky">ky&lt;/option>
+                      &lt;option value="kz" data-icon="flag flag-kz">kz&lt;/option>
+                      &lt;option value="la" data-icon="flag flag-la">la&lt;/option>
+                      &lt;option value="lb" data-icon="flag flag-lb">lb&lt;/option>
+                      &lt;option value="lc" data-icon="flag flag-lc">lc&lt;/option>
+                      &lt;option value="li" data-icon="flag flag-li">li&lt;/option>
+                      &lt;option value="lk" data-icon="flag flag-lk">lk&lt;/option>
+                      &lt;option value="lr" data-icon="flag flag-lr">lr&lt;/option>
+                      &lt;option value="ls" data-icon="flag flag-ls">ls&lt;/option>
+                      &lt;option value="lt" data-icon="flag flag-lt">lt&lt;/option>
+                      &lt;option value="lu" data-icon="flag flag-lu">lu&lt;/option>
+                      &lt;option value="lv" data-icon="flag flag-lv">lv&lt;/option>
+                      &lt;option value="ly" data-icon="flag flag-ly">ly&lt;/option>
+                      &lt;option value="ma" data-icon="flag flag-ma">ma&lt;/option>
+                      &lt;option value="mc" data-icon="flag flag-mc">mc&lt;/option>
+                      &lt;option value="md" data-icon="flag flag-md">md&lt;/option>
+                      &lt;option value="me" data-icon="flag flag-me">me&lt;/option>
+                      &lt;option value="mg" data-icon="flag flag-mg">mg&lt;/option>
+                      &lt;option value="mh" data-icon="flag flag-mh">mh&lt;/option>
+                      &lt;option value="mk" data-icon="flag flag-mk">mk&lt;/option>
+                      &lt;option value="ml" data-icon="flag flag-ml">ml&lt;/option>
+                      &lt;option value="mm" data-icon="flag flag-mm">mm&lt;/option>
+                      &lt;option value="mn" data-icon="flag flag-mn">mn&lt;/option>
+                      &lt;option value="mo" data-icon="flag flag-mo">mo&lt;/option>
+                      &lt;option value="mp" data-icon="flag flag-mp">mp&lt;/option>
+                      &lt;option value="mq" data-icon="flag flag-mq">mq&lt;/option>
+                      &lt;option value="mr" data-icon="flag flag-mr">mr&lt;/option>
+                      &lt;option value="ms" data-icon="flag flag-ms">ms&lt;/option>
+                      &lt;option value="mt" data-icon="flag flag-mt">mt&lt;/option>
+                      &lt;option value="mu" data-icon="flag flag-mu">mu&lt;/option>
+                      &lt;option value="mv" data-icon="flag flag-mv">mv&lt;/option>
+                      &lt;option value="mw" data-icon="flag flag-mw">mw&lt;/option>
+                      &lt;option value="mx" data-icon="flag flag-mx">mx&lt;/option>
+                      &lt;option value="my" data-icon="flag flag-my">my&lt;/option>
+                      &lt;option value="mz" data-icon="flag flag-mz">mz&lt;/option>
+                      &lt;option value="na" data-icon="flag flag-na">na&lt;/option>
+                      &lt;option value="nc" data-icon="flag flag-nc">nc&lt;/option>
+                      &lt;option value="ne" data-icon="flag flag-ne">ne&lt;/option>
+                      &lt;option value="nf" data-icon="flag flag-nf">nf&lt;/option>
+                      &lt;option value="ng" data-icon="flag flag-ng">ng&lt;/option>
+                      &lt;option value="ni" data-icon="flag flag-ni">ni&lt;/option>
+                      &lt;option value="nl" data-icon="flag flag-nl">nl&lt;/option>
+                      &lt;option value="no" data-icon="flag flag-no">no&lt;/option>
+                      &lt;option value="np" data-icon="flag flag-np">np&lt;/option>
+                      &lt;option value="nr" data-icon="flag flag-nr">nr&lt;/option>
+                      &lt;option value="nu" data-icon="flag flag-nu">nu&lt;/option>
+                      &lt;option value="nz" data-icon="flag flag-nz">nz&lt;/option>
+                      &lt;option value="om" data-icon="flag flag-om">om&lt;/option>
+                      &lt;option value="pa" data-icon="flag flag-pa">pa&lt;/option>
+                      &lt;option value="pe" data-icon="flag flag-pe">pe&lt;/option>
+                      &lt;option value="pf" data-icon="flag flag-pf">pf&lt;/option>
+                      &lt;option value="pg" data-icon="flag flag-pg">pg&lt;/option>
+                      &lt;option value="ph" data-icon="flag flag-ph">ph&lt;/option>
+                      &lt;option value="pk" data-icon="flag flag-pk">pk&lt;/option>
+                      &lt;option value="pl" data-icon="flag flag-pl">pl&lt;/option>
+                      &lt;option value="pm" data-icon="flag flag-pm">pm&lt;/option>
+                      &lt;option value="pn" data-icon="flag flag-pn">pn&lt;/option>
+                      &lt;option value="pr" data-icon="flag flag-pr">pr&lt;/option>
+                      &lt;option value="ps" data-icon="flag flag-ps">ps&lt;/option>
+                      &lt;option value="pt" data-icon="flag flag-pt">pt&lt;/option>
+                      &lt;option value="pw" data-icon="flag flag-pw">pw&lt;/option>
+                      &lt;option value="py" data-icon="flag flag-py">py&lt;/option>
+                      &lt;option value="qa" data-icon="flag flag-qa">qa&lt;/option>
+                      &lt;option value="re" data-icon="flag flag-re">re&lt;/option>
+                      &lt;option value="ro" data-icon="flag flag-ro">ro&lt;/option>
+                      &lt;option value="rs" data-icon="flag flag-rs">rs&lt;/option>
+                      &lt;option value="ru" data-icon="flag flag-ru">ru&lt;/option>
+                      &lt;option value="rw" data-icon="flag flag-rw">rw&lt;/option>
+                      &lt;option value="sa" data-icon="flag flag-sa">sa&lt;/option>
+                      &lt;option value="sb" data-icon="flag flag-sb">sb&lt;/option>
+                      &lt;option value="sc" data-icon="flag flag-sc">sc&lt;/option>
+                      &lt;option value="scotland" data-icon="flag flag-scotland">scotland&lt;/option>
+                      &lt;option value="sd" data-icon="flag flag-sd">sd&lt;/option>
+                      &lt;option value="se" data-icon="flag flag-se">se&lt;/option>
+                      &lt;option value="sg" data-icon="flag flag-sg">sg&lt;/option>
+                      &lt;option value="sh" data-icon="flag flag-sh">sh&lt;/option>
+                      &lt;option value="si" data-icon="flag flag-si">si&lt;/option>
+                      &lt;option value="sk" data-icon="flag flag-sk">sk&lt;/option>
+                      &lt;option value="sl" data-icon="flag flag-sl">sl&lt;/option>
+                      &lt;option value="sm" data-icon="flag flag-sm">sm&lt;/option>
+                      &lt;option value="sn" data-icon="flag flag-sn">sn&lt;/option>
+                      &lt;option value="so" data-icon="flag flag-so">so&lt;/option>
+                      &lt;option value="somaliland" data-icon="flag flag-somaliland">somaliland&lt;/option>
+                      &lt;option value="sr" data-icon="flag flag-sr">sr&lt;/option>
+                      &lt;option value="ss" data-icon="flag flag-ss">ss&lt;/option>
+                      &lt;option value="st" data-icon="flag flag-st">st&lt;/option>
+                      &lt;option value="sv" data-icon="flag flag-sv">sv&lt;/option>
+                      &lt;option value="sx" data-icon="flag flag-sx">sx&lt;/option>
+                      &lt;option value="sy" data-icon="flag flag-sy">sy&lt;/option>
+                      &lt;option value="sz" data-icon="flag flag-sz">sz&lt;/option>
+                      &lt;option value="tc" data-icon="flag flag-tc">tc&lt;/option>
+                      &lt;option value="td" data-icon="flag flag-td">td&lt;/option>
+                      &lt;option value="tf" data-icon="flag flag-tf">tf&lt;/option>
+                      &lt;option value="tg" data-icon="flag flag-tg">tg&lt;/option>
+                      &lt;option value="th" data-icon="flag flag-th">th&lt;/option>
+                      &lt;option value="tibet" data-icon="flag flag-tibet">tibet&lt;/option>
+                      &lt;option value="tj" data-icon="flag flag-tj">tj&lt;/option>
+                      &lt;option value="tk" data-icon="flag flag-tk">tk&lt;/option>
+                      &lt;option value="tl" data-icon="flag flag-tl">tl&lt;/option>
+                      &lt;option value="tm" data-icon="flag flag-tm">tm&lt;/option>
+                      &lt;option value="tn" data-icon="flag flag-tn">tn&lt;/option>
+                      &lt;option value="to" data-icon="flag flag-to">to&lt;/option>
+                      &lt;option value="tr" data-icon="flag flag-tr">tr&lt;/option>
+                      &lt;option value="tt" data-icon="flag flag-tt">tt&lt;/option>
+                      &lt;option value="tv" data-icon="flag flag-tv">tv&lt;/option>
+                      &lt;option value="tw" data-icon="flag flag-tw">tw&lt;/option>
+                      &lt;option value="tz" data-icon="flag flag-tz">tz&lt;/option>
+                      &lt;option value="ua" data-icon="flag flag-ua">ua&lt;/option>
+                      &lt;option value="ug" data-icon="flag flag-ug">ug&lt;/option>
+                      &lt;option value="um" data-icon="flag flag-um">um&lt;/option>
+                      &lt;option value="us" data-icon="flag flag-us">us&lt;/option>
+                      &lt;option value="uy" data-icon="flag flag-uy">uy&lt;/option>
+                      &lt;option value="uz" data-icon="flag flag-uz">uz&lt;/option>
+                      &lt;option value="va" data-icon="flag flag-va">va&lt;/option>
+                      &lt;option value="vc" data-icon="flag flag-vc">vc&lt;/option>
+                      &lt;option value="ve" data-icon="flag flag-ve">ve&lt;/option>
+                      &lt;option value="vg" data-icon="flag flag-vg">vg&lt;/option>
+                      &lt;option value="vi" data-icon="flag flag-vi">vi&lt;/option>
+                      &lt;option value="vn" data-icon="flag flag-vn">vn&lt;/option>
+                      &lt;option value="vu" data-icon="flag flag-vu">vu&lt;/option>
+                      &lt;option value="wales" data-icon="flag flag-wales">wales&lt;/option>
+                      &lt;option value="wf" data-icon="flag flag-wf">wf&lt;/option>
+                      &lt;option value="ws" data-icon="flag flag-ws">ws&lt;/option>
+                      &lt;option value="xk" data-icon="flag flag-xk">xk&lt;/option>
+                      &lt;option value="ye" data-icon="flag flag-ye">ye&lt;/option>
+                      &lt;option value="yt" data-icon="flag flag-yt">yt&lt;/option>
+                      &lt;option value="za" data-icon="flag flag-za">za&lt;/option>
+                      &lt;option value="zanzibar" data-icon="flag flag-zanzibar">zanzibar&lt;/option>
+                      &lt;option value="zm" data-icon="flag flag-zm">zm&lt;/option>
+                      &lt;option value="zw" data-icon="flag flag-zw">zw&lt;/option>
+
+                    &lt;/select>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+      <!-- Page level -->
+      <script src="assets/js/vendor.list.min.js"></script>
+      <script src="assets/js/vendor.clipboard.min.js"></script>
+      <script src="assets/js/theme.docs.icons.js"></script>
+      <script>
+        new List('container-icon', { /* -- Search -- */
+          valueNames: ['name', { data: ['icon'] }]
+        });
+      </script>
+
+    </div>
+
+  </body>
+</html>

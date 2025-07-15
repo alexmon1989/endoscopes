@@ -1,0 +1,1929 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">Smarty icons</h1>
+          <p class="lead text-gray-700">A selection of most used icons, integrated into Smarty core.</p>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <pre class="mb-5" style="height:70px">
+            <code class="lang-html">
+              &lt;!-- example --&gt;
+              &lt;i class="fi fi-heart-empty"&gt;&lt;/i&gt;
+            </code>
+          </pre>
+
+
+          <div id="container-icon">
+
+            <!-- Inline Search -->
+            <form class="subnav-search d-flex flex-nowrap ms-auto mt-0 sticky-top">
+              <input class="form-control form-control-lg search mb-0 border-light shadow-lg mt-1" id="search" placeholder="Icon search..." autocomplete="off">
+            </form>
+
+            <ul class="list doc-icon-preview" data-vendor-available="webfont" data-vendor-webfont-prefix="fi "><!-- space ending -->
+
+              <li data-icon="fi-check">
+                <span class="svg-wrapper">
+                  <i class="fi fi-check fs-5"></i>
+                </span>
+                <p>fi-check</p>
+              </li>
+              <li data-icon="fi-close">
+                <span class="svg-wrapper">
+                  <i class="fi fi-close fs-5"></i>
+                </span>
+                <p>fi-close</p>
+              </li>
+              <li data-icon="fi-search">
+                <span class="svg-wrapper">
+                  <i class="fi fi-search fs-5"></i>
+                </span>
+                <p>fi-search</p>
+              </li>
+              <li data-icon="fi-user-male">
+                <span class="svg-wrapper">
+                  <i class="fi fi-user-male fs-5"></i>
+                </span>
+                <p>fi-user-male</p>
+              </li>
+              <li data-icon="fi-user-female">
+                <span class="svg-wrapper">
+                  <i class="fi fi-user-female fs-5"></i>
+                </span>
+                <p>fi-user-female</p>
+              </li>
+              <li data-icon="fi-users">
+                <span class="svg-wrapper">
+                  <i class="fi fi-users fs-5"></i>
+                </span>
+                <p>fi-users</p>
+              </li>
+              <li data-icon="fi-star">
+                <span class="svg-wrapper">
+                  <i class="fi fi-star fs-5"></i>
+                </span>
+                <p>fi-star</p>
+              </li>
+              <li data-icon="fi-star-empty-radius">
+                <span class="svg-wrapper">
+                  <i class="fi fi-star-empty-radius fs-5"></i>
+                </span>
+                <p>fi-star-empty-radius</p>
+              </li>
+              <li data-icon="fi-star-empty">
+                <span class="svg-wrapper">
+                  <i class="fi fi-star-empty fs-5"></i>
+                </span>
+                <p>fi-star-empty</p>
+              </li>
+              <li data-icon="fi-start-half">
+                <span class="svg-wrapper">
+                  <i class="fi fi-start-half fs-5"></i>
+                </span>
+                <p>fi-start-half</p>
+              </li>
+              <li data-icon="fi-star-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-star-full fs-5"></i>
+                </span>
+                <p>fi-star-full</p>
+              </li>
+              <li data-icon="fi-heart-slim">
+                <span class="svg-wrapper">
+                  <i class="fi fi-heart-slim fs-5"></i>
+                </span>
+                <p>fi-heart-slim</p>
+              </li>
+              <li data-icon="fi-heart-empty">
+                <span class="svg-wrapper">
+                  <i class="fi fi-heart-empty fs-5"></i>
+                </span>
+                <p>fi-heart-empty</p>
+              </li>
+              <li data-icon="fi-heart-half">
+                <span class="svg-wrapper">
+                  <i class="fi fi-heart-half fs-5"></i>
+                </span>
+                <p>fi-heart-half</p>
+              </li>
+              <li data-icon="fi-heart-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-heart-full fs-5"></i>
+                </span>
+                <p>fi-heart-full</p>
+              </li>
+              <li data-icon="fi-arrow-up">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-up fs-5"></i>
+                </span>
+                <p>fi-arrow-up</p>
+              </li>
+              <li data-icon="fi-arrow-down">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-down fs-5"></i>
+                </span>
+                <p>fi-arrow-down</p>
+              </li>
+              <li data-icon="fi-arrow-left">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-left fs-5"></i>
+                </span>
+                <p>fi-arrow-left</p>
+              </li>
+              <li data-icon="fi-arrow-right">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-right fs-5"></i>
+                </span>
+                <p>fi-arrow-right</p>
+              </li>
+              <li data-icon="fi-arrow-up-slim">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-up-slim fs-5"></i>
+                </span>
+                <p>fi-arrow-up-slim</p>
+              </li>
+              <li data-icon="fi-arrow-down-slim">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-down-slim fs-5"></i>
+                </span>
+                <p>fi-arrow-down-slim</p>
+              </li>
+              <li data-icon="fi-arrow-left-slim">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-left-slim fs-5"></i>
+                </span>
+                <p>fi-arrow-left-slim</p>
+              </li>
+              <li data-icon="fi-arrow-right-slim">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-right-slim fs-5"></i>
+                </span>
+                <p>fi-arrow-right-slim</p>
+              </li>
+              <li data-icon="fi-arrow-up-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-up-full fs-5"></i>
+                </span>
+                <p>fi-arrow-up-full</p>
+              </li>
+              <li data-icon="fi-arrow-down-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-down-full fs-5"></i>
+                </span>
+                <p>fi-arrow-down-full</p>
+              </li>
+              <li data-icon="fi-arrow-left-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-left-full fs-5"></i>
+                </span>
+                <p>fi-arrow-left-full</p>
+              </li>
+              <li data-icon="fi-arrow-right-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-right-full fs-5"></i>
+                </span>
+                <p>fi-arrow-right-full</p>
+              </li>
+              <li data-icon="fi-arrow-right-3">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-right-3 fs-5"></i>
+                </span>
+                <p>fi-arrow-right-3</p>
+              </li>
+              <li data-icon="fi-arrow-download">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-download fs-5"></i>
+                </span>
+                <p>fi-arrow-download</p>
+              </li>
+              <li data-icon="fi-arrow-upload">
+                <span class="svg-wrapper">
+                  <i class="fi fi-arrow-upload fs-5"></i>
+                </span>
+                <p>fi-arrow-upload</p>
+              </li>
+              <li data-icon="fi-envelope">
+                <span class="svg-wrapper">
+                  <i class="fi fi-envelope fs-5"></i>
+                </span>
+                <p>fi-envelope</p>
+              </li>
+              <li data-icon="fi-envelope-2">
+                <span class="svg-wrapper">
+                  <i class="fi fi-envelope-2 fs-5"></i>
+                </span>
+                <p>fi-envelope-2</p>
+              </li>
+              <li data-icon="fi-eq-vertical">
+                <span class="svg-wrapper">
+                  <i class="fi fi-eq-vertical fs-5"></i>
+                </span>
+                <p>fi-eq-vertical</p>
+              </li>
+              <li data-icon="fi-eye">
+                <span class="svg-wrapper">
+                  <i class="fi fi-eye fs-5"></i>
+                </span>
+                <p>fi-eye</p>
+              </li>
+              <li data-icon="fi-shape-hexa">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shape-hexa fs-5"></i>
+                </span>
+                <p>fi-shape-hexa</p>
+              </li>
+              <li data-icon="fi-layers">
+                <span class="svg-wrapper">
+                  <i class="fi fi-layers fs-5"></i>
+                </span>
+                <p>fi-layers</p>
+              </li>
+              <li data-icon="fi-drop">
+                <span class="svg-wrapper">
+                  <i class="fi fi-drop fs-5"></i>
+                </span>
+                <p>fi-drop</p>
+              </li>
+              <li data-icon="fi-colors">
+                <span class="svg-wrapper">
+                  <i class="fi fi-colors fs-5"></i>
+                </span>
+                <p>fi-colors</p>
+              </li>
+              <li data-icon="fi-menu-dots">
+                <span class="svg-wrapper">
+                  <i class="fi fi-menu-dots fs-5"></i>
+                </span>
+                <p>fi-menu-dots</p>
+              </li>
+              <li data-icon="fi-percent">
+                <span class="svg-wrapper">
+                  <i class="fi fi-percent fs-5"></i>
+                </span>
+                <p>fi-percent</p>
+              </li>
+              <li data-icon="fi-mic-disabled">
+                <span class="svg-wrapper">
+                  <i class="fi fi-mic-disabled fs-5"></i>
+                </span>
+                <p>fi-mic-disabled</p>
+              </li>
+              <li data-icon="fi-thrash">
+                <span class="svg-wrapper">
+                  <i class="fi fi-thrash fs-5"></i>
+                </span>
+                <p>fi-thrash</p>
+              </li>
+              <li data-icon="fi-eye-disabled">
+                <span class="svg-wrapper">
+                  <i class="fi fi-eye-disabled fs-5"></i>
+                </span>
+                <p>fi-eye-disabled</p>
+              </li>
+              <li data-icon="fi-round-close">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-close fs-5"></i>
+                </span>
+                <p>fi-round-close</p>
+              </li>
+              <li data-icon="fi-brand-apple">
+                <span class="svg-wrapper">
+                  <i class="fi fi-brand-apple fs-5"></i>
+                </span>
+                <p>fi-brand-apple</p>
+              </li>
+              <li data-icon="fi-mollecules">
+                <span class="svg-wrapper">
+                  <i class="fi fi-mollecules fs-5"></i>
+                </span>
+                <p>fi-mollecules</p>
+              </li>
+              <li data-icon="fi-minus">
+                <span class="svg-wrapper">
+                  <i class="fi fi-minus fs-5"></i>
+                </span>
+                <p>fi-minus</p>
+              </li>
+              <li data-icon="fi-support-1">
+                <span class="svg-wrapper">
+                  <i class="fi fi-support-1 fs-5"></i>
+                </span>
+                <p>fi-support-1</p>
+              </li>
+              <li data-icon="fi-shield-ok">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shield-ok fs-5"></i>
+                </span>
+                <p>fi-shield-ok</p>
+              </li>
+              <li data-icon="fi-task-list">
+                <span class="svg-wrapper">
+                  <i class="fi fi-task-list fs-5"></i>
+                </span>
+                <p>fi-task-list</p>
+              </li>
+              <li data-icon="fi-print">
+                <span class="svg-wrapper">
+                  <i class="fi fi-print fs-5"></i>
+                </span>
+                <p>fi-print</p>
+              </li>
+              <li data-icon="fi-chat">
+                <span class="svg-wrapper">
+                  <i class="fi fi-chat fs-5"></i>
+                </span>
+                <p>fi-chat</p>
+              </li>
+              <li data-icon="fi-dots-vertical">
+                <span class="svg-wrapper">
+                  <i class="fi fi-dots-vertical fs-5"></i>
+                </span>
+                <p>fi-dots-vertical</p>
+              </li>
+              <li data-icon="fi-direction">
+                <span class="svg-wrapper">
+                  <i class="fi fi-direction fs-5"></i>
+                </span>
+                <p>fi-direction</p>
+              </li>
+              <li data-icon="fi-cart-1">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cart-1 fs-5"></i>
+                </span>
+                <p>fi-cart-1</p>
+              </li>
+              <li data-icon="fi-layers-middle">
+                <span class="svg-wrapper">
+                  <i class="fi fi-layers-middle fs-5"></i>
+                </span>
+                <p>fi-layers-middle</p>
+              </li>
+              <li data-icon="fi-circle-spin">
+                <span class="svg-wrapper">
+                  <i class="fi fi-circle-spin fs-5"></i>
+                </span>
+                <p>fi-circle-spin</p>
+              </li>
+              <li data-icon="fi-play-empty">
+                <span class="svg-wrapper">
+                  <i class="fi fi-play-empty fs-5"></i>
+                </span>
+                <p>fi-play-empty</p>
+              </li>
+              <li data-icon="fi-expand">
+                <span class="svg-wrapper">
+                  <i class="fi fi-expand fs-5"></i>
+                </span>
+                <p>fi-expand</p>
+              </li>
+              <li data-icon="fi-cog-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cog-full fs-5"></i>
+                </span>
+                <p>fi-cog-full</p>
+              </li>
+              <li data-icon="fi-pencil">
+                <span class="svg-wrapper">
+                  <i class="fi fi-pencil fs-5"></i>
+                </span>
+                <p>fi-pencil</p>
+              </li>
+              <li data-icon="fi-graduate">
+                <span class="svg-wrapper">
+                  <i class="fi fi-graduate fs-5"></i>
+                </span>
+                <p>fi-graduate</p>
+              </li>
+              <li data-icon="fi-smartphone">
+                <span class="svg-wrapper">
+                  <i class="fi fi-smartphone fs-5"></i>
+                </span>
+                <p>fi-smartphone</p>
+              </li>
+              <li data-icon="fi-like">
+                <span class="svg-wrapper">
+                  <i class="fi fi-like fs-5"></i>
+                </span>
+                <p>fi-like</p>
+              </li>
+              <li data-icon="fi-folder-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-folder-full fs-5"></i>
+                </span>
+                <p>fi-folder-full</p>
+              </li>
+              <li data-icon="fi-smartphone-chat">
+                <span class="svg-wrapper">
+                  <i class="fi fi-smartphone-chat fs-5"></i>
+                </span>
+                <p>fi-smartphone-chat</p>
+              </li>
+              <li data-icon="fi-squared-info">
+                <span class="svg-wrapper">
+                  <i class="fi fi-squared-info fs-5"></i>
+                </span>
+                <p>fi-squared-info</p>
+              </li>
+              <li data-icon="fi-eco">
+                <span class="svg-wrapper">
+                  <i class="fi fi-eco fs-5"></i>
+                </span>
+                <p>fi-eco</p>
+              </li>
+              <li data-icon="fi-cog">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cog fs-5"></i>
+                </span>
+                <p>fi-cog</p>
+              </li>
+              <li data-icon="fi-round-target">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-target fs-5"></i>
+                </span>
+                <p>fi-round-target</p>
+              </li>
+              <li data-icon="fi-bell">
+                <span class="svg-wrapper">
+                  <i class="fi fi-bell fs-5"></i>
+                </span>
+                <p>fi-bell</p>
+              </li>
+              <li data-icon="fi-squared-minus">
+                <span class="svg-wrapper">
+                  <i class="fi fi-squared-minus fs-5"></i>
+                </span>
+                <p>fi-squared-minus</p>
+              </li>
+              <li data-icon="fi-share">
+                <span class="svg-wrapper">
+                  <i class="fi fi-share fs-5"></i>
+                </span>
+                <p>fi-share</p>
+              </li>
+              <li data-icon="fi-recycle">
+                <span class="svg-wrapper">
+                  <i class="fi fi-recycle fs-5"></i>
+                </span>
+                <p>fi-recycle</p>
+              </li>
+              <li data-icon="fi-hourglass">
+                <span class="svg-wrapper">
+                  <i class="fi fi-hourglass fs-5"></i>
+                </span>
+                <p>fi-hourglass</p>
+              </li>
+              <li data-icon="fi-power">
+                <span class="svg-wrapper">
+                  <i class="fi fi-power fs-5"></i>
+                </span>
+                <p>fi-power</p>
+              </li>
+              <li data-icon="fi-phone-24">
+                <span class="svg-wrapper">
+                  <i class="fi fi-phone-24 fs-5"></i>
+                </span>
+                <p>fi-phone-24</p>
+              </li>
+              <li data-icon="fi-plus">
+                <span class="svg-wrapper">
+                  <i class="fi fi-plus fs-5"></i>
+                </span>
+                <p>fi-plus</p>
+              </li>
+              <li data-icon="fi-shape-abstract-cube">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shape-abstract-cube fs-5"></i>
+                </span>
+                <p>fi-shape-abstract-cube</p>
+              </li>
+              <li data-icon="fi-round-info-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-info-full fs-5"></i>
+                </span>
+                <p>fi-round-info-full</p>
+              </li>
+              <li data-icon="fi-layerstore">
+                <span class="svg-wrapper">
+                  <i class="fi fi-layerstore fs-5"></i>
+                </span>
+                <p>fi-layerstore</p>
+              </li>
+              <li data-icon="fi-database">
+                <span class="svg-wrapper">
+                  <i class="fi fi-database fs-5"></i>
+                </span>
+                <p>fi-database</p>
+              </li>
+              <li data-icon="fi-sound-on">
+                <span class="svg-wrapper">
+                  <i class="fi fi-sound-on fs-5"></i>
+                </span>
+                <p>fi-sound-on</p>
+              </li>
+              <li data-icon="fi-unlink">
+                <span class="svg-wrapper">
+                  <i class="fi fi-unlink fs-5"></i>
+                </span>
+                <p>fi-unlink</p>
+              </li>
+              <li data-icon="fi-home">
+                <span class="svg-wrapper">
+                  <i class="fi fi-home fs-5"></i>
+                </span>
+                <p>fi-home</p>
+              </li>
+              <li data-icon="fi-box">
+                <span class="svg-wrapper">
+                  <i class="fi fi-box fs-5"></i>
+                </span>
+                <p>fi-box</p>
+              </li>
+              <li data-icon="fi-phone">
+                <span class="svg-wrapper">
+                  <i class="fi fi-phone fs-5"></i>
+                </span>
+                <p>fi-phone</p>
+              </li>
+              <li data-icon="fi-orbit">
+                <span class="svg-wrapper">
+                  <i class="fi fi-orbit fs-5"></i>
+                </span>
+                <p>fi-orbit</p>
+              </li>
+              <li data-icon="fi-bell-full-active">
+                <span class="svg-wrapper">
+                  <i class="fi fi-bell-full-active fs-5"></i>
+                </span>
+                <p>fi-bell-full-active</p>
+              </li>
+              <li data-icon="fi-brand-android">
+                <span class="svg-wrapper">
+                  <i class="fi fi-brand-android fs-5"></i>
+                </span>
+                <p>fi-brand-android</p>
+              </li>
+              <li data-icon="fi-smart-devices">
+                <span class="svg-wrapper">
+                  <i class="fi fi-smart-devices fs-5"></i>
+                </span>
+                <p>fi-smart-devices</p>
+              </li>
+              <li data-icon="fi-pin-2">
+                <span class="svg-wrapper">
+                  <i class="fi fi-pin-2 fs-5"></i>
+                </span>
+                <p>fi-pin-2</p>
+              </li>
+              <li data-icon="fi-box-checked">
+                <span class="svg-wrapper">
+                  <i class="fi fi-box-checked fs-5"></i>
+                </span>
+                <p>fi-box-checked</p>
+              </li>
+              <li data-icon="fi-atom">
+                <span class="svg-wrapper">
+                  <i class="fi fi-atom fs-5"></i>
+                </span>
+                <p>fi-atom</p>
+              </li>
+              <li data-icon="fi-loading-dots">
+                <span class="svg-wrapper">
+                  <i class="fi fi-loading-dots fs-5"></i>
+                </span>
+                <p>fi-loading-dots</p>
+              </li>
+              <li data-icon="fi-eq-horizontal">
+                <span class="svg-wrapper">
+                  <i class="fi fi-eq-horizontal fs-5"></i>
+                </span>
+                <p>fi-eq-horizontal</p>
+              </li>
+              <li data-icon="fi-round-play">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-play fs-5"></i>
+                </span>
+                <p>fi-round-play</p>
+              </li>
+              <li data-icon="fi-list-checked">
+                <span class="svg-wrapper">
+                  <i class="fi fi-list-checked fs-5"></i>
+                </span>
+                <p>fi-list-checked</p>
+              </li>
+              <li data-icon="fi-target-simple">
+                <span class="svg-wrapper">
+                  <i class="fi fi-target-simple fs-5"></i>
+                </span>
+                <p>fi-target-simple</p>
+              </li>
+              <li data-icon="fi-road">
+                <span class="svg-wrapper">
+                  <i class="fi fi-road fs-5"></i>
+                </span>
+                <p>fi-road</p>
+              </li>
+              <li data-icon="fi-mic">
+                <span class="svg-wrapper">
+                  <i class="fi fi-mic fs-5"></i>
+                </span>
+                <p>fi-mic</p>
+              </li>
+              <li data-icon="fi-round-list">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-list fs-5"></i>
+                </span>
+                <p>fi-round-list</p>
+              </li>
+              <li data-icon="fi-brand-windows">
+                <span class="svg-wrapper">
+                  <i class="fi fi-brand-windows fs-5"></i>
+                </span>
+                <p>fi-brand-windows</p>
+              </li>
+              <li data-icon="fi-cart-2">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cart-2 fs-5"></i>
+                </span>
+                <p>fi-cart-2</p>
+              </li>
+              <li data-icon="fi-product-tag">
+                <span class="svg-wrapper">
+                  <i class="fi fi-product-tag fs-5"></i>
+                </span>
+                <p>fi-product-tag</p>
+              </li>
+              <li data-icon="fi-globe">
+                <span class="svg-wrapper">
+                  <i class="fi fi-globe fs-5"></i>
+                </span>
+                <p>fi-globe</p>
+              </li>
+              <li data-icon="fi-cart-3">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cart-3 fs-5"></i>
+                </span>
+                <p>fi-cart-3</p>
+              </li>
+              <li data-icon="fi-colors-2">
+                <span class="svg-wrapper">
+                  <i class="fi fi-colors-2 fs-5"></i>
+                </span>
+                <p>fi-colors-2</p>
+              </li>
+              <li data-icon="fi-lightbulb">
+                <span class="svg-wrapper">
+                  <i class="fi fi-lightbulb fs-5"></i>
+                </span>
+                <p>fi-lightbulb</p>
+              </li>
+              <li data-icon="fi-round-question-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-question-full fs-5"></i>
+                </span>
+                <p>fi-round-question-full</p>
+              </li>
+              <li data-icon="fi-bars-2">
+                <span class="svg-wrapper">
+                  <i class="fi fi-bars-2 fs-5"></i>
+                </span>
+                <p>fi-bars-2</p>
+              </li>
+              <li data-icon="fi-attachment">
+                <span class="svg-wrapper">
+                  <i class="fi fi-attachment fs-5"></i>
+                </span>
+                <p>fi-attachment</p>
+              </li>
+              <li data-icon="fi-checklist-squared">
+                <span class="svg-wrapper">
+                  <i class="fi fi-checklist-squared fs-5"></i>
+                </span>
+                <p>fi-checklist-squared</p>
+              </li>
+              <li data-icon="fi-graph">
+                <span class="svg-wrapper">
+                  <i class="fi fi-graph fs-5"></i>
+                </span>
+                <p>fi-graph</p>
+              </li>
+              <li data-icon="fi-selectable">
+                <span class="svg-wrapper">
+                  <i class="fi fi-selectable fs-5"></i>
+                </span>
+                <p>fi-selectable</p>
+              </li>
+              <li data-icon="fi-cloud-upload">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cloud-upload fs-5"></i>
+                </span>
+                <p>fi-cloud-upload</p>
+              </li>
+              <li data-icon="fi-mdeal">
+                <span class="svg-wrapper">
+                  <i class="fi fi-mdeal fs-5"></i>
+                </span>
+                <p>fi-mdeal</p>
+              </li>
+              <li data-icon="fi-24">
+                <span class="svg-wrapper">
+                  <i class="fi fi-24 fs-5"></i>
+                </span>
+                <p>fi-24</p>
+              </li>
+              <li data-icon="fi-cart-4">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cart-4 fs-5"></i>
+                </span>
+                <p>fi-cart-4</p>
+              </li>
+              <li data-icon="fi-list">
+                <span class="svg-wrapper">
+                  <i class="fi fi-list fs-5"></i>
+                </span>
+                <p>fi-list</p>
+              </li>
+              <li data-icon="fi-user-plus">
+                <span class="svg-wrapper">
+                  <i class="fi fi-user-plus fs-5"></i>
+                </span>
+                <p>fi-user-plus</p>
+              </li>
+              <li data-icon="fi-truck-speed">
+                <span class="svg-wrapper">
+                  <i class="fi fi-truck-speed fs-5"></i>
+                </span>
+                <p>fi-truck-speed</p>
+              </li>
+              <li data-icon="fi-cogs">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cogs fs-5"></i>
+                </span>
+                <p>fi-cogs</p>
+              </li>
+              <li data-icon="fi-dashboard">
+                <span class="svg-wrapper">
+                  <i class="fi fi-dashboard fs-5"></i>
+                </span>
+                <p>fi-dashboard</p>
+              </li>
+              <li data-icon="fi-lightning">
+                <span class="svg-wrapper">
+                  <i class="fi fi-lightning fs-5"></i>
+                </span>
+                <p>fi-lightning</p>
+              </li>
+              <li data-icon="fi-dots-horizontal">
+                <span class="svg-wrapper">
+                  <i class="fi fi-dots-horizontal fs-5"></i>
+                </span>
+                <p>fi-dots-horizontal</p>
+              </li>
+              <li data-icon="fi-loading">
+                <span class="svg-wrapper">
+                  <i class="fi fi-loading fs-5"></i>
+                </span>
+                <p>fi-loading</p>
+              </li>
+              <li data-icon="fi-exit">
+                <span class="svg-wrapper">
+                  <i class="fi fi-exit fs-5"></i>
+                </span>
+                <p>fi-exit</p>
+              </li>
+              <li data-icon="fi-plus-slim">
+                <span class="svg-wrapper">
+                  <i class="fi fi-plus-slim fs-5"></i>
+                </span>
+                <p>fi-plus-slim</p>
+              </li>
+              <li data-icon="fi-umbrella">
+                <span class="svg-wrapper">
+                  <i class="fi fi-umbrella fs-5"></i>
+                </span>
+                <p>fi-umbrella</p>
+              </li>
+              <li data-icon="fi-gps">
+                <span class="svg-wrapper">
+                  <i class="fi fi-gps fs-5"></i>
+                </span>
+                <p>fi-gps</p>
+              </li>
+              <li data-icon="fi-locked">
+                <span class="svg-wrapper">
+                  <i class="fi fi-locked fs-5"></i>
+                </span>
+                <p>fi-locked</p>
+              </li>
+              <li data-icon="fi-link">
+                <span class="svg-wrapper">
+                  <i class="fi fi-link fs-5"></i>
+                </span>
+                <p>fi-link</p>
+              </li>
+              <li data-icon="fi-shape-3dots">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shape-3dots fs-5"></i>
+                </span>
+                <p>fi-shape-3dots</p>
+              </li>
+              <li data-icon="fi-round-question">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-question fs-5"></i>
+                </span>
+                <p>fi-round-question</p>
+              </li>
+              <li data-icon="fi-image">
+                <span class="svg-wrapper">
+                  <i class="fi fi-image fs-5"></i>
+                </span>
+                <p>fi-image</p>
+              </li>
+              <li data-icon="fi-round-plus">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-plus fs-5"></i>
+                </span>
+                <p>fi-round-plus</p>
+              </li>
+              <li data-icon="fi-support">
+                <span class="svg-wrapper">
+                  <i class="fi fi-support fs-5"></i>
+                </span>
+                <p>fi-support</p>
+              </li>
+              <li data-icon="fi-go-back">
+                <span class="svg-wrapper">
+                  <i class="fi fi-go-back fs-5"></i>
+                </span>
+                <p>fi-go-back</p>
+              </li>
+              <li data-icon="fi-play">
+                <span class="svg-wrapper">
+                  <i class="fi fi-play fs-5"></i>
+                </span>
+                <p>fi-play</p>
+              </li>
+              <li data-icon="fi-dislike">
+                <span class="svg-wrapper">
+                  <i class="fi fi-dislike fs-5"></i>
+                </span>
+                <p>fi-dislike</p>
+              </li>
+              <li data-icon="fi-chart-up">
+                <span class="svg-wrapper">
+                  <i class="fi fi-chart-up fs-5"></i>
+                </span>
+                <p>fi-chart-up</p>
+              </li>
+              <li data-icon="fi-map">
+                <span class="svg-wrapper">
+                  <i class="fi fi-map fs-5"></i>
+                </span>
+                <p>fi-map</p>
+              </li>
+              <li data-icon="fi-dots-triangle">
+                <span class="svg-wrapper">
+                  <i class="fi fi-dots-triangle fs-5"></i>
+                </span>
+                <p>fi-dots-triangle</p>
+              </li>
+              <li data-icon="fi-dots-horizontal-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-dots-horizontal-full fs-5"></i>
+                </span>
+                <p>fi-dots-horizontal-full</p>
+              </li>
+              <li data-icon="fi-reload">
+                <span class="svg-wrapper">
+                  <i class="fi fi-reload fs-5"></i>
+                </span>
+                <p>fi-reload</p>
+              </li>
+              <li data-icon="fi-bookmark">
+                <span class="svg-wrapper">
+                  <i class="fi fi-bookmark fs-5"></i>
+                </span>
+                <p>fi-bookmark</p>
+              </li>
+              <li data-icon="fi-shape-abstract-dots">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shape-abstract-dots fs-5"></i>
+                </span>
+                <p>fi-shape-abstract-dots</p>
+              </li>
+              <li data-icon="fi-bars">
+                <span class="svg-wrapper">
+                  <i class="fi fi-bars fs-5"></i>
+                </span>
+                <p>fi-bars</p>
+              </li>
+              <li data-icon="fi-speaker-mute">
+                <span class="svg-wrapper">
+                  <i class="fi fi-speaker-mute fs-5"></i>
+                </span>
+                <p>fi-speaker-mute</p>
+              </li>
+              <li data-icon="fi-send">
+                <span class="svg-wrapper">
+                  <i class="fi fi-send fs-5"></i>
+                </span>
+                <p>fi-send</p>
+              </li>
+              <li data-icon="fi-brain">
+                <span class="svg-wrapper">
+                  <i class="fi fi-brain fs-5"></i>
+                </span>
+                <p>fi-brain</p>
+              </li>
+              <li data-icon="fi-bell-active">
+                <span class="svg-wrapper">
+                  <i class="fi fi-bell-active fs-5"></i>
+                </span>
+                <p>fi-bell-active</p>
+              </li>
+              <li data-icon="fi-folder-empty">
+                <span class="svg-wrapper">
+                  <i class="fi fi-folder-empty fs-5"></i>
+                </span>
+                <p>fi-folder-empty</p>
+              </li>
+              <li data-icon="fi-cart-5">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cart-5 fs-5"></i>
+                </span>
+                <p>fi-cart-5</p>
+              </li>
+              <li data-icon="fi-shrink">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shrink fs-5"></i>
+                </span>
+                <p>fi-shrink</p>
+              </li>
+              <li data-icon="fi-pin">
+                <span class="svg-wrapper">
+                  <i class="fi fi-pin fs-5"></i>
+                </span>
+                <p>fi-pin</p>
+              </li>
+              <li data-icon="fi-squares">
+                <span class="svg-wrapper">
+                  <i class="fi fi-squares fs-5"></i>
+                </span>
+                <p>fi-squares</p>
+              </li>
+              <li data-icon="fi-bell-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-bell-full fs-5"></i>
+                </span>
+                <p>fi-bell-full</p>
+              </li>
+              <li data-icon="fi-squared-graph">
+                <span class="svg-wrapper">
+                  <i class="fi fi-squared-graph fs-5"></i>
+                </span>
+                <p>fi-squared-graph</p>
+              </li>
+              <li data-icon="fi-squared-dots">
+                <span class="svg-wrapper">
+                  <i class="fi fi-squared-dots fs-5"></i>
+                </span>
+                <p>fi-squared-dots</p>
+              </li>
+              <li data-icon="fi-gift">
+                <span class="svg-wrapper">
+                  <i class="fi fi-gift fs-5"></i>
+                </span>
+                <p>fi-gift</p>
+              </li>
+              <li data-icon="fi-time">
+                <span class="svg-wrapper">
+                  <i class="fi fi-time fs-5"></i>
+                </span>
+                <p>fi-time</p>
+              </li>
+              <li data-icon="fi-cloud-download">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cloud-download fs-5"></i>
+                </span>
+                <p>fi-cloud-download</p>
+              </li>
+              <li data-icon="fi-shape-star">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shape-star fs-5"></i>
+                </span>
+                <p>fi-shape-star</p>
+              </li>
+              <li data-icon="fi-loud">
+                <span class="svg-wrapper">
+                  <i class="fi fi-loud fs-5"></i>
+                </span>
+                <p>fi-loud</p>
+              </li>
+              <li data-icon="fi-dots-vertical-full">
+                <span class="svg-wrapper">
+                  <i class="fi fi-dots-vertical-full fs-5"></i>
+                </span>
+                <p>fi-dots-vertical-full</p>
+              </li>
+              <li data-icon="fi-help">
+                <span class="svg-wrapper">
+                  <i class="fi fi-help fs-5"></i>
+                </span>
+                <p>fi-help</p>
+              </li>
+              <li data-icon="fi-fingerprint">
+                <span class="svg-wrapper">
+                  <i class="fi fi-fingerprint fs-5"></i>
+                </span>
+                <p>fi-fingerprint</p>
+              </li>
+              <li data-icon="fi-plus-squared">
+                <span class="svg-wrapper">
+                  <i class="fi fi-plus-squared fs-5"></i>
+                </span>
+                <p>fi-plus-squared</p>
+              </li>
+              <li data-icon="fi-round-lightning">
+                <span class="svg-wrapper">
+                  <i class="fi fi-round-lightning fs-5"></i>
+                </span>
+                <p>fi-round-lightning</p>
+              </li>
+              <li data-icon="fi-pie-chart">
+                <span class="svg-wrapper">
+                  <i class="fi fi-pie-chart fs-5"></i>
+                </span>
+                <p>fi-pie-chart</p>
+              </li>
+              <li data-icon="fi-calendar">
+                <span class="svg-wrapper">
+                  <i class="fi fi-calendar fs-5"></i>
+                </span>
+                <p>fi-calendar</p>
+              </li>
+              <li data-icon="fi-shape-squared-unequal">
+                <span class="svg-wrapper">
+                  <i class="fi fi-shape-squared-unequal fs-5"></i>
+                </span>
+                <p>fi-shape-squared-unequal</p>
+              </li>
+              <li data-icon="fi-cart-6">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cart-6 fs-5"></i>
+                </span>
+                <p>fi-cart-6</p>
+              </li>
+              <li data-icon="fi-support-headphones">
+                <span class="svg-wrapper">
+                  <i class="fi fi-support-headphones fs-5"></i>
+                </span>
+                <p>fi-support-headphones</p>
+              </li>
+              <li data-icon="fi-code">
+                <span class="svg-wrapper">
+                  <i class="fi fi-code fs-5"></i>
+                </span>
+                <p>fi-code</p>
+              </li>
+              <li data-icon="fi-brand-amazon">
+                <span class="svg-wrapper">
+                  <i class="fi fi-brand-amazon fs-5"></i>
+                </span>
+                <p>fi-brand-amazon</p>
+              </li>
+              <li data-icon="fi-brand-paypal">
+                <span class="svg-wrapper">
+                  <i class="fi fi-brand-paypal fs-5"></i>
+                </span>
+                <p>fi-brand-paypal</p>
+              </li>
+              <li data-icon="fi-social-facebook">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-facebook fs-5"></i>
+                </span>
+                <p>fi-social-facebook</p>
+              </li>
+              <li data-icon="fi-social-linkedin">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-linkedin fs-5"></i>
+                </span>
+                <p>fi-social-linkedin</p>
+              </li>
+              <li data-icon="fi-social-instagram">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-instagram fs-5"></i>
+                </span>
+                <p>fi-social-instagram</p>
+              </li>
+              <li data-icon="fi-social-twitch">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-twitch fs-5"></i>
+                </span>
+                <p>fi-social-twitch</p>
+              </li>
+              <li data-icon="fi-social-github">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-github fs-5"></i>
+                </span>
+                <p>fi-social-github</p>
+              </li>
+              <li data-icon="fi-social-spotify">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-spotify fs-5"></i>
+                </span>
+                <p>fi-social-spotify</p>
+              </li>
+              <li data-icon="fi-social-soundcloud">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-soundcloud fs-5"></i>
+                </span>
+                <p>fi-social-soundcloud</p>
+              </li>
+              <li data-icon="fi-social-pinterest">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-pinterest fs-5"></i>
+                </span>
+                <p>fi-social-pinterest</p>
+              </li>
+              <li data-icon="fi-social-rss">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-rss fs-5"></i>
+                </span>
+                <p>fi-social-rss</p>
+              </li>
+              <li data-icon="fi-social-snapchat">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-snapchat fs-5"></i>
+                </span>
+                <p>fi-social-snapchat</p>
+              </li>
+              <li data-icon="fi-social-twitter">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-twitter fs-5"></i>
+                </span>
+                <p>fi-social-twitter</p>
+              </li>
+              <li data-icon="fi-social-vimeo">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-vimeo fs-5"></i>
+                </span>
+                <p>fi-social-vimeo</p>
+              </li>
+              <li data-icon="fi-social-youtube">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-youtube fs-5"></i>
+                </span>
+                <p>fi-social-youtube</p>
+              </li>
+              <li data-icon="fi-social-unsplash">
+                <span class="svg-wrapper">
+                  <i class="fi fi-social-unsplash fs-5"></i>
+                </span>
+                <p>fi-social-unsplash</p>
+              </li>
+              <li data-icon="fi-homeadvisor">
+                <span class="svg-wrapper">
+                  <i class="fi fi-homeadvisor fs-5"></i>
+                </span>
+                <p>fi-homeadvisor</p>
+              </li>
+              <li data-icon="fi-movie">
+                <span class="svg-wrapper">
+                  <i class="fi fi-movie fs-5"></i>
+                </span>
+                <p>fi-movie</p>
+              </li>
+              <li data-icon="fi-cart-7">
+                <span class="svg-wrapper">
+                  <i class="fi fi-cart-7 fs-5"></i>
+                </span>
+                <p>fi-cart-7</p>
+              </li>
+              <li data-icon="mdi-check">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-check fs-5"></i>
+                </span>
+                <p>mdi-check</p>
+              </li>
+              <li data-icon="mdi-close">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-close fs-5"></i>
+                </span>
+                <p>mdi-close</p>
+              </li>
+              <li data-icon="mdi-format_align_center">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_align_center fs-5"></i>
+                </span>
+                <p>mdi-format_align_center</p>
+              </li>
+              <li data-icon="mdi-format_align_justify">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_align_justify fs-5"></i>
+                </span>
+                <p>mdi-format_align_justify</p>
+              </li>
+              <li data-icon="mdi-format_align_left">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_align_left fs-5"></i>
+                </span>
+                <p>mdi-format_align_left</p>
+              </li>
+              <li data-icon="mdi-format_align_right">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_align_right fs-5"></i>
+                </span>
+                <p>mdi-format_align_right</p>
+              </li>
+              <li data-icon="mdi-format_bold">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_bold fs-5"></i>
+                </span>
+                <p>mdi-format_bold</p>
+              </li>
+              <li data-icon="mdi-format_clear">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_clear fs-5"></i>
+                </span>
+                <p>mdi-format_clear</p>
+              </li>
+              <li data-icon="mdi-format_color_fill">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_color_fill fs-5"></i>
+                </span>
+                <p>mdi-format_color_fill</p>
+              </li>
+              <li data-icon="mdi-format_color_reset">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_color_reset fs-5"></i>
+                </span>
+                <p>mdi-format_color_reset</p>
+              </li>
+              <li data-icon="mdi-format_color_text">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_color_text fs-5"></i>
+                </span>
+                <p>mdi-format_color_text</p>
+              </li>
+              <li data-icon="mdi-format_indent_decrease">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_indent_decrease fs-5"></i>
+                </span>
+                <p>mdi-format_indent_decrease</p>
+              </li>
+              <li data-icon="mdi-format_indent_increase">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_indent_increase fs-5"></i>
+                </span>
+                <p>mdi-format_indent_increase</p>
+              </li>
+              <li data-icon="mdi-format_italic">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_italic fs-5"></i>
+                </span>
+                <p>mdi-format_italic</p>
+              </li>
+              <li data-icon="mdi-format_line_spacing">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_line_spacing fs-5"></i>
+                </span>
+                <p>mdi-format_line_spacing</p>
+              </li>
+              <li data-icon="mdi-format_list_bulleted">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_list_bulleted fs-5"></i>
+                </span>
+                <p>mdi-format_list_bulleted</p>
+              </li>
+              <li data-icon="mdi-format_list_numbered">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-format_list_numbered fs-5"></i>
+                </span>
+                <p>mdi-format_list_numbered</p>
+              </li>
+              <li data-icon="mdi-filter_1">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_1 fs-5"></i>
+                </span>
+                <p>mdi-filter_1</p>
+              </li>
+              <li data-icon="mdi-filter_2">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_2 fs-5"></i>
+                </span>
+                <p>mdi-filter_2</p>
+              </li>
+              <li data-icon="mdi-filter_3">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_3 fs-5"></i>
+                </span>
+                <p>mdi-filter_3</p>
+              </li>
+              <li data-icon="mdi-filter_4">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_4 fs-5"></i>
+                </span>
+                <p>mdi-filter_4</p>
+              </li>
+              <li data-icon="mdi-filter_5">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_5 fs-5"></i>
+                </span>
+                <p>mdi-filter_5</p>
+              </li>
+              <li data-icon="mdi-filter_6">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_6 fs-5"></i>
+                </span>
+                <p>mdi-filter_6</p>
+              </li>
+              <li data-icon="mdi-filter_7">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_7 fs-5"></i>
+                </span>
+                <p>mdi-filter_7</p>
+              </li>
+              <li data-icon="mdi-filter_8">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_8 fs-5"></i>
+                </span>
+                <p>mdi-filter_8</p>
+              </li>
+              <li data-icon="mdi-filter_9">
+                <span class="svg-wrapper">
+                  <i class="fi mdi-filter_9 fs-5"></i>
+                </span>
+                <p>mdi-filter_9</p>
+              </li>
+              <li data-icon="fi-emoji-happy">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-happy fs-5"></i>
+                </span>
+                <p>fi-emoji-happy</p>
+              </li>
+              <li data-icon="fi-emoji-smile">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-smile fs-5"></i>
+                </span>
+                <p>fi-emoji-smile</p>
+              </li>
+              <li data-icon="fi-emoji-tongue">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-tongue fs-5"></i>
+                </span>
+                <p>fi-emoji-tongue</p>
+              </li>
+              <li data-icon="fi-emoji-sad">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-sad fs-5"></i>
+                </span>
+                <p>fi-emoji-sad</p>
+              </li>
+              <li data-icon="fi-emoji-wink">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-wink fs-5"></i>
+                </span>
+                <p>fi-emoji-wink</p>
+              </li>
+              <li data-icon="fi-emoji-grin">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-grin fs-5"></i>
+                </span>
+                <p>fi-emoji-grin</p>
+              </li>
+              <li data-icon="fi-emoji-cool">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-cool fs-5"></i>
+                </span>
+                <p>fi-emoji-cool</p>
+              </li>
+              <li data-icon="fi-emoji-angry">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-angry fs-5"></i>
+                </span>
+                <p>fi-emoji-angry</p>
+              </li>
+              <li data-icon="fi-emoji-evil">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-evil fs-5"></i>
+                </span>
+                <p>fi-emoji-evil</p>
+              </li>
+              <li data-icon="fi-emoji-shocked">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-shocked fs-5"></i>
+                </span>
+                <p>fi-emoji-shocked</p>
+              </li>
+              <li data-icon="fi-emoji-baffled">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-baffled fs-5"></i>
+                </span>
+                <p>fi-emoji-baffled</p>
+              </li>
+              <li data-icon="fi-emoji-confused">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-confused fs-5"></i>
+                </span>
+                <p>fi-emoji-confused</p>
+              </li>
+              <li data-icon="fi-emoji-neutral">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-neutral fs-5"></i>
+                </span>
+                <p>fi-emoji-neutral</p>
+              </li>
+              <li data-icon="fi-emoji-hipster">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-hipster fs-5"></i>
+                </span>
+                <p>fi-emoji-hipster</p>
+              </li>
+              <li data-icon="fi-emoji-wondering">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-wondering fs-5"></i>
+                </span>
+                <p>fi-emoji-wondering</p>
+              </li>
+              <li data-icon="fi-emoji-sleepy">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-sleepy fs-5"></i>
+                </span>
+                <p>fi-emoji-sleepy</p>
+              </li>
+              <li data-icon="fi-emoji-frustrated">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-frustrated fs-5"></i>
+                </span>
+                <p>fi-emoji-frustrated</p>
+              </li>
+              <li data-icon="fi-emoji-crying">
+                <span class="svg-wrapper">
+                  <i class="fi fi-emoji-crying fs-5"></i>
+                </span>
+                <p>fi-emoji-crying</p>
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Modal : Icon -->
+          <div class="modal fade" id="modal-icon" data-bs-keyboard="true" tabindex="-1" aria-labelledby="mdlTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header border-0">
+                  <h5 class="fs-6 modal-title" id="mdlTitle"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body user-select-all pt-0">
+                  <pre class="text-gray-700 bg-gray-200 my-0"></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div id="rtl_arros" class="my-4">
+            <b>RTL ARROWS</b>
+            <p>Will turn the oposite direction on RTL, without a need to edit the html code</p>
+
+            <i class="fi fi-arrow-start"></i> &nbsp; &lt;i class="fi fi-arrow-start">&lt;/i> <br>
+            <i class="fi fi-arrow-end"></i> &nbsp; &lt;i class="fi fi-arrow-end">&lt;/i> <br>
+            
+            <i class="fi fi-arrow-start-slim"></i> &nbsp; &lt;i class="fi fi-arrow-start-slim">&lt;/i> <br>
+            <i class="fi fi-arrow-end-slim"></i> &nbsp; &lt;i class="fi fi-arrow-end-slim">&lt;/i> <br>
+
+            <i class="fi fi-arrow-start-full"></i> &nbsp; &lt;i class="fi fi-arrow-start-full">&lt;/i> <br>
+            <i class="fi fi-arrow-end-full"></i> &nbsp; &lt;i class="fi fi-arrow-end-full">&lt;/i> <br>
+
+          </div>
+
+          <div id="spinners" class="my-4">
+            <span class="text-muted d-block">Example: &lt;i class="fi fi-orbit <code>fi-spin</code>">&lt;/i></span>
+            <i class="fi fi-orbit fi-spin"></i> &nbsp; 
+            <i class="fi fi-circle-spin fi-spin"></i> &nbsp; 
+            <i class="fi fi-loading-dots fi-spin"></i> &nbsp; 
+            <i class="fi fi-loading fi-spin"></i> &nbsp; 
+          </div>
+
+          <hr>
+
+          <div class="my-4">
+            Please see Utilities for available classes (font size &amp; colors).<br>
+            <span class="text-muted d-block">Example: &lt;i class="fi fi-star-empty <code>small text-danger</code>">&lt;/i></span>
+            <i class="fi fi-star-empty small"></i> &nbsp; 
+            <i class="fi fi-star-empty fs-6 text-primary"></i> &nbsp; 
+            <i class="fi fi-star-empty fs-2 text-info"></i> &nbsp; 
+            <i class="fi fi-star-empty fs-5 text-warning"></i> &nbsp; 
+            <i class="fi fi-star-empty fs-1 text-danger"></i> &nbsp; 
+            <i class="fi fi-star-empty display-5 text-indigo"></i> &nbsp; 
+            <i class="fi fi-star-empty fs-1 text-pink"></i> &nbsp; 
+            <i class="fi fi-star-empty fs-5"></i> &nbsp; 
+            <i class="fi fi-star-empty fs--60"></i> &nbsp; 
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+      <!-- Page level -->
+      <script src="assets/js/vendor.list.min.js"></script>
+      <script src="assets/js/vendor.clipboard.min.js"></script>
+      <script src="assets/js/theme.docs.icons.js"></script>
+      <script>
+        new List('container-icon', { /* -- Search -- */
+          valueNames: ['name', { data: ['icon'] }]
+        });
+      </script>
+
+    </div>
+
+  </body>
+</html>

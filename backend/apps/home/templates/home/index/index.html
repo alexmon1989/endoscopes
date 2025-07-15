@@ -1,0 +1,65 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block meta_title %}{% if page.meta_title %}{{ page.meta_title }}{% else %}Головна сторінка{% endif %}{% endblock %}
+{% block meta_description %}{% if page.meta_description %}{{ page.meta_description }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if page.meta_keywords %}{{ page.meta_keywords }}{% endif %}{% endblock %}
+
+{% block content %}
+
+    <div class="jarallax overlay-dark overlay-opacity-7 d-flex align-items-center justify-content-center text-white"
+         style="background-image:url('{% static 'assets/images/endoscopie_reconditionne_1.webp' %}')"
+         data-speed="1.4">
+
+        <!-- optional content -->
+        <div class="text-center py-6 my-5">
+            <h1 class="m-0">{{ page.meta_h1 }}</h1>
+            {{ page.text_1|safe }}
+
+            <p class="mt-5 mb-0">
+                <a href="{% url 'catalog' %}"
+                   class="btn btn-pill btn-light transition-hover-top">
+                    Перейти до каталогу
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="section pt-6 pb-3">
+        <div class="container">
+            <!--
+                In order for lazyload to work, a height is required, else all images are in viewport.
+                By default, an empty png is set with 300px height:
+                http://png-pixel.com/
+            -->
+            <div class="row">
+                {% if categories %}
+
+                    {% for category in categories %}
+                        {% include 'home/index/_partials/category.html' with category=category %}
+                    {% endfor %}
+
+                {% else %}
+
+                    <div class="col-12">
+                        Категорії поки що відсутні
+                    </div>
+
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section pt-0">
+        <div class="container">
+
+            <div class="article-format p-4 p-lg-4 col-lg-12 shadow-sm rounded">
+                {{ page.description|safe }}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

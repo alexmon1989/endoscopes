@@ -1,0 +1,30 @@
+{% load thumbnail %}
+
+<div class="col-6 col-lg-4 mb-5">
+
+    <div class="bg-white p-2 shadow-primary-xs transition-hover-top transition-all-ease-250">
+        <a href="{% url 'category' slug=category.slug %}"
+           class="d-block overflow-hidden overlay-dark-hover overlay-opacity-2 text-decoration-none text-dark">
+            {% if category.categoryimage_set.all.0.image %}
+                <img class="img-fluid lazy rounded"
+                     data-src="{{ category.categoryimage_set.all.0.image|thumbnail_url:'category' }}"
+                     src="{{ category.categoryimage_set.all.0.image.url|thumbnail_url:'category' }}"
+                     alt="{{ category.title }}">
+            {% else %}
+                <img class="img-fluid lazy rounded"
+                     data-src="https://placehold.co/800?text=No+Image"
+                     src="https://placehold.co/800?text=No+Image"
+                     alt="No image">
+            {% endif %}
+        </a>
+
+        <div class="p-3">
+
+            <h5 class="m-0">
+                <a href="{% url 'category' slug=category.slug %}" class="text-dark text-primary-hover">{{ category.title }}</a>
+            </h5>
+
+        </div>
+    </div>
+
+</div>

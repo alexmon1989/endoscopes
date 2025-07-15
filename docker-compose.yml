@@ -1,0 +1,81 @@
+services:
+    db:
+        restart: unless-stopped
+        image: postgres:17.5-alpine
+        container_name: endoscopes_db
+        volumes:
+          - ./database:/var/lib/postgresql/data
+        env_file:
+          - .env
+        ports:
+          - "5432:5432"  
+        environment:
+          POSTGRES_DB: ${DATABASE_NAME}
+          POSTGRES_USER: ${DATABASE_USERNAME}
+          POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+        healthcheck:
+          test: ["CMD-SHELL", "pg_isready -d $$DATABASE_NAME -U $$DATABASE_USERNAME"]
+          interval: 10s
+          timeout: 5s
+          retries: 5
+    web:
+        restart: unless-stopped
+        container_name: endoscopes_web
+        build: .
+        # command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+        command: sh -c "python manage.py makemigrations && python manage.py migrate && gunicorn --workers 3 --bind 0.0.0.0:8000 core.wsgi:application"
+        volumes:
+          - ./backend:/app
+          - ./static:/static
+          - ./media:/media
+          - ./frontend:/frontend
+        ports:
+          - "8000:8000"
+        environment:
+          DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+          DEBUG: ${DEBUG}
+          DJANGO_LOGLEVEL: ${DJANGO_LOGLEVEL}
+          DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
+          DATABASE_ENGINE: ${DATABASE_ENGINE}
+          DATABASE_NAME: ${DATABASE_NAME}
+          DATABASE_USERNAME: ${DATABASE_USERNAME}         
+          DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+          DATABASE_HOST: ${DATABASE_HOST}
+          DATABASE_PORT: ${DATABASE_PORT}
+        healthcheck:
+          test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/')"]
+          interval: 10s
+          timeout: 5s
+          retries: 5
+        env_file:
+          - .env
+        depends_on:
+          db:
+            condition: service_healthy
+    nginx:
+        restart: unless-stopped
+        image: 'umputun/nginx-le:latest'
+        hostname: nginx
+        container_name: endoscopes_nginx
+        volumes:
+          - './static:/static'
+          - './media:/media'
+          - './etc/ssl:/etc/nginx/ssl'
+          - ./etc/service.conf:/etc/nginx/service.conf
+          # - ./etc/service-example-2.conf:/etc/nginx/service2.conf # more services, should be service*.conf
+          # - ./etc/stream-example-2.conf:/etc/nginx/stream2.conf # more streams, should be stream*.conf
+          # - ./etc/conf.d:/etc/nginx/conf.d-le # configuration folder, all files from it will be added
+          # - ./etc/stream.conf:/etc/nginx/stream.conf.d-le # streams configuration folder, all files from it will be added
+        ports:
+          - '80:80'
+          - '443:443'
+        env_file:
+          - .env
+        environment:
+          - TZ=${TZ}
+          - LETSENCRYPT=${LETSENCRYPT}
+          - LE_EMAIL=${LE_EMAIL}
+          - LE_FQDN=${LE_FQDN}
+        depends_on:
+          web:
+            condition: service_healthy

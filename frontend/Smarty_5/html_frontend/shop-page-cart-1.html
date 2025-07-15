@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>Smarty v5</title>
+		<meta name="description" content="...">
+
+		<meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- up to 10% speed up for external res -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/">
+		<!-- preloading icon font is helping to speed up a little bit -->
+		<link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="assets/css/core.min.css">
+		<link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+
+
+      <!-- Header -->
+      <header id="header" class="shadow-xs">
+
+        <!-- Navbar -->
+        <div class="container position-relative">
+
+          <nav class="navbar navbar-expand-lg navbar-light">
+
+            <div class="align-items-start">
+
+              <!-- mobile menu button : show -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="25" viewBox="0 0 20 20">
+                  <path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+                  <path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+                  <path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+                  <path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+                </svg>
+              </button>
+
+              <!-- 
+                Logo : height: 70px max
+              -->
+              <a class="navbar-brand m-0" href="shop-index-1.html">
+                <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+              </a>
+
+
+            </div>
+
+
+	          <!-- securd indicator -->
+						<span class="d-none d-lg-flex align-items-center text-success py-2 border-start px-3 mx-4">
+	            <svg width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+	              <path fill-rule="evenodd" d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"></path>
+	            </svg>
+	            <span class="ps-2 small">Secured data</span>
+	          </span>
+
+
+            <!-- mobile nav only -->
+            <div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+              <!-- navbar : mobile menu -->
+              <div class="navbar-xs d-none">
+
+                <!-- mobile menu button : close -->
+                <button class="navbar-toggler pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <svg width="20" viewBox="0 0 20 20">
+                    <path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+                  </svg>
+                </button>
+
+                <!-- 
+                  Mobile Menu Logo 
+                  Logo : height: 70px max
+                -->
+                <a class="navbar-brand" href="shop-index-1.html">
+                  <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+                </a>
+
+              </div>
+              <!-- /navbar : mobile menu -->
+
+              <!-- menu -->
+              <ul class="navbar-nav navbar-sm d-lg-none">
+
+		            <li class="nav-item"><a class="nav-link px-3" href="#">Continue shopping</a></li>
+		            <li class="nav-item"><a class="nav-link px-3" href="#">My account</a></li>
+		            <li class="nav-item"><a class="nav-link px-3" href="#">Favorites</a></li>
+
+              </ul>
+
+            </div>
+
+
+						<!-- Process Steps -->
+						<ol class="process-steps my-0 pb-2 ms-auto d-none d-lg-flex" style="width:400px">
+							<li class="process-step-item active">Cart</li>
+							<li class="process-step-item">Place order</li>
+							<li class="process-step-item">Payment</li>
+							<li class="process-step-item">Complete</li>
+						</ol>
+
+          </nav>
+
+        </div>
+        <!-- /Navbar -->
+
+      </header>
+      <!-- /Header -->
+
+
+		
+			<!-- page title -->
+			<div class="container py-5">
+
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb small">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">My cart</li>
+					</ol>
+				</nav>
+
+				<h1 class="h2 fw-bold">My Cart</h1>
+
+			</div>
+			<!-- /page title -->
+
+
+
+
+			<!-- CART -->
+			<div class="container pb-7">
+
+        <div class="row g-4">
+
+          <div class="col-lg-8 mb-5">
+
+            <!-- 
+              Cart form -->
+            <form id="form-cart" method="post" action="#">
+
+              <!-- #cart-items -->
+              <div id="cart-items">
+
+              	<!-- item -->
+                <div class="card mb-3 overflow-hidden">
+                  <div class="card-body p-md-4">
+
+                    <!-- remove from cart -->
+                    <a href="#" class="btn btn-light text-danger-hover py-1 px-2 rounded-0 position-absolute top-0 end-0">
+                      <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                      </svg>
+                    </a>
+
+                    <!-- image -->
+                    <div class="row g-3 py-2 align-items-center">
+                      <div class="col-4 col-md-2">
+                        <div class="ratio ratio-1x1">
+                          <span class="d-flex justify-content-center align-items-center">
+                            <img class="img-fluid rounded" src="demo.files/images/unsplash/products/smartwatch_3.jpg" alt="cart item">
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="col-8 col-md-5">
+
+                      	<!-- item name -->
+                        <a href="#" class="link-normal fw-medium">Apple smartwatch series 7 Midnight Sport Band</a>
+
+                        <!-- unit price -->
+                        <small class="d-block text-muted">Unit price: $80.00</small>
+
+                        <!-- attributes -->
+                        <small class="d-block text-muted">Color: silver</small>
+                        
+                      </div>
+
+                      <div class="col-12 col-md-5">
+                        <div class="row g-3">
+
+                          <div class="col-4 col-sm-6 col-lg-5 text-center">
+
+                          	<!-- quantity -->
+                            <div class="d-flex">
+                              <button data-item-quantity="minus" type="button" class="link-normal bg-white border rounded-start d-flex align-items-center px-2 fs-5">-</button>
+                              <input type="number" class="form-control form-control-sm text-center py-2 px-1 border-start-0 border-end-0 rounded-0 shadow-none" name="quantity[]" min="0" max="100" value="1">
+                              <button data-item-quantity="plus" type="button" class="link-normal bg-white border rounded-end d-flex align-items-center px-2 fs-5">+</button>
+                            </div>
+
+                            <!-- item stock -->
+                            <span class="small d-block text-muted mt-1">
+                              96 in stock
+                            </span>
+
+                          </div>
+
+                          <div class="col-8 col-sm-6 col-lg-7 text-md-end">
+
+                            <del class="d-block fw-normal text-muted small">$210.00</del>
+                            <span class="d-block fw-medium">$199.00</span>
+                            <small class="d-block text-success d-block mb-2">You save $11.00</small>
+                            
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- gift -->
+                                                                                                  
+                  </div>
+                </div>
+                <!-- /item -->
+
+              	<!-- item -->
+                <div class="card mb-3 overflow-hidden">
+                  <div class="card-body p-md-4">
+
+                    <!-- remove from cart -->
+                    <a href="#" class="btn btn-light text-danger-hover py-1 px-2 rounded-0 position-absolute top-0 end-0">
+                      <svg width="16px" height="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                      </svg>
+                    </a>
+
+                    <!-- image -->
+                    <div class="row g-3 py-2 align-items-center">
+                      <div class="col-4 col-md-2">
+                        <div class="ratio ratio-1x1">
+                          <span class="d-flex justify-content-center align-items-center">
+                            <img class="img-fluid rounded" src="demo.files/images/unsplash/products/hardik-sharma-CrPAvN29Nhs-unsplash-min.jpg" alt="cart item">
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="col-8 col-md-5">
+
+                      	<!-- item name -->
+                        <a href="#" class="link-normal fw-medium">Apple iPhone 12</a>
+
+                        <!-- unit price -->
+                        <small class="d-block text-muted">Unit price: $1122.00</small>
+
+                        <!-- attributes -->
+                        <small class="d-block text-muted">Color: black</small>
+                        
+                      </div>
+
+                      <div class="col-12 col-md-5">
+                        <div class="row g-3">
+
+                          <div class="col-4 col-sm-6 col-lg-5 text-center">
+
+                          	<!-- quantity -->
+                          	<select class="form-select form-select-sm shadow-none text-center">
+                          		<option value="1">1</option>
+                          		<option value="2">2</option>
+                          		<option value="3">3</option>
+                          	</select>
+
+                            <!-- item stock -->
+                            <span class="small d-block text-muted mt-1">
+                              3 in stock
+                            </span>
+
+                          </div>
+
+                          <div class="col-8 col-sm-6 col-lg-7 text-md-end">
+
+                            <!-- <del class="d-block fw-normal text-muted small">$1122.00</del> -->
+                            <span class="d-block fw-medium">$1122.00</span>
+                            <!-- <small class="d-block text-success d-block mb-2">You save $11.00</small> -->
+                            
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- gift -->
+                                                                                                  
+                  </div>
+                </div>
+                <!-- /item -->
+
+              </div>
+
+              <div class="d-flex justify-content-between">
+              	
+              	<!-- discount code : modal trigger -->
+	              <a href="#modal-discount" data-bs-toggle="modal" data-bs-target="#modal-discount" class="text-decoration-none d-inline-grid gap-auto-2 link-muted">
+	                <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	                  <circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle>
+	                  <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+	                  <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+	                  <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+	                </svg>
+	                <span>Do you have a discount code?</span>
+	              </a>
+
+	              <!-- update cart button
+	              delete for ajax or use inside <noscript></noscript> -->
+                <button type="submit" class="btn btn-sm btn-dark flex-none">Update cart</button>
+
+              </div>
+
+            </form>
+
+            <!-- 
+              Discount modal (outside of cart form) -->
+            <div class="modal fade" id="modal-discount" tabindex="-1" aria-labelledby="modal-discount-label" aria-hidden="true">
+              <form method="post" action="#" novalidate class="bs-validate modal-dialog modal-dialog-centered">
+
+                <div class="modal-content">
+                  <div class="modal-header border-0 pb-0">
+                    <h5 id="modal-discount-label" class="modal-title d-flex align-items-center">
+                      Do you have a discount code?
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body p-4">
+
+                    <div class="form-floating">
+                      <input required type="text" class="form-control" id="discount_code" name="discount_code" placeholder="Discount code">
+                      <label for="discount_code">Discount code</label>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer border-0 pt-0">
+                    <button type="submit" class="btn btn-primary">
+                      <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      <span>Apply</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+          </div>
+
+
+          <!-- summary -->
+          <div class="col-lg-4 mb-4">
+
+            <!-- #cart-summary -->
+            <div class="card text-gray-800">
+              <div class="card-header border-light fs-5 fw-bold mx-3 px-0 py-4">Order sumary</div>
+              <div class="card-body p-md-4">
+
+                              
+              <div id="cart-summary">
+
+                <div class="d-flex justify-content-between">
+                  <span>Products:</span>
+                  <span class="text-end">$1334.00</span>
+                </div>
+
+                <!-- shipping -->
+                <div class="clearfix">
+                  Shipping: 
+                  <span id="shipping-amount" class="float-end">$10.00</span>
+                  <!-- <span id="shipping-free" class="float-end text-success fw-medium">Free</span> -->
+                  <!-- <span id="shipping-undefined" class="float-end text-muted">&ndash;</span> -->
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <span>Fees:</span> 
+                  <span class="text-end">$3.00</span>
+                </div>
+                
+                <hr class="bg-gray-300">
+
+                <div class="fw-medium lh-1 mt-4">
+                  <span class="fs-6 d-block">Total <small class="fw-normal">(vat incl.)</small>:</span> 
+                  <span class="h3 d-block">$1347.00</span>
+                </div>
+
+                <small class="d-block text-gray-600">
+                  <span>You get <span class="text-primary">134</span> reward points</span> 
+                </small>
+
+              </div>
+
+              <!-- to checkout page -->
+              <div class="d-grid my-4">
+                <a href="shop-page-checkout.html" class="btn btn-primary">
+                  <span>To checkout</span>
+                  <svg width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                  </svg>
+                </a>
+              </div>
+              
+              <hr class="bg-gray-300">
+
+              <ul class="list-unstyled mb-0 small">
+                <li class="list-item pb-1"><a class="link-muted" href="#">Refund policy</a></li>
+                <li class="list-item pb-1"><a class="link-muted" href="#">Privacy policy</a></li>
+                <li class="list-item pb-1"><a class="link-muted" href="#">Terms & conditions</a></li>
+              </ul>
+
+              </div>
+            </div>
+
+            <!-- help/chat trigger -->
+            <div class="py-3 text-end">
+              <p class="d-inline-grid gap-auto-3">
+                <span class="text-gray-600">
+                  Need help? <a href="#" class="link-secondary text-dashed">Contact us</a>
+                </span>
+                <svg class="text-gray-500" width="28px" height="28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.052 512.052" fill="currentColor">
+                  <path d="M208.026,16.026c-114.7,0-208,78.9-208,176c0,39.8,15.7,77.9,44.5,108.9l-39.8,39.8c-4.6,4.6-6,11.5-3.5,17.4c2.5,6,8.3,9.9,14.8,9.9h192c114.7,0,208-78.9,208-176S322.726,16.026,208.026,16.026z"/>
+                  <path opacity="0.5" d="M467.526,428.926c28.8-30.9,44.5-69.1,44.5-108.9c0-49.8-24.6-94.9-64-126.9c-0.9,114.1-108.2,206.9-240,206.9h-89.2c34.5,56.9,104.6,96,185.2,96h192c6.5,0,12.3-3.9,14.8-9.9c2.5-6,1.1-12.9-3.5-17.4L467.526,428.926z"/>
+                  <path fill="#ffffff" d="M304.026,144.026h-192c-8.8,0-16,7.2-16,16s7.2,16,16,16h192c8.8,0,16-7.2,16-16S312.826,144.026,304.026,144.026z"/>
+                  <path fill="#ffffff" d="M240.026,208.026h-128c-8.8,0-16,7.2-16,16s7.2,16,16,16h128c8.8,0,16-7.2,16-16S248.826,208.026,240.026,208.026z"/>
+                </svg>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+			</div>
+			<!-- /CART -->
+
+
+
+
+      <!-- INFO BOX -->
+      <div class="container py-3">
+
+        <div class="row g-4">
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4">
+
+            <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/money_bag.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+            <div class="ps-3">
+              <h3 class="fs-5 mb-1">Money Back</h3>
+              <p class="m-0">Love it! Use it! Reuse it!</p>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4">
+
+            <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/free-delivery-truck.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+            <div class="ps-3">
+              <h3 class="fs-5 mb-1">Free Shipping</h3>
+              <p class="m-0">Shipping is on us</p>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4">
+
+            <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/24-hours-phone-service.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+            <div class="ps-3">
+              <h3 class="fs-5 mb-1">Free Support</h3>
+              <p class="m-0">24/24 available</p>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex text-center-xs py-2 py-sm-3 py-lg-4">
+
+            <!-- link example -->
+            <a href="#" class="text-dark text-decoration-none d-flex">
+
+              <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/handshake.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+              <div class="ps-3">
+                <h3 class="fs-5 mb-1">Best Deal</h3>
+                <p class="m-0">Quality guaranteed</p>
+              </div>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /INFO BOX -->
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="shadow-xs">
+
+				<div class="container text-center py-5">
+
+					<!-- logo -->
+					<span class="h--70 d-inline-flex align-items-center">
+						<img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+					</span>
+
+					<p class="m-0 text-gray-500 fs-6">
+
+						&copy; My Company Inc. 2015 – 2019. 
+
+						<br>
+
+						All Rights Reserved.
+					
+					</p>
+
+
+					<div class="mt-5"> 
+
+						<!-- social -->
+						<a href="#" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="facebook page">
+							<i class="fi fi-social-facebook"></i> 
+						</a>
+
+						<a href="#" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="twitter page">
+							<i class="fi fi-social-twitter"></i> 
+						</a>
+
+						<a href="#" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="linkedin page">
+							<i class="fi fi-social-linkedin"></i> 
+						</a>
+
+						<a href="#" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="youtube page">
+							<i class="fi fi-social-youtube"></i> 
+						</a>
+
+					
+
+						<!-- credit cards -->
+						<ul class="list-inline mb-0 mt-2"> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/visa.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="visa credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/mastercard.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="mastercard credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/discover.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="discover credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/amazon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="amazon credit card icon">
+							</li>
+							
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/paypal.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="paypal credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/skrill.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="skrill credit card icon">
+							</li>
+
+							<!-- more vendors on assets/images/credit_card/ -->
+
+						</ul>
+
+					</div>
+
+
+				</div>
+
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

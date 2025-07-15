@@ -1,0 +1,1827 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">Vendor : Chartjs</h1>
+          <p class="lead text-gray-700">Simple HTML5 Charts using the canvas tag.</p>
+          <ul class="mt-3 mb-0">
+            <li>License: MIT</li>
+            <li>
+              <a href="https://github.com/chartjs/Chart.js" target="_blank" rel="noopener nofollow">
+                https://github.com/chartjs/Chart.js
+              </a>
+            </li>
+            <li><code>src/js/vendors/vendor.chartjs.js</code></li>
+          </ul>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">Basic</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-1">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-1-preview" id="nav-tab-1-preview-link" aria-controls="nav-tab-1-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-1-html" id="nav-tab-1-html-link" aria-controls="nav-tab-1-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-1-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-1-preview" aria-labelledby="nav-tab-1-preview-link" role="tabpanel">
+
+                <div class="bg-light rounded-xl p-3 mb-4">
+
+                  <a href="#" data-chartjs-id="smartySimple" data-file-name="smartySimple" class="chartjs-save btn btn-sm btn-primary" title="Save Chart" aria-label="Save Chart">
+                    <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-save-fill" viewBox="0 0 16 16">  
+                      <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293V1.5z"></path>
+                    </svg>
+                    <span class="ms-2">Save chart</span>
+                  </a>
+
+                </div>
+
+                <!--
+                        
+                  data-chartjs-type="line|bar" 
+                  data-chartjs-grid="true|false|xAxes|yAxes" 
+                  data-chartjs-legend="false|top|bottom|left|right" 
+
+                  Color Examples
+                      Red:        rgb(255, 99, 132, 1)
+                      Orange:     rgb(255, 159, 64, 1)
+                      Yellow:     rgb(255, 205, 86, 1)
+                      Green:      rgb(75, 192, 192, 1)
+                      Blue:       rgb(54, 162, 235, 1)
+                      Purple:     rgb(153, 102, 255, 1)
+                      Grey:       rgb(201, 203, 207, 1)
+                      
+                      To set opacity, change the last value (0 - 1). 
+                      Example:    rgb(255, 99, 132, 0.5)
+                      :: Use Smarty Colorpicker :)
+
+                    -->
+                    <canvas id="smartySimple" class="chartjs" 
+                        data-chartjs-dots="true" 
+                        data-chartjs-legend="top" 
+                        data-chartjs-grid="true" 
+                        data-chartjs-tooltip="true" 
+
+                        data-chartjs-title="Single Chart" 
+                        data-chartjs-xaxes-label="Month" 
+                        data-chartjs-yaxes-label="Visits" 
+                        data-chartjs-line-width="5" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                        data-chartjs-datasets='[{                                                           
+                          "label":           "Visits",
+                          "data":            [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                          "fill":            true,
+                          "backgroundColor": "rgba(133, 145, 255, 0.5)"
+                        }]' style="height:600px"></canvas>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-1-html" aria-labelledby="nav-tab-1-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Save Chart - optional --&gt;
+                    &lt;a href="#" data-chartjs-id="smartySimple" data-file-name="smartySimple" class="chartjs-save btn btn-sm btn-primary" title="Save Chart" aria-label="Save Chart"&gt;
+                      &lt;svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-save-fill" viewBox="0 0 16 16"&gt;  
+                        &lt;path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293V1.5z"&gt;&lt;/path&gt;
+                      &lt;/svg&gt;
+                      &lt;span class="ms-2"&gt;Save chart&lt;/span&gt;
+                    &lt;/a&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+                            
+                      data-chartjs-type="line|bar" 
+                      data-chartjs-grid="true|false|xAxes|yAxes" 
+                      data-chartjs-legend="false|top|bottom|left|right" 
+
+                      Color Examples
+                          Red:        rgb(255, 99, 132, 1)
+                          Orange:     rgb(255, 159, 64, 1)
+                          Yellow:     rgb(255, 205, 86, 1)
+                          Green:      rgb(75, 192, 192, 1)
+                          Blue:       rgb(54, 162, 235, 1)
+                          Purple:     rgb(153, 102, 255, 1)
+                          Grey:       rgb(201, 203, 207, 1)
+                          
+                          To set opacity, change the last value (0 - 1). 
+                          Example:    rgb(255, 99, 132, 0.5)
+                          :: Use Smarty Colorpicker :)
+
+                        --&gt;
+                        &lt;canvas id="smartySimple" class="chartjs" 
+                            data-chartjs-dots="true" 
+                            data-chartjs-legend="top" 
+                            data-chartjs-grid="true" 
+                            data-chartjs-tooltip="true" 
+
+                            data-chartjs-title="Single Chart" 
+                            data-chartjs-xaxes-label="Month" 
+                            data-chartjs-yaxes-label="Visits" 
+                            data-chartjs-line-width="5" 
+
+                            data-chartjs-type="line" 
+                            data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                            data-chartjs-datasets='[{                                                           
+                              "label":           "Visits",
+                              "data":            [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                              "fill":            true,
+                              "backgroundColor": "rgba(133, 145, 255, 0.5)"
+                            }]' style="height:600px"&gt;&lt;/canvas&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">Multi</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-2" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-2-preview" id="nav-tab-2-preview-link" aria-controls="nav-tab-2-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-2-html" id="nav-tab-2-html-link" aria-controls="nav-tab-2-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-2-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-2-preview" aria-labelledby="nav-tab-2-preview-link" role="tabpanel">
+
+
+                <!--
+                  
+                  data-chartjs-type="line|bar" 
+                  data-chartjs-grid="true|false|xAxes|yAxes" 
+                  data-chartjs-legend="false|top|bottom|left|right" 
+
+                  Color Examples
+                    Red:    rgb(255, 99, 132, 1)
+                    Orange:   rgb(255, 159, 64, 1)
+                    Yellow:   rgb(255, 205, 86, 1)
+                    Green:    rgb(75, 192, 192, 1)
+                    Blue:   rgb(54, 162, 235, 1)
+                    Purple:   rgb(153, 102, 255, 1)
+                    Grey:   rgb(201, 203, 207, 1)
+                    
+                    To set opacity, change the last value (0 - 1). 
+                    Example:  rgb(255, 99, 132, 0.5)
+                    :: Use Smarty Colorpicker :)
+                -->
+                <canvas id="smartyMultiple" class="chartjs" 
+                  data-chartjs-dots="false" 
+                  data-chartjs-legend="top" 
+                  data-chartjs-grid="true" 
+                  data-chartjs-tooltip="true" 
+
+                  data-chartjs-title="Multiple Charts" 
+                  data-chartjs-xaxes-label="Month" 
+                  data-chartjs-yaxes-label="Visits vs Orders" 
+                  data-chartjs-line-width="5" 
+
+                  data-chartjs-type="line" 
+                  data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                  data-chartjs-datasets='[{                             
+                    "label":  "Visits",
+                    "data":   [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                    "fill":   true,
+                    "backgroundColor": "rgba(255, 159, 64, 0.5)"
+                  },{
+                    "label":  "Orders",
+                    "data":   [14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+                    "fill":   true,
+                    "backgroundColor": "rgba(255, 159, 64, 0.9)"
+                  }]' style="height:600px"></canvas>
+
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-2-html" aria-labelledby="nav-tab-2-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+                      
+                      data-chartjs-type="line|bar" 
+                      data-chartjs-grid="true|false|xAxes|yAxes" 
+                      data-chartjs-legend="false|top|bottom|left|right" 
+
+                      Color Examples
+                        Red:    rgb(255, 99, 132, 1)
+                        Orange:   rgb(255, 159, 64, 1)
+                        Yellow:   rgb(255, 205, 86, 1)
+                        Green:    rgb(75, 192, 192, 1)
+                        Blue:   rgb(54, 162, 235, 1)
+                        Purple:   rgb(153, 102, 255, 1)
+                        Grey:   rgb(201, 203, 207, 1)
+                        
+                        To set opacity, change the last value (0 - 1). 
+                        Example:  rgb(255, 99, 132, 0.5)
+                        :: Use Smarty Colorpicker :)
+                    --&gt;
+                    &lt;canvas id="smartyMultiple" class="chartjs" 
+                      data-chartjs-dots="false" 
+                      data-chartjs-legend="top" 
+                      data-chartjs-grid="true" 
+                      data-chartjs-tooltip="true" 
+
+                      data-chartjs-title="Multiple Charts" 
+                      data-chartjs-xaxes-label="Month" 
+                      data-chartjs-yaxes-label="Visits vs Orders" 
+                      data-chartjs-line-width="5" 
+
+                      data-chartjs-type="line" 
+                      data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                      data-chartjs-datasets='[{                             
+                        "label":  "Visits",
+                        "data":   [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                        "fill":   true,
+                        "backgroundColor": "rgba(255, 159, 64, 0.5)"
+                      },{
+                        "label":  "Orders",
+                        "data":   [14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+                        "fill":   true,
+                        "backgroundColor": "rgba(255, 159, 64, 0.9)"
+                      }]' style="height:600px"&gt;&lt;/canvas&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">Line</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-3" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-3-preview" id="nav-tab-3-preview-link" aria-controls="nav-tab-3-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-3-html" id="nav-tab-3-html-link" aria-controls="nav-tab-3-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-3-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-3-preview" aria-labelledby="nav-tab-3-preview-link" role="tabpanel">
+
+                <!--
+                      
+                      data-chartjs-type="line|bar" 
+                      data-chartjs-grid="true|false|xAxes|yAxes" 
+                      data-chartjs-legend="false|top|bottom|left|right" 
+
+                      Color Examples
+                          Red:        rgb(255, 99, 132, 1)
+                          Orange:     rgb(255, 159, 64, 1)
+                          Yellow:     rgb(255, 205, 86, 1)
+                          Green:      rgb(75, 192, 192, 1)
+                          Blue:       rgb(54, 162, 235, 1)
+                          Purple:     rgb(153, 102, 255, 1)
+                          Grey:       rgb(201, 203, 207, 1)
+                          
+                          To set opacity, change the last value (0 - 1). 
+                          Example:    rgb(255, 99, 132, 0.5)
+                          :: Use Smarty Colorpicker :)
+                  -->
+                  <canvas id="graphLineMixed" class="chartjs" 
+                      data-chartjs-dots="false" 
+                      data-chartjs-legend="top" 
+                      data-chartjs-grid="true" 
+                      data-chartjs-tooltip="true" 
+
+                      data-chartjs-title="Line Chart" 
+                      data-chartjs-xaxes-label="Month" 
+                      data-chartjs-yaxes-label="Visits vs Orders" 
+                      data-chartjs-line-width="5" 
+
+                      data-chartjs-type="line" 
+                      data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                      data-chartjs-datasets='[{                                                           
+                          "label":                    "Visits",
+                          "data":                     [30, 32, 34, 31, 33, 36, 34, 63, 31, 64, 33, 32],
+                          "fill":                     true,
+                          "backgroundColor":          "rgba(201, 203, 207, 0.3)"
+                      },{                                                           
+                          "label":                    "Orders",
+                          "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                          "fill":                     false,
+                          "backgroundColor":          "rgba(255, 99, 132, 0.6)"
+                      }]' style="height:600px"></canvas>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-3-html" aria-labelledby="nav-tab-3-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+                        
+                        data-chartjs-type="line|bar" 
+                        data-chartjs-grid="true|false|xAxes|yAxes" 
+                        data-chartjs-legend="false|top|bottom|left|right" 
+
+                        Color Examples
+                            Red:        rgb(255, 99, 132, 1)
+                            Orange:     rgb(255, 159, 64, 1)
+                            Yellow:     rgb(255, 205, 86, 1)
+                            Green:      rgb(75, 192, 192, 1)
+                            Blue:       rgb(54, 162, 235, 1)
+                            Purple:     rgb(153, 102, 255, 1)
+                            Grey:       rgb(201, 203, 207, 1)
+                            
+                            To set opacity, change the last value (0 - 1). 
+                            Example:    rgb(255, 99, 132, 0.5)
+                            :: Use Smarty Colorpicker :)
+                    -->
+                    &lt;canvas id="graphLineMixed" class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="top" 
+                        data-chartjs-grid="true" 
+                        data-chartjs-tooltip="true" 
+
+                        data-chartjs-title="Line Chart" 
+                        data-chartjs-xaxes-label="Month" 
+                        data-chartjs-yaxes-label="Visits vs Orders" 
+                        data-chartjs-line-width="5" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [30, 32, 34, 31, 33, 36, 34, 63, 31, 64, 33, 32],
+                            "fill":                     true,
+                            "backgroundColor":          "rgba(201, 203, 207, 0.3)"
+                        },{                                                           
+                            "label":                    "Orders",
+                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(255, 99, 132, 0.6)"
+                        }]' style="height:600px">&lt;/canvas>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">Mini</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-4" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-4-preview" id="nav-tab-4-preview-link" aria-controls="nav-tab-4-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-4-html" id="nav-tab-4-html-link" aria-controls="nav-tab-4-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-4-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-4-preview" aria-labelledby="nav-tab-4-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-4 mb-3">
+
+                    <canvas class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="false" 
+                        data-chartjs-grid="false" 
+                        data-chartjs-tooltip="false" 
+
+                        data-chartjs-line-width="3" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(255, 99, 132, 1)"
+                        }]' style="width:250px;height:250px;"></canvas>
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-4 mb-3">
+
+                    <canvas class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="false" 
+                        data-chartjs-grid="false" 
+                        data-chartjs-tooltip="false" 
+
+                        data-chartjs-line-width="3" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(75, 192, 192, 1)"
+                        }]' style="width:250px;height:250px;"></canvas>
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-4 mb-3">
+
+                    <canvas  class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="false" 
+                        data-chartjs-grid="false" 
+                        data-chartjs-tooltip="false" 
+
+                        data-chartjs-line-width="3" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(153, 102, 255, 1)"
+                        }]' style="width:250px;height:250px;"></canvas>
+
+                  </div>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-4 mb-3">
+
+                    <canvas class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="false" 
+                        data-chartjs-grid="false" 
+                        data-chartjs-tooltip="false" 
+
+                        data-chartjs-line-width="3" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(201, 203, 207, 1)"
+                        }]' style="width:250px;height:250px;"></canvas>
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-4 mb-3">
+
+                    <canvas class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="false" 
+                        data-chartjs-grid="false" 
+                        data-chartjs-tooltip="false" 
+
+                        data-chartjs-line-width="3" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(255, 205, 86, 1)"
+                        }]' style="width:250px;height:250px;"></canvas>
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-4 mb-3">
+
+                    <canvas  class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="false" 
+                        data-chartjs-grid="false" 
+                        data-chartjs-tooltip="false" 
+
+                        data-chartjs-line-width="3" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(54, 162, 235, 1)"
+                        }]' style="width:250px;height:250px;"></canvas>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-4-html" aria-labelledby="nav-tab-4-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+                        Color Examples
+                            Red:        rgb(255, 99, 132, 1)
+                            Orange:     rgb(255, 159, 64, 1)
+                            Yellow:     rgb(255, 205, 86, 1)
+                            Green:      rgb(75, 192, 192, 1)
+                            Blue:       rgb(54, 162, 235, 1)
+                            Purple:     rgb(153, 102, 255, 1)
+                            Grey:       rgb(201, 203, 207, 1)
+                            
+                            To set opacity, change the last value (0 - 1). 
+                            Example:    rgb(255, 99, 132, 0.5)
+                            :: Use Smarty Colorpicker :)
+                    -->
+                    &lt;canvas class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="false" 
+                        data-chartjs-grid="false" 
+                        data-chartjs-tooltip="false" 
+
+                        data-chartjs-line-width="3" 
+
+                        data-chartjs-type="line" 
+                        data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18],
+                            "fill":                     false,
+                            "backgroundColor":          "rgba(255, 99, 132, 1)"
+                        }]' style="width:250px;height:250px;">&lt;/canvas>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">Bars</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-5" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-5-preview" id="nav-tab-5-preview-link" aria-controls="nav-tab-5-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-5-html" id="nav-tab-5-html-link" aria-controls="nav-tab-5-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-5-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-5-preview" aria-labelledby="nav-tab-5-preview-link" role="tabpanel">
+
+                <!--
+                    
+                    data-chartjs-type="line|bar" 
+                    data-chartjs-grid="true|false|xAxes|yAxes" 
+                    data-chartjs-legend="false|top|bottom|left|right" 
+
+                    Color Examples
+                        Red:        rgb(255, 99, 132, 1)
+                        Orange:     rgb(255, 159, 64, 1)
+                        Yellow:     rgb(255, 205, 86, 1)
+                        Green:      rgb(75, 192, 192, 1)
+                        Blue:       rgb(54, 162, 235, 1)
+                        Purple:     rgb(153, 102, 255, 1)
+                        Grey:       rgb(201, 203, 207, 1)
+                        
+                        To set opacity, change the last value (0 - 1). 
+                        Example:    rgb(255, 99, 132, 0.5)
+                        :: Use Smarty Colorpicker :)
+                -->
+                <canvas id="smartyBarSimple" class="chartjs" 
+                    data-chartjs-dots="false" 
+                    data-chartjs-legend="true" 
+                    data-chartjs-grid="true" 
+                    data-chartjs-tooltip="true" 
+
+                    data-chartjs-title="Simple Bar Charts" 
+                    data-chartjs-xaxes-label="Month" 
+                    data-chartjs-yaxes-label="Visits" 
+
+                    data-chartjs-type="bar" 
+                    data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                    data-chartjs-datasets='[{                                                           
+                        "label":                    "Visits",
+                        "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                        "backgroundColor":          "rgba(139, 195, 74, 0.35)"
+                    }]' style="height:600px"></canvas>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-5-html" aria-labelledby="nav-tab-5-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+                        
+                        data-chartjs-type="line|bar" 
+                        data-chartjs-grid="true|false|xAxes|yAxes" 
+                        data-chartjs-legend="false|top|bottom|left|right" 
+
+                        Color Examples
+                            Red:        rgb(255, 99, 132, 1)
+                            Orange:     rgb(255, 159, 64, 1)
+                            Yellow:     rgb(255, 205, 86, 1)
+                            Green:      rgb(75, 192, 192, 1)
+                            Blue:       rgb(54, 162, 235, 1)
+                            Purple:     rgb(153, 102, 255, 1)
+                            Grey:       rgb(201, 203, 207, 1)
+                            
+                            To set opacity, change the last value (0 - 1). 
+                            Example:    rgb(255, 99, 132, 0.5)
+                            :: Use Smarty Colorpicker :)
+                    -->
+                    &lt;canvas id="smartyBarSimple" class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="true" 
+                        data-chartjs-grid="true" 
+                        data-chartjs-tooltip="true" 
+
+                        data-chartjs-title="Simple Bar Charts" 
+                        data-chartjs-xaxes-label="Month" 
+                        data-chartjs-yaxes-label="Visits" 
+
+                        data-chartjs-type="bar" 
+                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                            "backgroundColor":          "rgba(139, 195, 74, 0.35)"
+                        }]' style="height:600px">&lt;/canvas>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">Multi bar</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-6" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-6-preview" id="nav-tab-6-preview-link" aria-controls="nav-tab-6-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-6-html" id="nav-tab-6-html-link" aria-controls="nav-tab-6-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-6-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-6-preview" aria-labelledby="nav-tab-6-preview-link" role="tabpanel">
+
+                <!--
+                    
+                    data-chartjs-type="line|bar" 
+                    data-chartjs-grid="true|false|xAxes|yAxes" 
+                    data-chartjs-legend="false|top|bottom|left|right" 
+
+                    Color Examples
+                        Red:        rgb(255, 99, 132, 1)
+                        Orange:     rgb(255, 159, 64, 1)
+                        Yellow:     rgb(255, 205, 86, 1)
+                        Green:      rgb(75, 192, 192, 1)
+                        Blue:       rgb(54, 162, 235, 1)
+                        Purple:     rgb(153, 102, 255, 1)
+                        Grey:       rgb(201, 203, 207, 1)
+                        
+                        To set opacity, change the last value (0 - 1). 
+                        Example:    rgb(255, 99, 132, 0.5)
+                        :: Use Smarty Colorpicker :)
+                -->
+                <canvas id="smartyBarMultiple" class="chartjs" 
+                    data-chartjs-dots="false" 
+                    data-chartjs-legend="true" 
+                    data-chartjs-grid="true" 
+                    data-chartjs-tooltip="true" 
+
+                    data-chartjs-title="Multiple Bar Charts" 
+                    data-chartjs-xaxes-label="Month" 
+                    data-chartjs-yaxes-label="Visits vs Orders" 
+
+                    data-chartjs-type="bar" 
+                    data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                    data-chartjs-datasets='[{                                                           
+                        "label":                    "Visits",
+                        "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                        "backgroundColor":          "rgba(3, 169, 244, 0.7)"
+                    },{
+                        "label":                    "Orders",
+                        "data":                     [14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+                        "backgroundColor":          "rgba(255, 193, 7, 0.61)"
+                    }]' style="height:600px"></canvas>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-6-html" aria-labelledby="nav-tab-6-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+                        
+                        data-chartjs-type="line|bar" 
+                        data-chartjs-grid="true|false|xAxes|yAxes" 
+                        data-chartjs-legend="false|top|bottom|left|right" 
+
+                        Color Examples
+                            Red:        rgb(255, 99, 132, 1)
+                            Orange:     rgb(255, 159, 64, 1)
+                            Yellow:     rgb(255, 205, 86, 1)
+                            Green:      rgb(75, 192, 192, 1)
+                            Blue:       rgb(54, 162, 235, 1)
+                            Purple:     rgb(153, 102, 255, 1)
+                            Grey:       rgb(201, 203, 207, 1)
+                            
+                            To set opacity, change the last value (0 - 1). 
+                            Example:    rgb(255, 99, 132, 0.5)
+                            :: Use Smarty Colorpicker :)
+                    -->
+                    &lt;canvas id="smartyBarMultiple" class="chartjs" 
+                        data-chartjs-dots="false" 
+                        data-chartjs-legend="top" 
+                        data-chartjs-grid="true" 
+                        data-chartjs-tooltip="true" 
+
+                        data-chartjs-title="Multiple Bar Charts" 
+                        data-chartjs-xaxes-label="Month" 
+                        data-chartjs-yaxes-label="Visits vs Orders" 
+                        data-chartjs-line-width="5" 
+
+                        data-chartjs-type="bar" 
+                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+                        data-chartjs-datasets='[{                                                           
+                            "label":                    "Visits",
+                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                            "backgroundColor":          "rgba(3, 169, 244, 0.7)"
+                        },{
+                            "label":                    "Orders",
+                            "data":                     [14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+                            "backgroundColor":          "rgba(255, 193, 7, 0.61)"
+                        }]' style="height:600px">&lt;/canvas>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">Pie & Doughnut</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-7" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-7-preview" id="nav-tab-7-preview-link" aria-controls="nav-tab-7-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-7-html" id="nav-tab-7-html-link" aria-controls="nav-tab-7-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-7-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-7-preview" aria-labelledby="nav-tab-7-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+                  <div class="col-lg-6">
+
+                    <!--
+                      data-chartjs-type="pie|doughnut" 
+                      data-chartjs-legend="false|top|bottom|left|right" 
+                    -->
+                    <h6>Pie chart</h6>
+                    <canvas id="pieChart" class="chartjs" 
+                        data-chartjs-title="" 
+                        data-chartjs-legend="left" 
+                        data-chartjs-tooltip="true" 
+
+                        data-chartjs-type="pie" 
+                        data-chartjs-datasets='[
+                            ["Visitors", 544, "#ff0000"],
+                            ["Orders", 412, "#377dff"],
+                            ["Green Stuff", 455, "#6dbb30"],
+                            ["This is Yellow", 511, "#fad776"]
+                        ]'></canvas>
+
+                  </div>
+
+                  <div class="col-lg-6">
+                    <h6>Doughnut chart</h6>
+                    <!--
+                        data-chartjs-type="pie|doughnut" 
+                        data-chartjs-legend="false|top|bottom|left|right" 
+                    -->
+                    <canvas id="donutChart" class="chartjs" 
+                        data-chartjs-title="" 
+                        data-chartjs-legend="left" 
+                        data-chartjs-tooltip="true" 
+
+                        data-chartjs-type="doughnut" 
+                        data-chartjs-datasets='[
+                            ["Visitors", 544, "#ff0000"],
+                            ["Orders", 412, "#377dff"],
+                            ["Green Stuff", 455, "#6dbb30"],
+                            ["This is Yellow", 511, "#fad776"]
+                        ]'></canvas>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-7-html" aria-labelledby="nav-tab-7-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!--
+                      data-chartjs-type="pie|doughnut" 
+                      data-chartjs-legend="false|top|bottom|left|right" 
+                    -->
+                    &lt;canvas class="chartjs" 
+                        data-chartjs-title="Pie Chart" 
+                        data-chartjs-legend="left" 
+                        data-chartjs-tooltip="true" 
+
+                        data-chartjs-type="doughnut" 
+                        data-chartjs-datasets='[
+                            ["Visitors", 544, "#ff0000"],
+                            ["Orders", 412, "#377dff"],
+                            ["Green Stuff", 455, "#6dbb30"],
+                            ["This is Yellow", 511, "#fad776"]
+                        ]'>&lt;/canvas>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">by Attribute</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-8" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-8-preview" id="nav-tab-8-preview-link" aria-controls="nav-tab-8-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-8-html" id="nav-tab-8-html-link" aria-controls="nav-tab-8-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-8-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-8-preview" aria-labelledby="nav-tab-8-preview-link" role="tabpanel">
+
+                <canvas id="byAttributes" class="chartjs" 
+                  data-chartjs='{
+                    "type": "bar",
+                    "data": {
+                      "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                      "datasets": [{
+                        "label": "# of Votes",
+                        "data": [12, 19, 3, 5, 2, 3],
+                        "backgroundColor": [
+                          "rgba(255, 99, 132, 0.2)",
+                          "rgba(54, 162, 235, 0.2)",
+                          "rgba(255, 206, 86, 0.2)",
+                          "rgba(75, 192, 192, 0.2)",
+                          "rgba(153, 102, 255, 0.2)",
+                          "rgba(255, 159, 64, 0.2)"
+                        ],
+                        "borderColor": [
+                          "rgba(255, 99, 132, 1)",
+                          "rgba(54, 162, 235, 1)",
+                          "rgba(255, 206, 86, 1)",
+                          "rgba(75, 192, 192, 1)",
+                          "rgba(153, 102, 255, 1)",
+                          "rgba(255, 159, 64, 1)"
+                        ],
+                        "borderWidth": 1
+                      }]
+                    },
+                    
+                    "options": {
+                      "scales": {
+                        "yAxes": [{
+                          "ticks": {
+                            "beginAtZero": true
+                          }
+                        }]
+                      }
+                    }
+                }'></canvas>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-8-html" aria-labelledby="nav-tab-8-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;canvas id="byAttributes" class="chartjs" 
+                      data-chartjs='{
+                        "type": "bar",
+                        "data": {
+                          "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                          "datasets": [{
+                            "label": "# of Votes",
+                            "data": [12, 19, 3, 5, 2, 3],
+                            "backgroundColor": [
+                              "rgba(255, 99, 132, 0.2)",
+                              "rgba(54, 162, 235, 0.2)",
+                              "rgba(255, 206, 86, 0.2)",
+                              "rgba(75, 192, 192, 0.2)",
+                              "rgba(153, 102, 255, 0.2)",
+                              "rgba(255, 159, 64, 0.2)"
+                            ],
+                            "borderColor": [
+                              "rgba(255, 99, 132, 1)",
+                              "rgba(54, 162, 235, 1)",
+                              "rgba(255, 206, 86, 1)",
+                              "rgba(75, 192, 192, 1)",
+                              "rgba(153, 102, 255, 1)",
+                              "rgba(255, 159, 64, 1)"
+                            ],
+                            "borderWidth": 1
+                          }]
+                        },
+                        
+                        "options": {
+                          "scales": {
+                            "yAxes": [{
+                              "ticks": {
+                                "beginAtZero": true
+                              }
+                            }]
+                          }
+                        }
+                    }'&gt;&lt;/canvas&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Chartjs <b class="text-gray-700">by Javascript</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-9" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-9-preview" id="nav-tab-9-preview-link" aria-controls="nav-tab-9-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-9-html" id="nav-tab-9-html-link" aria-controls="nav-tab-9-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-9-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-9-preview" aria-labelledby="nav-tab-9-preview-link" role="tabpanel">
+
+                <canvas id="byObject" class="chartjs" data-custom="customChartJs"></canvas>
+                <script>
+
+                  var customChartJs = {
+                    type: 'line',
+                    data: {
+                      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                      datasets: [
+                        {
+                          label: 'Visits',
+                          data: [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                          fill: true,
+
+                          pointHoverRadius: 4,
+                          pointHoverBorderWidth: 12,
+                          pointBackgroundColor:       'rgba(133, 133, 145, 0)',
+                          pointBorderColor:           'rgba(133, 145, 255, 0)',
+                          pointHoverBackgroundColor:  'rgba(133, 145, 255, 0)',
+                          pointHoverBorderColor:      'rgba(133, 145, 255, 0)',
+                          borderWidth: 0,
+
+                          backgroundColor:            'rgba(133, 145, 255, 0.5)',
+                          borderColor:                'rgb(133, 145, 255, 0)',
+
+                          categoryPercentage: 0.35,
+                          barPercentage: 0.70,
+                          // categoryPercentage: 0.6, // bar width adjust
+                          // barPercentage: 1,        // bar width adjust
+                    
+                        },
+                        {
+                          label: 'Orders',
+                          data: [14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+                          fill: true,
+
+                          pointHoverRadius: 4,
+                          pointHoverBorderWidth: 12,
+                          pointBackgroundColor:       'rgba(133, 133, 145, 0)',
+                          pointBorderColor:           'rgba(133, 145, 255, 0)',
+                          pointHoverBackgroundColor:  'rgba(133, 145, 255, 0)',
+                          pointHoverBorderColor:      'rgba(133, 145, 255, 0)',
+                          borderWidth: 0,
+
+                          backgroundColor:            'rgba(133, 145, 255, 0.9)',
+                          borderColor:                'rgb(133, 145, 255, 0)',
+                        }
+                      ]
+                    },
+
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: true,
+                      hover: {
+                        mode: 'index'
+                      },
+                      legend: {
+                        display: true,
+                        position: 'top',
+                      },
+
+                      scales: {
+                          xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                              display: false,
+                              labelString: 'Month'
+                            },
+                            ticks: {
+                              display: true,
+                              beginAtZero: true,
+                              fontColor: '#999999',
+                              fontSize: 13,
+                              padding: 10
+                            },
+                            display: true,
+                            gridLines: false,
+                          }],
+
+                          yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                              display: false,
+                              labelString: 'Value'
+                            },
+
+                            gridLines: {
+                              color:              '#dddddd',
+                              borderDash:         [2, 3],
+                              zeroLineBorderDash: [2, 3],
+                              zeroLineWidth: 1,
+                            },
+
+                            ticks: {
+                              max:            50,                            
+                              stepSize:       10,
+                              display:        true,
+                              beginAtZero:    true,
+                              fontColor:      '#999999',
+                              fontSize:       13,
+                              padding:        10
+                            }
+                          }]
+                      },
+
+                      title: {
+                        display: false,
+                        text: 'Legend Position: top'
+                      },
+
+
+                      tooltips: {
+                        enabled: true,
+                        intersect: false,
+                        mode: 'nearest',
+                        bodySpacing: 5,
+                        yPadding: 10,
+                        xPadding: 15, 
+                        caretPadding: 0,
+                        displayColors: false,
+                        backgroundColor: '#121212',
+                        titleFontColor: '#ffffff', 
+                        cornerRadius: 4,
+                        footerSpacing: 0,
+                        titleSpacing: 0
+                      },
+
+                      layout: {
+                        padding: {
+                          left:   0,
+                          right:  0,
+                          top:    0,
+                          bottom: 0
+                        }
+                      }
+                    }
+                  };
+
+                </script>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-9-html" aria-labelledby="nav-tab-9-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;canvas id="byObject" class="chartjs" data-custom="customChartJs"&gt;&lt;/canvas&gt;
+                    &lt;script&gt;
+
+                      var customChartJs = {
+                        type: 'line',
+                        data: {
+                          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                          datasets: [
+                            {
+                              label: 'Visits',
+                              data: [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+                              fill: true,
+
+                              pointHoverRadius: 4,
+                              pointHoverBorderWidth: 12,
+                              pointBackgroundColor:       'rgba(133, 133, 145, 0)',
+                              pointBorderColor:           'rgba(133, 145, 255, 0)',
+                              pointHoverBackgroundColor:  'rgba(133, 145, 255, 0)',
+                              pointHoverBorderColor:      'rgba(133, 145, 255, 0)',
+                              borderWidth: 0,
+
+                              backgroundColor:            'rgba(133, 145, 255, 0.5)',
+                              borderColor:                'rgb(133, 145, 255, 0)',
+
+                              categoryPercentage: 0.35,
+                              barPercentage: 0.70,
+                              // categoryPercentage: 0.6, // bar width adjust
+                              // barPercentage: 1,        // bar width adjust
+                        
+                            },
+                            {
+                              label: 'Orders',
+                              data: [14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+                              fill: true,
+
+                              pointHoverRadius: 4,
+                              pointHoverBorderWidth: 12,
+                              pointBackgroundColor:       'rgba(133, 133, 145, 0)',
+                              pointBorderColor:           'rgba(133, 145, 255, 0)',
+                              pointHoverBackgroundColor:  'rgba(133, 145, 255, 0)',
+                              pointHoverBorderColor:      'rgba(133, 145, 255, 0)',
+                              borderWidth: 0,
+
+                              backgroundColor:            'rgba(133, 145, 255, 0.9)',
+                              borderColor:                'rgb(133, 145, 255, 0)',
+                            }
+                          ]
+                        },
+
+                        options: {
+                          responsive: true,
+                          maintainAspectRatio: true,
+                          hover: {
+                            mode: 'index'
+                          },
+                          legend: {
+                            display: true,
+                            position: 'top',
+                          },
+
+                          scales: {
+                              xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                  display: false,
+                                  labelString: 'Month'
+                                },
+                                ticks: {
+                                  display: true,
+                                  beginAtZero: true,
+                                  fontColor: '#999999',
+                                  fontSize: 13,
+                                  padding: 10
+                                },
+                                display: true,
+                                gridLines: false,
+                              }],
+
+                              yAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                  display: false,
+                                  labelString: 'Value'
+                                },
+
+                                gridLines: {
+                                  color:              '#dddddd',
+                                  borderDash:         [2, 3],
+                                  zeroLineBorderDash: [2, 3],
+                                  zeroLineWidth: 1,
+                                },
+
+                                ticks: {
+                                  max:            50,                            
+                                  stepSize:       10,
+                                  display:        true,
+                                  beginAtZero:    true,
+                                  fontColor:      '#999999',
+                                  fontSize:       13,
+                                  padding:        10
+                                }
+                              }]
+                          },
+
+                          title: {
+                            display: false,
+                            text: 'Legend Position: top'
+                          },
+
+
+                          tooltips: {
+                            enabled: true,
+                            intersect: false,
+                            mode: 'nearest',
+                            bodySpacing: 5,
+                            yPadding: 10,
+                            xPadding: 15, 
+                            caretPadding: 0,
+                            displayColors: false,
+                            backgroundColor: '#121212',
+                            titleFontColor: '#ffffff', 
+                            cornerRadius: 4,
+                            footerSpacing: 0,
+                            titleSpacing: 0
+                          },
+
+                          layout: {
+                            padding: {
+                              left:   0,
+                              right:  0,
+                              top:    0,
+                              bottom: 0
+                            }
+                          }
+                        }
+                      };
+
+                    &lt;/script&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+    </div>
+
+  </body>
+</html>

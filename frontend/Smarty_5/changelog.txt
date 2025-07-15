@@ -1,0 +1,135 @@
+#################################################
+#   
+#   NPM Version: 8.11.0+
+#   node Version: v16.16.0+
+#
+#   GULP Version (tested with success)
+#     CLI version: 2.3.0
+#     Local version: 4.0.2
+#
+###
+#
+# Important! Do not update to major version!
+# Locked npm plugins
+#
+#     @fullcalendar/*@4.4.2
+#     sortablejs@1.10.2
+#     chalk@4.1.2 (now is ESM only)
+#     del@6.0.0 (now is ESM only)
+#     chart.js@2.9.4
+#     cocoen@2.0.5
+#     swiper@6.8.4
+#
+#################################################
+
+@Version  5.0.7
+@Date     Wednesday, Nov 13, 2024
+@Author   Dorin Grigoras
+  * Update:   Bootstrap to v5.3.3
+  * Update:   jQuery to v3.7.1
+
+
+@Version  5.0.6
+@Date     Sunday, June 18, 2023
+@Author   www.stepofweb.com
+  * Update:   Bootstrap to v5.3.0
+  * Update:   jQuery to v3.7.0
+  * Update:   Datatables vendor (datatables.net-keytable-bs5)
+  * Update:   Leaflet vendor to v1.9.4
+  * Update:   Typed vendor to v2.0.11 (also gulp.config__vendors.js path changed)
+  * Update:   NPM @babel, scss
+
+@Version  5.0.5
+@Date     Thursday, March 16, 2023
+@Author   www.stepofweb.com
+  * Update:   Bootstrap to v5.2.3
+  * Update:   jQuery to v3.6.4
+  * Update:   Datatables vendor to Bootstrap 5 (changes: gulp.config__vendors.js)
+  * Update:   Leaflet vendor
+  * Update:   Typed vendor
+  * Update:   NPM @babel, autoprefixer, cssnano, scss, node-saas
+  * Fix:      Admin card paddings without .card wrapper
+
+@Version  5.0.4
+@Date     Thursday, October 20, 2022
+@Author   www.stepofweb.com
+  * Update:   Bootstrap to v5.2.2
+  * Update:   jQuery to v3.6.1
+  * Update:   Flot vendor
+  * Update:   Prismjs vendor
+  * Update:   Leaflet vendor
+  * Update:   NPM @babel, autoprefixer, cssnano, scss, node-saas
+
+@Version  5.0.3
+@Date     Friday, July 15, 2022
+@Author   www.stepofweb.com
+  * Fix:   Countdown timer (changes: src/js/sow.core/sow.timer_countdown.js)
+
+@Version  5.0.3
+@Date     Friday, July 15, 2022
+@Author   www.stepofweb.com
+  * Fix:   CSS RTL
+
+@Version  5.0.2
+@Date     Friday, July 15, 2022
+@Author   www.stepofweb.com
+  * Update:   various npm packages used by GULP
+  * Update:   node update required v16+
+
+
+@Version  5.0.1
+@Date    Thursday, March 24, 2022
+@Author   www.stepofweb.com
+  * Update:   various npm packages used by GULP
+  * Update:   various html pages
+
+
+@Version  5.0.0
+@Date     Monday, January 10, 2022
+@Author   www.stepofweb.com
+  * Update:   Boostrap 5
+  * Removed:  Smarty helpers: .p--*, .m--*, .w--*, .h--*, .b--*, .border-*-soft
+  * Removed:  Smarty theme colors: pink, indigo, purple
+  * Removed:  SOW : Service Worker
+  * Removed:  Vendor : Sparkline Charts
+  * Removed:  Vendor : Bootstrap Select (BS5 incompatibility)
+  * Removed:  GULP imgopt (image optimization tool)
+  * Fix:      Bootstrap select long text (src/scss/_vendors/vendor.bootstrap_select.scss)
+  * Renamed From Bootstrap 
+    v4              to    v5
+    .font-weight-*        .fw-*
+    .pl-                  .ps-
+    .pr-                  .pe-
+    .ml-                  .ms-
+    .mr-                  .me-
+    .dropleft             .dropstart
+    .dropright            .dropend
+    .text-left            .text-start
+    .text-right           .text-end
+    .float-left           .float-start
+    .float-right          .float-end
+    .border-left          .border-start
+    .border-right         .border-end
+    .no-gutters           .g-0
+    .bl-0                 .border-start-0
+    .br-0                 .border-end-0
+    .bt-0                 .border-top-0
+    .bb-0                 .border-bottom-0
+    .badge-primary        .bg-primary
+    .badge-*              .bg-*
+    .sr-only              .visually-hidden
+    .h-*vh                .vh-*
+    .h-min-*vh            .min-vh-*
+    .form-label-group     .form-floating
+
+    data-target           data-bs-target
+    data-toggle           data-bs-toggle
+    data-dismiss          data-bs-dismiss
+    data-parent           data-bs-parent
+    data-original-title   data-bs-original-title
+    data-backdrop         data-bs-backdrop
+    data-keyboard         data-bs-keyboard
+    data-trigger          data-bs-trigger
+    data-container        data-bs-container
+    data-content          data-bs-content
+    data-placement        data-bs-placement

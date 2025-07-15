@@ -1,0 +1,3034 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">SOW : Form advanced</h1>
+          <p class="lead text-gray-700">SOW plugins are part of <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="_blank" rel="noopener nofollow">Smarty</a> Core, written from scratch!</p>
+          <code>src/js/sow.core/sow.form_advanced.js</code>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Advanced <b class="text-gray-700">Lists/expanders</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-1">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-1-preview" id="nav-tab-1-preview-link" aria-controls="nav-tab-1-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-1-html" id="nav-tab-1-html-link" aria-controls="nav-tab-1-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-1-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-1-preview" aria-labelledby="nav-tab-1-preview-link" role="tabpanel">
+
+              	<div class="card">
+              		<div class="card-body p-4">
+										1. <code>required</code> attribute is removed when containers are hidden so you can submit the form having required hidden fields!<br>
+										2. <code>disable</code> attribute is added when containers are hidden. <code>.js-form-advanced-list-ignore</code> class added on element will cancel this feature!<br>
+										<hr>
+										3. <b>AJAX</b> content is loaded once, on option click! <a href="plugins-sow-ajax-content.html" class="js-ajax">SOW : Ajax : Content</a> can also used to load the content (on page load).
+									</div>
+								</div>
+
+								<div class="row g-4 mt-5">
+
+									<div class="col-12 col-lg-6">
+
+										<h5 class="mb-4">Simple List</h5>
+
+										<!-- Simple List -->
+										<div class="form-advanced-list px-4 py-2 shadow-primary-md rounded-xl">
+
+											<!-- Trigger : 1 -->
+											<label class="form-radio form-radio-primary d-block py-3">
+												<input type="radio" name="adancedlist_1" class="form-advanced-list-reveal" checked>
+												<i></i> Option 1
+											</label>
+
+
+											<!-- Trigger : 2 -->
+											<label class="form-radio form-radio-danger d-block py-3">
+												<input type="radio" name="adancedlist_1" class="form-advanced-list-reveal" data-form-advanced-target="#simple2_expand">
+												<i></i> Option 2
+											</label>
+
+
+											<!-- Expand 3 -->
+											<div id="simple2_expand" class="form-advanced-list-reveal-item bg-light rounded hide p-4">
+												Simple &amp; Advanced examples are woring exactly the same!
+											</div>
+											<!-- /Expand -->
+
+
+											<!-- Trigger : 3 -->
+											<label class="form-radio form-radio-warning d-block py-3">
+												<input type="radio" name="adancedlist_1" class="form-advanced-list-reveal" data-form-advanced-target="#simple3_expand">
+												<i></i> Option 3
+											</label>
+
+											<!-- Expand 3 -->
+											<div id="simple3_expand" class="form-advanced-list-reveal-item bg-warning-soft rounded hide p-4">
+												So this is just a very simple example! 
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="col-12 col-lg-6">
+
+										<h5 class="mb-4">Advanced Lists</h5>
+
+										<!-- form-advanced-list -->
+										<form novalidate class="bs-validate" id="listExpandersForm" method="post" action="#">
+
+											<!--
+
+												Disabled elements (within hidden containers) are not included in form submit (get or post)
+
+												.js-form-advanced-list-ignore 		skip disable function within hidden container (inputs/textarea/etc)
+
+												data-form-advanced-list-hidden-required="true"  	 									remove required when container is hidden 							(default: false)
+												data-form-advanced-list-hidden-disable="true"  											disable when container is hidden (skipped if disable class used)	(default: false)
+												data-form-advanced-list-hidden-disable-class=".js-advanced-list-hidden-disable-class"  	disable when container is hidden using a class 						(default: '')
+
+											-->
+											<div class="form-advanced-list p-4 shadow rounded" 
+												data-form-advanced-list-hidden-required="true" 
+												data-form-advanced-list-hidden-disable="true" 
+												data-form-advanced-list-hidden-disable-class=".advanced-list-hidden-disable-class">
+
+
+
+												<!-- Trigger 1 -->
+												<label class="form-radio form-radio-primary d-block py-3">
+													<input type="radio" name="form_advanced_list" class="form-advanced-list-reveal" value="1" checked="" data-form-advanced-target="#optionA_expand">
+													<i></i> Using form reset!
+												</label>
+
+												<!-- Expand 1 -->
+												<div id="optionA_expand" class="form-advanced-list-reveal-item border-bottom">
+
+													<!-- 
+														REQUIRED INPUT
+														when this container is hidden, "required" is removed. 
+														Is added back when/if the container is visible again!
+														Only add the required param to any input, datepicker, etc
+													-->
+													<label class="d-block">Required input</label>
+													<input required type="text" class="form-control" value="">
+
+													<!-- 
+														DISABLE BY A CLASS
+														required input and also disabled
+														disabled input using class
+													-->
+													<label class="d-block mt-4">Disabled when hidden, using a class<small></small></label>
+													<input required type="text" class="form-control js-advanced-list-hidden-disable-class" value="">
+													<code class="smaller">.js-advanced-list-hidden-disable-class</code>
+
+													<!-- 
+														IGNORE (required/disabled are not affecting this field)
+														disabled input and ignored by the plugin
+														js-form-advanced-list-ignore = ignore plugin
+													-->
+													<label class="d-block mt-4">Always Disabled <small>.js-form-advanced-list-ignore</small></label>
+													<input disabled type="text" class="form-control js-form-advanced-list-ignore" value="">
+
+													<!-- 
+														Reset Button 
+														data-target-reset="" 	(id or class ; multiple separated by comma ; href might be used instead for a single #id)
+														data-exclude-reset="" 	(id or class ; multiple separated by comma)
+														.js-ignore  			(always visible ; also remove .hide-force)
+													-->
+													<div class="my-4">
+														<a href="#optionA_expand" class="form-advanced-reset js-ignore btn btn-sm btn-light">
+															<i class="fi fi-close"></i>
+															reset section
+														</a>
+													</div>
+
+												</div>
+
+
+
+												<!-- Trigger 2 -->
+												<label class="form-radio form-radio-primary d-block py-3">
+													<input type="radio" name="form_advanced_list" class="form-advanced-list-reveal" value="2" data-form-advanced-target="#optionB_expand">
+													<i></i> Required fields
+												</label>
+
+												<!-- Expand 2 -->
+												<div id="optionB_expand" class="form-advanced-list-reveal-item border-bottom hide">
+													
+													<!-- 
+														REQUIRED INPUT
+														when this container is hidden, "required" is removed. 
+														Is added back when/if the container is visible again!
+														Only add the required param to any input, datepicker, etc
+													-->
+													<label class="d-block">Required input</label>
+													<input required type="text" class="form-control" value="">
+
+													<!-- 
+														DISABLE BY A CLASS
+														required input and also disabled
+														disabled input using class
+													-->
+													<label class="d-block mt-4">Disabled when hidden, using a class<small></small></label>
+													<input required type="text" class="form-control js-advanced-list-hidden-disable-class" value="">
+													<code class="smaller">.js-advanced-list-hidden-disable-class</code>
+
+												</div>
+												<!-- /Expand -->
+
+
+
+												<!-- Trigger 3 : Ajax -->
+												<label class="form-radio form-radio-primary d-block py-3">
+													<input type="radio" name="form_advanced_list" class="form-advanced-list-reveal" value="3" data-form-advanced-target="#optionC_expand" data-form-advanced-ajax-url="_ajax/dummy_text2.html" data-form-advanced-ajax-icon="true">
+													<i></i> Ajax Content
+												</label>
+
+												<!-- Expand 3 : Ajax -->
+												<div id="optionC_expand" class="form-advanced-list-reveal-item border-top hide">
+													<!-- populated by ajax -->
+												</div>
+											
+											</div>
+
+
+											<div class="mt-4">
+
+												<!-- 
+													SUBMIT FORM
+												-->
+												<button type="submit" class="btn btn-primary">submit</button>
+
+
+												<!-- 
+													Reset Button 
+													data-target-reset="" 	(id or class ; multiple separated by comma)
+													data-exclude-reset="" 	(id or class ; multiple separated by comma)
+													.js-ignore  			(always visible ; also remove .hide-force)
+												-->
+												<a href="#" data-target-reset="#listExpandersForm" data-exclude-reset=".form-advanced-list-reveal" class="form-advanced-reset js-ignore btn btn-light">
+													Reset All
+												</a>
+
+											</div>
+
+										</form>
+										<!-- form-advanced-list -->
+
+									</div>
+
+								</div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-1-html" aria-labelledby="nav-tab-1-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Simple List --&gt;
+                    &lt;div class="form-advanced-list px-4 py-2 shadow-primary-md rounded-xl"&gt;
+
+                      &lt;!-- Trigger : 1 --&gt;
+                      &lt;label class="form-radio form-radio-primary d-block py-3"&gt;
+                        &lt;input type="radio" name="adancedlist_1" class="form-advanced-list-reveal" checked&gt;
+                        &lt;i&gt;&lt;/i&gt; Option 1
+                      &lt;/label&gt;
+
+
+                      &lt;!-- Trigger : 2 --&gt;
+                      &lt;label class="form-radio form-radio-danger d-block py-3"&gt;
+                        &lt;input type="radio" name="adancedlist_1" class="form-advanced-list-reveal" data-form-advanced-target="#simple2_expand"&gt;
+                        &lt;i&gt;&lt;/i&gt; Option 2
+                      &lt;/label&gt;
+
+
+                      &lt;!-- Expand 3 --&gt;
+                      &lt;div id="simple2_expand" class="form-advanced-list-reveal-item bg-light rounded hide p-4"&gt;
+                        Simple &amp; Advanced examples are woring exactly the same!
+                      &lt;/div&gt;
+                      &lt;!-- /Expand --&gt;
+
+
+                      &lt;!-- Trigger : 3 --&gt;
+                      &lt;label class="form-radio form-radio-warning d-block py-3"&gt;
+                        &lt;input type="radio" name="adancedlist_1" class="form-advanced-list-reveal" data-form-advanced-target="#simple3_expand"&gt;
+                        &lt;i&gt;&lt;/i&gt; Option 3
+                      &lt;/label&gt;
+
+                      &lt;!-- Expand 3 --&gt;
+                      &lt;div id="simple3_expand" class="form-advanced-list-reveal-item bg-warning-soft rounded hide p-4"&gt;
+                        So this is just a very simple example! 
+                      &lt;/div&gt;
+
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+
+                <pre class="rounded mt-5">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- form-advanced-list --&gt;
+                    &lt;form novalidate class="bs-validate" id="listExpandersForm" method="post" action="#"&gt;
+
+                      &lt;!--
+
+                        Disabled elements (within hidden containers) 
+                        are not included in form submit (get or post)
+
+                        skip disable function within hidden container (inputs/textarea/etc)
+                        .js-form-advanced-list-ignore                   
+
+
+                        remove required when container is hidden         (default: false)
+                        data-form-advanced-list-hidden-required="true"   
+
+                        disable when container is hidden (skipped if disable class used)  (default: false)
+                        data-form-advanced-list-hidden-disable="true"    
+                        
+                        disable when container is hidden using a class   (default: '')
+                        data-form-advanced-list-hidden-disable-class=".js-advanced-list-hidden-disable-class"   
+
+                      --&gt;
+                      &lt;div class="form-advanced-list p-4 shadow rounded" 
+                        data-form-advanced-list-hidden-required="true" 
+                        data-form-advanced-list-hidden-disable="true" 
+                        data-form-advanced-list-hidden-disable-class=".advanced-list-hidden-disable-class"&gt;
+
+
+                        &lt;!-- Trigger 1 --&gt;
+                        &lt;label class="form-radio form-radio-primary d-block py-3"&gt;
+                          &lt;input type="radio" name="form_advanced_list" class="form-advanced-list-reveal" value="1" checked="" data-form-advanced-target="#optionA_expand"&gt;
+                          &lt;i&gt;&lt;/i&gt; Using form reset!
+                        &lt;/label&gt;
+
+                        &lt;!-- Expand 1 --&gt;
+                        &lt;div id="optionA_expand" class="form-advanced-list-reveal-item border-bottom"&gt;
+
+                          &lt;!-- 
+                            REQUIRED INPUT
+                            when this container is hidden, "required" is removed. 
+                            Is added back when/if the container is visible again!
+                            Only add the required param to any input, datepicker, etc
+                          --&gt;
+                          &lt;label class="d-block"&gt;Required input&lt;/label&gt;
+                          &lt;input required type="text" class="form-control" value=""&gt;
+
+                          &lt;!-- 
+                            DISABLE BY A CLASS
+                            required input and also disabled
+                            disabled input using class
+                          --&gt;
+                          &lt;label class="d-block mt-4"&gt;Disabled when hidden, using a class&lt;small&gt;&lt;/small&gt;&lt;/label&gt;
+                          &lt;input required type="text" class="form-control js-advanced-list-hidden-disable-class" value=""&gt;
+                          &lt;code class="smaller"&gt;.js-advanced-list-hidden-disable-class&lt;/code&gt;
+
+                          &lt;!-- 
+                            IGNORE (required/disabled are not affecting this field)
+                            disabled input and ignored by the plugin
+                            js-form-advanced-list-ignore = ignore plugin
+                          --&gt;
+                          &lt;label class="d-block mt-4"&gt;Always Disabled &lt;small&gt;.js-form-advanced-list-ignore&lt;/small&gt;&lt;/label&gt;
+                          &lt;input disabled type="text" class="form-control js-form-advanced-list-ignore" value=""&gt;
+
+                          &lt;!-- 
+                            Reset Button 
+                            data-target-reset=""  (id or class ; multiple separated by comma ; href might be used instead for a single #id)
+                            data-exclude-reset=""   (id or class ; multiple separated by comma)
+                            .js-ignore        (always visible ; also remove .hide-force)
+                          --&gt;
+                          &lt;div class="my-4"&gt;
+                            &lt;a href="#optionA_expand" class="form-advanced-reset js-ignore btn btn-sm btn-light"&gt;
+                              &lt;i class="fi fi-close"&gt;&lt;/i&gt;
+                              reset section
+                            &lt;/a&gt;
+                          &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+
+
+                        &lt;!-- Trigger 2 --&gt;
+                        &lt;label class="form-radio form-radio-primary d-block py-3"&gt;
+                          &lt;input type="radio" name="form_advanced_list" class="form-advanced-list-reveal" value="2" data-form-advanced-target="#optionB_expand"&gt;
+                          &lt;i&gt;&lt;/i&gt; Required fields
+                        &lt;/label&gt;
+
+                        &lt;!-- Expand 2 --&gt;
+                        &lt;div id="optionB_expand" class="form-advanced-list-reveal-item border-bottom hide"&gt;
+                          
+                          &lt;!-- 
+                            REQUIRED INPUT
+                            when this container is hidden, "required" is removed. 
+                            Is added back when/if the container is visible again!
+                            Only add the required param to any input, datepicker, etc
+                          --&gt;
+                          &lt;label class="d-block"&gt;Required input&lt;/label&gt;
+                          &lt;input required type="text" class="form-control" value=""&gt;
+
+                          &lt;!-- 
+                            DISABLE BY A CLASS
+                            required input and also disabled
+                            disabled input using class
+                          --&gt;
+                          &lt;label class="d-block mt-4"&gt;Disabled when hidden, using a class&lt;small&gt;&lt;/small&gt;&lt;/label&gt;
+                          &lt;input required type="text" class="form-control js-advanced-list-hidden-disable-class" value=""&gt;
+                          &lt;code class="smaller"&gt;.js-advanced-list-hidden-disable-class&lt;/code&gt;
+
+                        &lt;/div&gt;
+                        &lt;!-- /Expand --&gt;
+
+
+
+                        &lt;!-- Trigger 3 : Ajax --&gt;
+                        &lt;label class="form-radio form-radio-primary d-block py-3"&gt;
+                          &lt;input type="radio" name="form_advanced_list" class="form-advanced-list-reveal" value="3" data-form-advanced-target="#optionC_expand" data-form-advanced-ajax-url="_ajax/dummy_text2.html" data-form-advanced-ajax-icon="true"&gt;
+                          &lt;i&gt;&lt;/i&gt; Ajax Content
+                        &lt;/label&gt;
+
+                        &lt;!-- Expand 3 : Ajax --&gt;
+                        &lt;div id="optionC_expand" class="form-advanced-list-reveal-item border-top hide"&gt;
+                          &lt;!-- populated by ajax --&gt;
+                        &lt;/div&gt;
+                      
+                      &lt;/div&gt;
+
+
+                      &lt;div class="mt-4"&gt;
+
+                        &lt;!-- 
+                          SUBMIT FORM
+                        --&gt;
+                        &lt;button type="submit" class="btn btn-primary"&gt;submit&lt;/button&gt;
+
+
+                        &lt;!-- 
+                          Reset Button 
+                          data-target-reset=""  (id or class ; multiple separated by comma)
+                          data-exclude-reset=""   (id or class ; multiple separated by comma)
+                          .js-ignore        (always visible ; also remove .hide-force)
+                        --&gt;
+                        &lt;a href="#" data-target-reset="#listExpandersForm" data-exclude-reset=".form-advanced-list-reveal" class="form-advanced-reset js-ignore btn btn-light"&gt;
+                          Reset All
+                        &lt;/a&gt;
+
+                      &lt;/div&gt;
+
+                    &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Required <b class="text-gray-700">Form hidden fields</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-2" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-2-preview" id="nav-tab-2-preview-link" aria-controls="nav-tab-2-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-2-html" id="nav-tab-2-html-link" aria-controls="nav-tab-2-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-2-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-2-preview" aria-labelledby="nav-tab-2-preview-link" role="tabpanel">
+
+								<p class="mb-5">
+									There are situations we have required fields but hidden inside a container. <br>
+									Smarty solve this by adding <code>.js-form-advanced-required</code> to the container that is hidden/visible.
+								</p>
+
+								<form novalidate class="bs-validate" action="#" method="GET">
+
+									<!--
+										TOGGLER
+											Note: if multiple IDs used (data-bs-target="#id1, id2")
+											add class: .js-form-advanced-required-toggler
+									-->
+									<div class="form-check mb-2">
+									  <input class="form-check-input form-check-input-primary" type="checkbox" value="" id="opt-show-hide" data-bs-toggle="collapse" data-bs-target="#opt-hidden-submit">
+									  <label class="form-check-label" for="opt-show-hide">
+									    Hide/show option
+									  </label>
+									</div>
+
+
+									<!--
+										CONTAINER
+										.js-form-advanced-required	class
+									-->
+									<div id="opt-hidden-submit" class="collapse js-form-advanced-required">
+
+										<!--
+											REQUIRED
+										-->
+										<div class="form-floating mb-3">
+											<input required placeholder="Required" id="opt-req-1" type="text" value="" class="form-control">
+											<label for="opt-req-1" class="w-100">
+												Required 
+											</label>
+										</div>
+
+										<!--
+											NOT REQUIRED
+										-->
+										<div class="form-floating mb-3">
+											<input placeholder="Not Required" id="opt-optional-1" type="text" value="" class="form-control">
+											<label for="opt-optional-1" class="w-100">
+												Not Required
+											</label>
+										</div>
+
+									</div>
+
+									<button type="submit" class="btn btn-sm btn-primary mt-4">Submit</button>
+
+								</form>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-2-html" aria-labelledby="nav-tab-2-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+
+                    ...
+
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Bulk <b class="text-gray-700">options</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-4" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-4-preview" id="nav-tab-4-preview-link" aria-controls="nav-tab-4-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-4-html" id="nav-tab-4-html-link" aria-controls="nav-tab-4-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-4-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-4-preview" aria-labelledby="nav-tab-4-preview-link" role="tabpanel">
+
+								<form class="bs-validate" novalidate id="form_id" method="post" action="#">
+
+									<!-- 
+
+										IMPORTANT
+										The "action" hidden input is updated by javascript according to button params/action:
+											data-js-form-advanced-hidden-action-id="#action"
+											data-js-form-advanced-hidden-action-value="delete"
+
+										In your backend, should process data like this (PHP example):
+
+											if($_POST['action'] === 'delete') {
+
+												foreach($_POST['item_id'] as $item_id) {
+													// ... delete $item_id from database
+												}
+
+											}
+
+									-->
+									<input type="hidden" id="action" name="action" value=""><!-- value populated by js -->
+
+
+									<div class="form-check mb-2">
+									  <input data-checkall-container="#item_list" class="checkall form-check-input form-check-input-default" type="checkbox" id="adv-checkall-top">
+									  <label class="form-check-label" for="adv-checkall-top">
+									    Check All
+									  </label>
+									</div>
+
+									<hr>
+
+									<div id="item_list">
+
+										<div class="form-check mb-2">
+										  <input class="form-check-input form-check-input-primary" type="checkbox" name="item_id[]" value="1" id="adv-check-1">
+										  <label class="form-check-label" for="adv-check-1">
+										    Item 1
+										  </label>
+										</div>
+
+										<div class="form-check mb-2">
+										  <input class="form-check-input form-check-input-primary" type="checkbox" name="item_id[]" value="2" id="adv-check-2">
+										  <label class="form-check-label" for="adv-check-2">
+										    Item 2
+										  </label>
+										</div>
+
+										<div class="form-check mb-2">
+										  <input class="form-check-input form-check-input-primary" type="checkbox" name="item_id[]" value="3" id="adv-check-3">
+										  <label class="form-check-label" for="adv-check-3">
+										    Item 3
+										  </label>
+										</div>
+
+									</div>
+
+									<hr>
+
+									<div class="form-check mb-2">
+									  <input data-checkall-container="#item_list" class="checkall form-check-input form-check-input-default" type="checkbox" id="adv-checkall-bottom">
+									  <label class="form-check-label" for="adv-checkall-bottom">
+									    Check All
+									  </label>
+									</div>
+
+
+									<!-- options -->
+									<div class="mt-4 text-center-xs">
+
+										<!-- SELECTED ITEMS -->
+										<div class="clearfix"><!-- using .dropdown, autowidth not working -->
+
+											<a href="#" class="btn btn-sm btn-pill btn-light" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+												<span class="group-icon">
+													<i class="fi fi-dots-vertical-full"></i>
+													<i class="fi fi-close"></i>
+												</span>
+												<span>Selected Items</span>
+											</a>
+
+											<div class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-250">
+												
+												<div class="scrollable-vertical max-vh-50">
+
+													<a 	href="#" 
+														class="dropdown-item text-truncate js-form-advanced-bulk"
+														data-js-form-advanced-bulk-hidden-action-id="#action" 
+														data-js-form-advanced-bulk-hidden-action-value="active" 
+														data-js-form-advanced-bulk-container-items="#item_list" 
+														data-js-form-advanced-bulk-required-selected="true" 
+														data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+														data-js-form-advanced-bulk-required-txt-position="top-center" 
+														data-js-form-advanced-bulk-required-custom-modal="" 
+														data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+														data-js-form-advanced-bulk-required-modal-type="success" 
+														data-js-form-advanced-bulk-required-modal-size="modal-md" 
+														data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+														data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+														data-js-form-advanced-bulk-required-modal-txt-body-txt="Set active {{no_selected}} selected products?" 
+														data-js-form-advanced-bulk-required-modal-txt-body-info="" 
+														data-js-form-advanced-bulk-required-modal-btn-text-yes="Confirm" 
+														data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+														data-js-form-advanced-bulk-submit-without-confirmation="false" 
+														data-js-form-advanced-form-id="#form_id">
+														<i class="fi fi-check"></i>
+														Set : Active
+													</a>
+													<a 	href="#" 
+														class="dropdown-item text-truncate js-form-advanced-bulk" 
+														data-js-form-advanced-bulk-hidden-action-id="#action" 
+														data-js-form-advanced-bulk-hidden-action-value="inactive" 
+														data-js-form-advanced-bulk-container-items="#item_list" 
+														data-js-form-advanced-bulk-required-selected="true" 
+														data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+														data-js-form-advanced-bulk-required-txt-position="top-center" 
+														data-js-form-advanced-bulk-required-custom-modal="" 
+														data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+														data-js-form-advanced-bulk-required-modal-type="warning" 
+														data-js-form-advanced-bulk-required-modal-size="modal-md" 
+														data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+														data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+														data-js-form-advanced-bulk-required-modal-txt-body-txt="Set inactive {{no_selected}} selected products?" 
+														data-js-form-advanced-bulk-required-modal-txt-body-info="" 
+														data-js-form-advanced-bulk-required-modal-btn-text-yes="Confirm" 
+														data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+														data-js-form-advanced-bulk-submit-without-confirmation="false" 
+														data-js-form-advanced-form-id="#form_id">
+														<i class="fi fi-close"></i>
+														Set : Inactive
+													</a>
+
+													<a 	href="#" 
+														class="dropdown-item text-truncate js-form-advanced-bulk" 
+														data-js-form-advanced-bulk-hidden-action-id="#action" 
+														data-js-form-advanced-bulk-hidden-action-value="delete" 
+														data-js-form-advanced-bulk-container-items="#item_list" 
+														data-js-form-advanced-bulk-required-selected="true" 
+														data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+														data-js-form-advanced-bulk-required-txt-position="top-center" 
+														data-js-form-advanced-bulk-required-custom-modal="" 
+														data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+														data-js-form-advanced-bulk-required-modal-type="danger" 
+														data-js-form-advanced-bulk-required-modal-size="modal-md" 
+														data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+														data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+														data-js-form-advanced-bulk-required-modal-txt-body-txt="Are you sure? Delete {{no_selected}} selected products?" 
+														data-js-form-advanced-bulk-required-modal-txt-body-info="Please note: this is a permanent action!" 
+														data-js-form-advanced-bulk-required-modal-btn-text-yes="Yes, Delete" 
+														data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+														data-js-form-advanced-bulk-submit-without-confirmation="false" 
+														data-js-form-advanced-form-id="#form_id">
+														<i class="fi fi-thrash text-danger"></i>
+														Set : Delete
+													</a>
+
+													<div class="dropdown-divider"></div>
+
+													<a 	href="#" 
+														class="dropdown-item text-truncate js-form-advanced-bulk" 
+														data-js-form-advanced-bulk-hidden-action-id="#action" 
+														data-js-form-advanced-bulk-hidden-action-value="myactionhere3" 
+														data-js-form-advanced-bulk-container-items="#item_list" 
+														data-js-form-advanced-bulk-required-selected="true" 
+														data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+														data-js-form-advanced-bulk-required-txt-position="top-center" 
+														data-js-form-advanced-bulk-submit-without-confirmation="true" 
+														data-js-form-advanced-form-id="#form_id">
+														<i class="fi fi-mollecules text-danger"></i>
+														Submit : No Confirm.
+													</a>
+
+													<div class="dropdown-divider"></div>
+
+													<a 	href="#" 
+														class="dropdown-item text-truncate js-form-advanced-bulk" 
+														data-js-form-advanced-bulk-hidden-action-id="#action" 
+														data-js-form-advanced-bulk-hidden-action-value="myactionhere1" 
+														data-js-form-advanced-bulk-container-items="#item_list" 
+														data-js-form-advanced-bulk-required-selected="true" 
+														data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+														data-js-form-advanced-bulk-required-custom-modal="#my_custom_modal" 
+														data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+														data-js-form-advanced-bulk-submit-without-confirmation="false" 
+														data-js-form-advanced-form-id="#form_id">
+														<i class="fi fi-heart-slim text-success"></i>
+														Inline Custom Modal
+													</a>
+
+													<a href="#" 
+														class="dropdown-item text-truncate js-form-advanced-bulk" 
+														data-js-form-advanced-bulk-hidden-action-id="#action"
+														data-js-form-advanced-bulk-hidden-action-value="myactionhere2"
+														data-js-form-advanced-bulk-container-items="#item_list" 
+
+														data-js-form-advanced-bulk-required-selected="true" 
+														data-js-form-advanced-bulk-required-txt-error="No Customers Selected!"
+
+														data-js-form-advanced-bulk-required-custom-modal="#my_custom_modal_ajax" 
+														data-js-form-advanced-bulk-required-custom-modal-content-ajax="../_ajax/form_advanced_bulk_custom_modal_content.html" 
+
+														data-js-form-advanced-bulk-submit-without-confirmation="false"
+														data-js-form-advanced-form-id="#form_id">
+														<i class="fi fi-heart-slim"></i> Inline + Ajax Content
+													</a>
+
+													<!-- 
+														NO INLINE HTML CODE NEEDED!
+														Fully customizable
+														see html_frontend/ajax/form_advanced_bulk_custom_modal_content_full.html
+													-->
+													<a 	href="#" 
+														class="dropdown-item text-truncate js-form-advanced-bulk" 
+														data-js-form-advanced-bulk-hidden-action-id="#action" 
+														data-js-form-advanced-bulk-hidden-action-value="myactionhere1" 
+														data-js-form-advanced-bulk-container-items="#item_list" 
+														data-js-form-advanced-bulk-required-selected="true" 
+														data-js-form-advanced-bulk-required-txt-error="No Items Selected!" 
+														data-js-form-advanced-bulk-required-txt-position="top-center" 
+														data-js-form-advanced-bulk-submit-without-confirmation="false" 
+														data-js-form-advanced-bulk-required-modal-size="modal-md" 
+
+														data-js-form-advanced-bulk-required-modal-type="custom" 
+														data-js-form-advanced-bulk-required-modal-backdrop="static" 
+														data-js-form-advanced-bulk-required-custom-modal-content-ajax="../_ajax/form_advanced_bulk_custom_modal_content_full.html" 
+
+														data-js-form-advanced-form-id="#form_id">
+														<i class="fi fi-lightning text-warning"></i>
+														Full Ajax Content
+													</a>
+
+												</div>
+
+											</div>
+
+										</div>
+										<!-- /SELECTED ITEMS -->
+
+									</div>
+									<!-- /options -->
+
+
+
+									<!-- Inline custom modal (should stay inside <form> to be able to post data) -->
+									<div class="modal fade show" id="my_custom_modal" role="dialog" tabindex="-1" aria-labelledby="modal-title-confirm" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+
+												<!--
+
+													Header color - optional
+														.bg-[primary|danger|warning|success|info|pink|indigo]-soft
+												-->
+												<div class="modal-header border-0 bg-primary-soft">
+													<h5 id="modal-title-confirm" class="modal-title fw-light fs-4">
+														Inline custom modal
+													</h5>
+
+													<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+														<span class="fi fi-close fs-4" aria-hidden="true"></span>
+													</button>
+
+												</div>
+												<!-- /Header -->
+
+												<!-- body -->
+												<div class="modal-body py-5">
+
+													Selected items: <span class="js-form-advanced-selected-items">0</span>
+
+
+													<div class="fs-4">
+														Customize as you like! <br><br>
+
+														<!-- FILE UPLOADER -->
+														<div class="clearfix">
+															<!--
+
+																2. AJAX UPLOAD : DYNAMIC PROGRESS UNDER BUTTON
+																No any extra html code needed for the progress bar.
+
+															-->
+															<label class="btn btn-warning btn-sm cursor-pointer position-relative">
+
+																<!-- 
+																	We use .absolute-full class instead of .viewport-out
+																	Just to make sure the element is working crossbrowser!
+
+																	.show-hover-container  	= show delete button only on hover (always visible on mobile)
+
+																 -->
+															    <input 	name="ajax_files_progress_dynamic[]" 
+															    		multiple=""
+															    		type="file" 
+
+															    		data-file-ext="jpg,png,gif"
+															    		data-file-max-size-kb-per-file="3000"
+															    		data-file-max-size-kb-total="5000" 
+															    		data-file-max-total-files="3"
+															    		data-file-ext-err-msg="Allowed:" 
+															    		data-file-exist-err-msg="File already exists:"
+															    		data-file-size-err-item-msg="File too large!"
+															    		data-file-size-err-total-msg="Total allowed size exceeded!"
+															    		data-file-size-err-max-msg="Maximum allowed files:"
+															    		data-file-toast-position="bottom-center"
+															    		data-file-preview-container=".js-form-advanced-container-table-form-test" 
+															    		data-file-preview-img-height="120" 
+															    		data-file-preview-show-info="true" 
+															    		data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+															    		data-file-preview-img-cover="false" 
+															    		data-file-btn-clear="a.js-form-advanced-btn-multiple-ajax-remove"
+
+															    		data-file-ajax-upload-enable="true"
+															    		data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php"
+															    		data-file-ajax-upload-params="['action','upload']['param2','value2']"
+
+															    		data-file-ajax-delete-enable="true"
+															    		data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php"
+															    		data-file-ajax-delete-params="['action','delete_file']"
+
+															    		data-file-ajax-reorder-enable="true"
+															    		data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php"
+															    		data-file-ajax-reorder-params="['action','reorder']"
+																			data-file-ajax-reorder-toast-success="Order Saved!" 
+																			data-file-ajax-reorder-toast-position="bottom-center" 
+
+															    		data-file-ajax-toast-success-txt="Successfully Uploaded!"
+															    		data-file-ajax-toast-error-txt="One or more files not uploaded!"
+															    		data-file-ajax-callback-function=""
+															    		data-file-ajax-progressbar-custom=""
+															    		data-file-ajax-progressbar-disable="false"
+
+
+															    		class="custom-file-input absolute-full">
+
+																<span class="group-icon">
+																	<i class="fi fi-arrow-upload"></i>
+																	<i class="fi fi-circle-spin fi-spin"></i>
+													    		</span> 
+
+																<span>Ajax Uploader</span>
+
+															</label>
+
+															<div class="js-form-advanced-container-table-form-test position-relative mt-3 clearfix hide-empty"></div>
+															<small class="d-block text-gray-400">Upload few images and then... reorder them :)</small>
+														</div>	
+														<!-- /FILE UPLOADER -->
+
+														<br>
+														<small>Yes, ajax content for modals also supported!</small><br>
+														<small>Check <a href="plugins-sow-form-advanced.html" class="js-ajax link-muted">SOW : Form Advanced</a> for more &amp; documentation!</small>
+													</div>
+
+												</div>
+												<!-- /body -->
+
+												<!-- footer ; buttons -->
+												<div class="modal-footer">
+
+													<!-- submit button - actually submitting the form -->
+													<button type="submit" class="btn pt-10 pb-10 fs-6 btn-primary">
+														<i class="fi fi-check"></i> Oh, Great!
+													</button>
+
+													<!-- cancel|close button -->
+													<a href="#" class="btn pt-10 pb-10 fs-6 btn-light" data-bs-dismiss="modal">
+														<i class="fi fi-close"></i> Close
+													</a>
+
+												</div>
+												<!-- /footer ; buttons -->
+
+											</div>
+
+										</div>
+									</div>
+									<!-- /Inline custom modal -->
+
+
+
+									<!-- Inline custom modal + Ajax Content -->
+									<div class="modal fade show" id="my_custom_modal_ajax" role="dialog" tabindex="-1" aria-labelledby="modal-title-confirm" aria-hidden="true">
+										<div class="modal-dialog modal-lg" role="document">
+											<div class="modal-content">
+
+													<!-- Ajax content is added here -->
+													<!--
+
+														Content: ../_ajax/form_advanced_bulk_custom_modal_content.html
+														Note: is full modal content: header, body and footer.
+														So you can fully customize each ajax content.
+
+													-->
+
+													<!-- ajax loading icon : optional -->
+													<div class="p-5 text-center">
+														<i class="fi fi-circle-spin fi-spin fs-1 text-muted"></i>
+													</div>
+													<!-- /ajax loading icon : optional -->
+
+											</div>
+
+										</div>
+									</div>
+									<!-- /Inline custom modal + Ajax Content -->
+
+								</form>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-4-html" aria-labelledby="nav-tab-4-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+		                &lt;form class="bs-validate" novalidate id="form_id" method="post" action="#"&gt;
+
+		                  &lt;!-- 
+
+		                    IMPORTANT
+		                    The "action" hidden input is updated by javascript according to button params/action:
+		                      data-js-form-advanced-hidden-action-id="#action"
+		                      data-js-form-advanced-hidden-action-value="delete"
+
+		                    In your backend, should process data like this (PHP example):
+
+		                      if($_POST['action'] === 'delete') {
+
+		                        foreach($_POST['item_id'] as $item_id) {
+		                          // ... delete $item_id from database
+		                        }
+
+		                      }
+
+		                  --&gt;
+		                  &lt;input type="hidden" id="action" name="action" value=""&gt;&lt;!-- value populated by js --&gt;
+
+
+		                  &lt;div class="form-check mb-2"&gt;
+		                    &lt;input data-checkall-container="#item_list" class="checkall form-check-input form-check-input-default" type="checkbox" id="adv-checkall-top"&gt;
+		                    &lt;label class="form-check-label" for="adv-checkall-top"&gt;
+		                      Check All
+		                    &lt;/label&gt;
+		                  &lt;/div&gt;
+
+		                  &lt;hr&gt;
+
+		                  &lt;div id="item_list"&gt;
+
+		                    &lt;div class="form-check mb-2"&gt;
+		                      &lt;input class="form-check-input form-check-input-primary" type="checkbox" name="item_id[]" value="1" id="adv-check-1"&gt;
+		                      &lt;label class="form-check-label" for="adv-check-1"&gt;
+		                        Item 1
+		                      &lt;/label&gt;
+		                    &lt;/div&gt;
+
+		                    &lt;div class="form-check mb-2"&gt;
+		                      &lt;input class="form-check-input form-check-input-primary" type="checkbox" name="item_id[]" value="2" id="adv-check-2"&gt;
+		                      &lt;label class="form-check-label" for="adv-check-2"&gt;
+		                        Item 2
+		                      &lt;/label&gt;
+		                    &lt;/div&gt;
+
+		                    &lt;div class="form-check mb-2"&gt;
+		                      &lt;input class="form-check-input form-check-input-primary" type="checkbox" name="item_id[]" value="3" id="adv-check-3"&gt;
+		                      &lt;label class="form-check-label" for="adv-check-3"&gt;
+		                        Item 3
+		                      &lt;/label&gt;
+		                    &lt;/div&gt;
+
+		                  &lt;/div&gt;
+
+		                  &lt;hr&gt;
+
+		                  &lt;div class="form-check mb-2"&gt;
+		                    &lt;input data-checkall-container="#item_list" class="checkall form-check-input form-check-input-default" type="checkbox" id="adv-checkall-bottom"&gt;
+		                    &lt;label class="form-check-label" for="adv-checkall-bottom"&gt;
+		                      Check All
+		                    &lt;/label&gt;
+		                  &lt;/div&gt;
+
+
+		                  &lt;!-- options --&gt;
+		                  &lt;div class="mt-4 text-center-xs"&gt;
+
+		                    &lt;!-- SELECTED ITEMS --&gt;
+		                    &lt;div class="clearfix"&gt;&lt;!-- using .dropdown, autowidth not working --&gt;
+
+		                      &lt;a href="#" class="btn btn-sm btn-pill btn-light" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"&gt;
+		                        &lt;span class="group-icon"&gt;
+		                          &lt;i class="fi fi-dots-vertical-full"&gt;&lt;/i&gt;
+		                          &lt;i class="fi fi-close"&gt;&lt;/i&gt;
+		                        &lt;/span&gt;
+		                        &lt;span&gt;Selected Items&lt;/span&gt;
+		                      &lt;/a&gt;
+
+		                      &lt;div class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-250"&gt;
+		                        
+		                        &lt;div class="scrollable-vertical max-vh-50"&gt;
+
+		                          &lt;a  href="#" 
+		                            class="dropdown-item text-truncate js-form-advanced-bulk"
+		                            data-js-form-advanced-bulk-hidden-action-id="#action" 
+		                            data-js-form-advanced-bulk-hidden-action-value="active" 
+		                            data-js-form-advanced-bulk-container-items="#item_list" 
+		                            data-js-form-advanced-bulk-required-selected="true" 
+		                            data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+		                            data-js-form-advanced-bulk-required-txt-position="top-center" 
+		                            data-js-form-advanced-bulk-required-custom-modal="" 
+		                            data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+		                            data-js-form-advanced-bulk-required-modal-type="success" 
+		                            data-js-form-advanced-bulk-required-modal-size="modal-md" 
+		                            data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+		                            data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+		                            data-js-form-advanced-bulk-required-modal-txt-body-txt="Set active {{no_selected}} selected products?" 
+		                            data-js-form-advanced-bulk-required-modal-txt-body-info="" 
+		                            data-js-form-advanced-bulk-required-modal-btn-text-yes="Confirm" 
+		                            data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+		                            data-js-form-advanced-bulk-submit-without-confirmation="false" 
+		                            data-js-form-advanced-form-id="#form_id"&gt;
+		                            &lt;i class="fi fi-check"&gt;&lt;/i&gt;
+		                            Set : Active
+		                          &lt;/a&gt;
+		                          &lt;a  href="#" 
+		                            class="dropdown-item text-truncate js-form-advanced-bulk" 
+		                            data-js-form-advanced-bulk-hidden-action-id="#action" 
+		                            data-js-form-advanced-bulk-hidden-action-value="inactive" 
+		                            data-js-form-advanced-bulk-container-items="#item_list" 
+		                            data-js-form-advanced-bulk-required-selected="true" 
+		                            data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+		                            data-js-form-advanced-bulk-required-txt-position="top-center" 
+		                            data-js-form-advanced-bulk-required-custom-modal="" 
+		                            data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+		                            data-js-form-advanced-bulk-required-modal-type="warning" 
+		                            data-js-form-advanced-bulk-required-modal-size="modal-md" 
+		                            data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+		                            data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+		                            data-js-form-advanced-bulk-required-modal-txt-body-txt="Set inactive {{no_selected}} selected products?" 
+		                            data-js-form-advanced-bulk-required-modal-txt-body-info="" 
+		                            data-js-form-advanced-bulk-required-modal-btn-text-yes="Confirm" 
+		                            data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+		                            data-js-form-advanced-bulk-submit-without-confirmation="false" 
+		                            data-js-form-advanced-form-id="#form_id"&gt;
+		                            &lt;i class="fi fi-close"&gt;&lt;/i&gt;
+		                            Set : Inactive
+		                          &lt;/a&gt;
+
+		                          &lt;a  href="#" 
+		                            class="dropdown-item text-truncate js-form-advanced-bulk" 
+		                            data-js-form-advanced-bulk-hidden-action-id="#action" 
+		                            data-js-form-advanced-bulk-hidden-action-value="delete" 
+		                            data-js-form-advanced-bulk-container-items="#item_list" 
+		                            data-js-form-advanced-bulk-required-selected="true" 
+		                            data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+		                            data-js-form-advanced-bulk-required-txt-position="top-center" 
+		                            data-js-form-advanced-bulk-required-custom-modal="" 
+		                            data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+		                            data-js-form-advanced-bulk-required-modal-type="danger" 
+		                            data-js-form-advanced-bulk-required-modal-size="modal-md" 
+		                            data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+		                            data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+		                            data-js-form-advanced-bulk-required-modal-txt-body-txt="Are you sure? Delete {{no_selected}} selected products?" 
+		                            data-js-form-advanced-bulk-required-modal-txt-body-info="Please note: this is a permanent action!" 
+		                            data-js-form-advanced-bulk-required-modal-btn-text-yes="Yes, Delete" 
+		                            data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+		                            data-js-form-advanced-bulk-submit-without-confirmation="false" 
+		                            data-js-form-advanced-form-id="#form_id"&gt;
+		                            &lt;i class="fi fi-thrash text-danger"&gt;&lt;/i&gt;
+		                            Set : Delete
+		                          &lt;/a&gt;
+
+		                          &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+		                          &lt;a  href="#" 
+		                            class="dropdown-item text-truncate js-form-advanced-bulk" 
+		                            data-js-form-advanced-bulk-hidden-action-id="#action" 
+		                            data-js-form-advanced-bulk-hidden-action-value="myactionhere3" 
+		                            data-js-form-advanced-bulk-container-items="#item_list" 
+		                            data-js-form-advanced-bulk-required-selected="true" 
+		                            data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+		                            data-js-form-advanced-bulk-required-txt-position="top-center" 
+		                            data-js-form-advanced-bulk-submit-without-confirmation="true" 
+		                            data-js-form-advanced-form-id="#form_id"&gt;
+		                            &lt;i class="fi fi-mollecules text-danger"&gt;&lt;/i&gt;
+		                            Submit : No Confirm.
+		                          &lt;/a&gt;
+
+		                          &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+		                          &lt;a  href="#" 
+		                            class="dropdown-item text-truncate js-form-advanced-bulk" 
+		                            data-js-form-advanced-bulk-hidden-action-id="#action" 
+		                            data-js-form-advanced-bulk-hidden-action-value="myactionhere1" 
+		                            data-js-form-advanced-bulk-container-items="#item_list" 
+		                            data-js-form-advanced-bulk-required-selected="true" 
+		                            data-js-form-advanced-bulk-required-txt-error="No Selected Items!" 
+		                            data-js-form-advanced-bulk-required-custom-modal="#my_custom_modal" 
+		                            data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+		                            data-js-form-advanced-bulk-submit-without-confirmation="false" 
+		                            data-js-form-advanced-form-id="#form_id"&gt;
+		                            &lt;i class="fi fi-heart-slim text-success"&gt;&lt;/i&gt;
+		                            Inline Custom Modal
+		                          &lt;/a&gt;
+
+		                          &lt;a href="#" 
+		                            class="dropdown-item text-truncate js-form-advanced-bulk" 
+		                            data-js-form-advanced-bulk-hidden-action-id="#action"
+		                            data-js-form-advanced-bulk-hidden-action-value="myactionhere2"
+		                            data-js-form-advanced-bulk-container-items="#item_list" 
+
+		                            data-js-form-advanced-bulk-required-selected="true" 
+		                            data-js-form-advanced-bulk-required-txt-error="No Customers Selected!"
+
+		                            data-js-form-advanced-bulk-required-custom-modal="#my_custom_modal_ajax" 
+		                            data-js-form-advanced-bulk-required-custom-modal-content-ajax="../_ajax/form_advanced_bulk_custom_modal_content.html" 
+
+		                            data-js-form-advanced-bulk-submit-without-confirmation="false"
+		                            data-js-form-advanced-form-id="#form_id"&gt;
+		                            &lt;i class="fi fi-heart-slim"&gt;&lt;/i&gt; Inline + Ajax Content
+		                          &lt;/a&gt;
+
+		                          &lt;!-- 
+		                            NO INLINE HTML CODE NEEDED!
+		                            Fully customizable
+		                            see html_frontend/ajax/form_advanced_bulk_custom_modal_content_full.html
+		                          --&gt;
+		                          &lt;a  href="#" 
+		                            class="dropdown-item text-truncate js-form-advanced-bulk" 
+		                            data-js-form-advanced-bulk-hidden-action-id="#action" 
+		                            data-js-form-advanced-bulk-hidden-action-value="myactionhere1" 
+		                            data-js-form-advanced-bulk-container-items="#item_list" 
+		                            data-js-form-advanced-bulk-required-selected="true" 
+		                            data-js-form-advanced-bulk-required-txt-error="No Items Selected!" 
+		                            data-js-form-advanced-bulk-required-txt-position="top-center" 
+		                            data-js-form-advanced-bulk-submit-without-confirmation="false" 
+		                            data-js-form-advanced-bulk-required-modal-size="modal-md" 
+
+		                            data-js-form-advanced-bulk-required-modal-type="custom" 
+		                            data-js-form-advanced-bulk-required-modal-backdrop="static" 
+		                            data-js-form-advanced-bulk-required-custom-modal-content-ajax="../_ajax/form_advanced_bulk_custom_modal_content_full.html" 
+
+		                            data-js-form-advanced-form-id="#form_id"&gt;
+		                            &lt;i class="fi fi-lightning text-warning"&gt;&lt;/i&gt;
+		                            Full Ajax Content
+		                          &lt;/a&gt;
+
+		                        &lt;/div&gt;
+
+		                      &lt;/div&gt;
+
+		                    &lt;/div&gt;
+		                    &lt;!-- /SELECTED ITEMS --&gt;
+
+		                  &lt;/div&gt;
+		                  &lt;!-- /options --&gt;
+
+
+
+		                  &lt;!-- Inline custom modal (should stay inside &lt;form&gt; to be able to post data) --&gt;
+		                  &lt;div class="modal fade show" id="my_custom_modal" role="dialog" tabindex="-1" aria-labelledby="modal-title-confirm" aria-hidden="true"&gt;
+		                    &lt;div class="modal-dialog" role="document"&gt;
+		                      &lt;div class="modal-content"&gt;
+
+		                        &lt;!--
+
+		                          Header color - optional
+		                            .bg-[primary|danger|warning|success|info|pink|indigo]-soft
+		                        --&gt;
+		                        &lt;div class="modal-header border-0 bg-primary-soft"&gt;
+		                          &lt;h5 id="modal-title-confirm" class="modal-title fw-light fs-4"&gt;
+		                            Inline custom modal
+		                          &lt;/h5&gt;
+
+		                          &lt;button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"&gt;
+		                            &lt;span class="fi fi-close fs-4" aria-hidden="true"&gt;&lt;/span&gt;
+		                          &lt;/button&gt;
+
+		                        &lt;/div&gt;
+		                        &lt;!-- /header --&gt;
+
+		                        &lt;!-- body --&gt;
+		                        &lt;div class="modal-body py-5"&gt;
+
+		                          Selected items: &lt;span class="js-form-advanced-selected-items"&gt;0&lt;/span&gt;
+
+
+		                          &lt;div class="fs-4"&gt;
+		                            Customize as you like! &lt;br&gt;&lt;br&gt;
+
+		                            &lt;!-- FILE UPLOADER --&gt;
+		                            &lt;div class="clearfix"&gt;
+		                              &lt;!--
+
+		                                2. AJAX UPLOAD : DYNAMIC PROGRESS UNDER BUTTON
+		                                No any extra html code needed for the progress bar.
+
+		                              --&gt;
+		                              &lt;label class="btn btn-warning btn-sm cursor-pointer position-relative"&gt;
+
+		                                &lt;!-- 
+		                                  We use .absolute-full class instead of .viewport-out
+		                                  Just to make sure the element is working crossbrowser!
+
+		                                  .show-hover-container   = show delete button only on hover (always visible on mobile)
+
+		                                 --&gt;
+		                                  &lt;input  name="ajax_files_progress_dynamic[]" 
+		                                      multiple=""
+		                                      type="file" 
+
+		                                      data-file-ext="jpg,png,gif"
+		                                      data-file-max-size-kb-per-file="3000"
+		                                      data-file-max-size-kb-total="5000" 
+		                                      data-file-max-total-files="3"
+		                                      data-file-ext-err-msg="Allowed:" 
+		                                      data-file-exist-err-msg="File already exists:"
+		                                      data-file-size-err-item-msg="File too large!"
+		                                      data-file-size-err-total-msg="Total allowed size exceeded!"
+		                                      data-file-size-err-max-msg="Maximum allowed files:"
+		                                      data-file-toast-position="bottom-center"
+		                                      data-file-preview-container=".js-form-advanced-container-table-form-test" 
+		                                      data-file-preview-img-height="120" 
+		                                      data-file-preview-show-info="true" 
+		                                      data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+		                                      data-file-preview-img-cover="false" 
+		                                      data-file-btn-clear="a.js-form-advanced-btn-multiple-ajax-remove"
+
+		                                      data-file-ajax-upload-enable="true"
+		                                      data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php"
+		                                      data-file-ajax-upload-params="['action','upload']['param2','value2']"
+
+		                                      data-file-ajax-delete-enable="true"
+		                                      data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php"
+		                                      data-file-ajax-delete-params="['action','delete_file']"
+
+		                                      data-file-ajax-reorder-enable="true"
+		                                      data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php"
+		                                      data-file-ajax-reorder-params="['action','reorder']"
+		                                      data-file-ajax-reorder-toast-success="Order Saved!" 
+		                                      data-file-ajax-reorder-toast-position="bottom-center" 
+
+		                                      data-file-ajax-toast-success-txt="Successfully Uploaded!"
+		                                      data-file-ajax-toast-error-txt="One or more files not uploaded!"
+		                                      data-file-ajax-callback-function=""
+		                                      data-file-ajax-progressbar-custom=""
+		                                      data-file-ajax-progressbar-disable="false"
+
+
+		                                      class="custom-file-input absolute-full"&gt;
+
+		                                &lt;span class="group-icon"&gt;
+		                                  &lt;i class="fi fi-arrow-upload"&gt;&lt;/i&gt;
+		                                  &lt;i class="fi fi-circle-spin fi-spin"&gt;&lt;/i&gt;
+		                                  &lt;/span&gt; 
+
+		                                &lt;span&gt;Ajax Uploader&lt;/span&gt;
+
+		                              &lt;/label&gt;
+
+		                              &lt;div class="js-form-advanced-container-table-form-test position-relative mt-3 clearfix hide-empty"&gt;&lt;/div&gt;
+		                              &lt;small class="d-block text-gray-400"&gt;Upload few images and then... reorder them :)&lt;/small&gt;
+		                            &lt;/div&gt;  
+		                            &lt;!-- /FILE UPLOADER --&gt;
+
+		                            &lt;br&gt;
+		                            &lt;small&gt;Yes, ajax content for modals also supported!&lt;/small&gt;&lt;br&gt;
+		                            &lt;small&gt;Check &lt;a href="plugins-sow-form-advanced.html" class="js-ajax link-muted"&gt;SOW : Form Advanced&lt;/a&gt; for more &amp; documentation!&lt;/small&gt;
+		                          &lt;/div&gt;
+
+		                        &lt;/div&gt;
+		                        &lt;!-- /body --&gt;
+
+		                        &lt;!-- footer ; buttons --&gt;
+		                        &lt;div class="modal-footer"&gt;
+
+		                          &lt;!-- submit button - actually submitting the form --&gt;
+		                          &lt;button type="submit" class="btn pt-10 pb-10 fs-6 btn-primary"&gt;
+		                            &lt;i class="fi fi-check"&gt;&lt;/i&gt; Oh, Great!
+		                          &lt;/button&gt;
+
+		                          &lt;!-- cancel|close button --&gt;
+		                          &lt;a href="#" class="btn pt-10 pb-10 fs-6 btn-light" data-bs-dismiss="modal"&gt;
+		                            &lt;i class="fi fi-close"&gt;&lt;/i&gt; Close
+		                          &lt;/a&gt;
+
+		                        &lt;/div&gt;
+		                        &lt;!-- /footer ; buttons --&gt;
+
+		                      &lt;/div&gt;
+
+		                    &lt;/div&gt;
+		                  &lt;/div&gt;
+		                  &lt;!-- /Inline custom modal --&gt;
+
+
+
+		                  &lt;!-- Inline custom modal + Ajax Content --&gt;
+		                  &lt;div class="modal fade show" id="my_custom_modal_ajax" role="dialog" tabindex="-1" aria-labelledby="modal-title-confirm" aria-hidden="true"&gt;
+		                    &lt;div class="modal-dialog modal-lg" role="document"&gt;
+		                      &lt;div class="modal-content"&gt;
+
+		                          &lt;!-- Ajax content is added here --&gt;
+		                          &lt;!--
+
+		                            Content: ../_ajax/form_advanced_bulk_custom_modal_content.html
+		                            Note: is full modal content: header, body and footer.
+		                            So you can fully customize each ajax content.
+
+		                          --&gt;
+
+		                          &lt;!-- ajax loading icon : optional --&gt;
+		                          &lt;div class="p-5 text-center"&gt;
+		                            &lt;i class="fi fi-circle-spin fi-spin fs-1 text-muted"&gt;&lt;/i&gt;
+		                          &lt;/div&gt;
+		                          &lt;!-- /ajax loading icon : optional --&gt;
+
+		                      &lt;/div&gt;
+
+		                    &lt;/div&gt;
+		                  &lt;/div&gt;
+		                  &lt;!-- /Inline custom modal + Ajax Content --&gt;
+
+		                &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Limits <b class="text-gray-700">& Counters</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-5" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-5-preview" id="nav-tab-5-preview-link" aria-controls="nav-tab-5-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-5-html" id="nav-tab-5-html-link" aria-controls="nav-tab-5-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-5-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-5-preview" aria-labelledby="nav-tab-5-preview-link" role="tabpanel">
+
+								<!-- input limit + hidden message -->
+								<div class="position-relative">
+
+									<span class="js-form-advanced-limit-info badge bg-warning text-dark hide animate-bouncein position-absolute absolute-top m-1">
+										please, order between 1 and 48.
+									</span>
+
+									<input type="number" value="8" min="1" max="48" class="form-control js-form-advanced-limit">
+								</div>
+								<!-- /input limit + hidden message -->
+
+
+								<div class="row">
+									<div class="col-12 col-lg-6">
+
+										<!-- input -->
+										<label class="mt-5">Char Count Down</label>
+										<div class="position-relative">
+											
+											<span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												155 chars limit
+											</span>
+
+											<input type="text" name="-" class="form-control js-form-advanced-char-count-down" data-output-target=".js-form-advanced-char-left" value="" maxlength="155">
+											
+											<div class="smaller text-muted text-align-end mt-1">
+												characters left: <span class="js-form-advanced-char-left">155</span>
+											</div>
+										
+										</div>
+										
+										<br>
+
+										<!-- textarea -->
+										<div class="position-relative">
+											
+											<span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												1000 chars limit
+											</span>
+											
+											<textarea class="js-form-advanced-char-count-down form-control" data-output-target=".js-form-advanced-char-left2" maxlength="1000"></textarea>
+											
+											<div class="smaller text-muted text-align-end mt-1">
+												characters left: <span class="js-form-advanced-char-left2">1000</span>
+											</div>
+
+										</div>
+
+
+									</div>
+
+
+									<div class="col-12 col-lg-6">
+
+
+										<!--
+											
+											Remove maxlength|data-maxlength for no limit, only to count chars
+
+										-->
+
+										<!-- input -->
+										<label class="mt-5">Char Count Up</label>
+
+										<div class="position-relative">
+											
+											<span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												100 chars limit
+											</span>
+
+											<input type="text" name="-" class="form-control js-form-advanced-char-count-up" data-output-target=".js-form-advanced-char-total" value="" maxlength="100">
+											
+											<div class="smaller text-muted text-align-end mt-1">
+												characters: <span class="js-form-advanced-char-total">0</span> / 100
+											</div>
+
+										</div>
+
+										<br>
+
+										<!-- textarea -->
+										<div class="position-relative">
+											
+											<span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												100 chars limit
+											</span>
+
+											<textarea class="js-form-advanced-char-count-up form-control" data-output-target=".js-form-advanced-char-total2" maxlength="100"></textarea>
+											
+											<div class="smaller text-muted text-align-end mt-1">
+												characters: <span class="js-form-advanced-char-total2">0</span> / 100
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-5-html" aria-labelledby="nav-tab-5-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+										&lt;!-- input limit + hidden message -->
+										&lt;div class="position-relative">
+											&lt;span class="js-form-advanced-limit-info badge bg-warning text-dark hide animate-bouncein position-absolute absolute-top m-1">
+												please, order between 1 and 48.
+											&lt;/span>
+
+											&lt;input type="number" value="8" min="1" max="48" class="form-control js-form-advanced-limit">
+										&lt;/div>
+									</code>
+								</pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+										&lt;!-- char count down : input -->
+										&lt;div class="position-relative">
+											&lt;span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												155 chars limit
+											&lt;/span>
+
+											&lt;input type="text" name="-" class="form-control js-form-advanced-char-count-down" data-output-target=".js-form-advanced-char-left" value="" maxlength="155">
+											
+											&lt;div class="smaller text-muted text-align-end mt-1">
+												characters left: &lt;span class="js-form-advanced-char-left">155&lt;/span>
+											&lt;/div>
+										&lt;/div>
+									</code>
+								</pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+										&lt;!-- char count down : textarea -->
+										&lt;div class="position-relative">
+											&lt;span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												1000 chars limit
+											&lt;/span>
+											
+											&lt;textarea class="js-form-advanced-char-count-down form-control" data-output-target=".js-form-advanced-char-left2" maxlength="1000">&lt;/textarea>
+											
+											&lt;div class="smaller text-muted text-align-end mt-1">
+												characters left: &lt;span class="js-form-advanced-char-left2">1000&lt;/span>
+											&lt;/div>
+										&lt;/div>
+									</code>
+								</pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+										&lt;!-- char count up : input -->
+										&lt;div class="position-relative">
+											&lt;span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												100 chars limit
+											&lt;/span>
+
+											&lt;input type="text" name="-" class="form-control js-form-advanced-char-count-up" data-output-target=".js-form-advanced-char-total" value="" maxlength="100">
+											
+											&lt;div class="smaller text-muted text-align-end mt-1">
+												characters: &lt;span class="js-form-advanced-char-total">0&lt;/span> / 100
+											&lt;/div>
+										&lt;/div>
+									</code>
+								</pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+										&lt;!-- char count up : textarea -->
+										&lt;div class="position-relative">
+											&lt;span class="js-form-advanced-limit-info badge bg-warning hide animate-bouncein position-absolute absolute-top m-1">
+												100 chars limit
+											&lt;/span>
+
+											&lt;textarea class="js-form-advanced-char-count-up form-control" data-output-target=".js-form-advanced-char-total2" maxlength="100">&lt;/textarea>
+											
+											&lt;div class="smaller text-muted text-align-end mt-1">
+												characters: &lt;span class="js-form-advanced-char-total2">0&lt;/span> / 100
+											&lt;/div>
+										&lt;/div>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Input <b class="text-gray-700">Formatters</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-6" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-6-preview" id="nav-tab-6-preview-link" aria-controls="nav-tab-6-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-6-html" id="nav-tab-6-html-link" aria-controls="nav-tab-6-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-6-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-6-preview" aria-labelledby="nav-tab-6-preview-link" role="tabpanel">
+
+								<div class="row">
+
+									<div class="col-12 col-lg-6">
+
+										<!-- input -->
+										<label class="mt-5">Credit Card Format</label>
+										<div class="position-relative">
+											
+											<input type="text" name="cc_type" id="cc_type" value="" class="form-control form-control-sm mb-3" readonly="">
+
+											<div class="form-floating">
+												<input placeholder="Card Number" id="cc_number" type="text" data-card-type="#cc_type" class="form-control cc-format cc-number">
+												<label for="cc_number">Card Number</label>
+											</div>
+										
+										</div>
+										
+									</div>
+
+
+									<div class="col-12 col-lg-6">
+
+										<label class="mt-5">Date (card expire date)</label>
+
+										<div class="form-floating">
+											<input placeholder="MM / YY" id="cc_date" type="text" value="" class="form-control cc-format cc-expire" maxlength="5">
+											<label for="cc_date">MM / YY</label>
+										</div>
+									
+									</div>
+
+								</div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-6-html" aria-labelledby="nav-tab-6-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+										&lt;!-- 
+											credit card type : autodetected on user type 
+
+											amex
+											diners
+											jcb
+											laser
+											visa
+											mastercard
+											maestro
+											discover
+
+										-->
+										&lt;input type="text" name="cc_type" id="cc_type" value="" class="form-control form-control-sm mb-3" readonly="">
+
+										&lt;div class="form-floating">
+											&lt;input placeholder="Card Number" id="cc_number" type="text" data-card-type="#cc_type" class="form-control cc-format cc-number">
+											&lt;label for="cc_number">Card Number&lt;/label>
+										&lt;/div>
+
+
+										&lt;!-- date -->
+										&lt;div class="form-floating">
+											&lt;input placeholder="MM / YY" id="cc_date" type="text" value="" class="form-control cc-format cc-expire" maxlength="5">
+											&lt;label for="cc_date">MM / YY&lt;/label>
+										&lt;/div>
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Form <b class="text-gray-700">Reset</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-7" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-7-preview" id="nav-tab-7-preview-link" aria-controls="nav-tab-7-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-7-html" id="nav-tab-7-html-link" aria-controls="nav-tab-7-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-7-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-7-preview" aria-labelledby="nav-tab-7-preview-link" role="tabpanel">
+
+								<p>Type/select something </p>
+
+								<div id="form_content" class="mb-4">
+
+									<div class="form-floating mb-3">
+										<input placeholder="First Name" id="first_name" type="text" value="" class="form-control">
+										<label for="first_name">First Name</label>
+									</div>
+
+									<div class="form-floating mb-3">
+										<textarea placeholder="Textarea" id="description" class="form-control" rows="3"></textarea>
+										<label for="description">Textarea</label>
+									</div>
+
+									<div class="form-check mb-2">
+									  <input class="form-check-input form-check-input-primary" type="radio" name="radio_form" value="1" id="radio-f1">
+									  <label class="form-check-label" for="radio-f1">
+									    option 1
+									  </label>
+									</div>
+
+									<div class="form-check mb-2">
+									  <input class="form-check-input form-check-input-primary" type="radio" name="radio_form" value="2" id="radio-f2">
+									  <label class="form-check-label" for="radio-f2">
+									    option 2
+									  </label>
+									</div>
+
+								</div>
+
+								<!-- 
+									Reset Button 
+									data-target-reset="" 	(id or class ; multiple separated by comma)
+									data-exclude-reset="" 	(id or class ; multiple separated by comma)
+									.js-ignore  			(always visible ; also remove .hide-force)
+								-->
+								<a href="#" data-target-reset="#form_content" data-exclude-reset="" class="form-advanced-reset hide-force btn btn-light">
+									reset form
+								</a>
+
+							</div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-7-html" aria-labelledby="nav-tab-7-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+		                &lt;div id="form_content" class="mb-4"&gt;
+
+		                  &lt;div class="form-floating mb-3"&gt;
+		                    &lt;input placeholder="First Name" id="first_name" type="text" value="" class="form-control"&gt;
+		                    &lt;label for="first_name"&gt;First Name&lt;/label&gt;
+		                  &lt;/div&gt;
+
+		                  &lt;div class="form-floating mb-3"&gt;
+		                    &lt;textarea placeholder="Textarea" id="description" class="form-control" rows="3"&gt;&lt;/textarea&gt;
+		                    &lt;label for="description"&gt;Textarea&lt;/label&gt;
+		                  &lt;/div&gt;
+
+		                  &lt;div class="form-check mb-2"&gt;
+		                    &lt;input class="form-check-input form-check-input-primary" type="radio" name="radio_form" value="1" id="radio-f1"&gt;
+		                    &lt;label class="form-check-label" for="radio-f1"&gt;
+		                      option 1
+		                    &lt;/label&gt;
+		                  &lt;/div&gt;
+
+		                  &lt;div class="form-check mb-2"&gt;
+		                    &lt;input class="form-check-input form-check-input-primary" type="radio" name="radio_form" value="2" id="radio-f2"&gt;
+		                    &lt;label class="form-check-label" for="radio-f2"&gt;
+		                      option 2
+		                    &lt;/label&gt;
+		                  &lt;/div&gt;
+
+		                &lt;/div&gt;
+
+		                &lt;!-- 
+		                  Reset Button 
+		                  data-target-reset=""  (id or class ; multiple separated by comma)
+		                  data-exclude-reset=""   (id or class ; multiple separated by comma)
+		                  .js-ignore        (always visible ; also remove .hide-force)
+		                --&gt;
+		                &lt;a href="#" data-target-reset="#form_content" data-exclude-reset="" class="form-advanced-reset hide-force btn btn-light"&gt;
+		                  reset form
+		                &lt;/a&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Dynamic <b class="text-gray-700">Table</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-3" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-3-preview" id="nav-tab-3-preview-link" aria-controls="nav-tab-3-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-3-html" id="nav-tab-3-html-link" aria-controls="nav-tab-3-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-3-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-3-preview" aria-labelledby="nav-tab-3-preview-link" role="tabpanel">
+
+								<p class="mb-5">
+									Useful to ecommerce admin to create variants or if dynamic inputs are needed!
+								</p>
+
+
+								<!-- default -->
+								<div class="js-form-advanced-table mb-6" 
+									data-table-column-insert-before=".js-clone-before" 
+									data-table-column-insert-element='<input type="text" class="form-control form-control-sm" value="">' 
+									data-table-column-delete-button='<span class="btn-table-column-delete fi fi-close small cursor-pointer px-1 d-inline-block"></span>' 
+									data-table-column-limit="3" 
+									data-table-row-limit="5" 
+									data-table-row-method="append">
+
+
+									<!-- 
+										
+										ADD COLUMN
+
+											The name of this input (name="option" in this demo) 
+											is used to generate input fields with names like this:
+												name="option[color]"
+											
+											if no input name used, field name is generated like this:
+												name="color"
+
+									-->
+									<div class="js-form-advanced-table-column-add input-group mb-3 max-w-300">
+
+										<!-- 
+											Optional Plugin used:
+											SOW : Search Inline
+										-->
+										<input type="text" name="variant" class="form-control form-control-sm input-suggest" 
+											placeholder="Ex: color, size" 
+											aria-label="Table Cloner" 
+											aria-describedby="button-table-cloner-1"
+											data-input-suggest-type="text" 
+											data-input-suggest-name="variant" 
+											data-input-suggest-ajax-url="_ajax/input_suggest_variants.json" 
+											data-input-suggest-ajax-method="GET" 
+											data-input-suggest-ajax-limit="100">
+
+											<button class="btn btn-sm btn-outline-secondary" type="button" id="button-table-cloner-1">Add</button>
+									</div>
+
+
+									<table class="table table-bordered table-align-middle table-sm">
+										<thead>
+											<tr class="small">
+												<th>SKU</th>
+												<th>Barcode</th>
+												<th class="js-clone-before">Price</th>
+												<th>Select</th>
+												<th>Date</th>
+												<th style="width:90px;">Image</th>
+												<th style="width:80px;">&nbsp;</th>
+											</tr>
+										</thead>
+
+										<tbody>
+
+											<tr>
+												<!-- SKU -->
+												<td>
+													<input type="text" class="form-control form-control-sm" name="variant[sku][]" value="">
+												</td>
+
+												<!-- Barcode -->
+												<td>
+													<input type="text" class="form-control form-control-sm" name="variant[barcode][]" value="">
+												</td>
+
+												<!-- Price -->
+												<td class="js-clone-before">
+													<input type="number" class="form-control form-control-sm" name="variant[price][]" value="">
+												</td>
+
+												<!-- Select -->
+												<td>
+													<select class="form-select form-select-sm " name="variant[select][]" title="Select...">
+														<option value="0">Basic</option>
+														<option value="1">Mustard</option>
+														<option value="2">Ketchup</option>
+														<option value="3">Barbecue</option>
+													</select>
+												</td>
+
+												<!-- Date -->
+												<td>
+													<input autocomplete="off" type="text" name="variant[date][]" class="form-control form-control-sm rangepicker" 
+														data-layout-rounded="false" 
+														data-single-datepicker="true" 
+														data-timepicker="false" 
+														data-timepicker-24h="true" 
+														data-timepicker-show-seconds="false" 
+														data-disable-past-dates="true" 
+														data-date-format="MM/DD/YYYY" 
+														data-disable-auto-update-input="true" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_crange"	: "Custom Range",
+															"lang_months"	 : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}'>
+												</td>
+
+												<!-- Image -->
+												<td>
+
+													<!-- 
+
+														AJAX IMAGE UPLOAD
+
+													-->
+													<label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed mb-0" style="height:50px">
+
+														<!-- remove button -->
+														<a href="#" class="js-table-file-remove position-absolute absolute-top start-0 z-index-3 btn btn-sm btn-secondary p-0 w--20 h--20 m-1 lh-1 text-center hide">
+															<i class="fi fi-close m-0"></i>
+														</a>
+
+														<!-- image container -->
+														<span class="js-table-file-preview z-index-2 d-block absolute-full z-index-1 hide-empty"></span>
+
+														<!-- hidden file input -->
+														<input	name="variant[image][]" 
+																type="file" 
+																data-file-ext="jpg, jpeg, png" 
+																data-file-max-size-kb-per-file="1024" 
+																data-file-ext-err-msg="Allowed:" 
+																data-file-size-err-item-msg="File too large!" 
+																data-file-size-err-total-msg="Total allowed size exceeded!" 
+																data-file-toast-position="top-center" 
+																data-file-preview-container=".js-table-file-preview" 
+																data-file-btn-clear=".js-table-file-remove" 
+																data-file-preview-show-info="false" 
+																data-file-preview-class="m-0 p-0 rounded" 
+																data-file-preview-img-height="auto" 
+																data-file-preview-img-cover="true" 
+
+													    		data-file-ajax-upload-enable="true" 
+													    		data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+													    		data-file-ajax-delete-enable="true" 
+													    		data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-delete-params="['action','delete_file']" 
+
+													    		data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+													    		data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+
+																class="custom-file-input absolute-full">
+
+														<!-- icon -->
+														<span class="absolute-full d-middle">
+															<i class="fi fi-image fs-1 text-muted"></i>
+														</span>
+
+													</label>
+
+												</td>
+
+												<!-- Option -->
+												<td class="text-center">
+
+													<a href="#" class="btn btn-sm btn-primary btn-table-clone rounded-circle">
+														<span class="group-icon">
+															<i class="fi fi-plus"></i>
+															<i class="fi fi-thrash"></i>
+														</span>
+													</a>
+
+												</td>
+
+											</tr>
+
+										</tbody>
+									</table>
+
+
+								</div>
+
+
+								<!-- preadded columns -->
+								<div class="js-form-advanced-table mb-6" 
+									data-table-column-insert-before=".js-clone-before" 
+									data-table-column-insert-element='<input type="text" class="form-control form-control-sm" value="">' 
+									data-table-column-delete-button='<span class="btn-table-column-delete fi fi-close small cursor-pointer px-1 d-inline-block"></span>' 
+									data-table-column-limit="3" 
+									data-table-row-limit="5" 
+									data-table-row-method="prepend">
+
+
+									<!-- 
+										
+										ADD COLUMN
+
+											The name of this input (name="option" in this demo) 
+											is used to generate input fields with names like this:
+												name="option[color]"
+											
+											if no input name used, field name is generated like this:
+												name="color"
+
+									-->
+									<div class="js-form-advanced-table-column-add input-group mb-3 max-w-300">
+
+										<!-- 
+											Optional Plugin used:
+											SOW : Search Inline
+										-->
+										<input type="text" name="variant" class="form-control form-control-sm input-suggest" 
+											placeholder="Ex: color, size" 
+											aria-label="Table Cloner" 
+											aria-describedby="button-table-cloner-2"
+											data-input-suggest-type="text" 
+											data-input-suggest-name="variant" 
+											data-input-suggest-ajax-url="_ajax/input_suggest_variants.json" 
+											data-input-suggest-ajax-method="GET" 
+											data-input-suggest-ajax-limit="100">
+
+											<button class="btn btn-sm btn-secondary" type="button" id="button-table-cloner-2">Add</button>
+									</div>
+
+
+									<table class="table table-bordered table-align-middle table-sm">
+										<thead>
+											<tr class="small">
+												<th style="width:30px">&nbsp;</th>
+												<th>SKU</th>
+												<th>Barcode</th>
+												<th data-id="column-size" class="js-table-option">Size</th>
+												<th data-id="column-material" class="js-table-option">Material</th>
+												<th class="js-clone-before">Price</th>
+												<th>Select</th>
+												<th>Date</th>
+												<th style="width:90px;">Image</th>
+												<th style="width:80px;" class="text-center">
+													<a href="#" class="btn btn-sm btn-primary btn-table-clone rounded-circle">
+														<i class="fi fi-plus"></i>
+													</a>
+												</th>
+											</tr>
+										</thead>
+
+										<!-- 
+											See Sortable doumentation if ajax reorder is needed
+										-->
+										<tbody class="sortable">
+
+											<!-- 
+												OPTIONAL
+												ACTING AS A TEMPLATE TO CLONE
+												IS REMOVED ON LOAD IF .hide CLASS IS PRESENT
+
+												Else, the first TR is used by default!
+												.js-ignore = optional, used by sortable to igore from drag/drop reorder
+											-->
+											<tr class="js-ignore hide">
+
+												<!-- sortable handler -->
+												<td class="px-0 text-center">
+													<div class="sortable-handle lh-1 py-2 fi fi-dots-vertical"></div>
+												</td>
+
+												<!-- SKU -->
+												<td>
+													<input type="text" class="form-control form-control-sm" name="variant[sku][]" value="">
+												</td>
+
+												<!-- Barcode -->
+												<td>
+													<input type="text" class="form-control form-control-sm" name="variant[barcode][]" value="">
+												</td>
+
+
+
+												<!-- Preadded Option 1 -->
+												<td class="js-table-option column-size">
+													<input type="number" class="form-control form-control-sm" name="variant[size][]" value="">
+												</td>
+
+												<!-- Preadded Option 2 -->
+												<td class="js-table-option column-material">
+													<input type="number" class="form-control form-control-sm" name="variant[material][]" value="">
+												</td>
+
+
+
+												<!-- Price -->
+												<td class="js-clone-before">
+													<input type="number" class="form-control form-control-sm" name="variant[price][]" value="">
+												</td>
+
+												<!-- Select -->
+												<td>
+													<select class="form-select form-select-sm" name="variant[select][]" title="Select...">
+														<option value="0">Basic</option>
+														<option value="1">Mustard</option>
+														<option value="2">Ketchup</option>
+														<option value="3">Barbecue</option>
+													</select>
+												</td>
+
+												<!-- Date -->
+												<td>
+													<input autocomplete="off" type="text" name="variant[date][]" class="form-control form-control-sm rangepicker" 
+														data-layout-rounded="false" 
+														data-single-datepicker="true" 
+														data-timepicker="false" 
+														data-timepicker-24h="true" 
+														data-timepicker-show-seconds="false" 
+														data-disable-past-dates="true" 
+														data-date-format="MM/DD/YYYY" 
+														data-disable-auto-update-input="true" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_crange"	: "Custom Range",
+															"lang_months"	 : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}'>
+												</td>
+
+												<!-- Image -->
+												<td>
+
+													<!-- 
+
+														AJAX IMAGE UPLOAD
+
+													-->
+													<label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed mb-0" style="height:50px">
+
+														<!-- remove button -->
+														<a href="#" class="js-table-file-remove-1 js-file-item-del position-absolute absolute-top start-0 z-index-3 btn btn-sm btn-secondary p-0 w--20 h--20 m-1 lh-1 text-center hide">
+															<i class="fi fi-close m-0"></i>
+														</a>
+
+														<!-- image container -->
+														<span class="js-table-file-preview-1 z-index-2 d-block absolute-full z-index-1 hide-empty"></span>
+
+														<!-- hidden file input -->
+													    <input 	name="variant[image][]" 
+													    		type="file" 
+
+													    		data-file-ext="jpg, png, gif" 
+													    		data-file-max-size-kb-per-file="11500" 
+													    		data-file-ext-err-msg="Allowed:" 
+													    		data-file-size-err-item-msg="File too large!" 
+													    		data-file-size-err-total-msg="Total allowed size exceeded!" 
+													    		data-file-toast-position="bottom-center" 
+													    		data-file-preview-container=".js-table-file-preview-1" 
+													    		data-file-preview-show-info="false" 
+													    		data-file-preview-class="rounded-circle m-0 p-0 animate-bouncein" 
+													    		data-file-preview-img-height="auto" 
+													    		data-file-btn-clear=".js-table-file-remove-1" 
+													    		data-file-preview-img-cover="true" 
+
+													    		data-file-ajax-upload-enable="true" 
+													    		data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+													    		data-file-ajax-delete-enable="true" 
+													    		data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-delete-params="['action','delete_file']" 
+
+													    		data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+													    		data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+
+													    		class="custom-file-input absolute-full">
+
+														<!-- icon -->
+														<span class="absolute-full d-middle">
+															<i class="fi fi-image fs-1 text-muted"></i>
+														</span>
+
+													</label>
+
+												</td>
+
+												<!-- Option -->
+												<td class="position-relative text-center">
+
+													<!-- direct delete -->
+													<!--
+													<a href="#" class="btn btn-sm btn-light btn-table-clone-remove rounded-circle">
+														<i class="fi fi-thrash"></i>
+													</a>
+													-->
+
+													<!-- remove button (confirm trigger) -->
+													<a href="#" class="btn btn-table-clone-remove-confirm btn-sm btn-light rounded-circle">
+														<i class="fi fi-thrash"></i>
+													</a>
+
+													<!-- confirm -->
+													<div class="position-absolute bg-warning shadow top-0 bottom-0 end-0 w-200 z-index-10 hide">
+														<i class="arrow arrow-lg arrow-start arrow-center border-warning"></i>
+														<label class="d-block small mb-1">Are you sure?</label>
+														<a href="#" class="btn btn-table-clone-remove btn-danger btn-sm px-2 py-1">Delete</a>
+														<a href="#" class="btn btn-table-clone-remove-cancel btn-secondary btn-sm px-2 py-1">Cancel</a>
+													</div>
+
+												</td>
+
+											</tr>
+
+											<!-- preadded -->
+											<tr>
+
+												<!-- sortable handler -->
+												<td class="px-0 text-center">
+													<div class="sortable-handle lh-1 py-2 fi fi-dots-vertical"></div>
+												</td>
+
+												<!-- SKU -->
+												<td>
+													<input type="text" class="form-control form-control-sm" name="variant[sku][]" value="">
+												</td>
+
+												<!-- Barcode -->
+												<td>
+													<input type="text" class="form-control form-control-sm" name="variant[barcode][]" value="">
+												</td>
+
+
+
+												<!-- Preadded Option 1 -->
+												<td class="js-table-option column-size">
+													<input type="number" class="form-control form-control-sm" name="variant[size][]" value="">
+												</td>
+
+												<!-- Preadded Option 2 -->
+												<td class="js-table-option column-material">
+													<input type="number" class="form-control form-control-sm" name="variant[material][]" value="">
+												</td>
+
+
+
+												<!-- Price -->
+												<td class="js-clone-before">
+													<input type="number" class="form-control form-control-sm" name="variant[price][]" value="">
+												</td>
+
+												<!-- Select -->
+												<td>
+													<select class="form-select form-select-sm" name="variant[select][]" title="Select...">
+														<option value="0">Basic</option>
+														<option value="1">Mustard</option>
+														<option value="2">Ketchup</option>
+														<option value="3">Barbecue</option>
+													</select>
+												</td>
+
+												<!-- Date -->
+												<td>
+													<input autocomplete="off" type="text" name="variant[date][]" class="form-control form-control-sm rangepicker" 
+														data-layout-rounded="false" 
+														data-single-datepicker="true" 
+														data-timepicker="false" 
+														data-timepicker-24h="true" 
+														data-timepicker-show-seconds="false" 
+														data-disable-past-dates="true" 
+														data-date-format="MM/DD/YYYY" 
+														data-disable-auto-update-input="true" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_crange"	: "Custom Range",
+															"lang_months"	 : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}'>
+												</td>
+
+												<!-- Image -->
+												<td>
+
+													<!-- 
+
+														AJAX IMAGE UPLOAD
+
+													-->
+													<label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed mb-0" style="height:50px">
+
+														<!-- remove button -->
+														<a href="#" class="js-table-file-remove-1 js-file-item-del position-absolute absolute-top start-0 z-index-3 btn btn-sm btn-secondary p-0 m-1 lh-1 text-center" style="width:20px;height:20px">
+															<i class="fi fi-close m-0"></i>
+														</a>
+
+														<!-- image container -->
+														<span class="js-table-file-preview-1 z-index-2 d-block absolute-full z-index-1 hide-empty">
+															<span 	data-id="0" 
+																	data-file-name="mutzii-fmDCrqPQKog-unsplash-min.jpg" 
+																	style="background-image:url('../demo.files/images/unsplash/products/sneakers/thumb_330/mutzii-fmDCrqPQKog-unsplash-min.jpg')" 
+																	class="js-file-input-item d-inline-block position-relative overflow-hidden text-center m-0 p-0 animate-bouncein bg-cover w-100 h-100">
+															</span>
+														</span>
+
+														<!-- hidden file input -->
+													    <input 	name="variant[image][]" 
+													    		type="file" 
+
+													    		data-file-ext="jpg, png, gif" 
+													    		data-file-max-size-kb-per-file="11500" 
+													    		data-file-ext-err-msg="Allowed:" 
+													    		data-file-size-err-item-msg="File too large!" 
+													    		data-file-size-err-total-msg="Total allowed size exceeded!" 
+													    		data-file-toast-position="bottom-center" 
+													    		data-file-preview-container=".js-table-file-preview-1" 
+													    		data-file-preview-show-info="false" 
+													    		data-file-preview-class="rounded-circle m-0 p-0 animate-bouncein" 
+													    		data-file-preview-img-height="auto" 
+													    		data-file-btn-clear=".js-table-file-remove-1" 
+													    		data-file-preview-img-cover="true" 
+
+													    		data-file-ajax-upload-enable="true" 
+													    		data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+													    		data-file-ajax-delete-enable="true" 
+													    		data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-delete-params="['action','delete_file']" 
+
+													    		data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+													    		data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+
+													    		class="custom-file-input absolute-full">
+
+														<!-- icon -->
+														<span class="absolute-full d-middle">
+															<i class="fi fi-image fs-1 text-muted"></i>
+														</span>
+
+													</label>
+
+												</td>
+
+												<!-- Option -->
+												<td class="position-relative text-center">
+
+													<!-- direct delete -->
+													<!--
+													<a href="#" class="btn btn-sm btn-light btn-table-clone-remove rounded-circle">
+														<i class="fi fi-thrash"></i>
+													</a>
+													-->
+
+													<!-- remove button (confirm trigger) -->
+													<a href="#" class="btn btn-table-clone-remove-confirm btn-sm btn-light rounded-circle">
+														<i class="fi fi-thrash"></i>
+													</a>
+
+													<!-- confirm -->
+													<div class="position-absolute bg-warning shadow top-0 bottom-0 end-0 w-200 z-index-10 hide">
+														<i class="arrow arrow-lg arrow-start arrow-center border-warning"></i>
+														<label class="d-block small mb-1">Are you sure?</label>
+														<a href="#" class="btn btn-table-clone-remove btn-danger btn-sm px-2 py-1">Delete</a>
+														<a href="#" class="btn btn-table-clone-remove-cancel btn-secondary btn-sm px-2 py-1">Cancel</a>
+													</div>
+
+												</td>
+
+											</tr>
+
+											<!-- preadded -->
+											<tr>
+
+												<!-- sortable handler -->
+												<td class="px-0 text-center">
+													<div class="sortable-handle lh-1 py-2 fi fi-dots-vertical"></div>
+												</td>
+												
+												<!-- SKU -->
+												<td>
+													<input type="text" class="form-control form-control-sm" value="">
+												</td>
+
+												<!-- Barcode -->
+												<td>
+													<input type="text" class="form-control form-control-sm" value="">
+												</td>
+
+
+
+												<!-- Preadded Option 1 -->
+												<td class="js-table-option column-size">
+													<input type="number" class="form-control form-control-sm" name="variant[size][]" value="">
+												</td>
+
+												<!-- Preadded Option 2 -->
+												<td class="js-table-option column-material">
+													<input type="number" class="form-control form-control-sm" name="variant[material][]" value="">
+												</td>
+
+
+
+												<!-- Price -->
+												<td class="js-clone-before">
+													<input type="number" class="form-control form-control-sm" value="">
+												</td>
+
+												<!-- Select -->
+												<td>
+													<select class="form-select form-select-sm" name="variant[select][]" title="Select...">
+														<option value="0">Basic</option>
+														<option value="1">Mustard</option>
+														<option value="2">Ketchup</option>
+														<option value="3">Barbecue</option>
+													</select>
+												</td>
+
+												<!-- Date -->
+												<td>
+													<input autocomplete="off" type="text" name="variant[date][]" class="form-control form-control-sm rangepicker" 
+														data-layout-rounded="false" 
+														data-single-datepicker="true" 
+														data-timepicker="false" 
+														data-timepicker-24h="true" 
+														data-timepicker-show-seconds="false" 
+														data-disable-past-dates="true" 
+														data-date-format="MM/DD/YYYY" 
+														data-disable-auto-update-input="true" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_crange"	: "Custom Range",
+															"lang_months"	 : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}'>
+												</td>
+
+												<!-- Image -->
+												<td>
+
+													<!-- 
+
+														AJAX IMAGE UPLOAD
+
+													-->
+													<label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed mb-0" style="height:50px">
+
+														<!-- remove button -->
+														<a href="#" class="js-table-file-remove-2 js-file-item-del position-absolute absolute-top start-0 z-index-3 btn btn-sm btn-secondary p-0 m-1 lh-1 text-center" style="width:20px;height:20px">
+															<i class="fi fi-close m-0"></i>
+														</a>
+
+														<!-- image container -->
+														<span class="js-table-file-preview-2 z-index-2 d-block absolute-full z-index-1 hide-empty">
+															<span 	data-id="0" 
+																	data-file-name="nikita-kachanovsky-ad_0wMHtvlU-unsplash-min.jpg" 
+																	style="background-image:url('../demo.files/images/unsplash/products/sneakers/thumb_330/nikita-kachanovsky-ad_0wMHtvlU-unsplash-min.jpg')" 
+																	class="js-file-input-item d-inline-block position-relative overflow-hidden text-center m-0 p-0 animate-bouncein bg-cover w-100 h-100">
+															</span>
+														</span>
+
+														<!-- hidden file input -->
+													    <input 	name="variant[image][]"
+													    		type="file" 
+
+													    		data-file-ext="jpg, png, gif" 
+													    		data-file-max-size-kb-per-file="11500" 
+													    		data-file-ext-err-msg="Allowed:" 
+													    		data-file-size-err-item-msg="File too large!" 
+													    		data-file-size-err-total-msg="Total allowed size exceeded!" 
+													    		data-file-toast-position="bottom-center" 
+													    		data-file-preview-container=".js-table-file-preview-2" 
+													    		data-file-preview-show-info="false" 
+													    		data-file-preview-class="rounded-circle m-0 p-0 animate-bouncein" 
+													    		data-file-preview-img-height="auto" 
+													    		data-file-btn-clear=".js-table-file-remove-2" 
+													    		data-file-preview-img-cover="true" 
+
+													    		data-file-ajax-upload-enable="true" 
+													    		data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+													    		data-file-ajax-delete-enable="true" 
+													    		data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+													    		data-file-ajax-delete-params="['action','delete_file']" 
+
+													    		data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+													    		data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+
+													    		class="custom-file-input absolute-full">
+
+														<!-- icon -->
+														<span class="absolute-full d-middle">
+															<i class="fi fi-image fs-1 text-muted"></i>
+														</span>
+
+													</label>
+
+												</td>
+
+												<!-- Option -->
+												<td class="position-relative text-center">
+
+													<!-- direct delete -->
+													<!--
+													<a href="#" class="btn btn-sm btn-light btn-table-clone-remove rounded-circle">
+														<i class="fi fi-thrash"></i>
+													</a>
+													-->
+
+													<!-- remove button (confirm trigger) -->
+													<a href="#" class="btn btn-table-clone-remove-confirm btn-sm btn-light rounded-circle">
+														<i class="fi fi-thrash"></i>
+													</a>
+
+													<!-- confirm -->
+													<div class="position-absolute bg-warning shadow top-0 bottom-0 end-0 w-200 z-index-10 hide">
+														<i class="arrow arrow-lg arrow-start arrow-center border-warning"></i>
+														<label class="d-block small mb-1">Are you sure?</label>
+														<a href="#" class="btn btn-table-clone-remove btn-danger btn-sm px-2 py-1">Delete</a>
+														<a href="#" class="btn btn-table-clone-remove-cancel btn-secondary btn-sm px-2 py-1">Cancel</a>
+													</div>
+
+												</td>
+
+											</tr>
+
+										</tbody>
+									</table>
+
+								</div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-3-html" aria-labelledby="nav-tab-3-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+
+                  	Please use "View page source"
+
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+    </div>
+
+  </body>
+</html>

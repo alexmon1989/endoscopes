@@ -1,0 +1,55 @@
+upstream endoscopes_app {
+    server web:8000;
+}
+
+server {
+    listen       80;	
+    # listen       443;	
+	server_name endoscopes.local;
+	
+	#ssl_certificate         SSL_CERT;
+    #ssl_certificate_key     SSL_KEY;
+    #ssl_trusted_certificate SSL_CHAIN_CERT;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+	location = /robots.txt {
+        alias /static/robots.txt;
+    }
+
+    location = /favicon.ico {
+        alias /static/assets/images/favicon.png;
+    }
+
+	location /static {
+	    alias /static;
+		autoindex off;
+		access_log off; 
+        log_not_found off; 
+		expires max;
+    }
+    
+    location /media {
+	    alias /media;
+		autoindex off;
+		access_log off; 
+		log_not_found off; 
+		expires max;
+    }
+
+    location / {    
+        proxy_pass http://endoscopes_app;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_redirect off;
+    }
+        
+    gzip on;
+    gzip_disable "msie6";
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript;
+}

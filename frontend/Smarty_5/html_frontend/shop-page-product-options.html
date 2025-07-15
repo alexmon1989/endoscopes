@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>Smarty v5</title>
+		<meta name="description" content="...">
+
+		<meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- up to 10% speed up for external res -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/">
+		<!-- preloading icon font is helping to speed up a little bit -->
+		<link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="assets/css/core.min.css">
+		<link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+
+      <div class="bg-gray-200 p-4">
+        <a href="shop-page-product-2.html" class="fw-medium d-flex align-items-center">
+          <svg class="rtl-flip float-start" width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  
+            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+          </svg>
+          back to shop
+        </a>
+      </div>
+
+
+      <div class="container py-7">
+
+        <h1 class="fw-bold mb-7">
+          Useful options you might need
+        </h1>
+
+        <div class="row g-4">
+
+
+          <!-- pricing -->
+          <div class="col-lg-4">
+
+
+            <!-- price -->
+            <div class="mb-4">
+              <p class="mb-0 text-muted text-uppercase">SKU: RX-078R99</p>
+              <h3 class="mb-0 d-inline-grid gap-auto-3">
+                <del class="fw-normal text-muted">168.99</del>
+                <!-- price updated by configurator -->
+                <span class="fw-bold">$<span class="item-price" 
+                      data-toggle="count" 
+                      data-count-decimals="2"
+                      data-count-from="144.99" 
+                      data-count-to="144.99" 
+                      data-count-duration="250">144.99</span></span>
+              </h3>
+            </div>
+            <!-- /price -->
+
+
+            <!-- configurator -->
+            <div class="clearfix mb-5">
+
+              <h6 class="fw-medium">Configurator</h6>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" id="config-1" type="checkbox" value="" 
+                  data-count-target=".item-price" 
+                  data-count-math="42.00">
+                <label class="form-check-label" for="config-1">
+                  + $42.00 Black bracelet
+                </label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" id="config-2" type="checkbox" value="" 
+                  data-count-target=".item-price" 
+                  data-count-math="12.00">
+                <label class="form-check-label" for="config-2">
+                  + $12.00 Screen protection
+                </label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input class="form-check-input" id="config-3" type="checkbox" value="" 
+                  data-count-target=".item-price" 
+                  data-count-math="112.00">
+                <label class="form-check-label" for="config-3">
+                  + $112.00 128Gb Memory
+                </label>
+              </div>
+
+              <div class="form-check mb-2">
+                <input disabled class="form-check-input" id="config-4" type="checkbox" value="" 
+                  data-count-target=".item-price" 
+                  data-count-math="112.00">
+                <label class="form-check-label" for="config-4">
+                  + <del>$5.99 Additional battery</del> <span class="fw-light">(out of stock)</span>
+                </label>
+              </div>
+
+              <div class="clearfix">
+
+                <!--
+                  use this for priced option, 
+                  instead of link
+                -->
+                <!--
+                <div class="form-check mb-2">
+                  <input class="form-check-input" id="config-upload" type="checkbox" value="" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#item_custom_image" 
+                    data-count-target=".item-price" 
+                    data-count-math="10.00">
+                  <label class="form-check-label" for="config-upload">
+                    + $10.00 Personalized logo
+                  </label>
+                </div>
+                -->
+
+                <a href="#item_custom_image" data-bs-toggle="collapse">
+                  <i class="fi fi-image"></i>
+                  <span class="d-inline-block px-2">
+                    upload personalized logo
+                  </span>
+                </a>
+                <!-- -->
+
+
+                <div id="item_custom_image" class="collapse">
+                  <div class="mt-3">
+
+                    <div class="clearfix">
+                      <label aria-label="Upload files" class="btn btn-sm btn-primary cursor-pointer position-relative m-0">
+
+                          <input  name="item_user_attachment[]" 
+                              type="file" 
+                              multiple=""
+
+                              data-file-ext="jpg, jpeg, psd, ai, png, zip, rar" 
+                              data-file-max-size-kb-per-file="10000"
+                              data-file-max-size-kb-total="100000" 
+                              data-file-max-total-files="10"
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-exist-err-msg="File already exists:"
+                              data-file-size-err-item-msg="File too large!"
+                              data-file-size-err-total-msg="Total allowed size exceeded!"
+                              data-file-size-err-max-msg="Maximum allowed files:"
+                              data-file-toast-position="bottom-center"
+                              data-file-preview-container=".js-file-input-container-multiple-product-attachment" 
+                              data-file-preview-img-height="50" 
+                              data-file-preview-show-info="true" 
+                              data-file-preview-class="bg-white p-2 mb-2 shadow-md rounded w-100" 
+                              data-file-btn-clear="a.js-file-input-btn-multiple-product-attachment-remove"
+                              data-file-preview-img-cover="false" 
+                              data-file-preview-list-type="list" 
+
+                              class="custom-file-input absolute-full">
+
+                        <span class="group-icon">
+                          <i class="fi fi-arrow-upload"></i>
+                          <i class="fi fi-circle-spin fi-spin"></i>
+                        </span> 
+
+                        <span>Select Files</span>
+
+                      </label>
+
+                      <!-- remove button -->
+                      <a href="#" aria-label="Clear files" class="js-file-input-btn-multiple-product-attachment-remove hide btn btn-sm btn-secondary mx-1">
+                        <i class="fi fi-close"></i>
+                        Clear files
+                      </a>
+                    </div>
+
+                    <!--
+                        
+                      Container : files are pushed here!
+                      .hide-empty = container hidden if empty
+
+                    -->
+                    <div class="js-file-input-container-multiple-product-attachment d-block position-relative clearfix hide-empty mt-3"><!-- container --></div>
+
+                  </div>
+
+                  <div class="d-block smaller mt-1 mx-1">
+                    Please upload maximum 100Mb of total files (10Mb/file). <br>
+                    Allowed files: jpg, psd, ai, png, zip, rar!
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            <!-- /configurator -->
+
+
+          </div>
+
+
+          <!-- attributes -->
+          <div class="col-lg-4">
+
+
+            <!-- color 1 -->
+            <div class="clearfix mb-3">
+
+              <h6 class="fw-medium">Color 1</h6>
+
+              <div class="clearfix mt-2">
+                <label class="form-selector">
+                  <input required type="radio" name="color">
+                  <i class="bg-primary"></i>
+                </label>
+
+                <label class="form-selector">
+                  <input required type="radio" name="color" disabled>
+                  <i class="bg-secondary"></i>
+                </label>
+
+                <label class="form-selector">
+                  <input required type="radio" name="color">
+                  <i class="bg-danger"></i>
+                </label>
+
+                <label class="form-selector">
+                  <input required type="radio" name="color">
+                  <i class="bg-warning"></i>
+                </label>
+
+              </div>
+
+            </div>
+            <!-- /color 1 -->
+
+
+
+            <!-- color 2 -->
+            <div class="clearfix mb-3">
+
+              <h6 class="fw-medium">Color 2</h6>
+
+              <div class="clearfix mt-2">
+
+                <label class="form-selector form-selector-xl rounded-circle shadow-xs">
+                  <input required type="radio" name="radio_selector" disabled>
+                  <i class="bg-cover" style="background-image:url('demo.files/images/unsplash/products/thumb_330/smartwatch_3.jpg')"></i>
+                </label>
+
+                <label class="form-selector form-selector-xl rounded-circle shadow-xs">
+                  <input required type="radio" name="radio_selector">
+                  <i class="bg-cover" style="background-image:url('demo.files/images/unsplash/products/thumb_330/smartwatch_3.jpg')"></i>
+                </label>
+
+                <label class="form-selector form-selector-xl rounded-circle shadow-xs">
+                  <input required type="radio" name="radio_selector">
+                  <i class="bg-cover" style="background-image:url('demo.files/images/unsplash/products/thumb_330/smartwatch_3.jpg')"></i>
+                </label>
+
+                <label class="form-selector form-selector-xl rounded-circle shadow-xs">
+                  <input required type="radio" name="radio_selector">
+                  <i class="bg-cover" style="background-image:url('demo.files/images/unsplash/products/thumb_330/smartwatch_3.jpg')"></i>
+                </label>
+
+              </div>
+
+            </div>
+            <!-- /color 2 -->
+
+
+
+            <!-- size 1 -->
+            <div class="clearfix mb-3">
+
+              <a class="h6 js-ajax-modal" href="#" 
+                data-href="_ajax/modal_shop_size_guide.html" 
+                data-ajax-modal-size="modal-xl" 
+                data-ajax-modal-centered="true">Size Guide
+              </a>
+
+              <div class="clearfix mt-2">
+                <label class="form-selector">
+                  <input required type="radio" name="size">
+                  <span>SM</span>
+                </label>
+
+                <label class="form-selector">
+                  <input required type="radio" name="size">
+                  <span>M</span>
+                </label>
+
+                <label class="form-selector">
+                  <input required type="radio" name="size">
+                  <span>XS</span>
+                </label>
+
+                <label class="form-selector">
+                  <input required type="radio" name="size">
+                  <span>XL</span>
+                </label>
+
+                <label class="form-selector">
+                  <input required type="radio" name="size" disabled>
+                  <span>XXL</span>
+                </label>
+              </div>
+
+            </div>
+            <!-- /size 1 -->
+
+
+
+            <!-- size 2 -->
+            <div class="clearfix mb-3">
+              <a class="js-ajax-modal h6 fw-medium" href="#"
+                data-href="_ajax/modal_shop_size_guide.html" 
+                data-ajax-modal-size="modal-xl" 
+                data-ajax-modal-centered="true">Size Guide
+              </a>
+
+              <div class="row g-0 mt-2">
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size" disabled="">
+                    <span class="w-100">EU 35</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 36</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 37</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 38</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 39</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 40</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 41</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 42</span>
+                  </label>
+                </div>
+
+                <div class="col-6 col-md-4">
+                  <label class="form-selector form-selector-lg d-block p-0 m-1">
+                    <input required type="radio" name="size">
+                    <span class="w-100">EU 43</span>
+                  </label>
+                </div>
+
+              </div>
+
+            </div>
+            <!-- /size 2 -->
+
+
+          </div>
+
+
+          <!-- add to cart -->
+          <div class="col-lg-4">
+
+
+
+
+            <h6>Logged in, ajax request (click favourite)</h6>
+
+            <!-- add to cart -->
+            <div class="py-3 d-lg-flex">
+
+              <div class="w-100 d-flex mb-2 mb-lg-0">
+                <!-- quantity -->
+                <input required type="number" value="1" min="1" max="9999" class="flex-none form-control form-control-lg w-auto text-center float-start mx-0">
+                
+                <!-- add to cart button -->
+                <div class="d-grid w-100 mx-2">
+                  <button type="submit" class="btn btn-lg btn-dark flex-none">Add to cart</button>
+                </div>
+              </div>
+
+              <!-- favourites button (delete if not needed) -->
+              <a href="#" class="btn-toggle btn btn-lg btn-light d-flex justify-content-center align-items-center px-lg-4" 
+                data-bs-toggle="tooltip" 
+                data-bs-original-title="add to favourite" 
+
+                data-toggle-ajax-url-on="demo.files/php/demo.ajax_request.php?product_id=1&amp;action=add_to_favourite"
+                data-toast-success-message="Added to your favourite!"
+                data-toast-success-position="bottom-center">
+                <i class="fs-6 m-0 fi fi-heart-empty"><!-- heart icon --></i> 
+                <!-- mobile only --><span class="px-3 d-lg-none">add to favourite</span>
+              </a>
+
+            </div>
+            <!-- /add to cart -->
+
+
+
+
+            <h6 class="mt-5">Not logged in (click favourite)</h6>
+
+            <!-- add to cart -->
+            <div class="py-3 d-lg-flex">
+
+              <div class="w-100 d-flex mb-2 mb-lg-0">
+                <!-- quantity -->
+                <input required type="number" value="1" min="1" max="9999" class="flex-none form-control form-control-lg w-auto text-center float-start mx-0">
+                
+                <!-- add to cart button -->
+                <div class="d-grid w-100 mx-2">
+                  <button type="submit" class="btn btn-lg btn-dark flex-none">Add to cart</button>
+                </div>
+              </div>
+
+              <!-- favourites button (delete if not needed) -->
+              <a href="#" class="js-ajax-modal btn-toggle btn btn-lg btn-light d-flex justify-content-center align-items-center px-lg-4" 
+                data-bs-toggle="tooltip" 
+                data-bs-original-title="add to favourite" 
+
+                    data-href="_ajax/modal_signin.html" 
+                    data-ajax-modal-size="modal-md" 
+                    data-ajax-modal-backdrop="static" 
+                    data-ajax-modal-centered="true">
+                <i class="fs-6 m-0 fi fi-heart-empty"><!-- heart icon --></i> 
+                <!-- mobile only --><span class="px-3 d-lg-none">add to favourite</span>
+              </a>
+
+            </div>
+            <!-- /add to cart -->
+
+
+
+
+            <h6 class="mt-5">Without favourite button</h6>
+
+            <!-- add to cart -->
+            <div class="py-3 d-flex">
+
+              <!-- quantity -->
+              <input required type="number" value="1" min="1" max="9999" class="flex-none form-control form-control-lg w-auto text-center float-start mx-0">
+              
+              <!-- add to cart button -->
+              <div class="d-grid w-100 mx-2">
+                <button type="submit" class="btn btn-lg btn-dark flex-none">Add to cart</button>
+              </div>
+
+            </div>
+            <!-- /add to cart -->
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+		</div><!-- /#wrapper -->
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,94 @@
+{% load project_extras %}
+
+{% contacts as contacts %}
+<footer id="footer" class="bg-gray-900 text-white">
+
+    <!-- line divider -->
+    <hr class="bg-gray-500 my-0 container">
+
+    <div class="container py-5">
+
+        <div class="row g-4">
+
+            <div class="col-12 col-lg-4 mb-4">
+
+                <div class="my-4"><!-- copyright -->
+                    <p class="small mb-0">&copy; 2025 endocsopes.com.ua</p>
+                    <p class="small mb-0">Усі права захищено.</p>
+                </div>
+
+                {% if contacts.facebook_url %}
+                    <a href="{{ contacts.facebook_url }}"
+                       target="_blank"
+                       class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700"
+                       rel="noopener"
+                       aria-label="facebook page">
+                        <i class="fi fi-social-facebook"></i>
+                    </a>
+                {% endif %}
+
+                {% if contacts.instagram_url %}
+                    <a href="{{ contacts.instagram_url }}"
+                       target="_blank"
+                       class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700"
+                       rel="noopener" aria-label="instagram page">
+                        <i class="fi fi-social-instagram"></i>
+                    </a>
+                {% endif %}
+
+            </div>
+
+            <div class="col-12 col-lg-4 mb-4">
+
+                <h3 class="small mb-4">КОНТАКТИ</h3>
+
+                <div class="small d-flex align-items-start my-3">
+                    <svg class="me-3 flex-none my-1" height="24px" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                    </svg>
+                    <div class="contacts">
+                        <div class="mb-3">
+                            Телефон:
+                            {{ contacts.phones|safe }}
+                        </div>
+
+                        Email:
+                        {{ contacts.email|safe }}
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-lg-4 mb-4">
+
+                <h3 class="small mb-4">МЕНЮ</h3>
+
+                <ul class="list-unstyled">
+                    <li class="list-item mb-2">
+                        <i class="fi fi-arrow-end me-2 smaller"></i>
+                        <a class="text-gray-400" href="{% url 'about' %}">Про нас</a>
+                    </li>
+                    <li class="list-item mb-2">
+                        <i class="fi fi-arrow-end me-2 smaller"></i>
+                        <a class="text-gray-400" href="{% url 'catalog' %}">Каталог</a>
+                    </li>
+                    <li class="list-item mb-2">
+                        <i class="fi fi-arrow-end me-2 smaller"></i>
+                        <a class="text-gray-400" href="{% url 'delivery' %}">Доставка та оплата</a>
+                    </li>
+                    <li class="list-item mb-2">
+                        <i class="fi fi-arrow-end me-2 smaller"></i>
+                        <a class="text-gray-400" href="{% url 'contacts' %}">Контакти</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>

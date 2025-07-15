@@ -1,0 +1,42 @@
+{% extends 'layout/base.html' %}
+
+{% block meta_title %}{% if category.meta_title %}{{ category.meta_title }}{% else %}{{ category.title }}
+{% endif %}{% endblock %}
+{% block meta_description %}{% if category.meta_description %}{{ category.meta_description }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if category.meta_keywords %}{{ category.meta_keywords }}{% endif %}{% endblock %}
+
+{% block content %}
+    {% include 'catalog/category/_partials/breadcrumbs.html' %}
+
+    <div class="bg-gray-200 pb-2-xs py-5">
+        <div class="container">
+
+            <div class="row">
+                {% include 'catalog/category/_partials/gallery.html' %}
+                {% include 'catalog/category/_partials/options.html' %}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section py-5">
+        <div class="container">
+
+            <div class="row g-4 g-xl-5">
+
+                <div class="col-12 mb-3">
+                    <h2 class="fw-bold mb-4">
+                        Опис
+                    </h2>
+
+                    <div class="article-format">
+                        {{ category.description|safe }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

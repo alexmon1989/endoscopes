@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>Smarty v5</title>
+		<meta name="description" content="...">
+
+		<meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- up to 10% speed up for external res -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/">
+		<!-- preloading icon font is helping to speed up a little bit -->
+		<link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="assets/css/core.min.css">
+		<link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+	</head>
+
+	<!--
+			
+			Disable scroll to top button (because of mobile "Place order")
+			data-s2t-disable="true"
+
+	-->
+	<body data-s2t-disable="true">
+
+		<div id="wrapper">
+
+
+      <!-- Header -->
+      <header id="header" class="shadow-xs">
+
+        <!-- Navbar -->
+        <div class="container position-relative">
+
+          <nav class="navbar navbar-expand-lg navbar-light">
+
+            <div class="align-items-start">
+
+              <!-- mobile menu button : show -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="25" viewBox="0 0 20 20">
+                  <path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+                  <path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+                  <path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+                  <path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+                </svg>
+              </button>
+
+              <!-- 
+                Logo : height: 70px max
+              -->
+              <a class="navbar-brand m-0" href="shop-index-1.html">
+                <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+              </a>
+
+
+            </div>
+
+
+	          <!-- securd indicator -->
+						<span class="d-none d-lg-flex align-items-center text-success py-2 border-start px-3 mx-4">
+	            <svg width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+	              <path fill-rule="evenodd" d="M8 .5c-.662 0-1.77.249-2.813.525a61.11 61.11 0 0 0-2.772.815 1.454 1.454 0 0 0-1.003 1.184c-.573 4.197.756 7.307 2.368 9.365a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586a11.191 11.191 0 0 0 2.418-2.3c1.611-2.058 2.94-5.168 2.367-9.365a1.454 1.454 0 0 0-1.003-1.184 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5zm2.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.793 6.354 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"></path>
+	            </svg>
+	            <span class="ps-2 small">Secured data</span>
+	          </span>
+
+
+            <!-- mobile nav only -->
+            <div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+              <!-- navbar : mobile menu -->
+              <div class="navbar-xs d-none">
+
+                <!-- mobile menu button : close -->
+                <button class="navbar-toggler pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <svg width="20" viewBox="0 0 20 20">
+                    <path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+                  </svg>
+                </button>
+
+                <!-- 
+                  Mobile Menu Logo 
+                  Logo : height: 70px max
+                -->
+                <a class="navbar-brand" href="shop-index-1.html">
+                  <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+                </a>
+
+              </div>
+              <!-- /navbar : mobile menu -->
+
+              <!-- menu -->
+              <ul class="navbar-nav navbar-sm d-lg-none">
+
+		            <li class="nav-item"><a class="nav-link px-3" href="#">Continue shopping</a></li>
+		            <li class="nav-item"><a class="nav-link px-3" href="#">My account</a></li>
+		            <li class="nav-item"><a class="nav-link px-3" href="#">Favorites</a></li>
+
+              </ul>
+
+            </div>
+
+
+						<!-- Process Steps -->
+						<ol class="process-steps my-0 pb-2 ms-auto d-none d-lg-flex" style="width:400px">
+							<li class="process-step-item complete">Cart</li>
+							<li class="process-step-item active">Place order</li>
+							<li class="process-step-item">Payment</li>
+							<li class="process-step-item">Complete</li>
+						</ol>
+
+          </nav>
+
+        </div>
+        <!-- /Navbar -->
+
+      </header>
+      <!-- /Header -->
+
+
+
+			<!-- CHECKOUT -->
+			<div class="container pb-7 pt-5">
+
+        <div class="row g-4">
+
+          <div class="col-lg-7"><!-- account, address, payment -->
+
+            <!-- 
+              Checkout form -->
+                          
+              <form id="form-checkout" novalidate class="bs-validate" method="post" action="/checkout/">
+
+                <div class="card mb-3">
+                  <div class="card-header fs-4 fw-bold py-3">Delivery</div>
+                  <div class="card-body p-md-4">
+
+
+                    <!-- #checkout-account -->
+                    <div class="mb-5">
+                      <div id="checkout-account" class="position-relative">
+                    
+		                    <div class="d-xl-flex align-items-center mb-2">
+
+
+		                      <!-- new customer (will create an account) -->
+		                      <div class="form-check py-1 mb-1 me-3">
+		                        <input class="form-check-input form-check-input-primary" type="radio" name="user[account_type]" id="user-account-type-1" value="1" checked>
+		                        <label class="form-check-label user-select-none cursor-pointer lh-1" for="user-account-type-1">
+		                        	New client
+		                        </label>
+		                      </div>
+
+		                      <!-- already have an account -->
+		                      <div class="form-check py-1 mb-1 me-3">
+		                        <input class="form-check-input form-check-input-primary" type="radio" name="user[account_type]" id="user-account-type-2" value="1">
+		                        <label class="form-check-label user-select-none cursor-pointer lh-1 js-ajax-modal" for="user-account-type-2" 
+			                        data-href="_ajax/modal_signin.html"
+													    data-ajax-modal-size="modal-md"
+													    data-ajax-modal-centered="true"
+													    data-ajax-modal-backdrop="static">
+		                        	Already have an account
+		                        </label>
+		                      </div>
+
+		                      <!-- without account -->
+		                      <div class="form-check py-1 mb-1 me-3">
+		                        <input class="form-check-input form-check-input-primary" type="radio" name="user[account_type]" id="user-account-type-3" value="0">
+		                        <label class="form-check-label user-select-none cursor-pointer lh-1" for="user-account-type-3">
+		                        	Order as guest
+		                        </label>
+		                      </div>
+
+		                    </div>
+		                  
+		                    <div class="form-floating">
+		                      <input required type="email" class="form-control" id="user-email" name="user[user_email]" placeholder="Email address" value="">
+		                      <label for="user-email">Email address</label>
+		                    </div>
+			                  
+			                </div> 
+			              </div>
+
+
+                    <!-- #checkout-shipping -->
+                    <div class="mb-5">
+
+                    	<div class="fs-5 mb-3 fw-bold">Shipping address</div>
+                      <div id="checkout-shipping" class="position-relative">
+
+			                  <div id="checkout-shipping-form" class="row g-3">
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+	                            <input required type="text" class="form-control shadow-none" id="shipping__full_name" name="shipping[full_name]" placeholder="Full name" value="">
+	                            <label for="shipping__full_name" class="text-truncate w-100">Full name</label>
+	                          </div>
+	                        </div>
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+	                            <input required type="text" class="form-control shadow-none" id="shipping__phone_number" name="shipping[phone_number]" placeholder="Phone" value="">
+	                            <label for="shipping__phone_number" class="text-truncate w-100">Phone</label>
+	                          </div>
+	                        </div>
+
+	                        <div class="col-12">
+	                          <div class="form-floating">
+	                            <input required type="text" class="form-control shadow-none" id="shipping__address_1" name="shipping[address_1]" placeholder="Address" value="">
+	                            <label for="shipping__address_1" class="text-truncate w-100">Address (street, number, apartament, etc)</label>
+	                          </div>
+	                        </div>
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+				                      <!-- 
+				                        based on `SOW : Ajax Select` plugin 
+				                        documentation/plugins-sow-ajax-select.html
+				                      -->
+	                            <select required data-ajax-target="#shipping__state_id" class="js-ajax form-select shadow-none" id="shipping__country_id" name="shipping[country_id]" aria-label="Country">
+				                        <option value="">Select Contry...</option>
+				                        <option value="1">United States</option>
+				                        <option value="2">Romania</option>
+	                            </select>
+	                            <label for="shipping__country_id" class="text-truncate w-100">Country</label>
+	                          </div>
+	                        </div>
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+				                      <!-- 
+				                        based on `SOW : Ajax Select` plugin 
+				                        documentation/plugins-sow-ajax-select.html
+				                      -->
+	                            <select required disabled class="form-select shadow-none" id="shipping__state_id" name="shipping[city_id]" aria-label="Localitate"
+																data-ajax-url="_ajax/select_ajax_state_list.php" 
+				                        data-ajax-method="GET" 
+				                        data-ajax-params="['action','get_state_list']['param2','value2']" 
+				                        data-live-search="true">
+
+	                              <option value="">Select country first</option>
+	                              
+	                            </select>
+	                            <label for="shipping__state_id" class="text-truncate w-100">State</label>
+	                          </div>
+	                        </div>
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+	                            <input required type="text" class="form-control shadow-none" id="shipping__city_name" name="shipping[city_name]" placeholder="City" value="">
+	                            <label for="shipping__city_name" class="text-truncate w-100">City</label>
+	                          </div>
+	                        </div>
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+	                            <input required type="text" class="form-control shadow-none" id="shipping__postcode" name="shipping[postcode]" placeholder="Postcode" value="">
+	                            <label for="shipping__postcode" class="text-truncate w-100">Postcode</label>
+	                          </div>
+	                        </div>
+
+                				</div>
+
+			                  <div class="form-check mt-4 mb-2">
+			                    <input class="form-check-input form-check-input-primary" type="checkbox" value="1" id="billing_company" name="billing_company" data-bs-toggle="collapse" data-bs-target="#checkout-billing">
+			                    <label class="form-check-label user-select-none fw-medium text-primary" for="billing_company">
+			                      Billing address is different
+			                    </label>
+			                  </div>
+			                
+			                </div>
+
+                  	</div>
+
+
+                    <!-- #checkout-billing -->
+                    <div id="checkout-billing" class="collapse">
+                      <div class="mb-5">
+                        <div class="fs-5 mb-3 fw-bold">Billing address</div>
+                
+              						<div id="checkout-billing-form" class="row g-3 ">
+
+			                     	<div class="col-12">
+			                        <div class="form-floating">
+			                          <input  type="text" class="form-control shadow-none" id="billing__full_name" name="billing[full_name]" placeholder="Full name" value="">
+			                          <label for="billing__full_name" class="text-truncate w-100">Full name</label>
+			                        </div>
+			                      </div>
+			                  
+			                      <div class="col-sm-6">
+			                        <div class="form-floating">
+			                          <input  type="text" class="form-control shadow-none" id="billing__company_name" name="billing[company_name]" placeholder="Company" value="">
+			                          <label for="billing__company_name" class="text-truncate w-100">Company</label>
+			                        </div>
+			                      </div>
+			                  
+			                      <div class="col-sm-6">
+			                        <div class="form-floating">
+			                          <input  type="text" class="form-control shadow-none" id="billing__company_vat" name="billing[company_vat]" placeholder="VAT number" value="">
+			                          <label for="billing__company_vat" class="text-truncate w-100">VAT number</label>
+			                        </div>
+			                      </div>
+			                  
+			                      <div class="col-md-6">
+			                        <div class="form-floating">
+			                          <input  type="text" class="form-control shadow-none" id="billing__company_bank_name" name="billing[company_bank_name]" placeholder="Bank name (optional)" value="">
+			                          <label for="billing__company_bank_name" class="text-truncate w-100">Bank name (optional)</label>
+			                        </div>
+			                      </div>
+			                  
+			                      <div class="col-md-6">
+			                        <div class="form-floating">
+			                          <input  type="text" class="form-control shadow-none" id="billing__company_bank_number" name="billing[company_bank_number]" placeholder="IBAN" value="">
+			                          <label for="billing__company_bank_number" class="text-truncate w-100">IBAN (opțional)</label>
+			                        </div>
+			                      </div>
+
+			                      <div class="col-12">
+			                        <div class="form-floating">
+			                          <input  type="text" class="form-control shadow-none" id="billing__address_1" name="billing[address_1]" placeholder="Address" value="">
+			                          <label for="billing__address_1" class="text-truncate w-100">Address</label>
+			                        </div>
+			                      </div>
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+	                            <input type="text" class="form-control shadow-none" id="billing__city_name" name="shipping[city_name]" placeholder="City" value="">
+	                            <label for="billing__city_name" class="text-truncate w-100">City</label>
+	                          </div>
+	                        </div>
+
+	                        <div class="col-sm-6">
+	                          <div class="form-floating">
+	                            <input type="text" class="form-control shadow-none" id="billing__postcode" name="shipping[postcode]" placeholder="Postcode" value="">
+	                            <label for="billing__postcode" class="text-truncate w-100">Postcode</label>
+	                          </div>
+	                        </div>
+
+			                		</div>
+                      
+                      </div>
+                    </div>
+
+
+                    <!-- #checkout-shipping-rate -->
+                    <div class="mb-5">
+                			<div class="fs-5 mb-3 fw-bold">Delivery method</div>
+                      <div id="checkout-shipping-rate" class="position-relative">
+                                                    
+                        <div class="form-check mb-2">
+                          <input required type="radio" name="method[shipping]" id="rate-1" value="1" class="form-check-input form-check-input-primary" checked>
+                          <label class="form-check-label user-select-none" for="rate-1">
+                            10,00 RON &ndash; UPS
+                            <small class="d-block text-muted">2-3 business days</small>
+                          </label>
+                        </div>
+                      
+                        <div class="form-check mb-2">
+                          <input required type="radio" name="method[shipping]" id="rate-2" value="2" class="form-check-input form-check-input-primary">
+                          <label class="form-check-label user-select-none" for="rate-2">
+                            8,00 RON &ndash; Fedex
+                            <small class="d-block text-muted">1-2 business days</small>
+                          </label>
+                        </div>
+                                                                                
+                        <div class="form-check mb-2">
+                          <input required type="radio" name="method[shipping]" id="rate-3" value="3" class="form-check-input form-check-input-primary">
+                          <label class="form-check-label user-select-none" for="rate-3">
+                            Pickup in store - New York
+                            <span class="d-block text-muted smaller user-select-all">
+                              PO Box 21132 Here Weare Str
+                            </span>
+                          </label>
+                        </div>
+                                          
+                			</div>
+                  	</div>
+
+
+                    <!-- #checkout-payment -->
+                    <div class="mb-3 lh-1">
+                      <span class="fs-5 fw-bold">Payment method</span>
+                      <small class="d-block text-success fw-medium mt-1">All transactions are secured</small>
+                    </div>
+                    <div id="checkout-payment" class="position-relative">
+                    
+                      <div class="py-2">
+                        <div class="form-check">
+                          <input required class="form-check-input form-check-input-primary" type="radio" id="payment__card" name="method[payment]" value="card" checked>
+                          <label class="form-check-label user-select-none" for="payment__card">
+                            Credit card
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="py-2">
+                        <div class="form-check">
+                          <input required class="form-check-input form-check-input-primary" type="radio" id="payment__paypal" name="method[payment]" value="paypal">
+                          <label class="form-check-label user-select-none" for="payment__paypal">
+                            Paypal
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="py-2">
+                        <div class="form-check">
+                          <input required class="form-check-input form-check-input-primary" type="radio" id="payment__cash" name="method[payment]" value="cash">
+                          <label class="form-check-label user-select-none" for="payment__cash">
+                            Cash on delivery
+                          </label>
+                        </div>
+                      </div>
+                  
+                		</div>
+
+                  </div>
+                </div>
+
+                <!-- preview items -->
+                <div class="card mb-3">
+                  <div class="card-header fs-5 fw-bold">Your items</div>
+                  <div class="card-body p-md-4">
+                                          
+                    <ul class="list-unstyled p-0 m-0">
+														
+											<!-- item -->               
+                      <li class="row align-items-center mb-2 pb-2">
+
+                        <!-- image -->
+                        <div class="col-3 col-md-2">
+                          <div class="ratio ratio-1x1">
+                            <span class="d-flex justify-content-center align-items-center">
+                              <span class="d-flex justify-content-center align-items-center">
+                                <img class="img-fluid rounded" src="demo.files/images/unsplash/products/smartwatch_3.jpg" alt="cart item">
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="col-9 col-md-10">
+                          <p class="mb-0 fw-medium text-truncate">1 &times; Apple smartwatch series 7 Midnight Sport Band</p>
+
+                          <p class="mb-0 d-flex align-items-center small">
+                            <del class="fw-normal text-muted me-2">$210.00</del>
+                            <span class="fw-medium me-2">$199.00</span>
+                         	</p>
+
+                          <small class="d-block text-muted">Color: silver</small>
+                        </div>
+
+                      </li>
+                      <!-- /item -->   
+
+											<!-- item -->               
+                      <li class="row align-items-center mb-2 pb-2">
+
+                        <!-- image -->
+                        <div class="col-3 col-md-2">
+                          <div class="ratio ratio-1x1">
+                            <span class="d-flex justify-content-center align-items-center">
+                              <span class="d-flex justify-content-center align-items-center">
+                                <img class="img-fluid rounded" src="demo.files/images/unsplash/products/hardik-sharma-CrPAvN29Nhs-unsplash-min.jpg" alt="cart item">
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="col-9 col-md-10">
+                          <p class="mb-0 fw-medium text-truncate">1 &times; Apple iPhone 12</p>
+
+                          <p class="mb-0 d-flex align-items-center small">
+                            <!-- <del class="fw-normal text-muted me-2">$210.00</del> -->
+                            <span class="fw-medium me-2">$1122.00</span>
+                         	</p>
+
+                          <small class="d-block text-muted">Color: black</small>
+                        </div>
+
+                      </li>
+                      <!-- /item --> 
+
+                    </ul>
+
+                  </div>
+                </div>
+                
+                <!-- terms -->
+                <div class="card mb-3">
+                	<div class="card-body">
+                  
+	                  <h4 class="fs-6 fw-bold">How secure is your personal data?</h4>
+	                  <p class="smaller">
+	                    The personal data provided above will be collected and processed for: 
+	                    issuing the tax invoice and warranty certificates, telephone information (and / or Email / SMS notifications regarding the order), 
+	                    delivery of the order and automatic registration of the customer's account.
+	                  </p>
+
+	                  <hr class="bg-gray-300">
+
+	                  <div class="form-check mb-2"><!-- i do agree -->
+	                    <input required class="form-check-input form-check-input-primary" type="checkbox" id="action" name="action" value=""><!-- value replaced by js: checkout:process -->
+	                    <label class="form-check-label user-select-none" for="action">
+	                      I agree Smarty <a class="text-decoration-none" href="shop-page-terms.html" target="_blank" rel="noopener">terms & conditions</a>
+	                    </label>
+	                  </div>
+
+	                  <div class="form-check"><!-- subscribe -->
+	                    <input class="form-check-input form-check-input-primary" type="checkbox" value="1" id="accept_subscribe" name="user[accept_subscribe]">
+	                    <label class="form-check-label user-select-none text-muted" for="accept_subscribe">
+	                      Keep me informed with the latest gadgets
+	                    </label>
+	                  </div>
+
+	                </div>
+                </div>
+
+                <!-- 
+                  
+                  Submit
+                  desktop only 
+
+                -->
+                <div class="d-none d-lg-block">
+                  <button type="submit" class="btn btn-lg btn-primary px-4 d-flex align-items-center">
+                    Place order
+                  </button>
+                </div>
+
+
+                <!-- 
+                  
+                  Submit
+                  mobile only 
+
+                -->
+                <div class="d-flex d-lg-none align-items-center position-fixed w-100 bottom-0 start-0 end-0 z-index-2 bg-white border-top p-2">
+
+                  <div class="w-100 fw-medium lh-1">
+                    <span class="small d-block">Total <small class="fw-normal">(vat incl.)</small></span> 
+                    <span class="h5 d-block">$1347.00</span>
+                  </div>
+
+                  <button type="submit" class="btn btn-sm btn-primary flex-none" data-form-submit='{"id":"action","value":"checkout:process","delay":800}'>
+                    Place order
+                  </button>
+
+                </div>
+
+              </form>
+
+          </div>
+
+          <!-- order summary -->
+          <div class="col-lg-5 mb-4">
+
+            <div class="sticky-kit z-index-0">
+
+            <!-- #cart-summary -->
+            <div class="card text-gray-800">
+              <div class="card-header border-light fs-5 fw-bold mx-3 px-0 py-4">Order sumary</div>
+              <div class="card-body p-md-4">
+                              
+	              <div id="cart-summary">
+
+	                <div class="d-flex justify-content-between">
+	                  <span>Products:</span>
+	                  <span class="text-end">$1334.00</span>
+	                </div>
+
+	                <!-- shipping -->
+	                <div class="clearfix">
+	                  Shipping: 
+	                  <span id="shipping-amount" class="float-end">$10.00</span>
+	                  <!-- <span id="shipping-free" class="float-end text-success fw-medium">Free</span> -->
+	                  <!-- <span id="shipping-undefined" class="float-end text-muted">&ndash;</span> -->
+	                </div>
+
+	                <div class="d-flex justify-content-between">
+	                  <span>Fees:</span> 
+	                  <span class="text-end">$3.00</span>
+	                </div>
+	                
+	                <hr class="bg-gray-300">
+
+	                <div class="fw-medium lh-1 mt-4">
+	                  <span class="fs-6 d-block">Total <small class="fw-normal">(vat incl.)</small>:</span> 
+	                  <span class="h3 d-block">$1347.00</span>
+	                </div>
+
+	                <small class="d-block text-gray-600">
+	                  <span>You get <span class="text-primary">134</span> reward points</span> 
+	                </small>
+
+	              </div>
+
+              </div>
+            </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+			</div>
+			<!-- /CHECKOUT -->
+
+
+		</div><!-- /#wrapper -->
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

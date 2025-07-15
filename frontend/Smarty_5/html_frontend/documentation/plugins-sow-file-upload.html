@@ -1,0 +1,2968 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Smarty</title>
+    <meta name="description" content="Smarty Documentation">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="../assets/css/core.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/theme.docs.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+  </head>
+  <body class="layout-admin bg-white aside-sticky aside-lg header-sticky" data-s2t-class="btn-dark btn-sm rounded-circle">
+
+
+    <!-- floating butons -->
+    <div class="position-absolute top-0 end-0 m-3 z-index-5 d-flex align-items-center">
+      <a href="../index.html" class="link-muted small mx-3">
+        <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path></svg>
+        <span>back to main</span>
+      </a>
+      <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+    </div>
+
+
+    <!-- header : mobile only -->
+    <header id="header" class="d-flex d-lg-none align-items-center shadow-xs">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+          <div class="align-items-start">
+            
+            <!-- sidebar toggler -->
+            <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+              <span class="group-icon">
+                <i><svg width="25" height="25" viewBox="0 0 20 20"><path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path><path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path><path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path><path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path></svg></i>
+                <i><svg width="25" height="25" viewBox="0 0 47.971 47.971"><path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/></svg></i>
+              </span>
+            </a>
+
+            <!-- Logo : height: 60px max -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Purchase</a>
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /header : mobile only -->
+
+
+    <div id="wrapper_content" class="d-flex align-items-stretch">
+
+
+      <!-- sidebar -->
+      <aside id="aside-main" class="aside-start d-flex align-items-stretch justify-content-lg-between align-items-start flex-column bg-gray-200 fw-normal aside-hide-xs">
+
+        <a class="d-flex align-items-center p-3" href="index.html">
+          <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+          <span class="badge bg-gray-300 text-gray-800 ms-3">v5.0.7</span>
+        </a>
+
+        <div class="aside-wrapper scrollable-vertical scrollable-styled-dark">
+
+
+          <!--
+
+            All parent open navs are closed on click!
+            To ignore this feature, add .js-ignore to .nav-deep
+
+            Links height (paddings):
+              .nav-deep-xs
+              .nav-deep-md    (default, ununsed class)
+              .nav-deep-sm
+              .nav-deep-lg
+          -->
+          <nav class="nav-deep nav-deep-light nav-deep-xs" style="font-size:15px">
+            <ul class="nav flex-column px-2 py-4">
+
+              <li class="nav-title">
+                <h6 class="small mb-1 fw-bold">DOCUMENTATION</h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="index.html">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="gulp.html">Gulp</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="migration.html">Migration</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="changelog.html">Changelog</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="credits.html">Credits</a></li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">COMPONENTS & ELEMENTS</h6>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Components</span>
+                </a>
+              
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-alerts.html">Alerts</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-accordions.html">Accordions</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-avatars.html">Avatars</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-badges.html">Badges</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-buttons.html">Buttons</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-cards.html">Cards</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-carousel.html">Carousel</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-collapse.html">Collapse</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-lists.html">Lists</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-media.html">Media</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-modals.html">Modals</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navs.html">Navs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-navbar.html">Navbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-offcanvas.html">Offcanvas</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-pagination.html">Pagination</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-progress.html">Progress</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-process-steps.html">Process Steps</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-popover.html">Popover</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-spinners.html">Spinners</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tabs.html">Tabs</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tables.html">Tables</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-timeline.html">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-thumbnails.html">Thumbnails</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-tooltip.html">Tooltip</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="components-typography.html">Typography</a></li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-control.html">Form control</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-form-select.html">Select</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-checks-radios.html">Checks & radios</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-switches.html">Switches</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-range.html">Range</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-input-group.html">Input group</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-floating-labels.html">Floating label</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="forms-validation.html">Validation</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Icons</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-smarty.html">Smarty icons<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-bootstrap.html">Bootstrap icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-simple-icons.html">Simple icons<span class="smaller float-end mt-1 opacity-50">SVG</span></a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="icons-flags.html">Flags<span class="smaller float-end mt-1 opacity-50">WEB</span></a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Utilities / Helpers</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-backgrounds.html">Text &amp; Backgrouns</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-text-color-extended.html">Extended Text Color</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-borders.html">Borders</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-shadows.html">Box Shadows</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-font.html">Font Size / Weight</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-width-height.html">Width / Height</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-padding-margin.html">Paddings / Margins</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-transition.html">Transitions / Transforms</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-position.html">Position</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-visibility.html">Visibility</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-overlays.html">Overlays &amp; Opacity</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-scroll.html">Scroll &amp; Scrollbar</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-misc.html">Miscellaneous</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-responsive.html">Responsive</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="util-rtl.html">RTL</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Php / Forms</span>
+                </a>
+
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-overview.html">Overview</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="php-forms.html">Contact Forms</a></li>
+                </ul>
+
+              </li>
+
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>SOW : CORE PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-overview.html"><span>Overview</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-header.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Header</span></a></li>
+              <!-- no ajax --><li class="nav-item"><a class="nav-link" href="plugins-sow-search-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">9Kb</span><span>SOW : Search Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-input-suggest.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Input Suggest</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-image.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Ajax : Image</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">10Kb</span><span>SOW : Ajax : Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Forms</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-content.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Ajax : Content</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Ajax : Modals</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html"><span class="badge float-end fw-normal mt-1 text-gray-500">6Kb</span><span>SOW : Ajax : Confirm</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-ajax-select.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.5Kb</span><span>SOW : Ajax : Select</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-validation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Form Validation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-form-advanced.html"><span class="badge float-end fw-normal mt-1 text-gray-500">7Kb</span><span>SOW : Form Advanced</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-file-upload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">24Kb</span><span>SOW : File Upload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkall.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check All</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-checkgroup.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Check Group</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-toasts.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4Kb</span><span>SOW : Toasts</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gdpr.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : GDPR Cookies</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-inline-search.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Inline Search</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-dropdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">3Kb</span><span>SOW : Dropdowns</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Deep Navigation</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2.5Kb</span><span>SOW : Button Toggle</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-scroll-to.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Scroll To</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Timer Autohide</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Timer Countdown</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-gfont.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1.5Kb</span><span>SOW : Google Font</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-lazyload.html"><span class="badge float-end fw-normal mt-1 text-gray-500">1Kb</span><span>SOW : Lazyload</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-count-animate.html"><span class="badge float-end fw-normal mt-1 text-gray-500">4.1Kb</span><span>SOW : Count Animate</span></a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-sow-utils.html"><span class="badge float-end fw-normal mt-1 text-gray-500">2Kb</span><span>SOW : Utils</span></a></li>
+
+              <li class="nav-title mt-5">
+                <h6 class="small mb-1 fw-bold">
+                  <span>VENDOR PLUGINS</span>
+                </h6>
+              </li>
+
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flickity.html">Vendor : Flickity Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-swiper.html">Vendor : Swiper Slider</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">Vendor : Jaxallax</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">Vendor : Sticky Kit</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">Vendor : Fancybox</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">Vendor : Photoswipe</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-openstreetmap.html">Vendor : OpenStreetMap</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">Vendor : Slimscroll</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-nestable.html">Vendor : Nestable</a></li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span><span>Vendor : Pickers</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">Datepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">Rangepicker</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">Colorpicker</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Charts</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">Chart.js</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-flot.html">Flot Chart</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-easypie.html">Easy Pie Chart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-ajax" href="#">
+                  <span class="group-icon float-end">
+                    <i class="fi fi-arrow-end-slim"></i>
+                    <i class="fi fi-arrow-down-slim"></i>
+                  </span>
+                  <span>Vendor : Editors</span>
+                </a>
+                <ul class="nav flex-column">
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">Medium Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-markdown.html">Markdown Editor</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-summernote.html">Summernote</a></li>
+                  <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-quill-editor.html">Quill Editor</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-datatable.html">Vendor : Datatable</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">Vendor : Fullcalendar</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">Vendor : Prismjs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-aos.html">Vendor : AOS</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-typed.html">Vendor : Typed</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">Vendor : Sortablejs</a></li>
+              <li class="nav-item"><a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">Vendor : Cocoen</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+
+      <!-- middle -->
+      <main id="middle" class="flex-fill p-0">
+
+
+        <header class="doc-page-title p-4 p-md-5"><!-- page title -->
+          <h1 class="h2 mb-0 fw-bold">SOW : File upload</h1>
+          <p class="lead text-gray-700">SOW plugins are part of <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="_blank" rel="noopener nofollow">Smarty</a> Core, written from scratch!</p>
+          <code>src/js/sow.core/sow.file_upload.js</code>
+        </header>
+
+
+        <div class="doc-content p-4 p-md-5">
+
+          <div class="container-doc">
+
+            <h5>Overview:</h5>
+            <ul>
+              <li>image preview</li>
+              <li>filter by file extension</li>
+              <li>filter by file size</li>
+              <li>filter by size of all files (on multiple upload)</li>
+              <li>enabled multiple uploads using the same file input</li>
+              <li>ajax instant uploads</li>
+              <li>fancy progress bar &amp; custom progress bar (all based on bootstrap progress)</li>
+              <li>drag to reorder (dependnecies: <a href="plugins-vendor-sortablejs.html" class="js-ajax link-muted">sortablejs vendor</a>)</li>
+              <li>lightweight - 24Kb minified (6.4Kb gzipped).</li>
+            </ul>
+
+            <p>
+              While playing around, watch your console to see ajax requests.
+            </p>
+
+          </div>
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Regular <b class="text-gray-700">File input</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-1">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-1-preview" id="nav-tab-1-preview-link" aria-controls="nav-tab-1-preview" data-bs-toggle="pill">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-1-html" id="nav-tab-1-html-link" aria-controls="nav-tab-1-html" data-bs-toggle="pill">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-1-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-1-preview" aria-labelledby="nav-tab-1-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-lg-6">
+
+                    <h6>Multiple Files & Preview</h6>
+
+                    <div class="mb-3">
+
+                      <!--
+
+                        Params for multiple files
+                            data-file-ext="jpg, png, gif, mp3"                      file extendion allowed
+                            data-file-max-size-kb-per-file="100"                      size per file in Kb
+                            data-file-max-size-kb-total="300"                       size of total files
+                            data-file-max-total-files="3"                         maximum files allowed to upload
+                            data-file-ext-err-msg="Allowed:"                        file extension error message (default: "Allowed:" )
+                            data-file-exist-err-msg="File already exists:"                file already exists message (default: "File already exists:")
+                            data-file-size-err-item-msg="File too large!"                 file too large error message (default: "File too large!")
+                            data-file-size-err-total-msg="Total allowed size exceeded!"         files total size allowed message (default: "Total allowed size exceeded!")
+                            data-file-size-err-max-msg="Maximum allowed files:"             no of files error (default: "Maximum allowed files:")
+                            data-file-toast-position="bottom-center"                  toastr error position
+                            data-file-preview-container=".js-file-input-preview-single-container"   container preview (id or class)
+                            data-file-preview-img-height="120"                      image preview height in pixels (default: 120)
+                            data-file-preview-show-info="true"                      true = display image name and size in Kb (default: false)
+                            data-file-btn-clear="a.js-file-upload-clear"                clear button (id or class)
+
+                        Optional - customize preview item container:
+                          data-file-preview-class="shadow-md m-2 rounded"               (default: "shadow-md m-2 rounded")
+
+                      -->
+                      <input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="html, jpg, png, gif, mp3" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="12" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-preview-multiple-container" 
+                          data-file-preview-img-height="120" 
+                          data-file-preview-show-info="true" 
+                          data-file-preview-class="shadow-md m-2 rounded float-start" 
+                          data-file-btn-clear="a.js-file-upload-clear"
+                          class="form-control">
+                      
+
+                    </div>
+
+                    <div class="js-file-input-preview-multiple-container ms--n6 me--n6 clearfix hide-empty"><!-- preview container --></div>
+
+                    <!-- 
+                      clear files button
+                      hidden by default 
+                    -->
+                    <div class="mt-1">
+                      <a href="#" class="hide js-file-upload-clear btn btn-light btn-sm">
+                        Clear Files
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="col-lg-6">
+
+                    <h6>Single File &Preview</h6>
+
+                    <div class="mb-3">
+
+                      <!--
+
+                        Params for single file
+                          data-file-ext="jpg, png, gif, mp3"                      file extendion allowed
+                          data-file-max-size-kb-per-file="100"                      size per file in Kb
+                          data-file-ext-err-msg="Allowed:"                        file extension error message (default: "Allowed:" )
+                          data-file-size-err-item-msg="File too large!"                 file too large error message (default: "File too large!")
+                          data-file-toast-position="bottom-center"                  toastr error position
+                          data-file-preview-container=".js-file-input-preview-single-container"   container preview (id or class)
+                          data-file-preview-img-height="120"                      image preview height in pixels (default: 120)
+                          data-file-preview-show-info="true"                      true = display image name and size in Kb (default: false)
+                          data-file-btn-clear="a.js-file-upload-clear"                clear button (id or class)
+
+                        Optional - customize preview item container:
+                          data-file-preview-class="shadow-md m-2 rounded"               (default: "shadow-md m-2 rounded")
+
+
+                        AJAX TRANSFORM : JUST ADD:
+
+                        data-file-ajax-upload-enable="true"
+                        data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php"
+                        data-file-ajax-upload-params="['action','upload']['param2','value2']"
+
+                        data-file-ajax-delete-enable="true"
+                        data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php"
+                        data-file-ajax-delete-params="['action','delete_file']"
+
+                        data-file-ajax-toast-success-txt="Successfully Uploaded!"
+                        data-file-ajax-toast-error-txt="One or more files not uploaded!"
+
+                      -->
+                      <input type="file" name="file_input_name" 
+                          data-file-ext="jpg, png, gif, mp3" 
+                          data-file-max-size-kb-per-file="30000"
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!"
+                          data-file-size-err-total-msg="Total allowed size exceeded!"
+                          data-file-toast-position="bottom-center"
+                          data-file-preview-container=".js-file-input-preview-single-container2" 
+                          data-file-preview-img-height="auto" 
+                          data-file-preview-show-info="false" 
+                          data-file-btn-clear="a.js-file-upload-clear2"
+                          class="form-control">
+                        
+                    </div>
+
+
+                    <div class="js-file-input-preview-single-container2 ms--n6 me--n6 mt-4 hide-empty"><!-- preview container --></div>
+
+                    <!-- 
+                      clear files button
+                      hidden by default 
+                    -->
+                    <div class="mt-1">
+                      <a href="#" class="hide js-file-upload-clear2 btn btn-light btn-sm">
+                        Remove Image
+                      </a>
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-1-html" aria-labelledby="nav-tab-1-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Single File & Preview --&gt;
+                    &lt;div class="mb-3"&gt;
+
+                      &lt;input type="file" name="file_input_name" 
+                          data-file-ext="jpg, png, gif, mp3" 
+                          data-file-max-size-kb-per-file="30000"
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!"
+                          data-file-size-err-total-msg="Total allowed size exceeded!"
+                          data-file-toast-position="bottom-center"
+                          data-file-preview-container=".js-file-input-preview-single-container2" 
+                          data-file-preview-img-height="auto" 
+                          data-file-preview-show-info="false" 
+                          data-file-btn-clear="a.js-file-upload-clear2"
+                          class="form-control"&gt;
+                        
+                    &lt;/div&gt;
+
+                    &lt;div class="js-file-input-preview-single-container2 ms--n6 me--n6 mt-4 hide-empty"&gt;&lt;!-- preview container --&gt;&lt;/div&gt;
+
+                    &lt;!-- 
+                      clear files button
+                      hidden by default 
+                    --&gt;
+                    &lt;div class="mt-1"&gt;
+                      &lt;a href="#" class="hide js-file-upload-clear2 btn btn-light btn-sm"&gt;
+                        Remove Image
+                      &lt;/a&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Multiple Files & Preview --&gt;
+                    &lt;div class="mb-3"&gt;
+                      &lt;input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="html, jpg, png, gif, mp3" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="12" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-preview-multiple-container" 
+                          data-file-preview-img-height="120" 
+                          data-file-preview-show-info="true" 
+                          data-file-preview-class="shadow-md m-2 rounded float-start" 
+                          data-file-btn-clear="a.js-file-upload-clear"
+                          class="form-control"&gt;
+                      
+
+                    &lt;/div&gt;
+
+                    &lt;div class="js-file-input-preview-multiple-container ms--n6 me--n6 clearfix hide-empty"&gt;&lt;!-- preview container --&gt;&lt;/div&gt;
+
+                    &lt;!-- 
+                      clear files button
+                      hidden by default 
+                    --&gt;
+                    &lt;div class="mt-1"&gt;
+                      &lt;a href="#" class="hide js-file-upload-clear btn btn-light btn-sm"&gt;
+                        Clear Files
+                      &lt;/a&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Button <b class="text-gray-700">File upload</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-2" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-2-preview" id="nav-tab-2-preview-link" aria-controls="nav-tab-2-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-2-html" id="nav-tab-2-html-link" aria-controls="nav-tab-2-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-2-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-2-preview" aria-labelledby="nav-tab-2-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+                  
+                  <div class="col-12 col-lg-6">
+
+                    <!-- STATIC -->
+                    <div class="mb-1">
+
+                      <label class="btn btn-primary cursor-pointer position-relative">
+
+                        <!-- 
+                          We use .absolute-full class instead of .viewport-out
+                          Just to make sure the element is working crossbrowser!
+                         -->
+                        <input multiple type="file" name="file_input_name[]" 
+                            data-file-ext="mp3, jpg, png, gif" 
+                            data-file-max-size-kb-per-file="0" 
+                            data-file-max-size-kb-total="0" 
+                            data-file-max-total-files="100" 
+                            data-file-ext-err-msg="Allowed:" 
+                            data-file-exist-err-msg="File already exists:" 
+                            data-file-size-err-item-msg="File too large!" 
+                            data-file-size-err-total-msg="Total allowed size exceeded!" 
+                            data-file-size-err-max-msg="Maximum allowed files:" 
+                            data-file-toast-position="bottom-center" 
+                            data-file-preview-container=".js-file-input-container-multiple-example" 
+                            data-file-preview-img-height="120" 
+                            data-file-preview-show-info="false" 
+                            data-file-preview-class="shadow-md m-2 rounded float-start" 
+                            data-file-btn-clear="a.js-file-input-btn-multiple-example-remove" 
+                            data-file-preview-img-cover="false" 
+                            class="custom-file-input absolute-full">
+
+                          Select Files
+
+                      </label>
+
+                      <!-- remove button -->
+                      <a href="#" title="Clear Files" data-bs-toggle="tooltip" class="js-file-input-btn-multiple-example-remove hide btn btn-secondary">
+                        <i class="fi fi-close"></i>
+                        Clear files
+                      </a>
+
+                    </div>
+
+
+                    <!--
+                        
+                      Ajax container : files are pushed here!
+                      Each upload button/input has a preview container.
+                      You can delete it if no file preview is needed and also no need to use on button/input the preview params.
+
+                      A little css trick:
+                        .hide-empty class is hidding the container as long as its empty (comments allowed, without space/new line)
+                        Become visible when content is pushed by ajax!
+
+                    -->
+                    <div class="js-file-input-container-multiple-example d-inline-block position-relative clearfix hide-empty"><!-- container --></div>
+
+                  </div>
+
+                  <div class="col-12 col-lg-6">
+
+                    <!-- AJAX -->
+                    <div class="mb-1">
+
+                      <label class="btn btn-primary cursor-pointer position-relative">
+
+                        <!-- 
+                          We use .absolute-full class instead of .viewport-out
+                          Just to make sure the element is working crossbrowser!
+                         -->
+                        <input multiple type="file" name="file_input_name[]" 
+                            data-file-ext="mp3, jpg, png, gif" 
+                            data-file-max-size-kb-per-file="0" 
+                            data-file-max-size-kb-total="0" 
+                            data-file-max-total-files="100" 
+                            data-file-ext-err-msg="Allowed:" 
+                            data-file-exist-err-msg="File already exists:" 
+                            data-file-size-err-item-msg="File too large!" 
+                            data-file-size-err-total-msg="Total allowed size exceeded!" 
+                            data-file-size-err-max-msg="Maximum allowed files:" 
+                            data-file-toast-position="bottom-center" 
+                            data-file-preview-container=".js-file-input-container-multiple-example-ajax" 
+                            data-file-preview-img-height="120" 
+                            data-file-preview-show-info="false" 
+                            data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+                            data-file-preview-img-cover="false" 
+
+                            data-file-ajax-upload-enable="true" 
+                            data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                            data-file-ajax-delete-enable="true" 
+                            data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-delete-params="['action','delete_file']" 
+
+                            data-file-ajax-reorder-enable="true" 
+                            data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-reorder-params="['action','reorder']" 
+                            data-file-ajax-reorder-toast-success="Order Saved!" 
+                            data-file-ajax-reorder-toast-position="bottom-center" 
+
+                            data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                            data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                            data-file-ajax-callback-function="" 
+                            data-file-ajax-progressbar-custom="" 
+                            data-file-ajax-progressbar-disable="false" 
+                            class="custom-file-input absolute-full">
+
+                          Ajax : Select Files
+
+                      </label>
+
+                    </div>
+
+
+                    <!--
+                        
+                      Ajax container : files are pushed here!
+                      Each upload button/input has a preview container.
+                      You can delete it if no file preview is needed and also no need to use on button/input the preview params.
+
+                      A little css trick:
+                        .hide-empty class is hidding the container as long as its empty (comments allowed, without space/new line)
+                        Become visible when content is pushed by ajax!
+
+                    -->
+                    <div class="js-file-input-container-multiple-example-ajax d-inline-block position-relative clearfix hide-empty"><!-- container --></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-2-html" aria-labelledby="nav-tab-2-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- non-ajax buton --&gt;
+                    &lt;div class="mb-1"&gt;
+
+                      &lt;label class="btn btn-primary cursor-pointer position-relative"&gt;
+                      &lt;input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="mp3, jpg, png, gif" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="100" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-container-multiple-example" 
+                          data-file-preview-img-height="120" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="shadow-md m-2 rounded float-start" 
+                          data-file-btn-clear="a.js-file-input-btn-multiple-example-remove" 
+                          data-file-preview-img-cover="false" 
+                          class="custom-file-input absolute-full"&gt;
+
+                          Select Files
+
+                      &lt;/label&gt;
+
+                      &lt;!-- remove button --&gt;
+                      &lt;a href="#" title="Clear Files" data-bs-toggle="tooltip" class="js-file-input-btn-multiple-example-remove hide btn btn-secondary"&gt;
+                        &lt;i class="fi fi-close"&gt;&lt;/i&gt;
+                        Clear files
+                      &lt;/a&gt;
+
+                    &lt;/div&gt;
+
+
+                    &lt;!--
+                        
+                      Ajax container : files are pushed here!
+                      Each upload button/input has a preview container.
+                      You can delete it if no file preview is needed and also no need to use on button/input the preview params.
+
+                      A little css trick:
+                        .hide-empty class is hidding the container as long as its empty (comments allowed, without space/new line)
+                        Become visible when content is pushed by ajax!
+
+                    --&gt;
+                    &lt;div class="js-file-input-container-multiple-example d-inline-block position-relative clearfix hide-empty"&gt;&lt;!-- container --&gt;&lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- ajax button --&gt;
+                    &lt;div class="mb-1"&gt;
+
+                      &lt;label class="btn btn-primary cursor-pointer position-relative"&gt;
+                      &lt;input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="mp3, jpg, png, gif" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="100" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-container-multiple-example-ajax" 
+                          data-file-preview-img-height="120" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+                          data-file-preview-img-cover="false" 
+
+                          data-file-ajax-upload-enable="true" 
+                          data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                          data-file-ajax-delete-enable="true" 
+                          data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-delete-params="['action','delete_file']" 
+
+                          data-file-ajax-reorder-enable="true" 
+                          data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-reorder-params="['action','reorder']" 
+                          data-file-ajax-reorder-toast-success="Order Saved!" 
+                          data-file-ajax-reorder-toast-position="bottom-center" 
+
+                          data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                          data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                          data-file-ajax-callback-function="" 
+                          data-file-ajax-progressbar-custom="" 
+                          data-file-ajax-progressbar-disable="false" 
+                          class="custom-file-input absolute-full"&gt;
+
+                          Ajax : Select Files
+
+                      &lt;/label&gt;
+
+                    &lt;/div&gt;
+
+
+                    &lt;!--
+                        
+                      Ajax container : files are pushed here!
+                      Each upload button/input has a preview container.
+                      You can delete it if no file preview is needed and also no need to use on button/input the preview params.
+
+                      A little css trick:
+                        .hide-empty class is hidding the container as long as its empty (comments allowed, without space/new line)
+                        Become visible when content is pushed by ajax!
+
+                    --&gt;
+                    &lt;div class="js-file-input-container-multiple-example-ajax d-inline-block position-relative clearfix hide-empty"&gt;&lt;!-- container --&gt;&lt;/div&gt;
+
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Button <b class="text-gray-700">Submit reveal</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-3" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-3-preview" id="nav-tab-3-preview-link" aria-controls="nav-tab-3-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-3-html" id="nav-tab-3-html-link" aria-controls="nav-tab-3-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-3-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-3-preview" aria-labelledby="nav-tab-3-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6">
+
+                    <small class="d-block mb-2">
+                      Regular preview
+                    </small>
+
+                    <!-- upload files button -->
+                    <label class="btn btn-primary cursor-pointer position-relative">
+
+                      <!-- 
+                        We use .absolute-full class instead of .viewport-out
+                        Just to make sure the element is working crossbrowser!
+                       -->
+                      <input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="mp3, jpg, png, gif, csv" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="5" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-container__reveal_example" 
+                          data-file-preview-img-height="120" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="shadow-md m-2 rounded float-start" 
+                          data-file-btn-clear="a.js-input-clear__reveal_example" 
+                          data-file-btn-submit="button.js-file-btn-submit__reveal_example" 
+                          data-file-preview-img-cover="false" 
+                          class="custom-file-input absolute-full">
+
+                      <i class="fi fi-arrow-upload"></i>
+                      <span>Select Files</span>
+
+                    </label>
+
+                    <!-- preview container -->
+                    <div class="js-file-input-container__reveal_example position-relative clearfix hide-empty"><!-- container --></div>
+
+                    <!-- buttons -->
+                    <div class="mt-3">
+
+                      <!-- submit button -->
+                      <button type="submit" class="js-file-btn-submit__reveal_example hide btn btn-primary">
+                        <i class="fi fi-check"></i>
+                        Upload Files
+                      </button>
+
+                      <!-- clear button -->
+                      <a href="#" class="js-input-clear__reveal_example hide btn btn-light">
+                        <i class="fi fi-close"></i>
+                        Cancel
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-12 col-lg-6">
+
+                    <small class="d-block mb-2">
+                      List type preview
+                    </small>
+
+                    <!-- upload files button -->
+                    <label class="btn btn-primary cursor-pointer position-relative">
+
+                      <!-- 
+                        We use .absolute-full class instead of .viewport-out
+                        Just to make sure the element is working crossbrowser!
+                       -->
+                      <input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="mp3, jpg, png, gif, csv" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="5" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-container__reveal_example2" 
+                          data-file-preview-img-height="60" 
+                          data-file-preview-show-info="true" 
+                          data-file-btn-clear="a.js-input-clear__reveal_example2" 
+                          data-file-btn-submit="button.js-file-btn-submit__reveal_example2" 
+                          data-file-preview-img-cover="false" 
+                          data-file-preview-list-type="list" 
+                          class="custom-file-input absolute-full">
+
+                      <i class="fi fi-arrow-upload"></i>
+                      <span>Select Files</span>
+
+                    </label>
+
+                    <!-- preview container -->
+                    <div class="js-file-input-container__reveal_example2 position-relative clearfix hide-empty mt-3"><!-- container --></div>
+
+                    <!-- buttons -->
+                    <div class="mt-3">
+
+                      <!-- submit button -->
+                      <button type="submit" class="js-file-btn-submit__reveal_example2 hide btn btn-primary">
+                        <i class="fi fi-check"></i>
+                        Upload Files
+                      </button>
+
+                      <!-- clear button -->
+                      <a href="#" class="js-input-clear__reveal_example2 hide btn btn-light">
+                        <i class="fi fi-close"></i>
+                        Cancel
+                      </a>
+
+                    </div>
+
+                  </div>
+                  
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-3-html" aria-labelledby="nav-tab-3-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Regular preview --&gt;
+                    &lt;label class="btn btn-primary cursor-pointer position-relative"&gt;
+
+                      &lt;input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="mp3, jpg, png, gif, csv" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="5" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-container__reveal_example" 
+                          data-file-preview-img-height="120" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="shadow-md m-2 rounded float-start" 
+                          data-file-btn-clear="a.js-input-clear__reveal_example" 
+                          data-file-btn-submit="button.js-file-btn-submit__reveal_example" 
+                          data-file-preview-img-cover="false" 
+                          class="custom-file-input absolute-full"&gt;
+
+                      &lt;i class="fi fi-arrow-upload"&gt;&lt;/i&gt;
+                      &lt;span&gt;Select Files&lt;/span&gt;
+
+                    &lt;/label&gt;
+
+                    &lt;!-- preview container --&gt;
+                    &lt;div class="js-file-input-container__reveal_example position-relative clearfix hide-empty"&gt;&lt;!-- container --&gt;&lt;/div&gt;
+
+                    &lt;!-- buttons --&gt;
+                    &lt;div class="mt-3"&gt;
+
+                      &lt;!-- submit button --&gt;
+                      &lt;button type="submit" class="js-file-btn-submit__reveal_example hide btn btn-primary"&gt;
+                        &lt;i class="fi fi-check"&gt;&lt;/i&gt;
+                        Upload Files
+                      &lt;/button&gt;
+
+                      &lt;!-- clear button --&gt;
+                      &lt;a href="#" class="js-input-clear__reveal_example hide btn btn-light"&gt;
+                        &lt;i class="fi fi-close"&gt;&lt;/i&gt;
+                        Cancel
+                      &lt;/a&gt;
+
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- List type preview --&gt;
+                    &lt;label class="btn btn-primary cursor-pointer position-relative"&gt;
+
+                      &lt;input multiple type="file" name="file_input_name[]" 
+                          data-file-ext="mp3, jpg, png, gif, csv" 
+                          data-file-max-size-kb-per-file="0" 
+                          data-file-max-size-kb-total="0" 
+                          data-file-max-total-files="5" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-exist-err-msg="File already exists:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-size-err-max-msg="Maximum allowed files:" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-container__reveal_example2" 
+                          data-file-preview-img-height="60" 
+                          data-file-preview-show-info="true" 
+                          data-file-btn-clear="a.js-input-clear__reveal_example2" 
+                          data-file-btn-submit="button.js-file-btn-submit__reveal_example2" 
+                          data-file-preview-img-cover="false" 
+                          data-file-preview-list-type="list" 
+                          class="custom-file-input absolute-full"&gt;
+
+                      &lt;i class="fi fi-arrow-upload"&gt;&lt;/i&gt;
+                      &lt;span&gt;Select Files&lt;/span&gt;
+
+                    &lt;/label&gt;
+
+                    &lt;!-- preview container --&gt;
+                    &lt;div class="js-file-input-container__reveal_example2 position-relative clearfix hide-empty mt-3"&gt;&lt;!-- container --&gt;&lt;/div&gt;
+
+                    &lt;!-- buttons --&gt;
+                    &lt;div class="mt-3"&gt;
+
+                      &lt;!-- submit button --&gt;
+                      &lt;button type="submit" class="js-file-btn-submit__reveal_example2 hide btn btn-primary"&gt;
+                        &lt;i class="fi fi-check"&gt;&lt;/i&gt;
+                        Upload Files
+                      &lt;/button&gt;
+
+                      &lt;!-- clear button --&gt;
+                      &lt;a href="#" class="js-input-clear__reveal_example2 hide btn btn-light"&gt;
+                        &lt;i class="fi fi-close"&gt;&lt;/i&gt;
+                        Cancel
+                      &lt;/a&gt;
+
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Ajax <b class="text-gray-700">Progressbar</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-4" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-4-preview" id="nav-tab-4-preview-link" aria-controls="nav-tab-4-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-4-html" id="nav-tab-4-html-link" aria-controls="nav-tab-4-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-4-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-4-preview" aria-labelledby="nav-tab-4-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <!--
+
+                      1. AJAX : CUSTOM PROGRESS BAR
+
+                    -->
+                    <div class="mb-1">
+
+                      <label class="btn btn-danger cursor-pointer position-relative">
+
+                          <input multiple type="file" name="ajax_files[]" 
+                              data-file-ext="" 
+                              data-file-max-size-kb-per-file="" 
+                              data-file-max-size-kb-total="0" 
+                              data-file-max-total-files="6" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-exist-err-msg="File already exists:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-size-err-max-msg="Maximum allowed files:" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-container-multiple-ajax" 
+                              data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+                              data-file-preview-img-height="120" 
+                              data-file-preview-show-info="false" 
+                              data-file-preview-img-cover="false" 
+
+                              data-file-ajax-upload-enable="true" 
+                              data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                              data-file-ajax-delete-enable="true" 
+                              data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-delete-params="['action','delete_file']" 
+
+                              data-file-ajax-reorder-enable="true" 
+                              data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-reorder-params="['action','reorder']" 
+                              data-file-ajax-reorder-toast-success="Order Saved!" 
+                              data-file-ajax-reorder-toast-position="bottom-center" 
+
+                              data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                              data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                              data-file-ajax-callback-function="" 
+                              data-file-ajax-progressbar-custom=".js-file-input-progress-multiple-ajax" 
+                              data-file-ajax-progressbar-disable="false" 
+                              class="custom-file-input absolute-full">
+
+                          <!-- 
+
+                            optional loader indicator only - instead of group-icon (if needed)
+                            <i class="js-file-input-ajax-loader hide-force fi fi-circle-spin fi-spin"></i>
+
+                          -->
+                        <span class="group-icon">
+                          <i class="fi fi-arrow-upload"></i>
+                          <i class="fi fi-circle-spin fi-spin"></i>
+                        </span> 
+
+                        <span>Ajax : Progressbar</span>
+
+                      </label>
+
+
+                      <!-- 
+
+                        Custom Ajax Progress Bar 
+                        Hidden by default (.hide)
+
+                        Add .js-ignore class to keep always visible
+                        Else, the plugin will autohide the progress after each finished upload.
+
+                      -->
+                      <div class="js-ignore js-file-input-progress-multiple-ajax">
+
+                        <!-- 
+
+                          [%] percent indicator 
+
+                          Requirements: 
+                            to be found inside this container (specified with data-file-ajax-progressbar-custom=".js-file-input-progress-multiple-ajax")
+                            .js-file-input-upload-percent to any element (i, span, etc)
+
+                        -->
+                        <div class="small text-gray-500">
+                          <span class="js-file-input-upload-percent">0%</span> Completed
+                        </div>
+                        <!-- /percent indicator -->
+
+
+                        <!-- progress bar -->
+                        <div class="progress" style="height:5px">
+                          <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                      </div>
+
+
+                      <!-- Ajax container : files are pushed here! -->
+                      <div class="js-file-input-container-multiple-ajax position-relative clearfix hide-empty"><!-- container --></div>
+
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <!--
+
+                      2. AJAX UPLOAD : DYNAMIC PROGRESS UNDER BUTTON
+                      No any extra html code needed for the progress bar.
+
+                    -->
+                    <div class="mb-1">
+
+                      <label class="btn btn-warning cursor-pointer position-relative">
+
+                          <input multiple type="file" name="ajax_files_progress_dynamic[]" 
+                              data-file-ext="" 
+                              data-file-max-size-kb-per-file="" 
+                              data-file-max-size-kb-total="0" 
+                              data-file-max-total-files="6" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-exist-err-msg="File already exists:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-size-err-max-msg="Maximum allowed files:" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-container-multiple-ajax-dynamic-progress" 
+                              data-file-preview-img-height="120" 
+                              data-file-preview-show-info="true" 
+                              data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+                              data-file-preview-img-cover="false" 
+
+                              data-file-ajax-upload-enable="true" 
+                              data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                              data-file-ajax-delete-enable="true" 
+                              data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-delete-params="['action','delete_file']" 
+
+                              data-file-ajax-reorder-enable="true" 
+                              data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-reorder-params="['action','reorder']" 
+                              data-file-ajax-reorder-toast-success="Order Saved!" 
+                              data-file-ajax-reorder-toast-position="bottom-center" 
+
+                              data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                              data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                              data-file-ajax-callback-function="" 
+                              data-file-ajax-progressbar-custom="" 
+                              data-file-ajax-progressbar-disable="false" 
+                              class="custom-file-input absolute-full">
+
+                        <span class="group-icon">
+                          <i class="fi fi-arrow-upload"></i>
+                          <i class="fi fi-circle-spin fi-spin"></i>
+                        </span> 
+
+                        <span>Ajax : Dynamic Progressbar</span>
+
+                      </label>
+
+
+                      <!--
+
+                        Ajax container : files are pushed here!
+
+                      -->
+                      <div class="mt-3 js-file-input-container-multiple-ajax-dynamic-progress position-relative clearfix hide-empty">
+
+
+                        <!-- 
+
+                          PREADDED FILES 
+
+                          In order to be able to delete preadded files using Form Advanced Plugin,
+                          one of the following params is required to each .js-file-input-item:
+
+                            data-id="0"               your database file id
+                            data-file-name="filename.jpg"       optional; required if data-id not set (or set to "0")
+                          
+                          When a file is deleted, a POST request is sent:
+                            Following params are sent (array):
+
+                              action    => 'delete_file',         // see: data-file-ajax-delete-params="['action','delete_file']" (action => "delete_file" is anyway added by default)
+                              file_name   => 'filename.jpg',
+                              file_id   => 1,
+                              ajax    => true
+
+                            So in your backend you should be able to delete the files by 
+                              - file_id (your database file id)
+                              - file_name
+
+                          Delete POST request is sent to data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php"
+                            If `data-file-ajax-delete-url` is empty or not set, `data-file-ajax-upload-url` is used.
+                            So you are able to set different URLs for each action.
+
+                            **  No response is waited from the server! Callback not supported on delete!
+                              404 status is considered "failed" so the message will be "404 Server Error!"
+
+                        -->
+                        <h6 class="m-0">
+                          Preadded Files <span class="fw-light">(drag to reorder)</span>
+                        </h6>
+
+
+                        <!--
+                          
+                          Image Example
+
+                        -->
+                        <span data-id="0" data-file-name="filename.jpg" class="js-file-input-item d-inline-block position-relative overflow-hidden text-center show-hover-container shadow-md m-2 rounded float-start">
+
+                          <!-- delete button -->
+                          <a href="#" class="js-file-item-del position-absolute absolute-top show-hover-item left-0 z-index-2">
+                            <span class="d-inline-block btn btn-sm bg-danger text-white py-1 px-2 m-1">
+                              <i class="fi fi-close m-0"></i>
+                            </span>
+                          </a>
+
+                          <!-- info : header -->
+                          <span class="js-file-input-preview-header text-white position-absolute w-100 top-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2">
+                            <span class="text-truncate d-block smaller px-2">
+                              filename.jpg
+                            </span>
+                          </span>
+
+                          <!-- info : footer -->
+                          <span class="js-file-input-preview-footer text-white position-absolute w-100 bottom-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2">
+                            <span class="js-file-input-file-info-size text-truncate d-block smaller px-2">
+                              124 Kb
+                            </span>
+                          </span>
+
+                          <!-- 
+                            image 
+
+                            height="120"   same with file input attribute: data-file-preview-img-height="120" 
+                            It's adjusted if not set but there is a small delay so height is recommended to avoid "jump" effect!
+
+                          -->
+                          <img height="120" src="../demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="...">
+
+                        </span>
+
+
+
+
+
+
+                        <!-- 
+
+                          File Example
+
+                          Required (same with file input attribute: data-file-preview-img-height="120")
+                            style="min-width: 120px; min-height: 120px;"
+
+                        -->
+                        <span data-id="0" data-file-name="filename.mp3" style="min-width: 120px; min-height: 120px;" class="js-file-input-item d-inline-block position-relative overflow-hidden text-center show-hover-container shadow-md m-2 rounded float-start">
+
+                          <a href="#" class="js-file-item-del position-absolute absolute-top show-hover-item left-0 z-index-2">
+                            <span class="d-inline-block btn btn-sm bg-danger text-white py-1 px-2 m-1">
+                              <i class="fi fi-close m-0"></i>
+                            </span>
+                          </a>
+
+                          <!-- info : header -->
+                          <span class="js-file-input-preview-header text-white position-absolute w-100 top-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2">
+                            <span class="text-truncate d-block smaller px-2">
+                              filename.mp3
+                            </span>
+                          </span>
+
+                          <!-- info : footer -->
+                          <span class="js-file-input-preview-footer text-white position-absolute w-100 bottom-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2">
+                            <span class="js-file-input-file-info-size text-truncate d-block smaller px-2">
+                              159.34 Mb
+                            </span>
+                          </span>
+
+                          <!-- file extension -->
+                          <span class="absolute-full d-flex align-items-center justify-content-center fs-1 opacity-6 text-uppercase text-truncate">
+                            mp3
+                          </span>
+
+                        </span>
+
+                        <!-- /PREADDED FILES -->
+
+                      </div>
+                      
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-4-html" aria-labelledby="nav-tab-4-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Ajax : Progressbar --&gt;
+                    &lt;label class="btn btn-danger cursor-pointer position-relative"&gt;
+
+                        &lt;input multiple type="file" name="ajax_files[]" 
+                            data-file-ext="" 
+                            data-file-max-size-kb-per-file="" 
+                            data-file-max-size-kb-total="0" 
+                            data-file-max-total-files="6" 
+                            data-file-ext-err-msg="Allowed:" 
+                            data-file-exist-err-msg="File already exists:" 
+                            data-file-size-err-item-msg="File too large!" 
+                            data-file-size-err-total-msg="Total allowed size exceeded!" 
+                            data-file-size-err-max-msg="Maximum allowed files:" 
+                            data-file-toast-position="bottom-center" 
+                            data-file-preview-container=".js-file-input-container-multiple-ajax" 
+                            data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+                            data-file-preview-img-height="120" 
+                            data-file-preview-show-info="false" 
+                            data-file-preview-img-cover="false" 
+
+                            data-file-ajax-upload-enable="true" 
+                            data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                            data-file-ajax-delete-enable="true" 
+                            data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-delete-params="['action','delete_file']" 
+
+                            data-file-ajax-reorder-enable="true" 
+                            data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-reorder-params="['action','reorder']" 
+                            data-file-ajax-reorder-toast-success="Order Saved!" 
+                            data-file-ajax-reorder-toast-position="bottom-center" 
+
+                            data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                            data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                            data-file-ajax-callback-function="" 
+                            data-file-ajax-progressbar-custom=".js-file-input-progress-multiple-ajax" 
+                            data-file-ajax-progressbar-disable="false" 
+                            class="custom-file-input absolute-full"&gt;
+
+                        &lt;!-- 
+
+                          optional loader indicator only - instead of group-icon (if needed)
+                          &lt;i class="js-file-input-ajax-loader hide-force fi fi-circle-spin fi-spin"&gt;&lt;/i&gt;
+
+                        --&gt;
+                      &lt;span class="group-icon"&gt;
+                        &lt;i class="fi fi-arrow-upload"&gt;&lt;/i&gt;
+                        &lt;i class="fi fi-circle-spin fi-spin"&gt;&lt;/i&gt;
+                      &lt;/span&gt; 
+
+                      &lt;span&gt;Ajax : Progressbar&lt;/span&gt;
+
+                    &lt;/label&gt;
+
+
+                    &lt;!-- 
+
+                      Custom Ajax Progress Bar 
+                      Hidden by default (.hide)
+
+                      Add .js-ignore class to keep always visible
+                      Else, the plugin will autohide the progress after each finished upload.
+
+                    --&gt;
+                    &lt;div class="js-ignore js-file-input-progress-multiple-ajax"&gt;
+
+                      &lt;!-- 
+
+                        [%] percent indicator 
+
+                        Requirements: 
+                          to be found inside this container (specified with data-file-ajax-progressbar-custom=".js-file-input-progress-multiple-ajax")
+                          .js-file-input-upload-percent to any element (i, span, etc)
+
+                      --&gt;
+                      &lt;div class="small text-gray-500"&gt;
+                        &lt;span class="js-file-input-upload-percent"&gt;0%&lt;/span&gt; Completed
+                      &lt;/div&gt;
+                      &lt;!-- /percent indicator --&gt;
+
+
+                      &lt;!-- progress bar --&gt;
+                      &lt;div class="progress" style="height:5px"&gt;
+                        &lt;div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                      &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+
+                    &lt;!-- Ajax container : files are pushed here! --&gt;
+                    &lt;div class="js-file-input-container-multiple-ajax position-relative clearfix hide-empty"&gt;&lt;!-- container --&gt;&lt;/div&gt;
+                  </code>
+                </pre>
+
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- Ajax : Dynamic Progressbar --&gt;
+                    &lt;label class="btn btn-warning cursor-pointer position-relative"&gt;
+
+                        &lt;input multiple type="file" name="ajax_files_progress_dynamic[]" 
+                            data-file-ext="" 
+                            data-file-max-size-kb-per-file="" 
+                            data-file-max-size-kb-total="0" 
+                            data-file-max-total-files="6" 
+                            data-file-ext-err-msg="Allowed:" 
+                            data-file-exist-err-msg="File already exists:" 
+                            data-file-size-err-item-msg="File too large!" 
+                            data-file-size-err-total-msg="Total allowed size exceeded!" 
+                            data-file-size-err-max-msg="Maximum allowed files:" 
+                            data-file-toast-position="bottom-center" 
+                            data-file-preview-container=".js-file-input-container-multiple-ajax-dynamic-progress" 
+                            data-file-preview-img-height="120" 
+                            data-file-preview-show-info="true" 
+                            data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+                            data-file-preview-img-cover="false" 
+
+                            data-file-ajax-upload-enable="true" 
+                            data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                            data-file-ajax-delete-enable="true" 
+                            data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-delete-params="['action','delete_file']" 
+
+                            data-file-ajax-reorder-enable="true" 
+                            data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-reorder-params="['action','reorder']" 
+                            data-file-ajax-reorder-toast-success="Order Saved!" 
+                            data-file-ajax-reorder-toast-position="bottom-center" 
+
+                            data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                            data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                            data-file-ajax-callback-function="" 
+                            data-file-ajax-progressbar-custom="" 
+                            data-file-ajax-progressbar-disable="false" 
+                            class="custom-file-input absolute-full"&gt;
+
+                      &lt;span class="group-icon"&gt;
+                        &lt;i class="fi fi-arrow-upload"&gt;&lt;/i&gt;
+                        &lt;i class="fi fi-circle-spin fi-spin"&gt;&lt;/i&gt;
+                      &lt;/span&gt; 
+
+                      &lt;span&gt;Ajax : Dynamic Progressbar&lt;/span&gt;
+
+                    &lt;/label&gt;
+
+
+                    &lt;!--
+
+                      Ajax container : files are pushed here!
+
+                    --&gt;
+                    &lt;div class="mt-3 js-file-input-container-multiple-ajax-dynamic-progress position-relative clearfix hide-empty"&gt;
+
+
+                      &lt;!-- 
+
+                        PREADDED FILES 
+
+                        In order to be able to delete preadded files using Form Advanced Plugin,
+                        one of the following params is required to each .js-file-input-item:
+
+                          data-id="0"               your database file id
+                          data-file-name="filename.jpg"       optional; required if data-id not set (or set to "0")
+                        
+                        When a file is deleted, a POST request is sent:
+                          Following params are sent (array):
+
+                            action    =&gt; 'delete_file',         // see: data-file-ajax-delete-params="['action','delete_file']" (action =&gt; "delete_file" is anyway added by default)
+                            file_name   =&gt; 'filename.jpg',
+                            file_id   =&gt; 1,
+                            ajax    =&gt; true
+
+                          So in your backend you should be able to delete the files by 
+                            - file_id (your database file id)
+                            - file_name
+
+                        Delete POST request is sent to data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php"
+                          If `data-file-ajax-delete-url` is empty or not set, `data-file-ajax-upload-url` is used.
+                          So you are able to set different URLs for each action.
+
+                          **  No response is waited from the server! Callback not supported on delete!
+                            404 status is considered "failed" so the message will be "404 Server Error!"
+
+                      --&gt;
+                      &lt;h6 class="m-0"&gt;
+                        Preadded Files &lt;span class="fw-light"&gt;(drag to reorder)&lt;/span&gt;
+                      &lt;/h6&gt;
+
+
+                      &lt;!--
+                        
+                        Image Example
+
+                      --&gt;
+                      &lt;span data-id="0" data-file-name="filename.jpg" class="js-file-input-item d-inline-block position-relative overflow-hidden text-center show-hover-container shadow-md m-2 rounded float-start"&gt;
+
+                        &lt;!-- delete button --&gt;
+                        &lt;a href="#" class="js-file-item-del position-absolute absolute-top show-hover-item left-0 z-index-2"&gt;
+                          &lt;span class="d-inline-block btn btn-sm bg-danger text-white py-1 px-2 m-1"&gt;
+                            &lt;i class="fi fi-close m-0"&gt;&lt;/i&gt;
+                          &lt;/span&gt;
+                        &lt;/a&gt;
+
+                        &lt;!-- info : header --&gt;
+                        &lt;span class="js-file-input-preview-header text-white position-absolute w-100 top-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2"&gt;
+                          &lt;span class="text-truncate d-block smaller px-2"&gt;
+                            filename.jpg
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+
+                        &lt;!-- info : footer --&gt;
+                        &lt;span class="js-file-input-preview-footer text-white position-absolute w-100 bottom-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2"&gt;
+                          &lt;span class="js-file-input-file-info-size text-truncate d-block smaller px-2"&gt;
+                            124 Kb
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+
+                        &lt;!-- 
+                          image 
+
+                          height="120"   same with file input attribute: data-file-preview-img-height="120" 
+                          It's adjusted if not set but there is a small delay so height is recommended to avoid "jump" effect!
+
+                        --&gt;
+                        &lt;img height="120" src="../demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="..."&gt;
+
+                      &lt;/span&gt;
+
+
+
+
+
+
+                      &lt;!-- 
+
+                        File Example
+
+                        Required (same with file input attribute: data-file-preview-img-height="120")
+                          style="min-width: 120px; min-height: 120px;"
+
+                      --&gt;
+                      &lt;span data-id="0" data-file-name="filename.mp3" style="min-width: 120px; min-height: 120px;" class="js-file-input-item d-inline-block position-relative overflow-hidden text-center show-hover-container shadow-md m-2 rounded float-start"&gt;
+
+                        &lt;a href="#" class="js-file-item-del position-absolute absolute-top show-hover-item left-0 z-index-2"&gt;
+                          &lt;span class="d-inline-block btn btn-sm bg-danger text-white py-1 px-2 m-1"&gt;
+                            &lt;i class="fi fi-close m-0"&gt;&lt;/i&gt;
+                          &lt;/span&gt;
+                        &lt;/a&gt;
+
+                        &lt;!-- info : header --&gt;
+                        &lt;span class="js-file-input-preview-header text-white position-absolute w-100 top-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2"&gt;
+                          &lt;span class="text-truncate d-block smaller px-2"&gt;
+                            filename.mp3
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+
+                        &lt;!-- info : footer --&gt;
+                        &lt;span class="js-file-input-preview-footer text-white position-absolute w-100 bottom-0 left-0 right-0 clearfix overlay-dark overlay-opacity-2"&gt;
+                          &lt;span class="js-file-input-file-info-size text-truncate d-block smaller px-2"&gt;
+                            159.34 Mb
+                          &lt;/span&gt;
+                        &lt;/span&gt;
+
+                        &lt;!-- file extension --&gt;
+                        &lt;span class="absolute-full d-flex align-items-center justify-content-center fs-1 opacity-6 text-uppercase text-truncate"&gt;
+                          mp3
+                        &lt;/span&gt;
+
+                      &lt;/span&gt;
+
+                      &lt;!-- /PREADDED FILES --&gt;
+
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Inner <b class="text-gray-700">Image</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-5" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-5-preview" id="nav-tab-5-preview-link" aria-controls="nav-tab-5-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-5-html" id="nav-tab-5-html-link" aria-controls="nav-tab-5-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-5-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-5-preview" aria-labelledby="nav-tab-5-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <div id="avatar_container" class="row">
+
+                      <div class="col-6 mb-5 text-center">
+
+                        <!-- 
+
+                          INNER : STATIC : CIRCLE
+                          Width and Height are the same (because we use data-file-preview-img-cover="true")
+
+                        -->
+                        <label style="width:120px" class="rounded-circle text-center position-relative d-inline-block cursor-pointer border border-secondary border-dashed bg-white">
+
+                          <!-- remove button -->
+                          <a href="#" class="js-file-upload-avatar-circle-remove hide position-absolute absolute-top w-100 z-index-3">
+                            <span class="d-inline-block btn btn-sm btn-pill bg-secondary text-white p-0 m-1 mt-n3 lh-1 d-inline-flex align-items-center justify-content-center" style="width:30px;height:30px" title="remove avatar" data-tooltip="tooltip">
+                              <i class="fi fi-close m-0"></i>
+                            </span>
+                          </a>
+
+                          <span class="z-index-2 js-file-input-avatar-circle-container d-block absolute-full z-index-1 hide-empty"><!-- avatar container --></span>
+
+                          <!-- hidden input (out of viewport, or safari will ignore it) -->
+                          <input type="file" name="name_avatar_static_circle" 
+                              data-file-ext="" 
+                              data-file-max-size-kb-per-file="" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-avatar-circle-container" 
+                              data-file-preview-show-info="false" 
+                              data-file-preview-class="rounded-circle m-0 p-0 animate-bouncein" 
+                              data-file-preview-img-height="118" 
+                              data-file-btn-clear="a.js-file-upload-avatar-circle-remove" 
+                              data-file-preview-img-cover="true" 
+                              class="custom-file-input absolute-full">
+
+                          <svg class="fill-gray-600 rounded-circle m-4 z-index-0" viewBox="0 0 60 60">
+                            <path d="M41.014,45.389l-9.553-4.776C30.56,40.162,30,39.256,30,38.248v-3.381c0.229-0.28,0.47-0.599,0.719-0.951c1.239-1.75,2.232-3.698,2.954-5.799C35.084,27.47,36,26.075,36,24.5v-4c0-0.963-0.36-1.896-1-2.625v-5.319c0.056-0.55,0.276-3.824-2.092-6.525C30.854,3.688,27.521,2.5,23,2.5s-7.854,1.188-9.908,3.53c-2.368,2.701-2.148,5.976-2.092,6.525v5.319c-0.64,0.729-1,1.662-1,2.625v4c0,1.217,0.553,2.352,1.497,3.109c0.916,3.627,2.833,6.36,3.503,7.237v3.309c0,0.968-0.528,1.856-1.377,2.32l-8.921,4.866C1.801,46.924,0,49.958,0,53.262V57.5h46v-4.043C46,50.018,44.089,46.927,41.014,45.389z"/>
+                            <path d="M55.467,46.526l-9.723-4.21c-0.23-0.115-0.485-0.396-0.704-0.771l6.525-0.005c0,0,0.377,0.037,0.962,0.037c1.073,0,2.638-0.122,4-0.707c0.817-0.352,1.425-1.047,1.669-1.907c0.246-0.868,0.09-1.787-0.426-2.523c-1.865-2.654-6.218-9.589-6.354-16.623c-0.003-0.121-0.397-12.083-12.21-12.18c-1.187,0.01-2.309,0.156-3.372,0.413c0.792,2.094,0.719,3.968,0.665,4.576v4.733c0.648,0.922,1,2.017,1,3.141v4c0,1.907-1.004,3.672-2.607,4.662c-0.748,2.022-1.738,3.911-2.949,5.621c-0.15,0.213-0.298,0.414-0.443,0.604v2.86c0,0.442,0.236,0.825,0.631,1.022l9.553,4.776c3.587,1.794,5.815,5.399,5.815,9.41V57.5H60v-3.697C60,50.711,58.282,47.933,55.467,46.526z"/>
+                          </svg>
+
+                        </label>
+
+                        &nbsp;&nbsp;
+
+                        <!-- 
+
+                          INNER : STATIC : SQUARED
+                          Width and Height are the same (because we use data-file-preview-img-cover="true")
+
+                        -->
+                        <label style="width:120px" class="rounded text-center position-relative d-inline-block cursor-pointer border border-secondary border-dashed bg-white">
+
+                          <!-- remove button -->
+                          <a href="#" class="js-file-upload-avatar-squared-remove hide position-absolute absolute-top text-align-start w-100 z-index-3">
+                            <span class="d-inline-block btn btn-sm bg-secondary text-white py-1 px-2 m-1" title="remove avatar" data-tooltip="tooltip">
+                              <i class="fi fi-close m-0"></i>
+                            </span>
+                          </a>
+
+                          <span class="z-index-2 js-file-input-avatar-squared-container d-block absolute-full z-index-1 hide-empty"><!-- avatar container --></span>
+
+                          <!-- hidden input (out of viewport, or safari will ignore it) -->
+                          <input type="file" name="name_avatar_static_squared" 
+                              data-file-ext="jpg, png, gif" 
+                              data-file-max-size-kb-per-file="11500" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-avatar-squared-container" 
+                              data-file-preview-show-info="false" 
+                              data-file-preview-class="m-0 p-0 rounded animate-bouncein" 
+                              data-file-preview-img-height="118" 
+                              data-file-btn-clear="a.js-file-upload-avatar-squared-remove" 
+                              data-file-preview-img-cover="true" 
+                              class="custom-file-input absolute-full">
+
+                          <svg class="fill-gray-600 m-4 z-index-0" viewBox="0 0 60 60">
+                            <path d="M41.014,45.389l-9.553-4.776C30.56,40.162,30,39.256,30,38.248v-3.381c0.229-0.28,0.47-0.599,0.719-0.951c1.239-1.75,2.232-3.698,2.954-5.799C35.084,27.47,36,26.075,36,24.5v-4c0-0.963-0.36-1.896-1-2.625v-5.319c0.056-0.55,0.276-3.824-2.092-6.525C30.854,3.688,27.521,2.5,23,2.5s-7.854,1.188-9.908,3.53c-2.368,2.701-2.148,5.976-2.092,6.525v5.319c-0.64,0.729-1,1.662-1,2.625v4c0,1.217,0.553,2.352,1.497,3.109c0.916,3.627,2.833,6.36,3.503,7.237v3.309c0,0.968-0.528,1.856-1.377,2.32l-8.921,4.866C1.801,46.924,0,49.958,0,53.262V57.5h46v-4.043C46,50.018,44.089,46.927,41.014,45.389z"/>
+                            <path d="M55.467,46.526l-9.723-4.21c-0.23-0.115-0.485-0.396-0.704-0.771l6.525-0.005c0,0,0.377,0.037,0.962,0.037c1.073,0,2.638-0.122,4-0.707c0.817-0.352,1.425-1.047,1.669-1.907c0.246-0.868,0.09-1.787-0.426-2.523c-1.865-2.654-6.218-9.589-6.354-16.623c-0.003-0.121-0.397-12.083-12.21-12.18c-1.187,0.01-2.309,0.156-3.372,0.413c0.792,2.094,0.719,3.968,0.665,4.576v4.733c0.648,0.922,1,2.017,1,3.141v4c0,1.907-1.004,3.672-2.607,4.662c-0.748,2.022-1.738,3.911-2.949,5.621c-0.15,0.213-0.298,0.414-0.443,0.604v2.86c0,0.442,0.236,0.825,0.631,1.022l9.553,4.776c3.587,1.794,5.815,5.399,5.815,9.41V57.5H60v-3.697C60,50.711,58.282,47.933,55.467,46.526z"/>
+                          </svg>
+
+                        </label>
+
+                        <p class="text-muted mt-3">Regular, inner preview</p>
+
+                      </div>
+
+
+                      <div class="col-6 mb-5 text-center">
+
+                        <!-- 
+
+                          INNER : AJAX : CIRCLE
+                          Width and Height are the same (because we use data-file-preview-img-cover="true")
+
+                        -->
+                        <label style="width:120px" class="rounded-circle text-center position-relative d-inline-block cursor-pointer border border-secondary border-dashed bg-white">
+
+                          <!-- remove button -->
+                          <a href="#" class="js-file-upload-avatar-ajax-circle-remove hide position-absolute absolute-top w-100 z-index-3">
+                            <span class="d-inline-block btn btn-sm btn-pill bg-secondary text-white p-0 m-1 mt-n3 lh-1 d-inline-flex align-items-center justify-content-center" style="width:30px;height:30px" title="remove avatar" data-tooltip="tooltip">
+                              <i class="fi fi-close m-0"></i>
+                            </span>
+                          </a>
+
+                          <span class="z-index-2 js-file-input-avatar-ajax-circle-container d-block absolute-full z-index-1 hide-empty"><!-- avatar container --></span>
+
+                          <!-- hidden input (out of viewport, or safari will ignore it) -->
+                          <input type="file" name="name_avatar_ajax_circle" 
+                              data-file-ext="jpg, png, gif" 
+                              data-file-max-size-kb-per-file="11500" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-avatar-ajax-circle-container" 
+                              data-file-preview-show-info="false" 
+                              data-file-preview-class="rounded-circle m-0 p-0 animate-bouncein" 
+                              data-file-preview-img-height="118" 
+                              data-file-btn-clear="a.js-file-upload-avatar-ajax-circle-remove" 
+                              data-file-preview-img-cover="true" 
+
+                              data-file-ajax-upload-enable="true" 
+                              data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                              data-file-ajax-delete-enable="true" 
+                              data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-delete-params="['action','delete_file']" 
+
+                              data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                              data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                              class="custom-file-input absolute-full">
+
+                          <svg class="fill-gray-600 rounded-circle m-4 z-index-0" viewBox="0 0 60 60">
+                            <path d="M41.014,45.389l-9.553-4.776C30.56,40.162,30,39.256,30,38.248v-3.381c0.229-0.28,0.47-0.599,0.719-0.951c1.239-1.75,2.232-3.698,2.954-5.799C35.084,27.47,36,26.075,36,24.5v-4c0-0.963-0.36-1.896-1-2.625v-5.319c0.056-0.55,0.276-3.824-2.092-6.525C30.854,3.688,27.521,2.5,23,2.5s-7.854,1.188-9.908,3.53c-2.368,2.701-2.148,5.976-2.092,6.525v5.319c-0.64,0.729-1,1.662-1,2.625v4c0,1.217,0.553,2.352,1.497,3.109c0.916,3.627,2.833,6.36,3.503,7.237v3.309c0,0.968-0.528,1.856-1.377,2.32l-8.921,4.866C1.801,46.924,0,49.958,0,53.262V57.5h46v-4.043C46,50.018,44.089,46.927,41.014,45.389z"/>
+                            <path d="M55.467,46.526l-9.723-4.21c-0.23-0.115-0.485-0.396-0.704-0.771l6.525-0.005c0,0,0.377,0.037,0.962,0.037c1.073,0,2.638-0.122,4-0.707c0.817-0.352,1.425-1.047,1.669-1.907c0.246-0.868,0.09-1.787-0.426-2.523c-1.865-2.654-6.218-9.589-6.354-16.623c-0.003-0.121-0.397-12.083-12.21-12.18c-1.187,0.01-2.309,0.156-3.372,0.413c0.792,2.094,0.719,3.968,0.665,4.576v4.733c0.648,0.922,1,2.017,1,3.141v4c0,1.907-1.004,3.672-2.607,4.662c-0.748,2.022-1.738,3.911-2.949,5.621c-0.15,0.213-0.298,0.414-0.443,0.604v2.86c0,0.442,0.236,0.825,0.631,1.022l9.553,4.776c3.587,1.794,5.815,5.399,5.815,9.41V57.5H60v-3.697C60,50.711,58.282,47.933,55.467,46.526z"/>
+                          </svg>
+
+                        </label>
+
+                        &nbsp;&nbsp;
+
+                        <!-- 
+
+                          INNER : AJAX : SQUARED
+                          Width and Height are the same (because we use data-file-preview-img-cover="true")
+
+                        -->
+                        <label style="width:120px" class="rounded text-center position-relative d-inline-block cursor-pointer border border-secondary border-dashed bg-white">
+
+                          <!-- remove button -->
+                          <a href="#" class="js-file-upload-avatar-ajax-squared-remove hide position-absolute absolute-top text-align-start w-100 z-index-3">
+                            <span class="d-inline-block btn btn-sm bg-secondary text-white py-1 px-2 m-1" title="remove avatar" data-tooltip="tooltip">
+                              <i class="fi fi-close m-0"></i>
+                            </span>
+                          </a>
+
+                          <span class="z-index-2 js-file-input-avatar-ajax-squared-container d-block absolute-full z-index-1 hide-empty"><!-- avatar container --></span>
+
+                          <!-- hidden input (out of viewport, or safari will ignore it) -->
+                          <input type="file" name="name_avatar_ajax_squared" 
+                              data-file-ext="jpg, png, gif" 
+                              data-file-max-size-kb-per-file="11500" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-avatar-ajax-squared-container" 
+                              data-file-preview-show-info="false" 
+                              data-file-preview-class="m-0 p-0 rounded animate-bouncein" 
+                              data-file-preview-img-height="118" 
+                              data-file-btn-clear="a.js-file-upload-avatar-ajax-squared-remove" 
+                              data-file-preview-img-cover="true" 
+
+                              data-file-ajax-upload-enable="true" 
+                              data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                              data-file-ajax-delete-enable="true" 
+                              data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-delete-params="['action','delete_file']" 
+
+                              data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                              data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                              class="custom-file-input absolute-full">
+
+                          <svg class="fill-gray-600 m-4 z-index-0" viewBox="0 0 60 60">
+                            <path d="M41.014,45.389l-9.553-4.776C30.56,40.162,30,39.256,30,38.248v-3.381c0.229-0.28,0.47-0.599,0.719-0.951c1.239-1.75,2.232-3.698,2.954-5.799C35.084,27.47,36,26.075,36,24.5v-4c0-0.963-0.36-1.896-1-2.625v-5.319c0.056-0.55,0.276-3.824-2.092-6.525C30.854,3.688,27.521,2.5,23,2.5s-7.854,1.188-9.908,3.53c-2.368,2.701-2.148,5.976-2.092,6.525v5.319c-0.64,0.729-1,1.662-1,2.625v4c0,1.217,0.553,2.352,1.497,3.109c0.916,3.627,2.833,6.36,3.503,7.237v3.309c0,0.968-0.528,1.856-1.377,2.32l-8.921,4.866C1.801,46.924,0,49.958,0,53.262V57.5h46v-4.043C46,50.018,44.089,46.927,41.014,45.389z"/>
+                            <path d="M55.467,46.526l-9.723-4.21c-0.23-0.115-0.485-0.396-0.704-0.771l6.525-0.005c0,0,0.377,0.037,0.962,0.037c1.073,0,2.638-0.122,4-0.707c0.817-0.352,1.425-1.047,1.669-1.907c0.246-0.868,0.09-1.787-0.426-2.523c-1.865-2.654-6.218-9.589-6.354-16.623c-0.003-0.121-0.397-12.083-12.21-12.18c-1.187,0.01-2.309,0.156-3.372,0.413c0.792,2.094,0.719,3.968,0.665,4.576v4.733c0.648,0.922,1,2.017,1,3.141v4c0,1.907-1.004,3.672-2.607,4.662c-0.748,2.022-1.738,3.911-2.949,5.621c-0.15,0.213-0.298,0.414-0.443,0.604v2.86c0,0.442,0.236,0.825,0.631,1.022l9.553,4.776c3.587,1.794,5.815,5.399,5.815,9.41V57.5H60v-3.697C60,50.711,58.282,47.933,55.467,46.526z"/>
+                          </svg>
+
+                        </label>
+
+                        <p class="text-muted mt-3">Ajax, inner preview</p>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-6 mb-4">
+                    
+                    <!-- PREADDED : CIRCLE -->
+                    <label style="width:120px" class="rounded-circle text-center position-relative d-inline-block cursor-pointer border border-secondary border-dashed bg-white">
+
+                      <!-- remove button -->
+                      <a href="#" class="js-file-upload-avatar-ajax-circle-remove-preadded position-absolute absolute-top w-100 z-index-3">
+                        <span class="d-inline-block btn btn-sm btn-pill bg-secondary text-white p-0 m-1 mt-n3 lh-1 d-inline-flex align-items-center justify-content-center" style="width:30px;height:30px" data-tooltip="tooltip" data-bs-original-title="remove avatar">
+                          <i class="fi fi-close m-0"></i>
+                        </span>
+                      </a>
+
+                      <span class="z-index-2 js-file-input-avatar-ajax-circle-container-preadded d-block absolute-full z-index-1">
+                        <span   data-id="0" 
+                            data-file-name="pi.jpg" 
+                            style="background-image:url('../demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')" 
+                            class="js-file-input-item d-inline-block position-relative overflow-hidden text-center rounded-circle m-0 p-0 animate-bouncein bg-cover w-100 h-100">
+                        </span>
+                      </span>
+
+                      <input type="file" name="name_avatar_ajax_circle" 
+                          data-file-ext="jpg, png, gif" 
+                          data-file-max-size-kb-per-file="11500" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-avatar-ajax-circle-container-preadded" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="rounded-circle m-0 p-0 animate-bouncein" 
+                          data-file-preview-img-height="118" 
+                          data-file-btn-clear="a.js-file-upload-avatar-ajax-circle-remove-preadded" 
+                          data-file-preview-img-cover="true" 
+
+                          data-file-ajax-upload-enable="true" 
+                          data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                          data-file-ajax-delete-enable="true" 
+                          data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-delete-params="['action','delete_file']" 
+
+                          data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                          data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                          class="custom-file-input absolute-full">
+
+                      <svg class="fill-gray-600 rounded-circle m-4 z-index-0" viewBox="0 0 60 60">
+                        <path d="M41.014,45.389l-9.553-4.776C30.56,40.162,30,39.256,30,38.248v-3.381c0.229-0.28,0.47-0.599,0.719-0.951c1.239-1.75,2.232-3.698,2.954-5.799C35.084,27.47,36,26.075,36,24.5v-4c0-0.963-0.36-1.896-1-2.625v-5.319c0.056-0.55,0.276-3.824-2.092-6.525C30.854,3.688,27.521,2.5,23,2.5s-7.854,1.188-9.908,3.53c-2.368,2.701-2.148,5.976-2.092,6.525v5.319c-0.64,0.729-1,1.662-1,2.625v4c0,1.217,0.553,2.352,1.497,3.109c0.916,3.627,2.833,6.36,3.503,7.237v3.309c0,0.968-0.528,1.856-1.377,2.32l-8.921,4.866C1.801,46.924,0,49.958,0,53.262V57.5h46v-4.043C46,50.018,44.089,46.927,41.014,45.389z"/>
+                        <path d="M55.467,46.526l-9.723-4.21c-0.23-0.115-0.485-0.396-0.704-0.771l6.525-0.005c0,0,0.377,0.037,0.962,0.037c1.073,0,2.638-0.122,4-0.707c0.817-0.352,1.425-1.047,1.669-1.907c0.246-0.868,0.09-1.787-0.426-2.523c-1.865-2.654-6.218-9.589-6.354-16.623c-0.003-0.121-0.397-12.083-12.21-12.18c-1.187,0.01-2.309,0.156-3.372,0.413c0.792,2.094,0.719,3.968,0.665,4.576v4.733c0.648,0.922,1,2.017,1,3.141v4c0,1.907-1.004,3.672-2.607,4.662c-0.748,2.022-1.738,3.911-2.949,5.621c-0.15,0.213-0.298,0.414-0.443,0.604v2.86c0,0.442,0.236,0.825,0.631,1.022l9.553,4.776c3.587,1.794,5.815,5.399,5.815,9.41V57.5H60v-3.697C60,50.711,58.282,47.933,55.467,46.526z"/>
+                      </svg>
+
+                    </label>
+
+                    <!-- PREADDED : SQUARED -->
+                    <label style="width:120px" class="text-center position-relative d-inline-block cursor-pointer border border-secondary border-dashed bg-white">
+
+                      <!-- remove button -->
+                      <a href="#" class="js-file-upload-avatar-ajax-squared-remove-preadded position-absolute absolute-top w-100 z-index-3">
+                        <span class="d-inline-block btn btn-sm btn-pill bg-secondary text-white p-0 m-1 mt-n3 lh-1 d-inline-flex align-items-center justify-content-center" style="width:30px;height:30px" data-tooltip="tooltip" data-bs-original-title="remove avatar">
+                          <i class="fi fi-close m-0"></i>
+                        </span>
+                      </a>
+
+                      <span class="z-index-2 js-file-input-avatar-ajax-squared-container-preadded d-block absolute-full z-index-1">
+                        <span   data-id="0" 
+                            data-file-name="pi.jpg" 
+                            style="background-image:url('../demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')" 
+                            class="js-file-input-item d-inline-block position-relative overflow-hidden text-center m-0 p-0 animate-bouncein bg-cover w-100 h-100">
+                        </span>
+                      </span>
+
+                      <input type="file" name="name_avatar_ajax_circle" 
+                          data-file-ext="jpg, png, gif" 
+                          data-file-max-size-kb-per-file="11500" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-toast-position="bottom-center" 
+                          data-file-preview-container=".js-file-input-avatar-ajax-squared-container-preadded" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="m-0 p-0 animate-bouncein" 
+                          data-file-preview-img-height="118" 
+                          data-file-btn-clear="a.js-file-upload-avatar-ajax-squared-remove-preadded" 
+                          data-file-preview-img-cover="true" 
+
+                          data-file-ajax-upload-enable="true" 
+                          data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                          data-file-ajax-delete-enable="true" 
+                          data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-delete-params="['action','delete_file']" 
+
+                          data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                          data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                          class="custom-file-input absolute-full">
+
+                      <svg class="fill-gray-600 rounded-circle m-4 z-index-0" viewBox="0 0 60 60">
+                        <path d="M41.014,45.389l-9.553-4.776C30.56,40.162,30,39.256,30,38.248v-3.381c0.229-0.28,0.47-0.599,0.719-0.951c1.239-1.75,2.232-3.698,2.954-5.799C35.084,27.47,36,26.075,36,24.5v-4c0-0.963-0.36-1.896-1-2.625v-5.319c0.056-0.55,0.276-3.824-2.092-6.525C30.854,3.688,27.521,2.5,23,2.5s-7.854,1.188-9.908,3.53c-2.368,2.701-2.148,5.976-2.092,6.525v5.319c-0.64,0.729-1,1.662-1,2.625v4c0,1.217,0.553,2.352,1.497,3.109c0.916,3.627,2.833,6.36,3.503,7.237v3.309c0,0.968-0.528,1.856-1.377,2.32l-8.921,4.866C1.801,46.924,0,49.958,0,53.262V57.5h46v-4.043C46,50.018,44.089,46.927,41.014,45.389z"/>
+                        <path d="M55.467,46.526l-9.723-4.21c-0.23-0.115-0.485-0.396-0.704-0.771l6.525-0.005c0,0,0.377,0.037,0.962,0.037c1.073,0,2.638-0.122,4-0.707c0.817-0.352,1.425-1.047,1.669-1.907c0.246-0.868,0.09-1.787-0.426-2.523c-1.865-2.654-6.218-9.589-6.354-16.623c-0.003-0.121-0.397-12.083-12.21-12.18c-1.187,0.01-2.309,0.156-3.372,0.413c0.792,2.094,0.719,3.968,0.665,4.576v4.733c0.648,0.922,1,2.017,1,3.141v4c0,1.907-1.004,3.672-2.607,4.662c-0.748,2.022-1.738,3.911-2.949,5.621c-0.15,0.213-0.298,0.414-0.443,0.604v2.86c0,0.442,0.236,0.825,0.631,1.022l9.553,4.776c3.587,1.794,5.815,5.399,5.815,9.41V57.5H60v-3.697C60,50.711,58.282,47.933,55.467,46.526z"/>
+                      </svg>
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-5-html" aria-labelledby="nav-tab-5-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    Please, view page source.
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Inner <b class="text-gray-700">Variations</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-6" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-6-preview" id="nav-tab-6-preview-link" aria-controls="nav-tab-6-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-6-html" id="nav-tab-6-html-link" aria-controls="nav-tab-6-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-6-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-6-preview" aria-labelledby="nav-tab-6-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <!-- 
+
+                      INNER : STATIC
+
+                    -->
+                    <h6>Static</h6>
+                    <label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed">
+
+                      <!-- remove button -->
+                      <a href="#" class="js-file-input-showcase-remove hide position-absolute absolute-top text-align-start w-100 z-index-3">
+                        <span class="d-inline-block btn btn-sm bg-secondary text-white py-1 px-2 m-1" title="remove image" data-tooltip="tooltip">
+                          <i class="fi fi-close m-0"></i>
+                        </span>
+                      </a>
+
+                      <span class="z-index-2 js-file-input-showcase-container d-block absolute-full z-index-1 hide-empty"><!-- image container --></span>
+
+                      <input type="file" name="showcase_file" 
+                          data-file-ext="jpg, jpeg, png" 
+                          data-file-max-size-kb-per-file="10240" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-toast-position="top-center" 
+                          data-file-preview-container=".js-file-input-showcase-container" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="m-0 p-0 rounded" 
+                          data-file-preview-img-height="auto" 
+                          data-file-btn-clear="a.js-file-input-showcase-remove" 
+                          data-file-preview-img-cover="true" 
+                          class="custom-file-input absolute-full">
+
+                      <span class="absolute-full d-flex flex-column align-items-center justify-content-center">
+
+                        <i class="fi fi-image h1 text-muted"><!-- icon --></i>
+                        <small class="d-block text-muted">
+                          <b>IMAGE/COVER OF YOUR WORK</b>
+                          <span class="d-block mt-1">
+                            squared is preffered<br>
+                            please upload 600x600 px minimum.
+                          </span>
+                        </small>
+
+                      </span>
+
+                      <!-- ratio maintained using a `blank` image -->
+                      <img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="...">
+
+                    </label>
+
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <!-- 
+
+                      INNER : AJAX
+
+                    -->
+                    <h6>Ajax</h6>
+                    <label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed">
+
+                      <!-- remove button -->
+                      <a href="#" class="js-file-input-showcase-remove2 hide position-absolute absolute-top text-align-start w-100 z-index-3">
+                        <span class="d-inline-block btn btn-sm bg-secondary text-white py-1 px-2 m-1" title="remove image" data-tooltip="tooltip">
+                          <i class="fi fi-close m-0"></i>
+                        </span>
+                      </a>
+
+                      <span class="z-index-2 js-file-input-showcase-container2 d-block absolute-full z-index-1 hide-empty"><!-- image container --></span>
+
+                      <input type="file" name="showcase_file" 
+                          data-file-ext="jpg, jpeg, png" 
+                          data-file-max-size-kb-per-file="10240" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-toast-position="top-center" 
+                          data-file-preview-container=".js-file-input-showcase-container2" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="m-0 p-0 rounded" 
+                          data-file-preview-img-height="auto" 
+                          data-file-btn-clear="a.js-file-input-showcase-remove2" 
+                          data-file-preview-img-cover="true" 
+
+                          data-file-ajax-upload-enable="true" 
+                          data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                          data-file-ajax-delete-enable="true" 
+                          data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-delete-params="['action','delete_file']" 
+
+                          data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                          data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                          class="custom-file-input absolute-full">
+
+
+                      <span class="absolute-full d-flex flex-column align-items-center justify-content-center">
+
+                        <i class="fi fi-image h1 text-muted"><!-- icon --></i>
+                        <small class="d-block text-muted">
+                          <b>IMAGE/COVER OF YOUR WORK</b>
+                          <span class="d-block mt-1">
+                            squared is preffered<br>
+                            please upload 600x600 px minimum.
+                          </span>
+                        </small>
+
+                      </span>
+
+                      <!-- ratio maintained using a `blank` image -->
+                      <img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="...">
+
+                    </label>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-6-html" aria-labelledby="nav-tab-6-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- static --&gt;
+                    &lt;label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed"&gt;
+
+                      &lt;!-- remove button --&gt;
+                      &lt;a href="#" class="js-file-input-showcase-remove hide position-absolute absolute-top text-align-start w-100 z-index-3"&gt;
+                        &lt;span class="d-inline-block btn btn-sm bg-secondary text-white py-1 px-2 m-1" title="remove image" data-tooltip="tooltip"&gt;
+                          &lt;i class="fi fi-close m-0"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                      &lt;/a&gt;
+
+                      &lt;span class="z-index-2 js-file-input-showcase-container d-block absolute-full z-index-1 hide-empty"&gt;&lt;!-- image container --&gt;&lt;/span&gt;
+
+                      &lt;input type="file" name="showcase_file" 
+                          data-file-ext="jpg, jpeg, png" 
+                          data-file-max-size-kb-per-file="10240" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-toast-position="top-center" 
+                          data-file-preview-container=".js-file-input-showcase-container" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="m-0 p-0 rounded" 
+                          data-file-preview-img-height="auto" 
+                          data-file-btn-clear="a.js-file-input-showcase-remove" 
+                          data-file-preview-img-cover="true" 
+                          class="custom-file-input absolute-full"&gt;
+
+                      &lt;span class="absolute-full d-flex flex-column align-items-center justify-content-center"&gt;
+
+                        &lt;i class="fi fi-image h1 text-muted"&gt;&lt;!-- icon --&gt;&lt;/i&gt;
+                        &lt;small class="d-block text-muted"&gt;
+                          &lt;b&gt;IMAGE/COVER OF YOUR WORK&lt;/b&gt;
+                          &lt;span class="d-block mt-1"&gt;
+                            squared is preffered&lt;br&gt;
+                            please upload 600x600 px minimum.
+                          &lt;/span&gt;
+                        &lt;/small&gt;
+
+                      &lt;/span&gt;
+
+                      &lt;!-- ratio maintained using a `blank` image --&gt;
+                      &lt;img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="..."&gt;
+
+                    &lt;/label&gt;
+                  </code>
+                </pre>
+
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- ajax --&gt;
+                    &lt;label class="rounded text-center position-relative d-block cursor-pointer border border-secondary border-dashed"&gt;
+
+                      &lt;!-- remove button --&gt;
+                      &lt;a href="#" class="js-file-input-showcase-remove2 hide position-absolute absolute-top text-align-start w-100 z-index-3"&gt;
+                        &lt;span class="d-inline-block btn btn-sm bg-secondary text-white py-1 px-2 m-1" title="remove image" data-tooltip="tooltip"&gt;
+                          &lt;i class="fi fi-close m-0"&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                      &lt;/a&gt;
+
+                      &lt;span class="z-index-2 js-file-input-showcase-container2 d-block absolute-full z-index-1 hide-empty"&gt;&lt;!-- image container --&gt;&lt;/span&gt;
+
+                      &lt;input type="file" name="showcase_file" 
+                          data-file-ext="jpg, jpeg, png" 
+                          data-file-max-size-kb-per-file="10240" 
+                          data-file-ext-err-msg="Allowed:" 
+                          data-file-size-err-item-msg="File too large!" 
+                          data-file-size-err-total-msg="Total allowed size exceeded!" 
+                          data-file-toast-position="top-center" 
+                          data-file-preview-container=".js-file-input-showcase-container2" 
+                          data-file-preview-show-info="false" 
+                          data-file-preview-class="m-0 p-0 rounded" 
+                          data-file-preview-img-height="auto" 
+                          data-file-btn-clear="a.js-file-input-showcase-remove2" 
+                          data-file-preview-img-cover="true" 
+
+                          data-file-ajax-upload-enable="true" 
+                          data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                          data-file-ajax-delete-enable="true" 
+                          data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                          data-file-ajax-delete-params="['action','delete_file']" 
+
+                          data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                          data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                          class="custom-file-input absolute-full"&gt;
+
+                      &lt;span class="absolute-full d-flex flex-column align-items-center justify-content-center"&gt;
+
+                        &lt;i class="fi fi-image h1 text-muted"&gt;&lt;!-- icon --&gt;&lt;/i&gt;
+                        &lt;small class="d-block text-muted"&gt;
+                          &lt;b&gt;IMAGE/COVER OF YOUR WORK&lt;/b&gt;
+                          &lt;span class="d-block mt-1"&gt;
+                            squared is preffered&lt;br&gt;
+                            please upload 600x600 px minimum.
+                          &lt;/span&gt;
+                        &lt;/small&gt;
+
+                      &lt;/span&gt;
+
+                      &lt;!-- ratio maintained using a `blank` image --&gt;
+                      &lt;img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="..."&gt;
+
+                    &lt;/label&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <hr class="my-6 bg-gray-700"><!-- doc section divider -->
+
+
+          <div class="container-doc">
+
+            <h2 class="h4 mb-2 text-gray-600 doc-section-title doc-anchor">
+              <span>Upload <b class="text-gray-700">List type</b></span>
+            </h2>
+
+            <!-- Tab Pills -->
+            <ul class="nav nav-sm nav-invert rounded-pill" id="nav-tab-7" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#nav-tab-7-preview" id="nav-tab-7-preview-link" aria-controls="nav-tab-7-preview" data-bs-toggle="pill" role="tab" aria-selected="true">
+                  Preview
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#nav-tab-7-html" id="nav-tab-7-html-link" aria-controls="nav-tab-7-html" data-bs-toggle="pill" role="tab" aria-selected="false">
+                  HTML
+                 </a>
+              </li>
+            </ul>
+            <!-- /Tab Pills -->
+
+            <!-- Tab Pills Content -->
+            <div class="tab-content" id="nav-tab-7-content">
+              
+              <!-- Tab : Preview -->
+              <div class="tab-pane pt-5 fade show active" id="nav-tab-7-preview" aria-labelledby="nav-tab-7-preview-link" role="tabpanel">
+
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <!--
+
+                      LIST TYPE : STATIC
+
+                    -->
+                    <div class="mb-1">
+
+                      <label class="btn btn-primary cursor-pointer position-relative">
+
+                        <!-- 
+                          We use .absolute-full class instead of .viewport-out
+                          Just to make sure the element is working crossbrowser!
+
+                          data-file-preview-img-height="50"   - min. 50
+
+                            Layouts
+                              data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden" 
+                              data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden border" 
+                              data-file-preview-class="show-hover-container mb-2 rounded border overflow-hidden" 
+                              data-file-preview-class="show-hover-container border-bottom" 
+                              data-file-preview-class="show-hover-container border-start border-2 mb-1" 
+                              data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-2 mb-1" 
+                              data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-1 mb-1 border" 
+                              data-file-preview-class="show-hover-container bg-primary-soft rounded overflow-hidden p-1 mb-1" 
+
+                            .show-hover-container   = show delete button only on hover (always visible on mobile)
+
+                         -->
+                          <input multiple type="file" name="file_list_name[]" 
+                              data-file-ext="mp3, jpg, png, gif" 
+                              data-file-max-size-kb-per-file="" 
+                              data-file-max-size-kb-total="0" 
+                              data-file-max-total-files="100" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-exist-err-msg="File already exists:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-size-err-max-msg="Maximum allowed files:" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-container-multiple-list-static" 
+                              data-file-preview-img-height="80" 
+                              data-file-btn-clear="a.js-file-input-btn-multiple-list-static-remove" 
+                              data-file-preview-show-info="true" 
+                              data-file-preview-list-type="list" 
+                              class="custom-file-input absolute-full">
+
+                          <span class="group-icon">
+                            <i class="fi fi-arrow-upload"></i>
+                            <i class="fi fi-circle-spin fi-spin"></i>
+                          </span> 
+
+                          <span>Select Files</span>
+                          
+
+                      </label>
+
+                      <div class="js-file-input-container-multiple-list-static position-relative hide-empty mt-4"><!-- container --></div>
+
+                      <!-- remove button -->
+                      <div class="mt-3">
+                        <a href="#" title="Clear Images" data-bs-toggle="tooltip" class="js-file-input-btn-multiple-list-static-remove hide btn btn-secondary mb-2">
+                          <i class="fi fi-close"></i>
+                          Clear files
+                        </a>
+                      </div>
+
+                    </div>
+
+
+                  </div>
+
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <!--
+
+                      LIST TYPE : AJAX
+
+                    -->
+                    <div class="mb-1">
+
+                      <label class="btn btn-primary btn-soft cursor-pointer position-relative">
+
+                        <!-- 
+                          We use .absolute-full class instead of .viewport-out
+                          Just to make sure the element is working crossbrowser!
+
+                          data-file-preview-img-height="50"   - min. 50
+
+                            Layouts
+                              data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden" 
+                              data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden border" 
+                              data-file-preview-class="show-hover-container mb-2 rounded border overflow-hidden" 
+                              data-file-preview-class="show-hover-container border-bottom" 
+                              data-file-preview-class="show-hover-container border-start border-2 mb-1" 
+                              data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-2 mb-1" 
+                              data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-1 mb-1 border" 
+                              data-file-preview-class="show-hover-container bg-primary-soft rounded overflow-hidden p-1 mb-1" 
+
+                            .show-hover-container   = show delete button only on hover (always visible on mobile)
+
+                         -->
+                          <input multiple type="file" name="file_list_name[]" 
+                              data-file-ext="mp3, jpg, png, gif" 
+                              data-file-max-size-kb-per-file="" 
+                              data-file-max-size-kb-total="0" 
+                              data-file-max-total-files="100" 
+                              data-file-ext-err-msg="Allowed:" 
+                              data-file-exist-err-msg="File already exists:" 
+                              data-file-size-err-item-msg="File too large!" 
+                              data-file-size-err-total-msg="Total allowed size exceeded!" 
+                              data-file-size-err-max-msg="Maximum allowed files:" 
+                              data-file-toast-position="bottom-center" 
+                              data-file-preview-container=".js-file-input-container-multiple-list" 
+                              data-file-preview-img-height="80" 
+                              data-file-btn-clear="a.js-file-input-btn-multiple-list-remove" 
+                              data-file-preview-show-info="true" 
+                              data-file-preview-list-type="list" 
+
+                              data-file-ajax-upload-enable="true" 
+                              data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                              data-file-ajax-delete-enable="true" 
+                              data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-delete-params="['action','delete_file']" 
+
+                              data-file-ajax-reorder-enable="true" 
+                              data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                              data-file-ajax-reorder-params="['action','reorder']" 
+                              data-file-ajax-reorder-toast-success="Order Saved!" 
+                              data-file-ajax-reorder-toast-position="bottom-center" 
+
+                              data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                              data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                              data-file-ajax-callback-function="" 
+                              data-file-ajax-progressbar-custom="" 
+                              data-file-ajax-progressbar-disable="false" 
+                              class="custom-file-input absolute-full">
+
+                          <span class="group-icon">
+                            <i class="fi fi-arrow-upload"></i>
+                            <i class="fi fi-circle-spin fi-spin"></i>
+                          </span> 
+
+                          <span>Ajax : Select Files</span>
+                          
+
+                      </label>
+
+                      <div class="js-file-input-container-multiple-list position-relative hide-empty mt-4"><!-- container --></div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <!-- configurator -->
+                <div class="row g-4">
+
+                  <div class="col-12 col-lg-6 mb-4">
+
+                    <div class="bg-light rounded p-3">
+                      <h6>Layout Examples</h6>
+                      <p class="m-0">
+                        Copy the bottom class and add to <code>data-file-preview-class</code>
+                      </p>
+                    </div>
+
+                    <!-- LIST DEMO -->
+                    <div class="mt-4 p-5 shadow-md">
+
+
+                      <select class="form-control" onchange="
+                        var _val = jQuery(this).val();
+                        jQuery('.js-file-input-item-demo-list .js-file-input-item').attr('class', 'js-file-input-item d-flex clearfix bg-white position-relative ' + _val);
+                        jQuery('.js-file-input-item-demo-list .js-file-input-item').addClass(_val);
+                        
+                        jQuery('input.js-upload-input-list-type-class-demo').val(_val);
+                        jQuery('input.js-upload-input-list-type-class-demo+span>i').text(_val);
+                      ">
+
+                        <option value="shadow mb-2 p-1 row-pill">*. Using Pills</option>
+                        <option value="">0. Clean</option>
+                        <option value="shadow-md mb-2 p-1 rounded" selected="">1. Shadowed</option>
+                        <option value="shadow-md mb-2 p-1 rounded border overflow-hidden">2. Shadowed &amp; Bordered</option>
+                        <option value="mb-2 p-1 rounded border overflow-hidden">3. Bordered Only</option>
+                        <option value="border-bottom p-1">4. Border Bottom</option>
+                        <option value="border-start border-3 mb-1 px-1">5. Border Left</option>
+                        <option value="border border-warning mb-1 p-1">6. Border Color (border-*)</option>
+                        <option value="bg-light rounded p-2 mb-1">7. Light Background</option>
+                        <option value="bg-light rounded p-1 mb-1 border">8. Light Background + Bordered</option>
+                        <option value="bg-primary-soft rounded p-1 mb-1">9. Background Soft Primary</option>
+                        <option value="bg-warning-soft rounded p-1 mb-1">10. Background Soft Warning</option>
+                        <option value="bg-danger-soft rounded p-1 mb-1">11. Background Soft Danger</option>
+                        <option value="bg-success-soft rounded p-1 mb-1">12. Background Soft Success</option>
+                        <option value="bg-secondary-soft rounded p-1 mb-1">13. Background Soft Secondary</option>
+                        <option value="bg-dark-soft rounded p-1 mb-1">14. Background Soft Dark</option>
+                        <option value="bg-gradient-dark text-warning rounded p-1 mb-1">15. Background Dark ; Text Warning</option>
+                        <option value="bg-gradient-dark text-white rounded p-1 mb-1">16. Background Dark ; Text White</option>
+                        <option value="shadow mb-2 p-1 row-pill">.shadow</option>
+                        <option value="shadow-xs mb-2 p-1 row-pill">.shadow-xs</option>
+                        <option value="shadow-md mb-2 p-1 row-pill">.shadow-md</option>
+                        <option value="shadow-lg mb-3 p-1 row-pill">.shadow-lg</option>
+                        <option value="shadow-xlg mb-3 p-1 row-pill">.shadow-xlg</option>
+                        
+                        
+                      </select>
+                      <p class="text-muted smaller mb-4 mt-1">
+                        You can combine the utility class to create more layouts. <b>No CSS code!</b>
+                      </p>
+
+                      <!-- demo container -->
+                      <div class="js-file-input-item-demo-list">
+
+                        <!-- 
+
+                          The same markup is generated by javascript (SOW Form Advanced)
+                          No dedicated CSS, using helpers only!
+                        -->
+                        <div class="js-file-input-item d-flex clearfix shadow-md mb-2 p-1 rounded">
+                          <div class="position-relative d-inline-block bg-cover" style="min-width:50px; width:50px; height:50px; background-image:url('../demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')"></div>
+                          <div class="px-3 flex-fill d-flex align-items-center">
+                            <span class="text-truncate d-block min-w-0 lh-1">Item with image preview.jpg <br>
+                              <span class="smaller d-block pt-1">1.22 Mb</span>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="js-file-input-item d-flex clearfix shadow-md mb-2 p-1 rounded">
+                          <div class="position-relative d-inline-block bg-cover" style="min-width:50px; width:50px; height:50px">
+                            <span class="absolute-full d-flex align-items-center justify-content-center small opacity-6 text-uppercase text-truncate">mp3</span>
+                          </div>
+                          <div class="px-3 flex-fill d-flex align-items-center">
+                            <span class="text-truncate d-block min-w-0 lh-1">No image, extension only.mp3 <br>
+                              <span class="smaller d-block pt-1">159.34 Mb</span>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="js-file-input-item d-flex clearfix shadow-md mb-2 p-1 rounded">
+                          <div class="position-relative d-inline-block bg-cover" style="min-width:50px; width:50px; height:50px">
+                            <span class="absolute-full d-flex align-items-center justify-content-center small opacity-6 text-uppercase text-truncate">mov</span>
+                          </div>
+                          <div class="px-3 flex-fill d-flex min-w-0 align-items-center">
+                            <span class="text-truncate d-block lh-1">My great movie file.mov <br>
+                              <span class="smaller d-block pt-1">1.12 Gb</span>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="js-file-input-item d-flex clearfix shadow-md mb-2 p-1 rounded">
+                          <div class="position-relative d-inline-block bg-cover" style="min-width:50px; width:50px; height:50px">
+                            <span class="absolute-full d-flex align-items-center justify-content-center small opacity-6 text-uppercase text-truncate">mov</span>
+                          </div>
+                          <div class="px-3 flex-fill d-flex min-w-0 align-items-center">
+                            <span class="text-truncate d-block lh-1">Lorem ipsum dolor sit amet adipiscium because this is a very very very very very long long long long text.txt <br>
+                              <span class="smaller d-block pt-1">15.3 Kb</span>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="js-file-input-item d-flex clearfix shadow-md mb-2 p-1 rounded">
+                          <div class="position-relative d-inline-block bg-cover" style="min-width:80px; width:80px; height:80px; background-image:url('../demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')"></div>
+                          <div class="px-3 flex-fill d-flex align-items-center">
+                            <span class="text-truncate d-block min-w-0 lh-1">Bigger example by changing: <br>
+                              <span class="smaller d-block pt-1">data-file-preview-img-height="50"</span>
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /demo container -->
+
+                      <div class="clearfix mt-4">
+                        <span class="d-block smaller text-muted px-3">USED CLAESSES</span>
+                        <input type="text" class="form-control form-control-sm form-control-pill js-upload-input-list-type-class-demo" value="shadow-md mb-2 rounded">
+                        <span class="smaller mt-2"><b>data-file-preview-class</b>="<i>shadow-md mb-2 rounded</i>" </span>
+                      </div>
+
+                    </div>
+                    <!-- /LIST DEMO -->
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Tab : Html -->
+              <div class="tab-pane pt-5 fade" id="nav-tab-7-html" aria-labelledby="nav-tab-7-html-link" role="tabpanel">
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- static list --&gt;
+                    &lt;label class="btn btn-primary cursor-pointer position-relative"&gt;
+
+                      &lt;!-- 
+                        We use .absolute-full class instead of .viewport-out
+                        Just to make sure the element is working crossbrowser!
+
+                        data-file-preview-img-height="50"   - min. 50
+
+                          Layouts
+                            data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden" 
+                            data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden border" 
+                            data-file-preview-class="show-hover-container mb-2 rounded border overflow-hidden" 
+                            data-file-preview-class="show-hover-container border-bottom" 
+                            data-file-preview-class="show-hover-container border-start border-2 mb-1" 
+                            data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-2 mb-1" 
+                            data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-1 mb-1 border" 
+                            data-file-preview-class="show-hover-container bg-primary-soft rounded overflow-hidden p-1 mb-1" 
+
+                          .show-hover-container   = show delete button only on hover (always visible on mobile)
+
+                       --&gt;
+                        &lt;input multiple type="file" name="file_list_name[]" 
+                            data-file-ext="mp3, jpg, png, gif" 
+                            data-file-max-size-kb-per-file="" 
+                            data-file-max-size-kb-total="0" 
+                            data-file-max-total-files="100" 
+                            data-file-ext-err-msg="Allowed:" 
+                            data-file-exist-err-msg="File already exists:" 
+                            data-file-size-err-item-msg="File too large!" 
+                            data-file-size-err-total-msg="Total allowed size exceeded!" 
+                            data-file-size-err-max-msg="Maximum allowed files:" 
+                            data-file-toast-position="bottom-center" 
+                            data-file-preview-container=".js-file-input-container-multiple-list-static" 
+                            data-file-preview-img-height="80" 
+                            data-file-btn-clear="a.js-file-input-btn-multiple-list-static-remove" 
+                            data-file-preview-show-info="true" 
+                            data-file-preview-list-type="list" 
+                            class="custom-file-input absolute-full"&gt;
+
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-upload"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-circle-spin fi-spin"&gt;&lt;/i&gt;
+                        &lt;/span&gt; 
+
+                        &lt;span&gt;Select Files&lt;/span&gt;
+                        
+
+                    &lt;/label&gt;
+
+                    &lt;div class="js-file-input-container-multiple-list-static position-relative hide-empty mt-4"&gt;&lt;!-- container --&gt;&lt;/div&gt;
+
+                    &lt;!-- remove button --&gt;
+                    &lt;div class="mt-3"&gt;
+                      &lt;a href="#" title="Clear Images" data-bs-toggle="tooltip" class="js-file-input-btn-multiple-list-static-remove hide btn btn-secondary mb-2"&gt;
+                        &lt;i class="fi fi-close"&gt;&lt;/i&gt;
+                        Clear files
+                      &lt;/a&gt;
+                    &lt;/div&gt;
+                  </code>
+                </pre>
+
+                <pre class="rounded">
+                  <code class="lang-html line-numbers">
+                    &lt;!-- static ajax --&gt;
+                    &lt;label class="btn btn-primary btn-soft cursor-pointer position-relative"&gt;
+
+                      &lt;!-- 
+                        We use .absolute-full class instead of .viewport-out
+                        Just to make sure the element is working crossbrowser!
+
+                        data-file-preview-img-height="50"   - min. 50
+
+                          Layouts
+                            data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden" 
+                            data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden border" 
+                            data-file-preview-class="show-hover-container mb-2 rounded border overflow-hidden" 
+                            data-file-preview-class="show-hover-container border-bottom" 
+                            data-file-preview-class="show-hover-container border-start border-2 mb-1" 
+                            data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-2 mb-1" 
+                            data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p-1 mb-1 border" 
+                            data-file-preview-class="show-hover-container bg-primary-soft rounded overflow-hidden p-1 mb-1" 
+
+                          .show-hover-container   = show delete button only on hover (always visible on mobile)
+
+                       --&gt;
+                        &lt;input multiple type="file" name="file_list_name[]" 
+                            data-file-ext="mp3, jpg, png, gif" 
+                            data-file-max-size-kb-per-file="" 
+                            data-file-max-size-kb-total="0" 
+                            data-file-max-total-files="100" 
+                            data-file-ext-err-msg="Allowed:" 
+                            data-file-exist-err-msg="File already exists:" 
+                            data-file-size-err-item-msg="File too large!" 
+                            data-file-size-err-total-msg="Total allowed size exceeded!" 
+                            data-file-size-err-max-msg="Maximum allowed files:" 
+                            data-file-toast-position="bottom-center" 
+                            data-file-preview-container=".js-file-input-container-multiple-list" 
+                            data-file-preview-img-height="80" 
+                            data-file-btn-clear="a.js-file-input-btn-multiple-list-remove" 
+                            data-file-preview-show-info="true" 
+                            data-file-preview-list-type="list" 
+
+                            data-file-ajax-upload-enable="true" 
+                            data-file-ajax-upload-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-upload-params="['action','upload']['param2','value2']" 
+
+                            data-file-ajax-delete-enable="true" 
+                            data-file-ajax-delete-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-delete-params="['action','delete_file']" 
+
+                            data-file-ajax-reorder-enable="true" 
+                            data-file-ajax-reorder-url="../demo.files/php/demo.ajax_file_upload.php" 
+                            data-file-ajax-reorder-params="['action','reorder']" 
+                            data-file-ajax-reorder-toast-success="Order Saved!" 
+                            data-file-ajax-reorder-toast-position="bottom-center" 
+
+                            data-file-ajax-toast-success-txt="Successfully Uploaded!" 
+                            data-file-ajax-toast-error-txt="One or more files not uploaded!" 
+                            data-file-ajax-callback-function="" 
+                            data-file-ajax-progressbar-custom="" 
+                            data-file-ajax-progressbar-disable="false" 
+                            class="custom-file-input absolute-full"&gt;
+
+                        &lt;span class="group-icon"&gt;
+                          &lt;i class="fi fi-arrow-upload"&gt;&lt;/i&gt;
+                          &lt;i class="fi fi-circle-spin fi-spin"&gt;&lt;/i&gt;
+                        &lt;/span&gt; 
+
+                        &lt;span&gt;Ajax : Select Files&lt;/span&gt;
+                        
+
+                    &lt;/label&gt;
+
+                    &lt;div class="js-file-input-container-multiple-list position-relative hide-empty mt-4"&gt;&lt;!-- container --&gt;&lt;/div&gt;
+                  </code>
+                </pre>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+      <!-- /middle -->
+
+
+    </div>
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/vendor_bundle.min.js"></script>
+
+    <!-- this documentation only -->
+    <script src="assets/js/theme.docs.js"></script>
+
+    <!--
+
+      [SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+      If you have specific page js files, wrap them inside #page_js_files 
+      Ajax Navigation will use them for this page! 
+      This way you can load this page in a normal way and/or via ajax.
+      (you can change/add more containers in sow.config.js)
+
+    -->
+    <div id="page_js_files">
+
+      <script>/* assets/js/theme.docs.js */
+        docAnchor(); docNavSelected();
+      </script>
+
+    </div>
+
+  </body>
+</html>

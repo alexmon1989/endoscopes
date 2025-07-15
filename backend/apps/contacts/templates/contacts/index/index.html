@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+
+{% block meta_title %}{% if page.meta_title %}{{ page.meta_title }}{% else %}Контакти{% endif %}{% endblock %}
+{% block meta_description %}{% if page.meta_description %}{{ page.meta_description }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if page.meta_keywords %}{{ page.meta_keywords }}{% endif %}{% endblock %}
+
+{% block content %}
+    {% include 'contacts/index/_partials/breadcrumbs.html' %}
+
+    <div class="section">
+        <div class="container">
+
+        <div class="row g-xl-5">
+
+            {% include 'contacts/index/_partials/form.html' %}
+
+
+          {% include 'contacts/index/_partials/contacts.html' %}
+
+        </div>
+
+      </div>
+
+    </div>
+{% endblock %}

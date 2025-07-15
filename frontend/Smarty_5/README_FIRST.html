@@ -1,0 +1,245 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<title>README</title>
+
+		<!-- inline css because is just a small GULP info -->
+		<style>
+			*, :after, :before {
+			    box-sizing: border-box;
+			}
+			html,body {
+				padding: 0;
+				margin: 0;
+				color: #1c0950;
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 1.5;
+				font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+				background-color: #f9f9fc;
+			}
+			.container {
+				padding: 50px;
+				margin: auto;
+				margin-top: 60px;
+				margin-bottom: 60px;
+				max-width: 1200px;
+				border-radius: 6px;
+			}
+			.container:not(.container-clean) {
+				background-color: #fff;
+			}
+			:not(pre) code {
+				font-size: 87.5%;
+				color: #e83e8c;
+				word-break: break-word;
+			}
+			pre {
+				color: #fff;
+				background-color: #121212;
+				padding: 15px; 
+				font-size: 14px;
+			}
+			h1,
+			h2 {
+				font-size: 42px;
+				font-weight: bold;
+				color: #1c0950;
+				line-height: 1.5;
+			}
+			h2 {
+				font-size: 24px;
+			}
+			h3,h4,h5,h6 {
+				font-weight: 500;
+			}
+			.mt-5 {
+				margin-top: 50px;
+			}
+			.mb-5 {
+				margin-bottom: 50px;
+			}
+			.mb-6 {
+				margin-bottom: 80px;
+			}
+			.d-block {
+				display: block;
+			}
+			.d-inline-block {
+				display: inline-block;
+			}
+			.mx-auto {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.mt-0 {
+				margin-top: 0;
+			}
+			.mb-0 {
+				margin-bottom: 0;
+			}
+			.m-0 {
+				margin: 0;
+			}
+			.shadow {
+				box-shadow: 0 0 25px rgba(140,152,164,0.1);
+			}
+			.shadow-3d-up {
+				box-shadow: 0rem -2rem 3.5rem rgba(22,28,45,.1)
+			}
+			.shadow-3d-down {
+				box-shadow: 0 2.5rem 4rem rgba(22,28,45,.1);
+			}
+			.bg-light {
+				background-color: #f5f6fc;
+			}
+			.lead {
+				font-size: 22px;
+				font-weight: 300;
+			}
+			a,
+			.text-primary {
+				color: #377dff;
+				text-decoration: none;
+			}
+			a.btn-link {
+				border-bottom: #377dff 1px dashed;
+			}
+			.text-success {
+				color: #6dbb30;
+			}
+			.text-danger {
+				color: #dc3545;
+			}
+			.text-center {
+				text-align: center;
+			}
+			.text-muted {
+				color: #1c0950;
+			}
+			.link-muted {
+				color: #1c0950;
+				border-bottom: #1c0950 1px dashed;
+			}
+			svg.fill-primary,
+			svg.fill-primary path {
+				fill: #377dff !important;
+			}
+			hr {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				border: 0;
+				border-top: 1px solid rgba(0,0,0,0.1);
+			}
+			b {
+				font-weight: 600;
+			}
+			.rounded {
+				border-radius: 6px;
+			}
+			.col-6 {
+				width: 49%;
+				float: left;
+				margin-right: 1%;
+			}
+			.clearfix:after {
+				display: block;
+				clear: both;
+				content: "";
+			}
+
+			.embed-responsive {
+			    position: relative;
+			    display: block;
+			    width: 100%;
+			    padding: 0;
+			    overflow: hidden;
+			}
+			.embed-responsive-16by9:before {
+			    padding-top: 56.25%;
+			}
+			.embed-responsive:before {
+			    display: block;
+			    content: "";
+			}
+			.embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+			    position: absolute;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			    border: 0;
+			}
+
+			.alert-danger {
+				color: #721c24;
+				background: #f8d7da;
+				position: relative;
+				padding: 1rem 1.25rem;
+				border-radius: 4px;
+			}
+			.fw-bold { font-weight:bold  }
+			.small { font-size: 16px; }
+
+			@media screen and (max-width: 1290px) {
+				.container {
+					margin: 15px;
+				}
+			}
+			@media screen and (max-width: 1200px) {
+				.col-6 {
+					width: 100% !important; 
+					float: none !important;
+					margin-right: 0 !important;
+				}
+			}
+		</style>
+
+	</head>
+	<body>
+
+
+		<div class="container shadow">
+
+			<div class="text-center mb-5">
+				<h1 class="text-center mb-0 mt-0">Before starting</h1>
+				<p class="lead fw-bold mb-5">&ndash; local webserver required &ndash;</p>
+				<hr>
+			</div>
+
+			<p>
+				Smarty load plugins via ajax, so a local webserver is required by the browser! <br>
+				GULP is optional but if you use it, you can directly start a local webserver:
+			</p>
+
+			<pre class="rounded">gulp webserver --root html_frontend</pre>
+			<p>- or - for the admin:</p>
+			<pre class="rounded">gulp webserver --root html_admin</pre>
+
+			<hr>
+
+			<p>
+				Please read more in the official documentation!
+			</p>
+
+		</div>
+
+
+		<div class="container shadow-3d-down mb-0">
+			<div class="text-center">
+
+				<p class="m-0">
+
+					<a href="https://www.stepofweb.com" target="_blank" class="link-muted small">www.stepofweb.com</a>
+					<span class="d-block fw-bold">Thank you for chosing Smarty!</span>
+
+				</p>
+			
+			</div>
+		</div>
+
+		<script></script>
+	</body>
+</html>

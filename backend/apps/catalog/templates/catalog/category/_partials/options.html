@@ -1,0 +1,37 @@
+<div class="col-lg-6 order-2 mb-4 card p-3-xs p-xl-5">
+    {% if category.price %}
+        <h3 class="fw-bold">Вартість:</h3>
+        <div class="fs-6 mb-4">
+            <span class="fw-bolder text-teal-900">{{ category.price|safe|linebreaksbr }}</span>
+        </div>
+    {% endif %}
+
+    <div class="mb-5">
+        <a href="#"
+           data-href="{% url 'order_form' slug=category.slug %}"
+           data-ajax-modal-size="modal-md"
+           data-ajax-modal-centered="true"
+           data-ajax-modal-callback-function=""
+           class="js-ajax-modal btn btn-lg btn-primary w-100 fs-5">
+            <i class="fi fi-cart-2"></i>
+            Замовити
+        </a>
+    </div>
+
+    <div class="mb-2">
+        <h2 class="h3 fw-bold">Характеристики:</h2>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tbody>
+            {% for item in category.categoryproperty_set.all %}
+                <tr>
+                    <td class="text-muted w-50">{{ item.key }}</td>
+                    <td>{{ item.value|safe|linebreaksbr }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

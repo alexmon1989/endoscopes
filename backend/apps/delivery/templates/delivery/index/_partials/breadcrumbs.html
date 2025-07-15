@@ -1,0 +1,28 @@
+{% load static %}
+
+<div class="section jarallax text-center-xs overlay-dark overlay-opacity-7 text-white">
+
+    <!-- jarallax image -->
+    <img class="jarallax-img" src="{% static 'assets/images/endoscopie_reconditionne_1.webp' %}" alt="...">
+
+
+    <div class="container h-100">
+
+        <div class="d-table">
+            <div class="d-table-cell align-middle">
+
+                <h1>{% if page.meta_h1 %}{{ page.meta_h1 }}{% else %}Про нас{% endif %}</h1>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb small justify-content-md-start justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'home' %}">Головна</a></li>
+                        <li class="breadcrumb-item text-white active"
+                            aria-current="page">{% if page.meta_h1 %}{{ page.meta_h1 }}{% else %}Доставка та оплата{% endif %}</li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+</div>

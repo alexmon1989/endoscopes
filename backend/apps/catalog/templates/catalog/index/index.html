@@ -1,0 +1,47 @@
+{% extends 'layout/base.html' %}
+
+{% block meta_title %}{% if page.meta_title %}{{ page.meta_title }}{% else %}Каталог ендоскопів{% endif %}{% endblock %}
+{% block meta_description %}{% if page.meta_description %}{{ page.meta_description }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if page.meta_keywords %}{{ page.meta_keywords }}{% endif %}{% endblock %}
+
+{% block content %}
+    {% include 'catalog/index/_partials/breadcrumbs.html' %}
+
+    <div class="section pt-6 pb-3">
+        <div class="container">
+            <!--
+                In order for lazyload to work, a height is required, else all images are in viewport.
+                By default, an empty png is set with 300px height:
+                http://png-pixel.com/
+            -->
+            <div class="row">
+                {% if categories %}
+
+                    {% for category in categories %}
+                        {% include 'catalog/index/_partials/category.html' with category=category %}
+                    {% endfor %}
+
+                {% else %}
+
+                    <div class="col-12">
+                        Категорії поки що відсутні
+                    </div>
+
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+    {% if page.description %}
+        <div class="section pt-0">
+            <div class="container">
+
+                <div class="article-format p-4 p-lg-4 col-lg-12 shadow-sm rounded">
+                    {{ page.description|safe }}
+                </div>
+
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

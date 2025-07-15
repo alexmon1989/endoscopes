@@ -1,0 +1,19 @@
+{% extends 'layout/base.html' %}
+
+{% block meta_title %}{% if page.meta_title %}{{ page.meta_title }}{% else %}Доставка та оплата{% endif %}{% endblock %}
+{% block meta_description %}{% if page.meta_description %}{{ page.meta_description }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if page.meta_keywords %}{{ page.meta_keywords }}{% endif %}{% endblock %}
+
+{% block content %}
+    {% include 'delivery/index/_partials/breadcrumbs.html' %}
+
+    <div class="section">
+        <div class="container">
+
+            <div class="article-format p-4 p-lg-4 col-lg-12 shadow-sm rounded">
+                {{ page.description|safe }}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

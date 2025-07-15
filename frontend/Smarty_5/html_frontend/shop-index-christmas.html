@@ -1,0 +1,1891 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>Smarty v5</title>
+		<meta name="description" content="...">
+
+		<meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- up to 10% speed up for external res -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/">
+		<!-- preloading icon font is helping to speed up a little bit -->
+		<link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="assets/css/core.min.css">
+		<link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+	</head>
+
+	<body  data-s2t-class="btn-danger rounded-circle">
+
+		<div id="wrapper">
+
+
+			<!-- Header -->
+			<header id="header" class="shadow-xs bg-gradient-danger text-white">
+
+        <!-- TOP BAR -->
+        <div id="top_bar" class="bg-diff"> <!-- optional if body.header-sticky is present: add .js-ignore class to ignore autohide and stay visible all the time -->
+          <div class="container">
+
+            <div class="text-nowrap"><!-- change with .scrollable-horizontal to horizontally scroll, if -only- no dropdown is present -->
+              <div class="d-flex justify-content-between">
+
+                <div class="d-inline-block float-start">
+                  <ul class="list-inline m-0">
+
+                    <!-- LANGUAGE -->
+                    <li class="dropdown list-inline-item m-0">
+
+                      <a id="topDDLanguage" href="#" class="py-2 d-inline-block" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                        <i class="flag flag-us"></i> 
+                        <span class="text-white px-2">English</span>
+                      </a>
+
+                      <div aria-labelledby="topDDLanguage" class="dropdown-menu dropdown-menu-hover p-1 pb-0 scrollable-vertical">
+                        <a href="#" class="active dropdown-item text-muted text-truncate lh-1 rounded mb-1">
+                          <i class="flag flag-us"></i> 
+                          English
+                        </a>
+                        <a href="#" class="dropdown-item text-muted text-truncate lh-1 rounded mb-1">
+                          <i class="flag flag-de"></i> 
+                          German
+                        </a>
+                        <a href="#" class="dropdown-item text-muted text-truncate lh-1 rounded mb-1">
+                          <i class="flag flag-fr"></i> 
+                          Francaise
+                        </a>
+                      </div>
+
+                    </li>
+                    <!-- /LANGUAGE -->
+
+
+                    <!-- CURRENCY -->
+                    <li class="dropdown list-inline-item m-0">
+
+                      <span>/</span><!-- optional separator -->
+
+                      <a id="topDDCurrency" href="#" class="py-2 d-inline-block" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="text-white px-2">USD</span>
+                      </a>
+
+                      <div aria-labelledby="topDDCurrency" class="dropdown-menu dropdown-menu-hover text-uppercase text-center p-1 pb-0 w-auto">
+                        <a href="#" class="active dropdown-item text-muted text-truncate lh-1 rounded mb-1">
+                          USD
+                        </a>
+                        <a href="#" class="dropdown-item text-muted text-truncate lh-1 rounded mb-1">
+                          EUR
+                        </a>
+                        <a href="#" class="dropdown-item text-muted text-truncate lh-1 rounded mb-1">
+                          GBP
+                        </a>
+                      </div>
+
+                    </li>
+                    <!-- /CURRENCY -->
+
+                  </ul>
+                </div>
+
+
+                <div class="d-inline-block float-end">
+
+                  <ul class="list-inline m-0">
+
+                    <li class="dropdown list-inline-item">
+
+                      <a href="tel:+01-555-5555" class="p-2 d-inline-block fw-medium text-white">
+                        <i class="float-start fi fi-phone"></i> (+01) 555-5555
+                      </a>
+
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /TOP BAR -->
+
+
+
+				<!-- Navbar -->
+				<div class="container position-relative">
+
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path fill="#ffffff" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path fill="#ffffff" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path fill="#ffffff" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path fill="#ffffff" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+<!-- navbar : brand (logo) -->
+							<a class="navbar-brand m-0 position-relative" href="landing-0.html">
+
+								<!-- svg : adjusted using negative utility classes -->
+								<svg class="z-index-0 position-absolute top-0 end-0 mt-n15 ms--n20 me--n20" data-aos="fade-in" data-aos-delay="250" data-aos-offset="0" width="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.021 512.021"><path d="M508.709 232.816c4.267-4.062 4.433-10.814.371-15.08-1.953-2.052-4.643-3.242-7.475-3.309-21.589-.512-21.589-30.955-21.589-32.213.046-3.935-2.077-7.576-5.525-9.472l-103.104-56.747c-3.813-2.11-8.526-1.687-11.904 1.067l-82.645 67.392c-4.11 3.364-5.12 9.239-2.368 13.781l25.771 42.667c.482.783 1.063 1.5 1.728 2.133 12.109 13.958 18.294 32.09 17.237 50.539.05 29.076-11.725 56.922-32.619 77.141-4.266 4.062-4.432 10.814-.37 15.08 1.433 1.505 3.274 2.559 5.298 3.032 15.201 6.461 27.395 18.434 34.133 33.515 14.051 22.273 19.567 48.878 15.531 74.901-1.866 5.588 1.151 11.63 6.738 13.496 4.881 1.63 10.231-.457 12.718-4.963 17.237-30.805 45.419-56.811 64.192-59.157 3.866-.868 7.906.336 10.667 3.179 4.062 4.267 10.814 4.433 15.08.371 2.052-1.953 3.242-4.643 3.309-7.475v-6.997c-2.583-28.224 8.183-56.032 29.099-75.157 4.271-4.057 4.444-10.809.387-15.08l-.003-.003c-9.698-15.237-12.136-33.99-6.656-51.2 4.419-23.172 15.546-44.536 31.999-61.441z" fill="#43A047"></path><path d="M337.637 152.646c-3.649-3.038-8.866-3.299-12.8-.64l-30.997-46.528c.491-.448 1.259-.747 1.728-1.195 4.237-4.092 4.355-10.845.262-15.083s-10.845-4.355-15.083-.262l-.262.262c-16.939 16.939-100.907 11.328-113.067-.213-4.234-4.096-10.987-3.984-15.083.249-2.057 2.126-3.138 5.01-2.986 7.964-1.579 24.527-12.225 47.591-29.867 64.704-16.885 18.909-40.794 30.054-66.133 30.827-5.891.003-10.664 4.781-10.662 10.672.001 2.075.607 4.105 1.744 5.84 6.543 15.171 7.115 32.255 1.6 47.829-5.193 25.812-19.544 48.876-40.405 64.939-5.191 2.785-7.142 9.251-4.357 14.442 2.417 4.505 7.689 6.661 12.57 5.142 33.749-10.432 72.064-9.792 87.296 1.451 3.409 2.043 5.51 5.711 5.547 9.685-.034 4.348 2.574 8.281 6.592 9.941 1.291.538 2.676.813 4.075.811 2.831.005 5.548-1.115 7.552-3.115 1.451-1.451 3.072-3.179 4.843-5.077 17.553-22.314 44.553-35.107 72.939-34.56 5.891 0 10.667-4.776 10.667-10.667 0-26.432 49.643-64 96-64 5.891.011 10.675-4.757 10.686-10.648.005-2.84-1.123-5.565-3.134-7.571-12.117-12.117 9.493-45.781 21.867-60.16 3.838-4.465 3.332-11.198-1.132-15.039z" fill="#4CAF50"></path><path d="M138.682 256.731c-5.891-.011-10.657-4.796-10.646-10.687.006-3.111 1.37-6.064 3.734-8.086 4.267-3.605 104.064-88.427 152.171-108.416 5.467-2.25 11.723.357 13.973 5.824s-.357 11.723-5.824 13.973c-45.013 18.688-145.472 104.064-146.496 104.917-1.938 1.617-4.388 2.494-6.912 2.475zM385.104 361.2c-5.462.033-10.066-4.065-10.667-9.493-.448-4.267-11.115-103.893 10.411-152.619 1.99-5.545 8.098-8.426 13.643-6.436 5.545 1.99 8.426 8.098 6.436 13.643-.163.455-.357.898-.58 1.326-19.2 43.477-8.811 140.672-8.704 141.653.648 5.855-3.573 11.127-9.428 11.776h-.001l-1.11.15z" fill="#388E3C"></path><path d="M448.016.731c-28.977.092-54.276 19.642-61.675 47.659-1.091 4.114.368 8.482 3.712 11.115l76.651 60.288c1.885 1.483 4.215 2.287 6.613 2.283 1.774-.005 3.52-.452 5.077-1.301 31.046-16.699 42.676-55.404 25.977-86.45-11.152-20.735-32.812-33.647-56.355-33.594z" fill="#E53935"></path><circle cx="352.016" cy="96.731" r="74.667" fill="#D32F2F"></circle><circle cx="416.016" cy="139.398" r="74.667" fill="#F44336"></circle></svg>
+
+								<!-- logo -->
+								<img class="z-index-1 position-relative" src="assets/images/logo/logo_light.svg" width="110" height="38" alt="...">
+							
+							</a>
+
+						</div>
+
+
+						<!-- 
+
+							[SOW] SEARCH SUGGEST PLUGIN
+							++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+							PLEASE READ DOCUMENTATION
+							documentation/plugins-sow-search-suggest.html
+							++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						-->
+						<form 	action="#search-page" 
+								method="GET" 
+								data-autosuggest="on" 
+								data-theme-class="danger" 
+
+								data-mode="json" 
+								data-json-max-results='10'
+								data-json-related-title='Explore Smarty'
+								data-json-related-item-icon='fi fi-star-empty'
+								data-json-suggest-title='Suggestions for you'
+								data-json-suggest-noresult='No results for'
+								data-json-suggest-item-icon='fi fi-search'
+								data-json-suggest-min-score='5'
+								data-json-highlight-term='true'
+								data-contentType='application/json; charset=utf-8'
+								data-dataType='json'
+
+								data-container="#sow-search-container" 
+								data-input-min-length="2" 
+								data-input-delay="250" 
+								data-related-keywords="" 
+								data-related-url="_ajax/search_suggest_related.json" 
+								data-suggest-url="_ajax/search_suggest_input.json" 
+								data-related-action="related_get" 
+								data-suggest-action="suggest_get" 
+								class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto m-0 mx-lg-5">
+							<div class="sow-search-input w-100">
+
+								<!-- rounded: form-control-pill -->
+								<div class="input-group-over d-flex align-items-center w-100 h-100 rounded form-control-pill">
+
+									<input placeholder="what are you looking today?" aria-label="what are you looking today?" name="s" type="text" class="form-control-sow-search form-control bg-diff border-0 text-white" value="" autocomplete="off">
+
+									<span class="sow-search-buttons">
+
+										<!-- search button -->
+										<button aria-label="Global Search" type="submit" class="btn shadow-none m-0 px-3 py-2 bg-transparent text-white">
+											<i class="fi fi-search fs-5 m-0"></i>
+										</button>
+
+										<!-- close : mobile only (d-inline-block d-lg-none) -->
+										<a href="javascript:;" class="btn-sow-search-toggler btn btn-light shadow-none m-0 p-2 d-inline-block d-lg-none">
+											<i class="fi fi-close fs-5 m-0"></i>
+										</a>
+
+									</span>
+
+								</div>
+
+							</div>
+
+							<!-- search suggestion container -->
+							<div class="sow-search-container w-100 p-0 hide shadow-md" id="sow-search-container">
+								<div class="sow-search-container-wrapper">
+
+									<!-- main search container -->
+									<div class="sow-search-loader p-3 text-center hide">
+										<i class="fi fi-circle-spin fi-spin text-muted fs-1"></i>
+									</div>
+
+									<!-- svg : CHRISTMAS BELLS -->
+									<svg class="z-index-0 position-absolute top-0 start-0 mt-n4 ms-n3 me-n3" width="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M122.185 177.254l-20.624 16.316-19.205 35.099c-18.525 33.857-50.653 41.627-50.653 41.627l-3.442-1.884c-7.606-4.161-17.145-1.368-21.308 6.237l-5.024 9.18c-4.161 7.607-1.369 17.146 6.236 21.308l199.119 108.954c7.605 4.162 17.146 1.369 21.308-6.237l5.025-9.181c4.16-7.607 1.367-17.146-6.238-21.307l-3.443-1.886c-.008-.023-10.771-31.261 7.749-65.103l24.314-44.436v-88.688h-133.814v.001z" fill="#F2D422"/><path d="M204.678 187.555l-.704.346h.336l.368-.346zM109.847 220.328c-.243-.284-.476-.589-.703-.906l-.154-.217c-.219-.319-.429-.656-.631-1.008l-.139-.249c-.2-.365-.392-.746-.572-1.147l-.1-.232c-.185-.428-.362-.869-.523-1.337l-.035-.11c-.157-.463-.301-.949-.434-1.454l-.054-.2c-.13-.513-.245-1.05-.349-1.606l-.056-.303c-.098-.555-.182-1.133-.253-1.732l-.037-.332c-.066-.617-.121-1.254-.158-1.918l-.012-.27c-.035-.707-.057-1.435-.057-2.196v-14.721l-4.018 3.179-19.206 35.1c-18.525 33.857-50.653 41.627-50.653 41.627l-3.442-1.884c-7.606-4.161-17.145-1.368-21.308 6.237l-5.024 9.18c-4.161 7.607-1.369 17.146 6.236 21.308l12.687 6.942c-4.021-4.81-4.931-11.77-1.74-17.603l5.024-9.18c4.163-7.606 13.702-10.398 21.308-6.237l3.442 1.884s32.128-7.771 50.653-41.627l10.358-18.929-.05-.059z" fill="#E8C018"/><circle cx="94.379" cy="383.999" r="27.801" fill="#E5E1E1"/><circle cx="417.619" cy="383.999" r="27.8" fill="#E5E1E1"/><path d="M97.797 370.659c2.538-4.638 6.205-8.265 10.473-10.726l-.545-.317c-13.468-7.371-30.364-2.426-37.734 11.042-7.37 13.468-2.426 30.362 11.044 37.732 8.831 4.832 19.134 4.37 27.26-.317-13.052-7.523-17.766-24.131-10.498-37.414zM421.036 397.349c-7.267-13.284-2.554-29.891 10.498-37.416-8.126-4.688-18.429-5.149-27.26-.317-13.469 7.37-18.412 24.263-11.043 37.732 7.369 13.468 24.263 18.412 37.735 11.042l.544-.316c-4.269-2.461-7.937-6.087-10.474-10.725z" fill="#D1CFCF"/><path d="M510.07 283.831l-5.025-9.18c-4.163-7.606-13.7-10.398-21.307-6.237l-3.442 1.884s-32.13-7.771-50.653-41.627l-24.021-43.899v-5.2h-143.293l-8.301 10.481c-12.384 20.592-13.827 47.019-1.46 69.619l27.746 50.709c18.519 33.842 7.757 65.08 7.749 65.103l-3.443 1.886c-7.606 4.161-10.397 13.701-6.237 21.307l5.024 9.181c4.162 7.606 13.703 10.398 21.308 6.237l199.118-108.956c7.606-4.162 10.398-13.701 6.237-21.308z" fill="#F2D422"/><path d="M303.456 399.098l-5.024-9.181c-4.161-7.607-1.369-17.146 6.237-21.307l3.443-1.886c.008-.023 10.77-31.261-7.749-65.103l-27.746-50.709c-12.367-22.6-10.924-49.027 1.46-69.619l1.365-1.723h-13.113l-8.301 10.481c-12.384 20.592-13.827 47.019-1.46 69.619l27.746 50.709c18.519 33.842 7.757 65.08 7.749 65.103l-3.443 1.886c-7.606 4.161-10.397 13.701-6.237 21.307l5.024 9.181c4.162 7.606 13.703 10.398 21.308 6.237l12.487-6.833c-5.538-.014-10.9-2.961-13.746-8.162z" fill="#E8C018"/><path d="M215.304 172.608v-24.333c0-2.487.527-4.85 1.463-6.992l-84.244-41.344c-4.3-2.05-31.065-13.644-31.065 15.831v89.342c0 29.472 26.765 17.88 31.065 15.829l84.244-41.341c-.935-2.142-1.463-4.503-1.463-6.992zM374.56 99.939l-84.251 41.344c.936 2.141 1.466 4.504 1.466 6.991v24.333c0 2.489-.53 4.85-1.466 6.993l84.251 41.341c4.296 2.051 31.062 13.643 31.062-15.829v-89.342c0-29.475-26.766-17.881-31.062-15.831z" fill="#EA473B"/><path d="M124.628 205.112v-89.342c0-8.79 2.389-13.909 5.844-16.736-7.583-3.129-29.014-9.646-29.014 16.736v89.342c0 26.378 21.431 19.863 29.014 16.734-3.455-2.827-5.844-7.945-5.844-16.734z" fill="#D63322"/><path d="M232.783 187.768c-7.166 0-13.317-4.314-16.016-10.484l-10.522 5.163c-24.314 20.741-46.529 53.463-57.981 71.782l-.002.005c-8.428 13.003 3.103 18.739 3.171 18.775l15.227 7.001 2.401 1.104 1.214.556c7.411 3.41 15.624 7.184 21.857 10.051 14.78 6.797 18.075-7.032 18.075-7.032h.007c14.009-50.182 35.171-86.676 41.483-96.92h-18.914v-.001z" fill="#EA473B"/><path d="M168.877 273.987l.002-.006c11.065-21.915 31.983-59.863 56.74-87.756-3.946-1.778-7.116-4.971-8.852-8.941l-10.522 5.163c-24.314 20.741-46.529 53.463-57.981 71.782l-.002.005c-8.428 13.003 3.103 18.739 3.171 18.775l15.115 6.949c.441-1.816 1.187-3.8 2.329-5.971z" fill="#D63322"/><path d="M359.924 256.019l-.002-.005c-11.083-17.908-33.979-52.144-59.112-73.577l-10.501-5.153c-2.7 6.17-8.849 10.484-16.017 10.484h-18.912c6.304 10.226 27.407 46.623 41.417 96.685h.006c3.934 13.157 13.55 9.379 13.559 9.377l.278-.129.507-.233 40.257-18.511 1.105-.509c13.391-6.159 9.093-15.557 7.751-17.89l-.336-.539z" fill="#EA473B"/><path d="M282.256 185.839c-2.389 1.227-5.092 1.929-7.964 1.929h-18.912c6.304 10.226 27.407 46.623 41.417 96.685h.006c3.934 13.157 13.55 9.379 13.559 9.377l.278-.129.507-.233 13.068-6.009c-13.202-45.113-30.654-80.968-41.959-101.62zM274.292 130.216h-41.509c-9.957 0-18.058 8.101-18.058 18.058v24.333c0 9.957 8.101 18.056 18.058 18.056h41.509c9.96 0 18.063-8.1 18.063-18.056v-24.333c0-9.957-8.103-18.058-18.063-18.058z" fill="#D63322"/><path d="M237.895 172.608v-24.333c0-9.957 8.1-18.058 18.057-18.058h-23.169c-9.957 0-18.058 8.101-18.058 18.058v24.333c0 9.957 8.101 18.056 18.058 18.056h23.169c-9.956 0-18.057-8.1-18.057-18.056z" fill="#C62A1E"/></svg>
+									
+									<!-- 
+										AJAX CONTENT CONTAINER 
+										SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+									--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+								</div>
+							</div>
+							<!-- /search suggestion container -->
+
+							<!-- 
+
+								overlay combinations:
+									overlay-dark opacity-* [1-9]
+									overlay-light opacity-* [1-9]
+
+							-->
+							<div class="sow-search-backdrop backdrop-dark hide"><!-- alternate: overlay-dark opacity-3 --></div>
+
+						</form>
+						<!-- /SEARCH -->
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+							<!-- mobile : search toggler -->
+							<li class="list-inline-item mx-1 dropdown d-inline-block d-lg-none">
+
+								<a href="#" aria-label="Search" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" class="btn-sow-search-toggler d-inline-block text-center text-white">
+									<i class="fi fi-search fs-5"></i>
+									<span class="d-block small">search</span>
+								</a>
+
+							</li>
+
+							<!-- my account -->
+							<li class="list-inline-item mx-1 dropdown">
+
+								<a href="#" aria-label="My Account" id="dropdownAccountOptions" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" class="d-inline-block text-center text-white">
+									<i class="fi fi-users fs-4"></i>
+									<span class="d-block small">account</span>
+								</a>
+
+                <!-- dropdown -->
+                <div aria-labelledby="dropdownAccountOptions" class="list-unstyled dropdown-menu dropdown-menu-clean dropdown-click-ignore end-0 py-2 rounded-xl" style="min-width:215px;">
+
+                  <div class="dropdown-header px-4 mb-1 text-wrap fw-medium">John Doe</div>
+                  <div class="dropdown-divider mb-3"></div>
+                  <a class="dropdown-item active" href="account-index.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+                      <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
+                    </svg>
+                    <span>My account</span>
+                  </a>
+                  <a class="dropdown-item" href="account-orders.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+                      <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                    </svg>
+                    <span>My orders</span>
+                  </a>
+                  <a class="dropdown-item" href="account-favourites.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+                    </svg>
+                    <span>Favourites</span>
+                  </a>
+                  <a class="dropdown-item" href="account-reward.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                      <path fill-rule="evenodd" d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"></path>
+                    </svg>
+                    <span>Reward points</span>
+                  </a>
+                  <a class="dropdown-item" href="account-coupons.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.273 2.513l-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"></path>
+                      <path fill-rule="evenodd" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                    </svg>
+                    <span>Coupons</span>
+                  </a>
+                  <a class="dropdown-item" href="account-reviews.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path d="M3 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2z"></path>
+                      <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2zM1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"></path>
+                    </svg>
+                    <span>My reviews</span>
+                  </a>
+                  <a class="dropdown-item" href="account-refunds.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"></path>
+                      <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"></path>
+                    </svg>
+                    <span>My refunds</span>
+                  </a>
+                  <a class="dropdown-item" href="account-addresses.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>My addresses</span>
+                  </a>
+                  <a class="dropdown-item" href="account-settings.html">
+                    <svg class="text-gray-600 float-start" width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <path fill-rule="evenodd" d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z"></path>
+                    </svg>
+                    <span>Account settings</span>
+                  </a>
+                  <div class="dropdown-divider mt-3"></div>
+                  <a href="#" title="Log Out" class="dropdown-item mt-1">
+                    <i class="fi fi-power float-start"></i>
+                    Log Out
+                  </a>
+                </div>
+
+							</li>
+
+
+							<!-- favourites button : visible : desktop only -->
+							<li class="list-inline-item mx-1 dropdown d-none d-sm-block">
+
+								<a href="account-favourites.html" aria-label="My Favourites" class="d-inline-block text-center text-white">
+									<span class="badge bg-danger text-dark position-absolute end-0 mt-n1 p-1">2</span>
+									<i class="fi fi-heart-empty fs-4"></i>
+									<span class="d-block small">favourites</span>
+								</a>
+
+							</li>
+
+
+							<!-- cart -->
+							<li class="list-inline-item mx-1 dropdown">
+
+								<a href="#" aria-label="My Cart" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" class="d-inline-block text-center text-white">
+									<span class="badge bg-warning position-absolute end-0 mt-n1 p-1">2</span>
+									<i class="fi fi-cart-1 fs-4"></i>
+									<span class="d-block small">my cart</span>
+								</a>
+
+                <!-- dropdown -->
+                <div aria-labelledby="dropdownAccount" id="dropdownAccount" class="dropdown-menu dropdown-menu-clean dropdown-menu-invert dropdown-click-ignore mt-2 p-0 rounded-xl" style="width:300px"> 
+                  <div class="dropdown-header p-3 fw-medium">Cart Products</div> 
+
+                  <!--
+                  <div class="py-5 text-center bg-light">
+                    Your cart is empty!
+                  </div>
+                  -->
+
+
+                  <!-- item list -->
+                  <div class="max-vh-50 scrollable-vertical">
+
+                    <!-- item -->
+                    <div class="p-3 border-top border-light">
+
+                      <!-- image -->
+                      <div class="ratio ratio-1x1 float-start mt-1 bg-cover" 
+                        style="width:40px; background-image:url(demo.files/images/unsplash/products/thumb_330/barrett-ward-fYYUgvHYgpU-unsplash-min.jpg)"> </div> 
+
+                      <a href="#" class="small d-block link-normal">
+                        <span class="d-block text-truncate">
+                          1 &times; Product title comes here
+                        </span>
+                      </a>
+
+                      <span class="d-block small mt-1">$196.00</span>
+                    </div>
+                    <!-- /item -->
+
+
+                    <!-- item -->
+                    <div class="p-3 border-top border-light">
+
+                      <div class="ratio ratio-1x1 float-start mt-1 bg-cover" 
+                        style="width:40px; background-image:url(demo.files/images/unsplash/products/thumb_330/hardik-sharma-CrPAvN29Nhs-unsplash-min.jpg)"> </div> 
+
+                      <a href="#" class="small d-block link-normal">
+                        <span class="d-block text-truncate">
+                          1 &times; Product title comes here
+                        </span>
+                      </a>
+
+                      <span class="d-block small mt-1">$56.99</span>
+                    </div>
+                    <!-- /item -->
+
+
+                  </div>
+                  <!-- /item list -->
+
+
+                  <!-- subtotal -->
+                  <div class="fs-6 text-align-start border-top border-light px-3 py-2">
+                    Subtotal: <span class="float-end">$196.00</span>
+                  </div>
+
+
+                  <!-- go to cart button -->
+                  <div class="border-top border-light p-3">
+                    
+                    <a href="shop-page-cart-1.html" class="btn btn-danger w-100">
+                      <span>Go to Cart</span>
+                      <i class="fi fi-arrow-end smaller"></i>
+                    </a>
+
+                  </div>
+
+
+                </div>
+
+
+							</li>
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+					</nav>
+
+				</div>
+				<!-- /Navbar -->
+
+
+
+
+				<div class="clearfix">
+					
+          <!-- line -->
+          <hr class="m-0 bg-white opacity-25">
+					
+          <div class="container">
+
+            <nav class="navbar h-auto navbar-expand-lg navbar-dark justify-content-lg-between justify-content-md-inherit">
+
+
+              <!-- Menu -->
+              <!--
+
+                Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+                  .dropdown-menu-dark     - dark dropdown (desktop only, will be white on mobile)
+                  .dropdown-menu-hover    - open on hover
+                  .dropdown-menu-clean    - no background color on hover
+                  .dropdown-menu-invert     - open dropdown in oposite direction (left|right, according to RTL|LTR)
+                  .dropdown-menu-uppercase  - uppercase text (font-size is scalled down to 13px)
+                  .dropdown-click-ignore    - keep dropdown open on inside click (useful on forms inside dropdown)
+
+                  Repositioning long dropdown childs (Example: Pages->Account)
+                    .dropdown-menu-up-n100    - open up with top: -100px
+                    .dropdown-menu-up-n100    - open up with top: -150px
+                    .dropdown-menu-up-n180    - open up with top: -180px
+                    .dropdown-menu-up-n220    - open up with top: -220px
+                    .dropdown-menu-up-n250    - open up with top: -250px
+                    .dropdown-menu-up       - open up without negative class
+
+
+                  Dropdown prefix icon (optional, if enabled in variables.scss)
+                    .prefix-link-icon .prefix-icon-dot    - link prefix
+                    .prefix-link-icon .prefix-icon-line   - link prefix
+                    .prefix-link-icon .prefix-icon-ico    - link prefix
+                    .prefix-link-icon .prefix-icon-arrow  - link prefix
+
+                  .nav-link.nav-link-caret-hide   - no dropdown icon indicator on main link
+                  .nav-item.dropdown-mega     - required ONLY on fullwidth mega menu
+
+                  Mobile animation - add to .navbar-collapse:
+                  .navbar-animate-fadein
+                .navbar-animate-fadeinup
+                  .navbar-animate-bouncein
+
+              -->
+              <div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+
+                <!-- navbar : mobile menu -->
+                <div class="navbar-xs d-none"><!-- .sticky-top -->
+
+                  <!-- mobile menu button : close -->
+                  <button class="navbar-toggler pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg width="20" viewBox="0 0 20 20">
+                      <path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+                    </svg>
+                  </button>
+
+                  <!-- 
+                    Mobile Menu Logo 
+                    Logo : height: 70px max
+                  -->
+                  <a class="navbar-brand" href="shop-index-1.html">
+                    <img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+                  </a>
+
+                </div>
+                <!-- /navbar : mobile menu -->
+
+
+
+                <!-- navbar : navigation -->
+                <ul class="navbar-nav navbar-sm">
+                  <!-- Menu -->
+                  <!--
+
+                    Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+                      .dropdown-menu-dark     - dark dropdown (desktop only, will be white on mobile)
+                      .dropdown-menu-hover    - open on hover
+                      .dropdown-menu-clean    - no background color on hover
+                      .dropdown-menu-invert     - open dropdown in oposite direction (left|right, according to RTL|LTR)
+                      .dropdown-menu-uppercase  - uppercase text (font-size is scalled down to 13px)
+                      .dropdown-click-ignore    - keep dropdown open on inside click (useful on forms inside dropdown)
+
+                      Repositioning long dropdown childs (Example: Pages->Account)
+                        .dropdown-menu-up-n100    - open up with top: -100px
+                        .dropdown-menu-up-n100    - open up with top: -150px
+                        .dropdown-menu-up-n180    - open up with top: -180px
+                        .dropdown-menu-up-n220    - open up with top: -220px
+                        .dropdown-menu-up-n250    - open up with top: -250px
+                        .dropdown-menu-up       - open up without negative class
+
+
+                      Dropdown prefix icon (optional, if enabled in variables.scss)
+                        .prefix-link-icon .prefix-icon-dot    - link prefix
+                        .prefix-link-icon .prefix-icon-line   - link prefix
+                        .prefix-link-icon .prefix-icon-ico    - link prefix
+                        .prefix-link-icon .prefix-icon-arrow  - link prefix
+
+                      .nav-link.nav-link-caret-hide   - no dropdown icon indicator on main link
+                      .nav-item.dropdown-mega     - required ONLY on fullwidth mega menu
+
+                  -->
+                  <!-- home -->
+                  <li class="nav-item dropdown active">
+
+                    <a href="#" id="mainNavHome" class="nav-link dropdown-toggle" 
+                      data-bs-toggle="dropdown" 
+                      aria-haspopup="true" 
+                      aria-expanded="false">
+                      Home
+                    </a>
+
+                    <div aria-labelledby="mainNavHome" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-mega-xl dropdown-fadeindown rounded-xl rounded-top-0 p-0 overflow-hidden">
+
+                      <div class="row">
+
+                        <!-- menu items -->
+                        <div class="col-12 col-lg-7">
+
+                          <!-- 
+                            optional line column separator 
+                            .col-border-lg 
+                          -->
+                          <div class="row col-border-lg">
+
+                            <!-- title -->
+                            <h3 class="col-12 py-3 mx-lg-4 mt-2 fs-6 fw-bold">Shop variations</h3>
+
+                            <!-- col 1 -->
+                            <div class="col-12 col-lg-6">
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a href="shop-index-1.html" class="dropdown-link">Home 1</a></li>
+                                <li class="dropdown-item"><a href="shop-index-2.html" class="dropdown-link">Home 2</a></li>
+                                <li class="dropdown-item"><a href="shop-index-3.html" class="dropdown-link">Home 3</a></li>
+                                <li class="dropdown-item"><a href="shop-index-4.html" class="dropdown-link">Home 4</a></li>
+                                <li class="dropdown-item"><a href="shop-index-5.html" class="dropdown-link">Home 5</a></li>
+                                <li class="dropdown-item"><a href="shop-index-christmas.html" class="dropdown-link">Home 6</a></li>
+                                <li class="dropdown-item"><a href="shop-index-7.html" class="dropdown-link disabled">Home 7 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-8.html" class="dropdown-link disabled">Home 8 (soon)</a></li>
+                              </ul>
+                            </div>
+
+                            <!-- col 2 -->
+                            <div class="col-12 col-lg-6">
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a href="shop-index-9.html" class="dropdown-link disabled">Home 9 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-10.html" class="dropdown-link disabled">Home 10 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-11.html" class="dropdown-link disabled">Home 11 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-12.html" class="dropdown-link disabled">Home 12 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-13.html" class="dropdown-link disabled">Home 13 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-14.html" class="dropdown-link disabled">Home 14 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-15.html" class="dropdown-link disabled">Home 15 (soon)</a></li>
+                                <li class="dropdown-item"><a href="shop-index-16.html" class="dropdown-link disabled">Home 16 (soon)</a></li>
+                              </ul>
+                            </div>
+
+                            <!-- col 3 -->
+                            <ul class="col-12 list-unstyled pt-3">
+                              <li class="dropdown-divider"></li>
+                              <li class="dropdown-item pt-1 pb-2">
+                                <a href="index.html#ecommerce" class="dropdown-link text-muted d-flex align-items-center">
+                                  <span class="pe-2">Visual mode</span>
+                                  <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">  
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                                  </svg>
+                                </a>
+                              </li>
+                            </ul>
+
+                          </div>
+
+                        </div>
+
+                        <!-- image -->
+                        <div class="col px-3 py-5 bg-cover position-relative overlay-dark overlay-opacity-4 text-white d-flex flex-column align-items-center justify-content-center" 
+                        style="background-image: url(demo.files/images/unsplash/portfolio/thumb_330/boxed-water-is-better-LWagu5WepHU-unsplash-min.jpg);">
+                          
+                          <img src="assets/images/logo/logo_light.svg" width="110" height="38" alt="...">
+                          <p class="m-0">Smarty Ecommerce</p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </li>
+
+
+                  <!-- pages -->
+                  <li class="nav-item dropdown">
+
+                    <a href="#" id="mainNavPages" class="nav-link dropdown-toggle" 
+                      data-bs-toggle="dropdown" 
+                      aria-haspopup="true" 
+                      aria-expanded="false">
+                      Pages
+                    </a>
+
+                    <div aria-labelledby="mainNavPages" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-fadeindown rounded-xl rounded-top-0">
+                      <ul class="list-unstyled m-0 p-0">
+                        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Category</a>
+                          <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+                            <li class="dropdown-item"><a href="shop-page-category-1.html" class="dropdown-link">Category 1</a></li>
+                            <li class="dropdown-item"><a href="shop-page-category-2.html" class="dropdown-link">Category 2</a></li>
+                            <li class="dropdown-item"><a href="shop-page-category-3.html" class="dropdown-link">Category 3</a></li>
+                            <li class="dropdown-item"><a href="shop-page-category-4.html" class="dropdown-link">Category 4</a></li>
+                            <li class="dropdown-item"><a href="shop-page-category-lazyload.html" class="dropdown-link">Using lazyload</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><a href="shop-page-category-sidebar-right.html" class="dropdown-link">Right sidebar</a></li>
+                            <li class="dropdown-item"><a href="shop-page-category-sidebar-no.html" class="dropdown-link">No sidebar</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Product</a>
+                          <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+                            <li class="dropdown-item"><a href="shop-page-product-1.html" class="dropdown-link">Product 1</a></li>
+                            <li class="dropdown-item"><a href="shop-page-product-2.html" class="dropdown-link">Product 2</a></li>
+                            <li class="dropdown-item"><a href="shop-page-product-3.html" class="dropdown-link">Product 3</a></li>
+                            <li class="dropdown-item"><a href="shop-page-product-4.html" class="dropdown-link">Product 4</a></li>
+                            <li class="dropdown-item"><a href="shop-page-product-5.html" class="dropdown-link">Product 5</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><a href="shop-page-product-options.html" class="dropdown-link">Options</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Account</a>
+                          <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+                            <li class="dropdown-item"><a href="account-index.html" class="dropdown-link">My account</a></li>
+                            <li class="dropdown-item"><a href="account-orders.html" class="dropdown-link">My orders</a></li>
+                            <li class="dropdown-item"><a href="account-favourites.html" class="dropdown-link">My favourites</a></li>
+                            <li class="dropdown-item"><a href="account-reward.html" class="dropdown-link">Reward points</a></li>
+                            <li class="dropdown-item"><a href="account-coupons.html" class="dropdown-link">My coupons</a></li>
+                            <li class="dropdown-item"><a href="account-reviews.html" class="dropdown-link">My reviews</a></li>
+                            <li class="dropdown-item"><a href="account-refunds.html" class="dropdown-link">My refunds</a></li>
+                            <li class="dropdown-item"><a href="account-addresses.html" class="dropdown-link">My addresses</a></li>
+                            <li class="dropdown-item"><a href="account-settings.html" class="dropdown-link">Settings</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-bs-toggle="dropdown">Checkout</a>
+                          <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+                            <li class="dropdown-item"><a href="shop-page-cart-1.html" class="dropdown-link">Cart</a></li>
+                            <li class="dropdown-item"><a href="shop-page-cart-empty.html" class="dropdown-link">Cart empty</a></li>
+                            <li class="dropdown-item"><a href="shop-page-checkout.html" class="dropdown-link">Checkout page</a></li>
+                            <li class="dropdown-item"><a href="shop-page-checkout-success.html" class="dropdown-link">Order completed</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown-divider my-2"></li>
+                        <li class="dropdown-item"><a href="shop-page-signin.html" class="dropdown-link">Sign in</a></li>
+                        <li class="dropdown-item"><a href="shop-page-signup.html" class="dropdown-link">Sign up</a></li>
+                        <li class="dropdown-item"><a href="shop-page-password.html" class="dropdown-link">Password reset</a></li>
+                        <li class="dropdown-item"><a href="shop-page-faq.html" class="dropdown-link">Help page</a></li>
+                        <li class="dropdown-item"><a href="shop-page-contact.html" class="dropdown-link">Contact us</a></li>
+                        <li class="dropdown-item"><a href="shop-page-stores.html" class="dropdown-link">Store list</a></li>
+                        <li class="dropdown-item"><a href="invoice.html" class="dropdown-link">Invoice</a></li>
+                      </ul>
+                    </div>
+
+                  </li>
+
+
+                  <!-- Catalog -->
+                  <li class="nav-item dropdown dropdown-mega">
+
+                    <a href="#" id="mainNavCatalog" class="nav-link dropdown-toggle" 
+                      data-bs-toggle="dropdown" 
+                      aria-haspopup="true" 
+                      aria-expanded="false">
+                      !Catalog
+                    </a>
+
+                    <div aria-labelledby="mainNavCatalog" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-fadeindown rounded-xl rounded-top-0">
+                      <ul class="list-unstyled m-0 p-0">
+                        <li class="dropdown-item bg-transparent">
+
+                          <div class="row g-lg-4">
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Baby Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Baby T-Shirts</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Baby bibs</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Baby clothing sets</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Baby dresses</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Baby hoodies & sweatshirts</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Baby jackets & outwears</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Childrens Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Boys Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Boys Clothing (old)</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Family Matching Outfits</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Girls Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Girls Clothing (old)</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Ethnic Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Africa Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">American Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">European Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">India & Pakistan Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Islamic Clothing</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Home Decor</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Artificial Plants and Flowers</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Blinds, Shades & Shutters</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Candles & Home Fragrance</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Clocks</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Curtain Poles, Tracks & Accessories</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Decorative Accents</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Men's Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Men's Coats</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Men's Jackets</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Men's Jeans</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Men's Leggings</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Men's Hoodies & Sweatshirts</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Garment & Accessories</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Badges</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Boning</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Braid</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Buckles</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Buttons</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Cords</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Infant & Toddlers Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Baby Swimwear</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Other Baby Clothing (old)</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Bath Supplies</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Bath Beads</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Bath Brushes</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Sponges & Scrubbers</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Bath Fizzies</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Bath Oil</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Bath Powder</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link py-1" href="#">Bath Salt</a></li>
+                              </ul>
+
+                            </div>
+
+                          </div>
+
+                        </li>
+                      </ul>
+                    </div>
+
+                  </li>
+
+
+                  <!-- Categories -->
+                  <li class="nav-item dropdown dropdown-mega">
+
+                    <a href="#" id="mainNavCats" class="nav-link dropdown-toggle" 
+                      data-bs-toggle="dropdown" 
+                      aria-haspopup="true" 
+                      aria-expanded="false">
+                      !Categories
+                    </a>
+
+                    <div aria-labelledby="mainNavCats" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-fadeindown rounded-xl rounded-top-0">
+                      <ul class="list-unstyled m-0 p-0">
+                        <li class="dropdown-item bg-transparent">
+
+                          <div class="row">
+
+                            <!-- col 1 -->
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Baby Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Baby T-Shirts</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Baby bibs</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Baby clothing sets</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Baby dresses</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Baby hoodies & sweatshirts</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Baby jackets & outwears</a></li>
+                              </ul>
+
+                            </div>
+
+                            <!-- col 2 -->
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Ethnic Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Africa Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">American Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">European Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">India & Pakistan Clothing</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Islamic Clothing</a></li>
+                              </ul>
+
+                            </div>
+
+                            <!-- col 3 -->
+                            <div class="col-12 col-md-3">
+
+                              <h3 class="fs-6 fw-bold mb-3">Men's Clothing</h3>
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Men's Coats</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Men's Jackets</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Men's Jeans</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Men's Leggings</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Men's Hoodies & Sweatshirts</a></li>
+                              </ul>
+
+                            </div>
+
+                            <div class="col-12 col-md-3">
+
+                              <!-- best selling item -->
+                              <a href="#" style="min-height:300px;" class="d-block position-relative h-100 bg-cover overlay-dark overlay-opacity-3 overlay-opacity-4-hover text-white rounded lazy" 
+                              data-background-image="demo.files/images/unsplash/portfolio/thumb_330/boxed-water-is-better-LWagu5WepHU-unsplash-min.jpg">
+                                <div class="position-absolute fw-medium top-0 p-3 p-lg-4 d-flex flex-column">
+                                  <span class="d-block text-uppercase small">Best Seller</span>
+                                  <span class="d-block h5 mb-3">Boxed water is better</span>
+                                  <span class="d-block h5">$12.99</span>
+                                </div>
+                              </a>
+
+                            </div>
+
+                          </div>
+
+                        </li>
+                      </ul>
+                    </div>
+
+                  </li>
+
+
+                  <!-- Luxury -->
+                  <li class="nav-item dropdown dropdown-mega">
+
+                    <a href="#" id="mainNavWomen" class="nav-link dropdown-toggle" 
+                      data-bs-toggle="dropdown" 
+                      aria-haspopup="true" 
+                      aria-expanded="false">
+                      !Luxury
+                    </a>
+
+                    <div aria-labelledby="mainNavWomen" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-fadeindown rounded-xl rounded-top-0">
+                      <ul class="list-unstyled m-0 p-0">
+                        <li class="dropdown-item bg-transparent">
+
+                          <div class="row g-2">
+
+                            <!-- col 1 -->
+                            <div class="col-12 col-lg-4 col-xl-3">
+
+                              <ul class="list-unstyled">
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Modern furniture</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Living room</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Exotic plants</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Kitchen design</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Bathroom accessories</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Caffe & chair sets</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Garden accessories</a></li>
+                                <li class="dropdown-item"><a class="dropdown-link" href="#">Garden accessories</a></li>
+                              </ul>
+
+                            </div>
+
+                            <!-- col 2 -->
+                            <div class="col">
+
+                              <!-- bst selling item -->
+                              <a href="#" style="min-height:300px;" class="d-block position-relative h-100 bg-cover overlay-dark overlay-opacity-3 overlay-opacity-4-hover text-white rounded lazy" data-background-image="demo.files/images/unsplash/products/plants/photo-1531982560660-d9d15efdbe49.jpeg">
+                                <div class="position-absolute fw-medium top-0 p-3 p-lg-4 d-flex flex-column">
+                                  <span class="d-block text-uppercase small">Best Seller</span>
+                                  <span class="d-block h4 mb-3">Exotic room plants</span>
+                                  <span class="d-block h5">$46.99</span>
+                                </div>
+                              </a>
+
+                            </div>
+
+                          </div>
+
+                        </li>
+                      </ul>
+                    </div>
+
+                  </li>
+
+
+                  <!-- New arrivals -->
+                  <li class="nav-item dropdown dropdown-mega">
+
+                    <a href="#" id="mainNavNewArrivals" class="nav-link dropdown-toggle" 
+                      data-bs-toggle="dropdown" 
+                      aria-haspopup="true" 
+                      aria-expanded="false">
+                      !New Arrivals
+                    </a>
+
+                    <div aria-labelledby="mainNavNewArrivals" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-fadeindown rounded-xl rounded-top-0">
+                      <ul class="list-unstyled m-0 p-0">
+                        <li class="dropdown-item bg-transparent">
+
+                          <div class="row g-4">
+
+                            <!-- col 1 -->
+                            <div class="col-12 col-md-4">
+
+                              <!-- item -->
+                              <div class="ratio ratio-4x3 bg-cover overlay-dark overlay-opacity-3 text-white rounded lazy" data-background-image="demo.files/images/unsplash/products/thumb_330/nikolai-chernichenko-oyr64kMIz98-unsplash-min.jpg">
+                                <div class="position-absolute fw-medium top-0 p-3 p-lg-4 text-center d-flex flex-column align-items-center justify-content-center">
+                                  <span class="d-block text-uppercase smaller">Home & Garden</span>
+                                  <span class="d-block mb-3">Exotic room plants</span>
+                                  <a class="btn btn-sm btn-light" href="#">Shop Now</a>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <!-- col 2 -->
+                            <div class="col-12 col-md-4">
+
+                              <!-- item -->
+                              <div class="ratio ratio-4x3 bg-cover overlay-dark overlay-opacity-3 text-white rounded lazy" data-background-image="demo.files/images/unsplash/products/cosmetics/the-honest-company-jPQE61INdTg-unsplash-min.jpg">
+                                <div class="position-absolute fw-medium top-0 p-3 p-lg-4 text-center d-flex flex-column align-items-center justify-content-center">
+                                  <span class="d-block text-uppercase smaller">Women</span>
+                                  <span class="d-block mb-3">New lipstick</span>
+                                  <a class="btn btn-sm btn-light" href="#">Shop Now</a>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <!-- col 3 -->
+                            <div class="col-12 col-md-4">
+
+                              <!-- item -->
+                              <div class="ratio ratio-4x3 bg-cover overlay-dark overlay-opacity-3 text-white rounded lazy" data-background-image="demo.files/images/unsplash/products/thumb_330/aidan-hancock-UtzrcidfCsk-unsplash-min.jpg">
+                                <div class="position-absolute fw-medium top-0 p-3 p-lg-4 text-center d-flex flex-column align-items-center justify-content-center">
+                                  <span class="d-block text-uppercase smaller">Apple</span>
+                                  <span class="d-bloc mb-3">New Mackbook Pro</span>
+                                  <a class="btn btn-sm btn-light" href="#">Shop Now</a>
+                                </div>
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        </li>
+                      </ul>
+                    </div>
+
+                  </li>
+
+
+                  <!-- back to main -->
+                  <li class="nav-item">
+                    <a href="landing-0.html" class="nav-link">Back to main</a>
+                  </li>
+
+
+                  <!-- social icons : mobile only -->
+                  <li class="nav-item d-block d-sm-none text-center mb-4">
+
+                    <h3 class="h6 text-muted">Follow Us</h3>
+
+                    <a href="#" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+                      <i class="fi fi-social-facebook"></i> 
+                    </a>
+
+                    <a href="#" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+                      <i class="fi fi-social-twitter"></i> 
+                    </a>
+
+                    <a href="#" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+                      <i class="fi fi-social-linkedin"></i> 
+                    </a>
+
+                    <a href="#" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+                      <i class="fi fi-social-youtube"></i> 
+                    </a>
+
+                  </li>
+
+
+                  <!-- Get Smarty : mobile only (d-block d-sm-none)-->
+                  <li class="nav-item d-block d-sm-none">
+                    <a target="_blank" href="#buy_now" class="btn w-100 btn-primary shadow-none text-white m-0">
+                      Get Smarty
+                    </a>
+                  </li>
+
+                </ul>
+                <!-- /navbar : navigation -->
+
+
+              </div>
+
+            </nav>
+
+          </div>
+				</div>
+
+			</header>
+			<!-- /Header -->
+
+
+
+			<!-- INTRO -->
+			<div class="section min-vh-75 bg-light position-relative overflow-hidden overlay-dark overlay-opacity-5 bg-cover jarallax" style="background-image:url('demo.files/images/unsplash/holidays/guillaume-bourdages-I9786YJ-ob0-unsplash.jpg')">
+				
+				<div class="container position-relative z-index-2 py-7 d-middle" data-aos="fade-in" data-aos-delay="0" data-aos-offset="0"> 
+						
+					<div class="w-100 text-white py-7 p-0-xs" data-jarallax-element="150">
+
+						<h1 class="display-3 fw-bold mb-0">Christmas Gifts</h1>
+						<p class="h1 fw-bold mb-0">Upto 45% off</p>
+
+					</div>
+
+				</div>
+
+				<div class="absolute-full w-100 overflow-hidden opacity-5 z-index-1">
+					<img class="img-fluid" width="2000" height="2000" src="assets/images/masks/shape-line-lense.svg" alt="...">
+				</div>
+
+				<!-- svg bottom wave -->
+				<svg class="position-absolute bottom-0 w-100 mb--n30 m-0-md m-0-xs" viewBox="0 0 1440 320"><path fill="#ffffff" d="M0,288L80,277.3C160,267,320,245,480,245.3C640,245,800,267,960,240C1120,213,1280,139,1360,101.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+
+			</div>	
+			<!-- /INTRO -->
+
+
+
+
+			<!-- featured -->
+			<div class="section">
+				<div class="container">
+
+					<h2 class="mb-5 text-center-xs fw-normal text-muted">
+						Smarty <span class="fw-medium">Christmas Land</span>
+					</h2>
+
+
+					<div class="row g-2 g-xl-4">
+
+						<!-- featured 1 -->
+						<div class="col-12 col-md-5 mb-2" data-aos="fade-in" data-aos-delay="0" data-aos-offset="0">
+
+							<a href="#" class="d-block overlay-dark-hover overlay-opacity-3 rounded bg-light bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/holidays/markus-spiske-QN0VY7S909k-unsplash.jpg">
+
+								<h2 class="h2 position-absolute bottom-0 w-100 p-4 fw-medium text-dark z-index-2 text-align-start">
+									New Arrivals
+									<span class="d-block fs-6">SHOP NOW</span>
+								</h2>
+
+								<!-- transparent png 7x10 px -->
+								<img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAQAAADSxYyGAAAAD0lEQVR42mNkQAGMg4MLAAPPAAux65iEAAAAAElFTkSuQmCC" alt="...">
+							</a>
+
+						</div>
+
+
+						<div class="col-12 col-md-7">
+
+							<div class="row g-2 g-xl-4">
+
+								<!-- featured 2 -->
+								<div class="col-12 mb-4 m-0-xs" data-aos="fade-in" data-aos-delay="150" data-aos-offset="0">
+
+									<a href="#" class="d-block overlay-dark-hover overlay-opacity-3 rounded bg-light bg-cover lazy" 
+										data-background-image="demo.files/images/unsplash/holidays/sticker-mule-xdDfrh1sAp0-unsplash.jpg">
+										
+										<h3 class="position-absolute bottom-0 w-100 p-4 fw-light text-dark z-index-2 text-align-start">
+											Stickers
+											<span class="d-block fs-6">SHOP NOW</span>
+										</h3>
+
+										<!-- transparent png 21x10 px -->
+										<img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAQAAADxnt1TAAAAEUlEQVR42mNkIBowjiodaKUACusAC4zze1kAAAAASUVORK5CYII=" alt="...">
+									</a>
+
+								</div>
+
+								<!-- featured 3 -->
+								<div class="col-6 my-2" data-aos="fade-in" data-aos-delay="250" data-aos-offset="0">
+
+									<a href="#" class="d-block overlay-dark-hover overlay-opacity-3 rounded bg-light bg-cover lazy" 
+										data-background-image="demo.files/images/unsplash/holidays/david-everett-strickler-9QndjmrMeBE-unsplash.jpg">
+										
+										<h3 class="position-absolute bottom-0 w-100 p-4 fw-light text-dark z-index-2 text-align-start">
+											Gift Boxes
+											<span class="d-block fs-6">SHOP NOW</span>
+										</h3>
+
+										<!-- transparent gif 1x1 px -->
+										<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+									</a>
+
+								</div>
+
+								<!-- featured 4 -->
+								<div class="col-6 my-2" data-aos="fade-in" data-aos-delay="350" data-aos-offset="0">
+
+									<a href="#" class="d-block overlay-dark-hover overlay-opacity-3 rounded bg-light bg-cover lazy" 
+										data-background-image="demo.files/images/unsplash/holidays/spencer-imbrock-cvC4y-MoKg0-unsplash.jpg">
+										
+										<h3 class="position-absolute bottom-0 w-100 p-4 fw-light text-dark z-index-2 text-align-end">
+											Decorative
+											<span class="d-block fs-6">SHOP NOW</span>
+										</h3>
+									
+										<!-- transparent gif 1x1 px -->
+										<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+									</a>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+			<!-- /featured -->
+
+
+
+
+
+			<!-- CARDS -->
+			<div class="section bg-light bg-cover overlay-light overlay-opacity-6 jarallax" style="background-image:url('demo.files/images/unsplash/holidays/joanna-kosinska-78uNJt1kPw8-unsplash.jpg')">
+				<div class="container">
+
+
+					<h2 class="mb-5 text-center-xs fw-normal text-muted">
+						Family <span class="fw-medium">Christmas Gifts</span>
+					</h2>
+
+
+					<div class="row">
+						
+						<div class="col-12 col-md-6 col-lg-4 mb-4" data-aos="fade-in" data-aos-delay="150" data-aos-offset="0">
+
+							<!-- card -->
+							<div class="bg-white rounded-xl shadow-xlg overflow-hidden">
+								<div class="position-relative rounded-top text-white text-center pt-5 pb-6" style="background-color:#40afb9">
+
+									<div class="position-relative d-block z-index-1">
+
+										<!-- svg : clouds -->
+										<svg data-jarallax-element="-40" class="position-absolute top-0 start-0 mx-5" width="60" viewBox="0 0 511.998 511.998"><path d="M155.968 187.07h38.254c14.29-26.216 38.712-46.094 68.024-54.357-5.897-14.318-19.979-24.397-36.419-24.397-4.11 0-8.069.633-11.79 1.798.02-.598.046-1.195.046-1.798 0-29.244-23.714-52.956-52.96-52.956-25.223 0-46.309 17.632-51.642 41.239-3.168-1.056-6.548-1.634-10.069-1.634-10.834 0-20.398 5.424-26.133 13.703-3.2-.825-6.56-1.272-10.019-1.272-22 0-39.834 17.835-39.834 39.836 0 21.997 17.835 39.836 39.834 39.836h63.687" fill="#9FDEF7"/><path d="M373.536 162.958c-20.468-21.893-49.607-35.578-81.941-35.578-53.408 0-98.066 37.345-109.362 87.34-6.704-2.236-13.865-3.466-21.318-3.466-22.947 0-43.196 11.49-55.341 29.022-6.779-1.751-13.888-2.692-21.216-2.692-46.59 0-84.358 37.768-84.358 84.358 0 46.588 37.768 84.361 84.358 84.361h93.011c.196-28.675 23.489-51.858 52.206-51.858 5.446 0 10.697.835 15.633 2.382-.023-.79-.059-1.582-.059-2.382 0-38.787 31.442-70.23 70.228-70.23 33.443 0 61.41 23.387 68.483 54.691 4.197-1.401 8.678-2.17 13.346-2.17 14.368 0 27.051 7.194 34.655 18.175 4.245-1.098 8.696-1.688 13.284-1.688 19.231 0 36.057 10.279 45.295 25.637 13.396-14.793 21.557-34.414 21.557-55.94 0-46.056-37.332-83.384-83.384-83.384-8.696 0-17.08 1.333-24.963 3.803.041-1.263.096-2.529.096-3.803 0-18.832-4.641-36.579-12.845-52.163" fill="#BEEAFC"/><path d="M89.442 237.74c-1.682-.102-3.376-.157-5.084-.157-46.59-.001-84.358 37.768-84.358 84.358 0 46.588 37.768 84.361 84.358 84.361h93.011c.061-8.998 2.4-17.454 6.464-24.823-45.989-35.393-79.872-85.724-94.391-143.739z" fill="#AEE4FF"/><path d="M81.614 174.026c0-27.362 4.208-53.738 11.999-78.528-8.402 1.551-15.646 6.407-20.333 13.171-3.2-.825-6.56-1.272-10.019-1.272-22 0-39.834 17.835-39.834 39.836 0 21.997 17.835 39.836 39.834 39.836h18.678c-.212-4.322-.325-8.669-.325-13.043z" fill="#83D4ED"/><path d="M445.146 350.991c-4.588 0-9.041.588-13.284 1.688-7.604-10.982-20.287-18.175-34.655-18.175-4.668 0-9.149.769-13.346 2.17-7.074-31.305-35.04-54.691-68.483-54.691-38.786 0-70.228 31.443-70.228 70.23 0 .8.035 1.592.059 2.382-4.936-1.547-10.187-2.382-15.633-2.382-28.835 0-52.212 23.373-52.212 52.216 0 28.835 23.378 52.21 52.212 52.21h215.572c29.175 0 52.827-23.651 52.827-52.824-.002-29.175-23.654-52.824-52.829-52.824z" fill="#E4F2F9"/><path d="M285.258 337.525c0-18.847 4-36.758 11.185-52.941-29.585 8.267-51.295 35.403-51.295 67.627 0 .8.035 1.592.059 2.382-4.936-1.547-10.187-2.382-15.633-2.382-28.835 0-52.212 23.373-52.212 52.216 0 28.835 23.378 52.21 52.212 52.21h132.677c-45.391-20.453-76.993-66.092-76.993-119.112z" fill="#D7EDF9"/></svg>
+										<svg data-jarallax-element="-30" class="position-absolute bottom-0 end-0 mx-5 mb-4 opacity-7" width="60" viewBox="0 -87 463.83425 463"><path fill="#9FDEF7" d="M375.836 112.957c-5.852 0-11.691.582-17.426 1.742-4.324-21.582-18.305-39.992-37.934-49.957-19.625-9.965-42.738-10.383-62.715-1.137-18.078-49.797-73.102-75.508-122.898-57.43s-75.508 73.105-57.43 122.898c-43.621 1.379-78.078 37.484-77.426 81.121.656 43.641 36.184 78.691 79.828 78.762h296c48.598 0 88-39.398 88-88s-39.402-88-88-88zm0 0"/></svg>
+										<svg data-jarallax-element="-30" class="position-absolute bottom-0 end-0 mx-5" width="80" viewBox="0 -87 463.83425 463"><path fill="#BEEAFC" d="M375.836 112.957c-5.852 0-11.691.582-17.426 1.742-4.324-21.582-18.305-39.992-37.934-49.957-19.625-9.965-42.738-10.383-62.715-1.137-18.078-49.797-73.102-75.508-122.898-57.43s-75.508 73.105-57.43 122.898c-43.621 1.379-78.078 37.484-77.426 81.121.656 43.641 36.184 78.691 79.828 78.762h296c48.598 0 88-39.398 88-88s-39.402-88-88-88zm0 0"/></svg>
+
+										<div style="width:120px;height:120px;" class="bg-white rounded-circle d-inline-flex flex-column align-items-center justify-content-center text-danger lh-1">
+											<h2 class="h1 m-0">45%</h2>
+											<small class="d-block fs-6">OFF</small>
+										</div>
+
+									</div>
+
+									<!-- svg : trees -->
+									<svg class="position-absolute bottom-0 start-0 mx-4 mb-2" width="38" fill="#768339" viewBox="0 0 48.905 48.904"><path d="M22.092 7.262l2.36-1.24 2.359 1.24-.449-2.627 1.906-1.86-2.635-.385-1.181-2.39-1.18 2.39-2.637.385 1.909 1.86zM34.237 18.481h.851l-10.636-10.635-6.782 6.781zM33.958 26.638l-1.979.349c.323.192.554.533.554.938 0 .61-.496 1.104-1.106 1.104-.611 0-1.104-.496-1.104-1.104 0-.267.105-.498.26-.688l-3.443.611c.85.074 1.523.762 1.523 1.631 0 .916-.742 1.656-1.655 1.656-.919 0-1.658-.74-1.658-1.656 0-.654.388-1.209.938-1.479l-4.349.771c.299.151.51.457.51.813 0 .51-.411.922-.921.922-.509 0-.918-.412-.918-.922 0-.242.096-.456.248-.62l-10.009 1.776-2.513 2.514 27.466 2.003-1.468-1.468h6.777l-7.153-7.151zM16.146 25.439l-3.181 3.182 24.242-4.304-4.406-4.404-6.46-1.504c.37.354.604.853.604 1.407 0 1.077-.873 1.95-1.95 1.95-1.076 0-1.946-.873-1.946-1.95 0-.877.58-1.607 1.375-1.852l-3.319-.773c.12.203.205.426.205.676 0 .756-.614 1.37-1.37 1.37-.754 0-1.367-.614-1.367-1.37 0-.476.258-.876.628-1.121l-2.963-.689-2.425 2.425h3.715l-6.957 6.958h5.575v-.001zM42.468 41.925l-4.812-4.813-4.768-.347c.258.265.42.623.42 1.019 0 .81-.654 1.465-1.462 1.465s-1.46-.655-1.46-1.465c0-.481.251-.889.613-1.153l-8.132-.595c.205.207.332.488.332.802 0 .634-.512 1.147-1.146 1.147-.632 0-1.144-.512-1.144-1.147 0-.381.197-.701.484-.909l-3.998-.294c.54.32.907.899.907 1.571 0 1.011-.82 1.828-1.832 1.828-1.008 0-1.827-.817-1.827-1.828 0-.762.466-1.414 1.128-1.689l-2.73-.199-6.606 6.608h15.829l-1.257 6.979h6.889l-1.259-6.979 15.831-.001z"></path></svg>
+									<svg class="position-absolute bottom-0 mb-3" width="50" fill="#7a8c34" viewBox="0 0 48.905 48.904"><path d="M22.092 7.262l2.36-1.24 2.359 1.24-.449-2.627 1.906-1.86-2.635-.385-1.181-2.39-1.18 2.39-2.637.385 1.909 1.86zM34.237 18.481h.851l-10.636-10.635-6.782 6.781zM33.958 26.638l-1.979.349c.323.192.554.533.554.938 0 .61-.496 1.104-1.106 1.104-.611 0-1.104-.496-1.104-1.104 0-.267.105-.498.26-.688l-3.443.611c.85.074 1.523.762 1.523 1.631 0 .916-.742 1.656-1.655 1.656-.919 0-1.658-.74-1.658-1.656 0-.654.388-1.209.938-1.479l-4.349.771c.299.151.51.457.51.813 0 .51-.411.922-.921.922-.509 0-.918-.412-.918-.922 0-.242.096-.456.248-.62l-10.009 1.776-2.513 2.514 27.466 2.003-1.468-1.468h6.777l-7.153-7.151zM16.146 25.439l-3.181 3.182 24.242-4.304-4.406-4.404-6.46-1.504c.37.354.604.853.604 1.407 0 1.077-.873 1.95-1.95 1.95-1.076 0-1.946-.873-1.946-1.95 0-.877.58-1.607 1.375-1.852l-3.319-.773c.12.203.205.426.205.676 0 .756-.614 1.37-1.37 1.37-.754 0-1.367-.614-1.367-1.37 0-.476.258-.876.628-1.121l-2.963-.689-2.425 2.425h3.715l-6.957 6.958h5.575v-.001zM42.468 41.925l-4.812-4.813-4.768-.347c.258.265.42.623.42 1.019 0 .81-.654 1.465-1.462 1.465s-1.46-.655-1.46-1.465c0-.481.251-.889.613-1.153l-8.132-.595c.205.207.332.488.332.802 0 .634-.512 1.147-1.146 1.147-.632 0-1.144-.512-1.144-1.147 0-.381.197-.701.484-.909l-3.998-.294c.54.32.907.899.907 1.571 0 1.011-.82 1.828-1.832 1.828-1.008 0-1.827-.817-1.827-1.828 0-.762.466-1.414 1.128-1.689l-2.73-.199-6.606 6.608h15.829l-1.257 6.979h6.889l-1.259-6.979 15.831-.001z"></path></svg>
+									
+									<!-- svg : curved line -->
+									<svg class="position-absolute bottom-0 left-0 right-0 mb--n1" viewBox="0 0 1924 72"><path fill="#fff" d="M962 0c-455 1.5-962 72-962 72h1924s-507-70.5-962-72z"></path></svg>
+								</div>
+
+								<div class="p-4 text-center">
+									<h3 class="h4 m-0 text-muted">Christmas Gifts</h3>
+									<p class="display-5 text-danger mb-5">For Kids</p>
+
+									<div class="d-inline-block position-relative mx-auto transition-hover-top transition-all-ease-200">
+										
+										<!-- svg : star (rtl-scalex-n1 = reversed on RTL) -->
+										<svg style="margin-top:-20px;margin-left:-20px;margin-right:-20px;" class="position-absolute top-0 rtl-scalex-n1 start-0 z-index-1" width="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.037 512.037">
+											<path fill="#FFD54F" d="M412.083 123.57l-99.904-27.563c-2.33-.664-4.819-.498-7.04.469-150.506 64.513-297.173 282.646-303.338 291.905-2.401 3.589-2.401 8.272 0 11.861 2.415 3.597 6.765 5.375 11.008 4.501l95.872-19.2 19.52 117.12c.772 4.865 4.775 8.568 9.685 8.96h.789c4.626-.009 8.718-2.999 10.133-7.403.853-2.581 85.184-260.459 187.349-314.133l78.571-47.104c5.052-3.03 6.691-9.582 3.661-14.634-1.413-2.355-3.679-4.075-6.328-4.801l.022.022z"></path>
+											<path fill="#FFC107" d="M511.497 84.957c-1.373-4.468-5.545-7.482-10.219-7.381l-74.603.576-22.464-71.083c-2.453-5.614-8.993-8.177-14.607-5.724-2.561 1.119-4.605 3.163-5.724 5.724l-22.507 71.083-74.667-.576c-4.65-.104-8.794 2.921-10.112 7.381-1.434 4.423.163 9.265 3.947 11.968l60.651 43.349-23.467 70.741c-1.869 5.587 1.144 11.631 6.731 13.5 3.295 1.102 6.921.531 9.717-1.532l59.861-44.288 59.989 44.288c4.741 3.497 11.419 2.49 14.916-2.251 2.063-2.796 2.634-6.422 1.532-9.717l-23.467-70.741 60.651-43.349c3.746-2.732 5.298-7.568 3.842-11.968z"></path>
+											<path fill="#FFB300" d="M138.675 340.957c-5.891 0-10.667-4.776-10.667-10.667 0-2.308.749-4.554 2.133-6.4 4.907-6.592 10.539-14.464 16.725-23.125 30.955-43.328 73.387-102.741 114.048-128.789 4.96-3.181 11.56-1.739 14.741 3.221s1.739 11.56-3.221 14.741c-37.205 23.872-79.957 83.669-108.16 123.285-6.272 8.789-11.989 16.789-16.96 23.467-2.035 2.716-5.244 4.3-8.639 4.267z"></path>
+										</svg>
+										
+										<!-- button -->
+										<a href="#" class="btn btn-danger">
+											Santa for Kids
+										</a>
+
+									</div>
+
+								</div>
+
+							</div>
+							<!-- /card -->
+
+						</div>
+
+
+
+						<div class="col-12 col-md-6 col-lg-4 mb-4" data-aos="fade-in" data-aos-delay="250" data-aos-offset="0">
+
+							<!-- card -->
+							<div class="bg-white rounded-xl shadow-xlg overflow-hidden">
+								<div class="position-relative rounded-top text-white text-center pt-5 pb-6" style="background-color:#4bd2de">
+
+									<div class="position-relative d-block z-index-1">
+
+										<!-- svg : clouds -->
+										<svg data-jarallax-element="-40" class="position-absolute top-0 start-0 mx-5" width="60" viewBox="0 0 511.998 511.998"><path d="M155.968 187.07h38.254c14.29-26.216 38.712-46.094 68.024-54.357-5.897-14.318-19.979-24.397-36.419-24.397-4.11 0-8.069.633-11.79 1.798.02-.598.046-1.195.046-1.798 0-29.244-23.714-52.956-52.96-52.956-25.223 0-46.309 17.632-51.642 41.239-3.168-1.056-6.548-1.634-10.069-1.634-10.834 0-20.398 5.424-26.133 13.703-3.2-.825-6.56-1.272-10.019-1.272-22 0-39.834 17.835-39.834 39.836 0 21.997 17.835 39.836 39.834 39.836h63.687" fill="#9FDEF7"/><path d="M373.536 162.958c-20.468-21.893-49.607-35.578-81.941-35.578-53.408 0-98.066 37.345-109.362 87.34-6.704-2.236-13.865-3.466-21.318-3.466-22.947 0-43.196 11.49-55.341 29.022-6.779-1.751-13.888-2.692-21.216-2.692-46.59 0-84.358 37.768-84.358 84.358 0 46.588 37.768 84.361 84.358 84.361h93.011c.196-28.675 23.489-51.858 52.206-51.858 5.446 0 10.697.835 15.633 2.382-.023-.79-.059-1.582-.059-2.382 0-38.787 31.442-70.23 70.228-70.23 33.443 0 61.41 23.387 68.483 54.691 4.197-1.401 8.678-2.17 13.346-2.17 14.368 0 27.051 7.194 34.655 18.175 4.245-1.098 8.696-1.688 13.284-1.688 19.231 0 36.057 10.279 45.295 25.637 13.396-14.793 21.557-34.414 21.557-55.94 0-46.056-37.332-83.384-83.384-83.384-8.696 0-17.08 1.333-24.963 3.803.041-1.263.096-2.529.096-3.803 0-18.832-4.641-36.579-12.845-52.163" fill="#BEEAFC"/><path d="M89.442 237.74c-1.682-.102-3.376-.157-5.084-.157-46.59-.001-84.358 37.768-84.358 84.358 0 46.588 37.768 84.361 84.358 84.361h93.011c.061-8.998 2.4-17.454 6.464-24.823-45.989-35.393-79.872-85.724-94.391-143.739z" fill="#AEE4FF"/><path d="M81.614 174.026c0-27.362 4.208-53.738 11.999-78.528-8.402 1.551-15.646 6.407-20.333 13.171-3.2-.825-6.56-1.272-10.019-1.272-22 0-39.834 17.835-39.834 39.836 0 21.997 17.835 39.836 39.834 39.836h18.678c-.212-4.322-.325-8.669-.325-13.043z" fill="#83D4ED"/><path d="M445.146 350.991c-4.588 0-9.041.588-13.284 1.688-7.604-10.982-20.287-18.175-34.655-18.175-4.668 0-9.149.769-13.346 2.17-7.074-31.305-35.04-54.691-68.483-54.691-38.786 0-70.228 31.443-70.228 70.23 0 .8.035 1.592.059 2.382-4.936-1.547-10.187-2.382-15.633-2.382-28.835 0-52.212 23.373-52.212 52.216 0 28.835 23.378 52.21 52.212 52.21h215.572c29.175 0 52.827-23.651 52.827-52.824-.002-29.175-23.654-52.824-52.829-52.824z" fill="#E4F2F9"/><path d="M285.258 337.525c0-18.847 4-36.758 11.185-52.941-29.585 8.267-51.295 35.403-51.295 67.627 0 .8.035 1.592.059 2.382-4.936-1.547-10.187-2.382-15.633-2.382-28.835 0-52.212 23.373-52.212 52.216 0 28.835 23.378 52.21 52.212 52.21h132.677c-45.391-20.453-76.993-66.092-76.993-119.112z" fill="#D7EDF9"/></svg>
+										<svg data-jarallax-element="-30" class="position-absolute bottom-0 end-0 mx-5 mb-4 opacity-7" width="60" viewBox="0 -87 463.83425 463"><path fill="#9FDEF7" d="M375.836 112.957c-5.852 0-11.691.582-17.426 1.742-4.324-21.582-18.305-39.992-37.934-49.957-19.625-9.965-42.738-10.383-62.715-1.137-18.078-49.797-73.102-75.508-122.898-57.43s-75.508 73.105-57.43 122.898c-43.621 1.379-78.078 37.484-77.426 81.121.656 43.641 36.184 78.691 79.828 78.762h296c48.598 0 88-39.398 88-88s-39.402-88-88-88zm0 0"/></svg>
+										<svg data-jarallax-element="-30" class="position-absolute bottom-0 end-0 mx-5" width="80" viewBox="0 -87 463.83425 463"><path fill="#BEEAFC" d="M375.836 112.957c-5.852 0-11.691.582-17.426 1.742-4.324-21.582-18.305-39.992-37.934-49.957-19.625-9.965-42.738-10.383-62.715-1.137-18.078-49.797-73.102-75.508-122.898-57.43s-75.508 73.105-57.43 122.898c-43.621 1.379-78.078 37.484-77.426 81.121.656 43.641 36.184 78.691 79.828 78.762h296c48.598 0 88-39.398 88-88s-39.402-88-88-88zm0 0"/></svg>
+
+										<div style="width:120px;height:120px;" class="bg-white rounded-circle d-inline-flex flex-column align-items-center justify-content-center text-danger lh-1">
+											<h2 class="h1 m-0">45%</h2>
+											<small class="d-block fs-6">OFF</small>
+										</div>
+
+									</div>
+
+									<!-- svg : trees -->
+									<svg class="position-absolute bottom-0 start-0 mx-4 mb-2" width="38" fill="#768339" viewBox="0 0 48.905 48.904"><path d="M22.092 7.262l2.36-1.24 2.359 1.24-.449-2.627 1.906-1.86-2.635-.385-1.181-2.39-1.18 2.39-2.637.385 1.909 1.86zM34.237 18.481h.851l-10.636-10.635-6.782 6.781zM33.958 26.638l-1.979.349c.323.192.554.533.554.938 0 .61-.496 1.104-1.106 1.104-.611 0-1.104-.496-1.104-1.104 0-.267.105-.498.26-.688l-3.443.611c.85.074 1.523.762 1.523 1.631 0 .916-.742 1.656-1.655 1.656-.919 0-1.658-.74-1.658-1.656 0-.654.388-1.209.938-1.479l-4.349.771c.299.151.51.457.51.813 0 .51-.411.922-.921.922-.509 0-.918-.412-.918-.922 0-.242.096-.456.248-.62l-10.009 1.776-2.513 2.514 27.466 2.003-1.468-1.468h6.777l-7.153-7.151zM16.146 25.439l-3.181 3.182 24.242-4.304-4.406-4.404-6.46-1.504c.37.354.604.853.604 1.407 0 1.077-.873 1.95-1.95 1.95-1.076 0-1.946-.873-1.946-1.95 0-.877.58-1.607 1.375-1.852l-3.319-.773c.12.203.205.426.205.676 0 .756-.614 1.37-1.37 1.37-.754 0-1.367-.614-1.367-1.37 0-.476.258-.876.628-1.121l-2.963-.689-2.425 2.425h3.715l-6.957 6.958h5.575v-.001zM42.468 41.925l-4.812-4.813-4.768-.347c.258.265.42.623.42 1.019 0 .81-.654 1.465-1.462 1.465s-1.46-.655-1.46-1.465c0-.481.251-.889.613-1.153l-8.132-.595c.205.207.332.488.332.802 0 .634-.512 1.147-1.146 1.147-.632 0-1.144-.512-1.144-1.147 0-.381.197-.701.484-.909l-3.998-.294c.54.32.907.899.907 1.571 0 1.011-.82 1.828-1.832 1.828-1.008 0-1.827-.817-1.827-1.828 0-.762.466-1.414 1.128-1.689l-2.73-.199-6.606 6.608h15.829l-1.257 6.979h6.889l-1.259-6.979 15.831-.001z"></path></svg>
+									<svg class="position-absolute bottom-0 mb-3" width="50" fill="#7a8c34" viewBox="0 0 48.905 48.904"><path d="M22.092 7.262l2.36-1.24 2.359 1.24-.449-2.627 1.906-1.86-2.635-.385-1.181-2.39-1.18 2.39-2.637.385 1.909 1.86zM34.237 18.481h.851l-10.636-10.635-6.782 6.781zM33.958 26.638l-1.979.349c.323.192.554.533.554.938 0 .61-.496 1.104-1.106 1.104-.611 0-1.104-.496-1.104-1.104 0-.267.105-.498.26-.688l-3.443.611c.85.074 1.523.762 1.523 1.631 0 .916-.742 1.656-1.655 1.656-.919 0-1.658-.74-1.658-1.656 0-.654.388-1.209.938-1.479l-4.349.771c.299.151.51.457.51.813 0 .51-.411.922-.921.922-.509 0-.918-.412-.918-.922 0-.242.096-.456.248-.62l-10.009 1.776-2.513 2.514 27.466 2.003-1.468-1.468h6.777l-7.153-7.151zM16.146 25.439l-3.181 3.182 24.242-4.304-4.406-4.404-6.46-1.504c.37.354.604.853.604 1.407 0 1.077-.873 1.95-1.95 1.95-1.076 0-1.946-.873-1.946-1.95 0-.877.58-1.607 1.375-1.852l-3.319-.773c.12.203.205.426.205.676 0 .756-.614 1.37-1.37 1.37-.754 0-1.367-.614-1.367-1.37 0-.476.258-.876.628-1.121l-2.963-.689-2.425 2.425h3.715l-6.957 6.958h5.575v-.001zM42.468 41.925l-4.812-4.813-4.768-.347c.258.265.42.623.42 1.019 0 .81-.654 1.465-1.462 1.465s-1.46-.655-1.46-1.465c0-.481.251-.889.613-1.153l-8.132-.595c.205.207.332.488.332.802 0 .634-.512 1.147-1.146 1.147-.632 0-1.144-.512-1.144-1.147 0-.381.197-.701.484-.909l-3.998-.294c.54.32.907.899.907 1.571 0 1.011-.82 1.828-1.832 1.828-1.008 0-1.827-.817-1.827-1.828 0-.762.466-1.414 1.128-1.689l-2.73-.199-6.606 6.608h15.829l-1.257 6.979h6.889l-1.259-6.979 15.831-.001z"></path></svg>
+									
+									<!-- svg : curved line -->
+									<svg class="position-absolute bottom-0 left-0 right-0 mb--n1" viewBox="0 0 1924 72"><path fill="#fff" d="M962 0c-455 1.5-962 72-962 72h1924s-507-70.5-962-72z"></path></svg>
+								</div>
+
+								<div class="p-4 text-center">
+									<h3 class="h4 m-0 text-muted">Christmas Gifts</h3>
+									<p class="display-5 text-danger mb-5">For Him</p>
+
+									<div class="d-inline-block position-relative mx-auto transition-hover-top transition-all-ease-200">
+										
+										<!-- svg : star (rtl-scalex-n1 = reversed on RTL) -->
+										<svg style="margin-top:-20px;margin-left:-20px;margin-right:-20px;" class="position-absolute top-0 rtl-scalex-n1 start-0 z-index-1" width="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.037 512.037">
+											<path fill="#FFD54F" d="M412.083 123.57l-99.904-27.563c-2.33-.664-4.819-.498-7.04.469-150.506 64.513-297.173 282.646-303.338 291.905-2.401 3.589-2.401 8.272 0 11.861 2.415 3.597 6.765 5.375 11.008 4.501l95.872-19.2 19.52 117.12c.772 4.865 4.775 8.568 9.685 8.96h.789c4.626-.009 8.718-2.999 10.133-7.403.853-2.581 85.184-260.459 187.349-314.133l78.571-47.104c5.052-3.03 6.691-9.582 3.661-14.634-1.413-2.355-3.679-4.075-6.328-4.801l.022.022z"></path>
+											<path fill="#FFC107" d="M511.497 84.957c-1.373-4.468-5.545-7.482-10.219-7.381l-74.603.576-22.464-71.083c-2.453-5.614-8.993-8.177-14.607-5.724-2.561 1.119-4.605 3.163-5.724 5.724l-22.507 71.083-74.667-.576c-4.65-.104-8.794 2.921-10.112 7.381-1.434 4.423.163 9.265 3.947 11.968l60.651 43.349-23.467 70.741c-1.869 5.587 1.144 11.631 6.731 13.5 3.295 1.102 6.921.531 9.717-1.532l59.861-44.288 59.989 44.288c4.741 3.497 11.419 2.49 14.916-2.251 2.063-2.796 2.634-6.422 1.532-9.717l-23.467-70.741 60.651-43.349c3.746-2.732 5.298-7.568 3.842-11.968z"></path>
+											<path fill="#FFB300" d="M138.675 340.957c-5.891 0-10.667-4.776-10.667-10.667 0-2.308.749-4.554 2.133-6.4 4.907-6.592 10.539-14.464 16.725-23.125 30.955-43.328 73.387-102.741 114.048-128.789 4.96-3.181 11.56-1.739 14.741 3.221s1.739 11.56-3.221 14.741c-37.205 23.872-79.957 83.669-108.16 123.285-6.272 8.789-11.989 16.789-16.96 23.467-2.035 2.716-5.244 4.3-8.639 4.267z"></path>
+										</svg>
+										
+										<!-- button -->
+										<a href="#" class="btn btn-danger">
+											Santa for Him
+										</a>
+
+									</div>
+
+								</div>
+
+							</div>
+							<!-- /card -->
+
+						</div>
+
+
+
+						<div class="col-12 col-md-12 col-lg-4 mb-4" data-aos="fade-in" data-aos-delay="350" data-aos-offset="0">
+
+							<!-- card -->
+							<div class="bg-white rounded-xl shadow-xlg overflow-hidden">
+								<div class="position-relative rounded-top text-white text-center pt-5 pb-6" style="background-color:#3ea8c7">
+
+									<div class="position-relative d-block z-index-1">
+
+										<!-- svg : clouds -->
+										<svg data-jarallax-element="-40" class="position-absolute top-0 start-0 mx-5" width="60" viewBox="0 0 511.998 511.998"><path d="M155.968 187.07h38.254c14.29-26.216 38.712-46.094 68.024-54.357-5.897-14.318-19.979-24.397-36.419-24.397-4.11 0-8.069.633-11.79 1.798.02-.598.046-1.195.046-1.798 0-29.244-23.714-52.956-52.96-52.956-25.223 0-46.309 17.632-51.642 41.239-3.168-1.056-6.548-1.634-10.069-1.634-10.834 0-20.398 5.424-26.133 13.703-3.2-.825-6.56-1.272-10.019-1.272-22 0-39.834 17.835-39.834 39.836 0 21.997 17.835 39.836 39.834 39.836h63.687" fill="#9FDEF7"/><path d="M373.536 162.958c-20.468-21.893-49.607-35.578-81.941-35.578-53.408 0-98.066 37.345-109.362 87.34-6.704-2.236-13.865-3.466-21.318-3.466-22.947 0-43.196 11.49-55.341 29.022-6.779-1.751-13.888-2.692-21.216-2.692-46.59 0-84.358 37.768-84.358 84.358 0 46.588 37.768 84.361 84.358 84.361h93.011c.196-28.675 23.489-51.858 52.206-51.858 5.446 0 10.697.835 15.633 2.382-.023-.79-.059-1.582-.059-2.382 0-38.787 31.442-70.23 70.228-70.23 33.443 0 61.41 23.387 68.483 54.691 4.197-1.401 8.678-2.17 13.346-2.17 14.368 0 27.051 7.194 34.655 18.175 4.245-1.098 8.696-1.688 13.284-1.688 19.231 0 36.057 10.279 45.295 25.637 13.396-14.793 21.557-34.414 21.557-55.94 0-46.056-37.332-83.384-83.384-83.384-8.696 0-17.08 1.333-24.963 3.803.041-1.263.096-2.529.096-3.803 0-18.832-4.641-36.579-12.845-52.163" fill="#BEEAFC"/><path d="M89.442 237.74c-1.682-.102-3.376-.157-5.084-.157-46.59-.001-84.358 37.768-84.358 84.358 0 46.588 37.768 84.361 84.358 84.361h93.011c.061-8.998 2.4-17.454 6.464-24.823-45.989-35.393-79.872-85.724-94.391-143.739z" fill="#AEE4FF"/><path d="M81.614 174.026c0-27.362 4.208-53.738 11.999-78.528-8.402 1.551-15.646 6.407-20.333 13.171-3.2-.825-6.56-1.272-10.019-1.272-22 0-39.834 17.835-39.834 39.836 0 21.997 17.835 39.836 39.834 39.836h18.678c-.212-4.322-.325-8.669-.325-13.043z" fill="#83D4ED"/><path d="M445.146 350.991c-4.588 0-9.041.588-13.284 1.688-7.604-10.982-20.287-18.175-34.655-18.175-4.668 0-9.149.769-13.346 2.17-7.074-31.305-35.04-54.691-68.483-54.691-38.786 0-70.228 31.443-70.228 70.23 0 .8.035 1.592.059 2.382-4.936-1.547-10.187-2.382-15.633-2.382-28.835 0-52.212 23.373-52.212 52.216 0 28.835 23.378 52.21 52.212 52.21h215.572c29.175 0 52.827-23.651 52.827-52.824-.002-29.175-23.654-52.824-52.829-52.824z" fill="#E4F2F9"/><path d="M285.258 337.525c0-18.847 4-36.758 11.185-52.941-29.585 8.267-51.295 35.403-51.295 67.627 0 .8.035 1.592.059 2.382-4.936-1.547-10.187-2.382-15.633-2.382-28.835 0-52.212 23.373-52.212 52.216 0 28.835 23.378 52.21 52.212 52.21h132.677c-45.391-20.453-76.993-66.092-76.993-119.112z" fill="#D7EDF9"/></svg>
+										<svg data-jarallax-element="-30" class="position-absolute bottom-0 end-0 mx-5 mb-4 opacity-7" width="60" viewBox="0 -87 463.83425 463"><path fill="#9FDEF7" d="M375.836 112.957c-5.852 0-11.691.582-17.426 1.742-4.324-21.582-18.305-39.992-37.934-49.957-19.625-9.965-42.738-10.383-62.715-1.137-18.078-49.797-73.102-75.508-122.898-57.43s-75.508 73.105-57.43 122.898c-43.621 1.379-78.078 37.484-77.426 81.121.656 43.641 36.184 78.691 79.828 78.762h296c48.598 0 88-39.398 88-88s-39.402-88-88-88zm0 0"/></svg>
+										<svg data-jarallax-element="-30" class="position-absolute bottom-0 end-0 mx-5" width="80" viewBox="0 -87 463.83425 463"><path fill="#BEEAFC" d="M375.836 112.957c-5.852 0-11.691.582-17.426 1.742-4.324-21.582-18.305-39.992-37.934-49.957-19.625-9.965-42.738-10.383-62.715-1.137-18.078-49.797-73.102-75.508-122.898-57.43s-75.508 73.105-57.43 122.898c-43.621 1.379-78.078 37.484-77.426 81.121.656 43.641 36.184 78.691 79.828 78.762h296c48.598 0 88-39.398 88-88s-39.402-88-88-88zm0 0"/></svg>
+
+										<div style="width:120px;height:120px;" class="bg-white rounded-circle d-inline-flex flex-column align-items-center justify-content-center text-danger lh-1">
+											<h2 class="h1 m-0">45%</h2>
+											<small class="d-block fs-6">OFF</small>
+										</div>
+
+									</div>
+
+									<!-- svg : trees -->
+									<svg class="position-absolute bottom-0 start-0 mx-4 mb-2" width="38" fill="#768339" viewBox="0 0 48.905 48.904"><path d="M22.092 7.262l2.36-1.24 2.359 1.24-.449-2.627 1.906-1.86-2.635-.385-1.181-2.39-1.18 2.39-2.637.385 1.909 1.86zM34.237 18.481h.851l-10.636-10.635-6.782 6.781zM33.958 26.638l-1.979.349c.323.192.554.533.554.938 0 .61-.496 1.104-1.106 1.104-.611 0-1.104-.496-1.104-1.104 0-.267.105-.498.26-.688l-3.443.611c.85.074 1.523.762 1.523 1.631 0 .916-.742 1.656-1.655 1.656-.919 0-1.658-.74-1.658-1.656 0-.654.388-1.209.938-1.479l-4.349.771c.299.151.51.457.51.813 0 .51-.411.922-.921.922-.509 0-.918-.412-.918-.922 0-.242.096-.456.248-.62l-10.009 1.776-2.513 2.514 27.466 2.003-1.468-1.468h6.777l-7.153-7.151zM16.146 25.439l-3.181 3.182 24.242-4.304-4.406-4.404-6.46-1.504c.37.354.604.853.604 1.407 0 1.077-.873 1.95-1.95 1.95-1.076 0-1.946-.873-1.946-1.95 0-.877.58-1.607 1.375-1.852l-3.319-.773c.12.203.205.426.205.676 0 .756-.614 1.37-1.37 1.37-.754 0-1.367-.614-1.367-1.37 0-.476.258-.876.628-1.121l-2.963-.689-2.425 2.425h3.715l-6.957 6.958h5.575v-.001zM42.468 41.925l-4.812-4.813-4.768-.347c.258.265.42.623.42 1.019 0 .81-.654 1.465-1.462 1.465s-1.46-.655-1.46-1.465c0-.481.251-.889.613-1.153l-8.132-.595c.205.207.332.488.332.802 0 .634-.512 1.147-1.146 1.147-.632 0-1.144-.512-1.144-1.147 0-.381.197-.701.484-.909l-3.998-.294c.54.32.907.899.907 1.571 0 1.011-.82 1.828-1.832 1.828-1.008 0-1.827-.817-1.827-1.828 0-.762.466-1.414 1.128-1.689l-2.73-.199-6.606 6.608h15.829l-1.257 6.979h6.889l-1.259-6.979 15.831-.001z"></path></svg>
+									<svg class="position-absolute bottom-0 mb-3" width="50" fill="#7a8c34" viewBox="0 0 48.905 48.904"><path d="M22.092 7.262l2.36-1.24 2.359 1.24-.449-2.627 1.906-1.86-2.635-.385-1.181-2.39-1.18 2.39-2.637.385 1.909 1.86zM34.237 18.481h.851l-10.636-10.635-6.782 6.781zM33.958 26.638l-1.979.349c.323.192.554.533.554.938 0 .61-.496 1.104-1.106 1.104-.611 0-1.104-.496-1.104-1.104 0-.267.105-.498.26-.688l-3.443.611c.85.074 1.523.762 1.523 1.631 0 .916-.742 1.656-1.655 1.656-.919 0-1.658-.74-1.658-1.656 0-.654.388-1.209.938-1.479l-4.349.771c.299.151.51.457.51.813 0 .51-.411.922-.921.922-.509 0-.918-.412-.918-.922 0-.242.096-.456.248-.62l-10.009 1.776-2.513 2.514 27.466 2.003-1.468-1.468h6.777l-7.153-7.151zM16.146 25.439l-3.181 3.182 24.242-4.304-4.406-4.404-6.46-1.504c.37.354.604.853.604 1.407 0 1.077-.873 1.95-1.95 1.95-1.076 0-1.946-.873-1.946-1.95 0-.877.58-1.607 1.375-1.852l-3.319-.773c.12.203.205.426.205.676 0 .756-.614 1.37-1.37 1.37-.754 0-1.367-.614-1.367-1.37 0-.476.258-.876.628-1.121l-2.963-.689-2.425 2.425h3.715l-6.957 6.958h5.575v-.001zM42.468 41.925l-4.812-4.813-4.768-.347c.258.265.42.623.42 1.019 0 .81-.654 1.465-1.462 1.465s-1.46-.655-1.46-1.465c0-.481.251-.889.613-1.153l-8.132-.595c.205.207.332.488.332.802 0 .634-.512 1.147-1.146 1.147-.632 0-1.144-.512-1.144-1.147 0-.381.197-.701.484-.909l-3.998-.294c.54.32.907.899.907 1.571 0 1.011-.82 1.828-1.832 1.828-1.008 0-1.827-.817-1.827-1.828 0-.762.466-1.414 1.128-1.689l-2.73-.199-6.606 6.608h15.829l-1.257 6.979h6.889l-1.259-6.979 15.831-.001z"></path></svg>
+									
+									<!-- svg : curved line -->
+									<svg class="position-absolute bottom-0 left-0 right-0 mb--n1" viewBox="0 0 1924 72"><path fill="#fff" d="M962 0c-455 1.5-962 72-962 72h1924s-507-70.5-962-72z"></path></svg>
+								</div>
+
+								<div class="p-4 text-center">
+									<h3 class="h4 m-0 text-muted">Christmas Gifts</h3>
+									<p class="display-5 text-danger mb-5">For Her</p>
+
+									<div class="d-inline-block position-relative mx-auto transition-hover-top transition-all-ease-200">
+										
+										<!-- svg : star (rtl-scalex-n1 = reversed on RTL) -->
+										<svg style="margin-top:-20px;margin-left:-20px;margin-right:-20px;" class="position-absolute top-0 rtl-scalex-n1 start-0 z-index-1" width="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.037 512.037">
+											<path fill="#FFD54F" d="M412.083 123.57l-99.904-27.563c-2.33-.664-4.819-.498-7.04.469-150.506 64.513-297.173 282.646-303.338 291.905-2.401 3.589-2.401 8.272 0 11.861 2.415 3.597 6.765 5.375 11.008 4.501l95.872-19.2 19.52 117.12c.772 4.865 4.775 8.568 9.685 8.96h.789c4.626-.009 8.718-2.999 10.133-7.403.853-2.581 85.184-260.459 187.349-314.133l78.571-47.104c5.052-3.03 6.691-9.582 3.661-14.634-1.413-2.355-3.679-4.075-6.328-4.801l.022.022z"></path>
+											<path fill="#FFC107" d="M511.497 84.957c-1.373-4.468-5.545-7.482-10.219-7.381l-74.603.576-22.464-71.083c-2.453-5.614-8.993-8.177-14.607-5.724-2.561 1.119-4.605 3.163-5.724 5.724l-22.507 71.083-74.667-.576c-4.65-.104-8.794 2.921-10.112 7.381-1.434 4.423.163 9.265 3.947 11.968l60.651 43.349-23.467 70.741c-1.869 5.587 1.144 11.631 6.731 13.5 3.295 1.102 6.921.531 9.717-1.532l59.861-44.288 59.989 44.288c4.741 3.497 11.419 2.49 14.916-2.251 2.063-2.796 2.634-6.422 1.532-9.717l-23.467-70.741 60.651-43.349c3.746-2.732 5.298-7.568 3.842-11.968z"></path>
+											<path fill="#FFB300" d="M138.675 340.957c-5.891 0-10.667-4.776-10.667-10.667 0-2.308.749-4.554 2.133-6.4 4.907-6.592 10.539-14.464 16.725-23.125 30.955-43.328 73.387-102.741 114.048-128.789 4.96-3.181 11.56-1.739 14.741 3.221s1.739 11.56-3.221 14.741c-37.205 23.872-79.957 83.669-108.16 123.285-6.272 8.789-11.989 16.789-16.96 23.467-2.035 2.716-5.244 4.3-8.639 4.267z"></path>
+										</svg>
+										
+										<!-- button -->
+										<a href="#" class="btn btn-danger">
+											Santa for Her
+										</a>
+
+									</div>
+
+								</div>
+
+							</div>
+							<!-- /card -->
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+			<!-- /CARDS -->
+
+
+
+
+
+			<!-- Popular -->
+			<div class="section">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-12 col-lg-6 mb-4">
+
+
+							<h2 class="mb-5 text-center-xs fw-normal text-muted">
+								Popular <span class="fw-medium">this week</span>
+							</h2>
+
+
+							<!-- product list -->
+							<div class="row gutters-sm mb-4 g-2 g-xl-4" data-aos="fade-in" data-aos-delay="150" data-aos-offset="0">
+
+								<!-- item -->
+								<div class="col-6 col-lg-6 mb-4 mb-2-xs">
+
+									<div class="bg-white shadow-xs shadow-3d-hover transition-all-ease-250 transition-hover-top rounded show-hover-container-all p-2 h-100">
+
+										<a href="shop-page-product-2.html" class="d-block text-gray-800">
+
+											<figure class="text-center bg-gradient-radial-light rounded-top overflow-hidden">
+
+												<!-- svg : xmas tag -->
+												<svg class="position-absolute top-0 start-0 z-index-1" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#FF3B62" d="M408.96 171.42v340.58h-305.92v-340.58l116.1-105.94h73.72z"/><path fill="#E60020" d="M408.96 171.42v340.58h-152.96v-446.52h36.86z"/><path fill="#FFA920" d="M241 0h30v142h-30z"/><path fill="#C9E7F8" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-30v-30.08l-24.68 11.97-13.09-26.99 37.77-18.32v-27.58h-26.32l-18.32 37.77-26.99-13.09 11.97-24.68h-31.34v-30h31.34l-11.97-24.68 26.99-13.09 18.32 37.77h26.32v-26.32l-37.77-18.32 13.09-26.99 24.68 11.97v-31.34h30v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/><path fill="#FF8700" d="M256 0h15v142h-15z"/><path fill="#A2D8F5" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-15v-212h15v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/></svg>
+												
+												<!-- product image -->
+												<img class="img-fluid lazy" data-src="demo.files/images/unsplash/holidays/joanna-kosinska-XcLjqd_Lx00-unsplash.jpg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+											
+											</figure>
+
+		                  <span class="d-block fs-6 p-2">
+
+		                    <!-- rating -->
+		                    <span class="d-block smaller text-muted">
+		                      <i class="rating-4 smaller text-warning"></i> (4.7)
+		                    </span>
+
+		                    <!-- title -->
+		                    <span class="d-block fw-medium">Lorem ipsum dolor sit amet</span>
+
+		                    <!-- price -->
+		                    <span class="d-block fw-medium">
+		                      <del class="text-muted">$112.00</del> 
+		                      <span class="text-danger">$99.00</span>
+		                    </span>
+
+		                  </span>
+
+										</a>
+
+									</div>
+
+								</div>
+								<!-- /item -->
+
+
+
+								<!-- item -->
+								<div class="col-6 col-lg-6 mb-4 mb-2-xs">
+
+									<div class="bg-white shadow-xs shadow-3d-hover transition-all-ease-250 transition-hover-top rounded show-hover-container-all p-2 h-100">
+
+										<a href="shop-page-product-2.html" class="d-block text-gray-800">
+
+											<figure class="text-center bg-gradient-radial-light rounded-top overflow-hidden">
+
+												<!-- svg : xmas tag -->
+												<svg class="position-absolute top-0 start-0 z-index-1" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#FF3B62" d="M408.96 171.42v340.58h-305.92v-340.58l116.1-105.94h73.72z"/><path fill="#E60020" d="M408.96 171.42v340.58h-152.96v-446.52h36.86z"/><path fill="#FFA920" d="M241 0h30v142h-30z"/><path fill="#C9E7F8" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-30v-30.08l-24.68 11.97-13.09-26.99 37.77-18.32v-27.58h-26.32l-18.32 37.77-26.99-13.09 11.97-24.68h-31.34v-30h31.34l-11.97-24.68 26.99-13.09 18.32 37.77h26.32v-26.32l-37.77-18.32 13.09-26.99 24.68 11.97v-31.34h30v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/><path fill="#FF8700" d="M256 0h15v142h-15z"/><path fill="#A2D8F5" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-15v-212h15v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/></svg>
+												
+												<!-- product image -->
+												<img class="img-fluid lazy" data-src="demo.files/images/unsplash/holidays/joanna-kosinska-kKueFCypUk4-unsplash.jpg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+											
+											</figure>
+
+		                  <span class="d-block fs-6 p-2">
+
+		                    <!-- rating -->
+		                    <span class="d-block smaller text-muted">
+		                      <i class="rating-4 smaller text-warning"></i> (4.7)
+		                    </span>
+
+		                    <!-- title -->
+		                    <span class="d-block fw-medium">Lorem ipsum dolor sit amet</span>
+
+		                    <!-- price -->
+		                    <span class="d-block fw-medium">
+		                      <del class="text-muted">$112.00</del> 
+		                      <span class="text-danger">$99.00</span>
+		                    </span>
+
+		                  </span>
+
+										</a>
+
+									</div>
+
+								</div>
+								<!-- /item -->
+
+
+
+								<!-- item -->
+								<div class="col-6 col-lg-6 mb-4 mb-2-xs">
+
+									<div class="bg-white shadow-xs shadow-3d-hover transition-all-ease-250 transition-hover-top rounded show-hover-container-all p-2 h-100">
+
+										<a href="shop-page-product-2.html" class="d-block text-gray-800">
+
+											<figure class="text-center bg-gradient-radial-light rounded-top overflow-hidden">
+
+												<!-- svg : xmas tag -->
+												<svg class="position-absolute top-0 start-0 z-index-1" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#FF3B62" d="M408.96 171.42v340.58h-305.92v-340.58l116.1-105.94h73.72z"/><path fill="#E60020" d="M408.96 171.42v340.58h-152.96v-446.52h36.86z"/><path fill="#FFA920" d="M241 0h30v142h-30z"/><path fill="#C9E7F8" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-30v-30.08l-24.68 11.97-13.09-26.99 37.77-18.32v-27.58h-26.32l-18.32 37.77-26.99-13.09 11.97-24.68h-31.34v-30h31.34l-11.97-24.68 26.99-13.09 18.32 37.77h26.32v-26.32l-37.77-18.32 13.09-26.99 24.68 11.97v-31.34h30v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/><path fill="#FF8700" d="M256 0h15v142h-15z"/><path fill="#A2D8F5" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-15v-212h15v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/></svg>
+												
+												<!-- product image -->
+												<img class="img-fluid lazy" data-src="demo.files/images/unsplash/holidays/joanna-kosinska-xp3TH2cXjLE-unsplash.jpg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+											
+											</figure>
+
+		                  <span class="d-block fs-6 p-2">
+
+		                    <!-- rating -->
+		                    <span class="d-block smaller text-muted">
+		                      <i class="rating-4 smaller text-warning"></i> (4.7)
+		                    </span>
+
+		                    <!-- title -->
+		                    <span class="d-block fw-medium">Lorem ipsum dolor sit amet</span>
+
+		                    <!-- price -->
+		                    <span class="d-block fw-medium">
+		                      <del class="text-muted">$112.00</del> 
+		                      <span class="text-danger">$99.00</span>
+		                    </span>
+
+		                  </span>
+
+										</a>
+
+									</div>
+
+								</div>
+								<!-- /item -->
+
+
+
+								<!-- item -->
+								<div class="col-6 col-lg-6 mb-4 mb-2-xs">
+
+									<div class="bg-white shadow-xs shadow-3d-hover transition-all-ease-250 transition-hover-top rounded show-hover-container-all p-2 h-100">
+
+										<a href="shop-page-product-2.html" class="d-block text-gray-800">
+
+											<figure class="text-center bg-gradient-radial-light rounded-top overflow-hidden">
+
+												<!-- svg : xmas tag -->
+												<svg class="position-absolute top-0 start-0 z-index-1" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#FF3B62" d="M408.96 171.42v340.58h-305.92v-340.58l116.1-105.94h73.72z"/><path fill="#E60020" d="M408.96 171.42v340.58h-152.96v-446.52h36.86z"/><path fill="#FFA920" d="M241 0h30v142h-30z"/><path fill="#C9E7F8" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-30v-30.08l-24.68 11.97-13.09-26.99 37.77-18.32v-27.58h-26.32l-18.32 37.77-26.99-13.09 11.97-24.68h-31.34v-30h31.34l-11.97-24.68 26.99-13.09 18.32 37.77h26.32v-26.32l-37.77-18.32 13.09-26.99 24.68 11.97v-31.34h30v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/><path fill="#FF8700" d="M256 0h15v142h-15z"/><path fill="#A2D8F5" d="M362 331h-30.08l11.97 24.68-26.99 13.09-18.32-37.77h-27.58v27.58l37.77 18.32-13.09 26.99-24.68-11.97v30.08h-15v-212h15v31.34l24.68-11.97 13.09 26.99-37.77 18.32v26.32h27.58l18.32-37.77 26.99 13.09-11.97 24.68h30.08z"/></svg>
+												
+												<!-- product image -->
+												<img class="img-fluid lazy" data-src="demo.files/images/unsplash/holidays/joanna-kosinska-wRgU90HJOJ0-unsplash.jpg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+											
+											</figure>
+
+		                  <span class="d-block fs-6 p-2">
+
+		                    <!-- rating -->
+		                    <span class="d-block smaller text-muted">
+		                      <i class="rating-4 smaller text-warning"></i> (4.7)
+		                    </span>
+
+		                    <!-- title -->
+		                    <span class="d-block fw-medium">Lorem ipsum dolor sit amet</span>
+
+		                    <!-- price -->
+		                    <span class="d-block fw-medium">
+		                      <del class="text-muted">$112.00</del> 
+		                      <span class="text-danger">$99.00</span>
+		                    </span>
+
+		                  </span>
+
+										</a>
+
+									</div>
+
+								</div>
+								<!-- /item -->
+
+							</div>
+
+
+							<div class="clearfix bg-light p-1 row-pill mb-4">
+								<a href="#" class="btn btn-pill btn-sm btn-danger py-1 mb-0 float-start transition-hover-end" title="Detailed Revenue" aria-label="Detailed Revenue">View</a>
+								<span class="d-block pt-1 px-2 text-muted text-truncate">
+									more popular gifts
+								</span>
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-lg-6 mb-4">
+
+							<div class="px-4">
+
+								<!-- 1 -->
+								<div class="d-flex align-items-center mb-3">
+									<div class="flex-none pe-3">
+										<img width="50" height="50" src="demo.files/svg/icons/family.svg" alt="family">
+									</div>
+									<div class="col">
+										<h3 class="h5 px-1">
+											Family Gifts
+										</h3>
+									</div>
+								</div>
+
+								<p class="mb-5">
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+								</p>
+
+
+								<!-- 2 -->
+								<div class="d-flex align-items-center mb-3">
+									<div class="flex-none pe-3">
+										<img width="50" height="50" src="demo.files/svg/icons/gift.svg" alt="perfect gift">
+									</div>
+									<div class="col">
+										<h3 class="h5 px-1">
+											Chosing a Perfect Gift
+										</h3>
+									</div>
+								</div>
+
+								<p class="mb-5">
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+								</p>
+
+
+								<!-- 3 -->
+								<div class="d-flex align-items-center mb-3">
+									<div class="flex-none pe-3">
+										<img width="50" height="50" src="demo.files/svg/icons/heart.svg" alt="sharing love">
+									</div>
+									<div class="col">
+										<h3 class="h5 px-1">
+											Sharing Love
+										</h3>
+									</div>
+								</div>
+
+								<p class="mb-5">
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+								</p>
+
+
+								<!-- 4 -->
+								<div class="d-flex align-items-center mb-3">
+									<div class="flex-none pe-3">
+										<img width="50" height="50" src="demo.files/svg/icons/chat-tree.svg" alt="help chat">
+									</div>
+									<div class="col">
+										<h3 class="h5 px-1">
+											Not Sure Yet?
+										</h3>
+									</div>
+								</div>
+
+								<p class="mb-3">
+									Our prefessionals are here to help you to chose the best gift for the people you care most!
+								</p>
+
+								<a href="#" class="btn btn-sm btn-danger btn-pill btn-soft">
+									<i class="fi fi-chat"></i>
+									Start a chat with us
+								</a> 
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+				
+				</div>
+			</div>
+			<!-- /Popular -->
+
+
+
+
+
+
+			<!-- INFO BOX -->
+			<div class="section py-0 bg-light">
+				<div class="container py-3">
+
+          <div class="row g-4">
+
+            <div class="col-12 col-sm-6 col-lg-3 d-flex py-2 py-sm-3 py-lg-4">
+
+              <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/money_bag.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+              <div class="ps-3">
+                <h3 class="fs-5 mb-1">Money Back</h3>
+                <p class="m-0">Love it! Use it! Reuse it!</p>
+              </div>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3 d-flex py-2 py-sm-3 py-lg-4">
+
+              <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/free-delivery-truck.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+              <div class="ps-3">
+                <h3 class="fs-5 mb-1">Free Shipping</h3>
+                <p class="m-0">Shipping is on us</p>
+              </div>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3 d-flex py-2 py-sm-3 py-lg-4">
+
+              <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/24-hours-phone-service.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+              <div class="ps-3">
+                <h3 class="fs-5 mb-1">Free Support</h3>
+                <p class="m-0">24/24 available</p>
+              </div>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3 d-flex py-2 py-sm-3 py-lg-4">
+
+              <!-- link example -->
+              <a href="#" class="text-dark text-decoration-none d-flex">
+
+                <img width="60" height="60" class="lazy" data-src="demo.files/svg/ecommerce/handshake.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+                <div class="ps-3">
+                  <h3 class="fs-5 mb-1">Best Deal</h3>
+                  <p class="m-0">Quality guaranteed</p>
+                </div>
+
+              </a>
+
+            </div>
+
+          </div>
+
+				</div>
+			</div>
+			<!-- /INFO BOX -->
+
+							
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="bg-gradient-danger text-white">
+
+				<!-- expandable : hidden by default -->
+				<div id="footer_expand" class="collapse">
+					<div class="container py-5">
+
+						<ul class="mt-3 mb-0 breadcrumb bg-transparent p-0 block-xs"> 
+							<li class="breadcrumb-item"><a class="text-white" href="contact-1.html">Contact</a></li> 
+							<li class="breadcrumb-item"><a class="text-white" href="about-us-1.html">About Us</a></li> 
+							<li class="breadcrumb-item"><a class="text-white" href="page-terms-and-conditions.html">Terms &amp; Conditions</a></li> 
+							<li class="breadcrumb-item"><a class="text-white" href="page-cookie.html">GDPR &amp; Cookies</a></li> 
+						</ul>
+
+						<div class="text-white mt-3">
+							<p>
+								Frontend? Admin? What if you don't need anymore to learn and work with two different templates on your projects? 
+								<b>What would you do if time really matter?</b> Both: frontend and admin uses exactly the same core and all elements can be used in both sides because... actually there are no such thing "two sides" with Smarty!
+							</p>
+						</div>
+
+					</div>
+				</div>
+				<!-- /expandable : hidden by default -->
+
+
+				<div class="bg-distinct py-3 clearfix">
+
+					<div class="container clearfix fw-light text-center-xs position-relative">
+
+
+						<div class="clearfix float-start float-none-xs">
+
+							<!-- badge expand info -->
+							<span id="footer_expand_badge" class="badge bg-secondary rounded-pill p-2 position-absolute start-0 mt-n5 mx-2 position-relative small fw-normal">
+								<i class="arrow arrow-bottom border-secondary mx-1 mb-2"></i>
+								click to expand
+							</span>
+
+
+							<!-- footer expand toggler -->
+							<a href="#footer_expand" 
+								data-toggle-target="#footer_expand_badge" 
+								data-toggle-container-class="hide-force" 
+								data-offset="-100%" 
+								data-speed="600" 
+								class="scroll-to btn-toggle btn float-start overlay-dark overlay-opacity-2 overflow-hidden text-decoration-none px-3 py-2 rounded mt-n2 mb-n2 text-white" data-bs-toggle="collapse" rel="noopener" aria-expanded="false">
+								
+								<span class="group-icon">
+									<i class="fi fi-menu-dots fs-4"></i>
+									<i class="fi fi-close fs-4"></i>
+								</span>
+
+							</a>
+
+							<!-- copyright -->
+							<div class="py-2 float-start float-none-xs">
+								&copy; My Company Inc.
+							</div>
+
+							<div class="clearfix mt-2 d-block d-sm-none"><!-- mobile spacer --></div>
+						</div>
+
+
+						<!-- credit card -->
+						<ul class="list-inline mb-0 mt-2 float-end float-none-xs"> 
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/visa.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="visa credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/mastercard.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="mastercard credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/discover.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="discover credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/amazon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="amazon credit card icon">
+							</li>
+							
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/paypal.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="paypal credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/skrill.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="skrill credit card icon">
+							</li>
+
+							<!-- more vendors on assets/images/credit_card/ -->
+
+						</ul>
+						<!-- /credit card -->
+
+					</div>
+
+				</div>
+
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,77 @@
+		<!-- close button -->
+		<button type="button" class="close cursor-pointer z-index-10 position-absolute top-0 end-0 my-2 mx-3" data-bs-dismiss="modal" aria-label="Close">
+			<span class="fi fi-close fs-5 position-absolute end-0 top-0" aria-hidden="true"></span>
+		</button>
+
+
+		<div class="modal-body p-0 rounded overflow-hidden">
+
+			<div class="row g-0 z-index-1 position-relative">
+
+				<!-- 
+
+					And adjust background luminozity:
+						overlay-opacity-[0-9]
+
+				-->
+				<div class="col-12 col-lg-5 d-flex align-items-center overlay-dark overlay-opacity-4 bg-cover text-white" 
+				style="background-image: url(demo.files/images/unsplash/portfolio/thumb_330/boxed-water-is-better-LWagu5WepHU-unsplash-min.jpg);">
+					
+					<div class="px-4 py-6 w-100 text-center-xs">
+
+						<h3 class="m-0 fw-bold">
+							Up to 45<i class="fi fi-percent"></i> OFF <br>
+							<span class="h2 fw-normal">best deals</span>
+						</h3>
+
+					</div>
+
+				</div>
+
+
+				<div class="col-12 col-lg-7 d-flex align-items-center">
+					<div class="py-lg-7 px-4 px-md-5 w-100 text-center-xs">
+						
+						<div class="py-5">
+							<p class="lead">Never miss a good deal!</p>
+
+							<form novalidate class="bs-validate" method="post" action="#">
+
+								<div class="input-group mb-3">
+									<input required type="email" name="subscribe_email" value="" class="form-control" placeholder="email address">
+									<button class="btn btn-dark">Join us</button>
+								</div>
+
+								<label class="form-checkbox form-checkbox-dark form-checkbox-bordered d-block text-align-start">
+									<input required type="checkbox" name="checkbox" value="1">
+									<i></i> I agree the <a href="#" target="_blank" class="link-muted">terms &amp; conditions</a>
+								</label>
+
+							</form>
+						</div>
+
+					</div>
+
+
+					<!--
+
+						Cookie button, expire: 1 day
+						documentation/plugins-sow-utils.html
+
+						onload_modal_shop   	should match the id of the html markup that trigger this modal!
+												because is the cookie name set for this modal!
+
+					-->
+					<a href="#" class="sow-util-cookie link-muted smaller position-absolute end-0 bottom-0 m-2"
+						data-bs-dismiss="modal" aria-label="Close" 
+						data-cookie-set="onload_modal_shop" 
+						data-cookie-expire="1">
+						stop showing
+					</a>
+
+				</div>
+
+
+			</div>
+
+		</div>

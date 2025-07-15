@@ -1,0 +1,2318 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>Smarty v5</title>
+		<meta name="description" content="...">
+
+		<meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- up to 10% speed up for external res -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/">
+		<!-- preloading icon font is helping to speed up a little bit -->
+		<link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="assets/css/core.min.css">
+		<link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+	</head>
+
+	<!--
+
+		Available Body Classes
+			.layout-boxed 					- boxed layout (ignored if any .header-* class is present)
+
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+			.header-sticky  				- header : always visible on top
+			.header-over  					- header : over slider|parallax|image (next section must contain a large image, else will be indistinguishable)
+
+				Possible header combinations:
+					.header-over + .header-scroll-reveal
+					.header-over + .header-sticky
+						* NOTE: if .header-sticky + .header-scroll-reveal are both used, .header-scroll-reveal is ignored
+
+
+			.bg-cover .bg-fixed 			- both classes used with .layout-boxed to set a background image via style="background-image:url(...)"
+	-->
+	<body class="header-sticky">
+
+		<div id="wrapper">
+
+
+			<!-- Header -->
+			<header id="header" class="shadow-xs">
+
+
+				<!-- Navbar -->
+				<div class="container position-relative">
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search-suggest.html
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+					-->
+					<form 	action="#search-page" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="250" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggest_related.json" 
+							data-suggest-url="_ajax/search_suggest_input.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-over hide d-inline-flex">
+						<div class="sow-search-input w-100">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded shadow-md">
+
+								<input placeholder="what are you looking today?" aria-label="what are you looking today?" name="s" type="text" class="form-control-sow-search form-control shadow-xs" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button aria-label="Global Search" type="submit" class="btn bg-transparent shadow-none m-0 px-2 py-1 text-muted">
+										<i class="fi fi-search fs-5"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light shadow-none m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs-2"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p-3 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs-1"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop backdrop-dark hide"><!-- alternate: overlay-dark opacity-3 --></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+<!-- navbar : brand (logo) -->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<!--
+
+							Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+								.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+								.dropdown-menu-hover 		- open on hover
+								.dropdown-menu-clean 		- no background color on hover
+								.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+								.dropdown-menu-uppercase 	- uppercase text (font-size is scalled down to 13px)
+								.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+								Repositioning long dropdown childs (Example: Pages->Account)
+									.dropdown-menu-up-n100 		- open up with top: -100px
+									.dropdown-menu-up-n100 		- open up with top: -150px
+									.dropdown-menu-up-n180 		- open up with top: -180px
+									.dropdown-menu-up-n220 		- open up with top: -220px
+									.dropdown-menu-up-n250 		- open up with top: -250px
+									.dropdown-menu-up 			- open up without negative class
+
+
+								Dropdown prefix icon (optional, if enabled in variables.scss)
+									.prefix-link-icon .prefix-icon-dot 		- link prefix
+									.prefix-link-icon .prefix-icon-line 	- link prefix
+									.prefix-link-icon .prefix-icon-ico 		- link prefix
+									.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+								.nav-link.nav-link-caret-hide 	- no dropdown icon indicator on main link
+								.nav-item.dropdown-mega 		- required ONLY on fullwidth mega menu
+
+								Mobile animation - add to .navbar-collapse:
+								.navbar-animate-fadein
+								.navbar-animate-fadeinup
+								.navbar-animate-bouncein
+
+						-->
+						<div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+
+							<!-- navbar : mobile menu -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="38" alt="...">
+								</a>
+
+							</div>
+							<!-- /navbar : mobile menu -->
+
+
+
+							<!-- navbar : navigation -->
+							<ul class="navbar-nav">
+								<!-- Menu -->
+								<!--
+
+									Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+										.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+										.dropdown-menu-hover 		- open on hover
+										.dropdown-menu-clean 		- no background color on hover
+										.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+										.dropdown-menu-uppercase 	- uppercase text (font-size is scalled down to 13px)
+										.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+										Repositioning long dropdown childs (Example: Pages->Account)
+											.dropdown-menu-up-n100 		- open up with top: -100px
+											.dropdown-menu-up-n100 		- open up with top: -150px
+											.dropdown-menu-up-n180 		- open up with top: -180px
+											.dropdown-menu-up-n220 		- open up with top: -220px
+											.dropdown-menu-up-n250 		- open up with top: -250px
+											.dropdown-menu-up 			- open up without negative class
+
+
+										Dropdown prefix icon (optional, if enabled in variables.scss)
+											.prefix-link-icon .prefix-icon-dot 		- link prefix
+											.prefix-link-icon .prefix-icon-line 	- link prefix
+											.prefix-link-icon .prefix-icon-ico 		- link prefix
+											.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+										.nav-link.nav-link-caret-hide 	- no dropdown icon indicator on main link
+										.nav-item.dropdown-mega 		- required ONLY on fullwidth mega menu
+
+								-->
+								<!-- mobile only image + simple search (d-block d-sm-none) -->
+								<li class="nav-item d-block d-sm-none">
+
+									<!-- image -->
+									<div class="mb-4">
+										<img width="600" height="600" class="img-fluid" src="demo.files/svg/artworks/people_crossbrowser.svg" alt="...">
+									</div>
+
+									<!-- search -->
+									<form method="get" action="#!search" class="input-group-over mb-4 bg-light p-2 form-control-pill">
+										<input type="text" name="keyword" value="" placeholder="Quick search..." class="form-control border-dashed">
+										<button class="btn btn-sm fi fi-search mx-3"></button>
+									</form>
+
+								</li>
+
+
+
+
+								<!-- Default -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD1" class="nav-link dropdown-toggle" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Default
+									</a>
+
+									<div aria-labelledby="navDD1" class="dropdown-menu dropdown-menu-hover">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link">
+									        		<span class="badge bg-success float-end">new</span>
+									        		Option 3
+									        	</a>
+									        </li>
+
+
+											<!-- Multilevel -->
+									        <li class="dropdown-item dropdown"><!-- note: childs has .dropdown-link class, only the main has .nav-link -->
+												
+												<a href="#" class="dropdown-link" data-bs-toggle="dropdown">
+													Deep Unlimited
+												</a>
+
+											    <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+
+											        <li class="dropdown-item"><a href="#" class="dropdown-link">Option A</a></li>
+											        <li class="dropdown-item"><a href="#" class="dropdown-link">Option B</a></li>
+											        <li class="dropdown-item">
+											        	<a href="#" class="dropdown-link">
+											        		<span class="badge bg-info float-end">new</span>
+											        		Option C
+											        	</a>
+											        </li>
+											       
+											    </ul>
+
+											</li>
+
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+								<!-- Dark -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD5" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Dark
+									</a>
+
+									<div aria-labelledby="navDD5" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-menu-dark bg-gradient-secondary">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item text-warning">
+									        	<span class="d-block px-4 pb-3 pt-2 fs-6">
+									        		Dark / Color Dropdown
+									        	</span>
+									        </li>
+									        <li class="dropdown-divider border-secondary opacity-5"></li>
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 4</a></li>
+
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+								<!-- Fade Up -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD2" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Up
+									</a>
+
+									<div aria-labelledby="navDD2" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-fadeinup">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item">
+									        	<span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+									        		Animation: Fade Up
+									        	</span>
+									        </li>
+									        <li class="dropdown-divider"></li>
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 4</a></li>
+									       
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+								<!-- Fade Down -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD3" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Down
+									</a>
+
+									<div aria-labelledby="navDD3" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-fadeindown">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item">
+									        	<span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+									        		Animation: Fade In Down
+									        	</span>
+									        </li>
+									        <li class="dropdown-divider"></li>
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 4</a></li>
+									       
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+								<!-- Bounce -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD4" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Bounce
+									</a>
+
+									<div aria-labelledby="navDD4" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-bounceinup">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item">
+									        	<span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+									        		Animation: Bounce
+									        	</span>
+									        </li>
+									        <li class="dropdown-divider"></li>
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 4</a></li>
+									       
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+								<!-- Bullet -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD6" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Bullet
+									</a>
+
+									<div aria-labelledby="navDD6" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover prefix-link-icon prefix-icon-dot">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item text-primary">
+									        	<span class="d-block px-4 pb-3 pt-2 fs-6">
+									        		Bullet Indicator
+									        	</span>
+									        </li>
+									        <li class="dropdown-divider"></li>
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link prefix-icon-ignore">
+									        		<i class="fi fi-gps"></i> Icon
+									        	</a>
+									        </li>
+									        
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link prefix-icon-ignore">
+									        		No Indicator
+									        	</a>
+									        </li>
+									       
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+								<!-- Line -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD7" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Line
+									</a>
+
+									<div aria-labelledby="navDD7" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover prefix-link-icon prefix-icon-line">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item text-primary">
+									        	<span class="d-block px-4 pb-3 pt-2 fs-6">
+									        		Line Indicator
+									        	</span>
+									        </li>
+									        <li class="dropdown-divider"></li>
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link prefix-icon-ignore">
+									        		<i class="fi fi-gps"></i> Icon
+									        	</a>
+									        </li>
+									        
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link prefix-icon-ignore">
+									        		No Indicator
+									        	</a>
+									        </li>
+									       
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+
+								<!-- Arrow -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="navDD8" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Arrow
+									</a>
+
+									<div aria-labelledby="navDD8" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover prefix-link-icon prefix-icon-arrow">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item text-primary">
+									        	<span class="d-block px-4 pb-3 pt-2 fs-6">
+									        		Arrow Indicator
+									        	</span>
+									        </li>
+									        <li class="dropdown-divider"></li>
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+									        
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link prefix-icon-ignore">
+									        		<i class="fi fi-gps"></i> Icon
+									        	</a>
+									        </li>
+
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link prefix-icon-ignore">
+									        		No Indicator
+									        	</a>
+									        </li>
+									       
+									    </ul>
+									</div>
+
+								</li>
+
+
+
+								<!-- 
+									
+									Mega 2Col
+							
+								-->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="navDD13" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										2Col
+									</a>
+
+									<!--
+
+										Dropown Classes:
+											.dropdown-mega-sm 	{ width: 300px; }
+											.dropdown-mega-md 	{ width: 400px; }
+											.dropdown-mega-lg 	{ width: 600px; }
+											.dropdown-mega-xl 	{ width: 700px; }
+											.dropdown-mega-xxl 	{ width: 800px; }
+											.dropdown-menu-invert - open dropdown in oposite direction
+
+									-->
+									<div aria-labelledby="navDD13" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-menu-invert dropdown-mega-md">
+									    
+										<!-- 
+											optional line column separator 
+											.col-border-lg 
+										-->
+										<div class="row">
+
+											<div class="col-12 col-lg-6">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 1
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+											<div class="col-12 col-lg-6">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 2
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+										</div>
+									</div>
+
+								</li>
+
+
+
+								<!-- 
+
+									Mega 3Col
+
+								-->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="navDD10" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										3Col
+									</a>
+
+									<!--
+
+										Dropown Classes:
+											.dropdown-mega-sm 	{ width: 300px; }
+											.dropdown-mega-md 	{ width: 400px; }
+											.dropdown-mega-lg 	{ width: 600px; }
+											.dropdown-mega-xl 	{ width: 700px; }
+											.dropdown-mega-xxl 	{ width: 800px; }
+											.dropdown-menu-invert - open dropdown in oposite direction
+
+									-->
+									<div aria-labelledby="navDD10" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-menu-invert dropdown-mega-lg">
+									    
+										<!-- 
+											optional line column separator 
+											.col-border-lg 
+										-->
+										<div class="row">
+
+											<div class="col-12 col-lg-4">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 1
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+											<div class="col-12 col-lg-4">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 2
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+											<div class="col-12 col-lg-4">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 3
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+										</div>
+
+									</div>
+
+								</li>
+
+
+
+								<!-- 
+
+									Mega 4Col
+									.dropdown-menu-invert 	class used
+
+								-->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="navDD11" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										4Col
+									</a>
+
+									<div aria-labelledby="navDD11" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-menu-invert dropdown-mega-xxl">
+
+										<!-- 
+											optional line column separator 
+											.col-border-lg 
+										-->
+										<div class="row">
+
+											<div class="col-12 col-lg-3">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 1
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+											<div class="col-12 col-lg-3">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 2
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+											<div class="col-12 col-lg-3">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 3
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+											<div class="col-12 col-lg-3">
+												<ul class="list-unstyled">
+													<li class="dropdown-item">
+														<h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+															Column 4
+														</h3>
+													</li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 1</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 2</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 3</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 4</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 5</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 6</a></li>
+													<li class="dropdown-item"><a class="dropdown-link" href="#">Option 7</a></li>
+												</ul>
+											</div>
+
+										</div>
+
+									</div>
+
+								</li>
+
+
+
+								<!-- 
+
+									Full Mega Menu
+
+								-->
+								<li class="nav-item dropdown dropdown-mega">
+
+									<a href="#" id="navDD12" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Full
+									</a>
+
+									<div aria-labelledby="navDD12" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-fadeinup">
+
+										<!-- 
+											optional line column separator 
+											.col-border-lg 
+										-->
+							            <div class="row"> 
+
+							                <div class="col-12 col-lg-3">
+
+							                    <h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+							                    	Shop Homepage
+							                    </h3>
+
+							                    <ul class="prefix-link-icon prefix-icon-dot">
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-index-1.html">Shop Home 1</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-index-2.html">Shop Home 2</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-index-3.html">Shop Home 3</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-index-4.html">Shop Home 4</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-index-christmas.html">
+							                            	<span class="badge bg-secondary float-end">new</span>
+							                            	Shop : Christmas
+							                           	</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link disabled" href="#">More : Soon</a>
+							                        </li>
+
+							                    </ul>
+
+							                </div>
+
+							                <div class="col-12 col-lg-3">
+
+							                    <h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+							                    	Shop Category
+							                    </h3>
+
+							                    <ul class="prefix-link-icon prefix-icon-dot">
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-category-1.html">Category 1</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-category-2.html">Category 2</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-category-3.html">Category 3</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-category-4.html">Category 4</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-category-lazyload.html">Using Lazyload</a>
+							                        </li>
+
+							                    </ul>
+
+							                </div>
+
+							                <div class="col-12 col-lg-3">
+
+							                    <h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+							                    	Shop Cart
+							                    </h3>
+
+							                    <ul class="prefix-link-icon prefix-icon-dot">
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-cart-1.html">Cart</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-cart-2.html">Cart Empty</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-checkout-success.html">Checkout Success</a>
+							                        </li>
+
+							                    </ul>
+
+							                    <h3 class="h6 text-muted text-uppercase fs-6 mb-3 mt-5">
+							                    	Shop Product
+							                    </h3>
+
+							                    <ul class="prefix-link-icon prefix-icon-dot">
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-product-1.html">Product Page 1</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-product-2.html">Product Page 2</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-product-3.html">Product Page 3</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-product-4.html">Product Page 4</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="shop-page-product-5.html">Product Page 5</a>
+							                        </li>
+
+							                    </ul>
+
+							                </div>
+
+							                <div class="col-12 col-lg-3">
+
+							                    <h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+							                    	Blog Pages
+							                    </h3>
+
+							                    <ul class="prefix-link-icon prefix-icon-line">
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="blog-page-sidebar.html">With Sidebar</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="blog-page-sidebar-no.html">Without Sidebar</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="blog-page-article-sidebar.html">Article With Sidebar</a>
+							                        </li>
+
+							                        <li class="dropdown-item">
+							                            <a class="dropdown-link" href="blog-page-article-sidebar-no.html">Article Without Sidebar</a>
+							                        </li>
+
+							                    </ul>
+
+							                    <div class="mt-4">
+							                        <img width="600" height="600" class="img-fluid" src="demo.files/svg/artworks/undraw_wireframing_nxyi.svg" alt="...">
+							                    </div>
+
+							                </div>
+
+							            </div>
+
+									</div>
+
+								</li>
+
+
+
+
+								<!-- Click -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="navDD0" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Click
+									</a>
+
+									<div aria-labelledby="navDD0" class="dropdown-menu dropdown-menu-clean">
+									    <ul class="list-unstyled m-0 p-0">
+
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+									        <li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+									        <li class="dropdown-item">
+									        	<a href="#" class="dropdown-link">
+									        		<span class="badge bg-success float-end">new</span>
+									        		Option 3
+									        	</a>
+									        </li>
+
+									    </ul>
+									</div>
+
+								</li>
+
+
+							</ul>
+							<!-- /navbar : navigation -->
+
+
+						</div>
+
+					</nav>
+
+				</div>
+				<!-- /Navbar -->
+
+			</header>
+			<!-- /Header -->
+
+
+		
+
+			<!-- 
+
+				PAGE TITLE 
+
+				Note: best to use with body.bg-light (see this page)
+				And the content of sections inside white containers like this:
+					<div class="bg-white shadow-xs rounded p-4 p-md-5"> 
+						....
+					</div>
+
+			-->
+			<div class="section bg-white">
+				<div class="container py-5">
+
+
+					<p class="lead alert bg-light mb-6">
+
+						Each dropdown has its own classes.  Down below are all available classes. <br>
+						Can also be used as a regular dropdown!
+
+					</p>
+
+
+
+
+
+
+
+					<div class="row">
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Default Dropdown
+</h3>
+
+<a href="#C_1" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_1" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Default -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD1" class="nav-link dropdown-toggle" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Default
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD1" class="dropdown-menu dropdown-menu-hover">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link">
+               &lt;span class="badge bg-success float-end">new&lt;/span>
+               Option 3
+            &lt;/a>
+           &lt;/li>
+
+
+           &lt;!-- Multilevel -->
+           &lt;li class="dropdown-item dropdown">&lt;!-- note: childs has .dropdown-link class, only the main has .nav-link -->
+            
+            &lt;a href="#" class="dropdown-link" data-bs-toggle="dropdown">
+               Deep Unlimited
+            &lt;/a>
+
+             &lt;ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg rounded-xl border-0 m-0">
+
+                 &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option A&lt;/a>&lt;/li>
+                 &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option B&lt;/a>&lt;/li>
+                 &lt;li class="dropdown-item">
+                  &lt;a href="#" class="dropdown-link">
+                     &lt;span class="badge bg-info float-end">new&lt;/span>
+                     Option C
+                  &lt;/a>
+                 &lt;/li>
+                
+             &lt;/ul>
+
+         &lt;/li>
+
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Dark Dropdown
+</h3>
+
+<a href="#C_2" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_2" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Dark -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD5" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Dark
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD5" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-menu-dark bg-gradient-secondary">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item text-warning">
+            &lt;span class="d-block px-4 pb-3 pt-2 fs-6">
+               Dark / Color Dropdown
+            &lt;/span>
+           &lt;/li>
+           &lt;li class="dropdown-divider border-secondary opacity-5">&lt;/li>
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 3&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 4&lt;/a>&lt;/li>
+
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Fade Up (Hover Animation)
+</h3>
+
+<a href="#C_4" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_4" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Fade Up -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD2" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Up
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD2" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-fadeinup">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item">
+            &lt;span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+               Animation: Fade Up
+            &lt;/span>
+           &lt;/li>
+           &lt;li class="dropdown-divider">&lt;/li>
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 3&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 4&lt;/a>&lt;/li>
+          
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Fade Down (Hover Animation)
+</h3>
+
+<a href="#C_5" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_5" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Fade Down -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD3" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Down
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD3" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-fadeindown">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item">
+            &lt;span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+               Animation: Fade In Down
+            &lt;/span>
+           &lt;/li>
+           &lt;li class="dropdown-divider">&lt;/li>
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 3&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 4&lt;/a>&lt;/li>
+          
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Bounce (Hover Animation)
+</h3>
+
+<a href="#C_6" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_6" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Bounce -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD4" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Bounce
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD4" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover dropdown-bounceinup">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item">
+            &lt;span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+               Animation: Bounce
+            &lt;/span>
+           &lt;/li>
+           &lt;li class="dropdown-divider">&lt;/li>
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 3&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 4&lt;/a>&lt;/li>
+          
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Bullet (Item Indicator)
+</h3>
+
+<a href="#C_7" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_7" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Bullet -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD6" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Bullet
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD6" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover prefix-link-icon prefix-icon-dot">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item text-primary">
+            &lt;span class="d-block px-4 pb-3 pt-2 fs-6">
+               Bullet Indicator
+            &lt;/span>
+           &lt;/li>
+           &lt;li class="dropdown-divider">&lt;/li>
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 3&lt;/a>&lt;/li>
+
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link prefix-icon-ignore">
+               &lt;i class="fi fi-gps">&lt;/i> Icon
+            &lt;/a>
+           &lt;/li>
+           
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link prefix-icon-ignore">
+               No Indicator
+            &lt;/a>
+           &lt;/li>
+          
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Line (Item Indicator)
+</h3>
+
+<a href="#C_8" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_8" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Line -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD7" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Line
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD7" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover prefix-link-icon prefix-icon-line">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item text-primary">
+            &lt;span class="d-block px-4 pb-3 pt-2 fs-6">
+               Line Indicator
+            &lt;/span>
+           &lt;/li>
+           &lt;li class="dropdown-divider">&lt;/li>
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 3&lt;/a>&lt;/li>
+
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link prefix-icon-ignore">
+               &lt;i class="fi fi-gps">&lt;/i> Icon
+            &lt;/a>
+           &lt;/li>
+           
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link prefix-icon-ignore">
+               No Indicator
+            &lt;/a>
+           &lt;/li>
+          
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Arrow (Item Indicator)
+</h3>
+
+<a href="#C_9" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_9" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Arrow -->
+&lt;li class="nav-item dropdown active">
+
+   &lt;a href="#" id="navDD8" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Arrow
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD8" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover prefix-link-icon prefix-icon-arrow">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item text-primary">
+            &lt;span class="d-block px-4 pb-3 pt-2 fs-6">
+               Arrow Indicator
+            &lt;/span>
+           &lt;/li>
+           &lt;li class="dropdown-divider">&lt;/li>
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 3&lt;/a>&lt;/li>
+           
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link prefix-icon-ignore">
+               &lt;i class="fi fi-gps">&lt;/i> Icon
+            &lt;/a>
+           &lt;/li>
+
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link prefix-icon-ignore">
+               No Indicator
+            &lt;/a>
+           &lt;/li>
+          
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Mega Menu : 2 Columns
+</h3>
+
+<a href="#C_10" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_10" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- 
+   
+   Mega 2Col
+
+-->
+&lt;li class="nav-item dropdown">
+
+   &lt;a href="#" id="navDD13" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      2Col
+   &lt;/a>
+
+   &lt;!--
+
+      Dropown Classes:
+         .dropdown-mega-sm    { width: 300px; }
+         .dropdown-mega-md    { width: 400px; }
+         .dropdown-mega-lg    { width: 600px; }
+         .dropdown-mega-xl    { width: 700px; }
+         .dropdown-mega-xxl   { width: 800px; }
+         .dropdown-menu-invert - open dropdown in oposite direction
+
+   -->
+   &lt;div aria-labelledby="navDD13" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-menu-invert dropdown-mega-md">
+       
+      &lt;!-- 
+         optional line column separator 
+         .col-border-lg 
+      -->
+      &lt;div class="row">
+
+         &lt;div class="col-12 col-lg-6">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 1
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+         &lt;div class="col-12 col-lg-6">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 2
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+      &lt;/div>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Mega Menu : 3 Columns
+</h3>
+
+<a href="#C_11" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_11" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- 
+
+   Mega 3Col
+
+-->
+&lt;li class="nav-item dropdown">
+
+   &lt;a href="#" id="navDD10" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      3Col
+   &lt;/a>
+
+   &lt;!--
+
+      Dropown Classes:
+         .dropdown-mega-sm    { width: 300px; }
+         .dropdown-mega-md    { width: 400px; }
+         .dropdown-mega-lg    { width: 600px; }
+         .dropdown-mega-xl    { width: 700px; }
+         .dropdown-mega-xxl   { width: 800px; }
+         .dropdown-menu-invert - open dropdown in oposite direction
+
+   -->
+   &lt;div aria-labelledby="navDD10" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-menu-invert dropdown-mega-lg">
+       
+      &lt;!-- 
+         optional line column separator 
+         .col-border-lg 
+      -->
+      &lt;div class="row">
+
+         &lt;div class="col-12 col-lg-4">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 1
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+         &lt;div class="col-12 col-lg-4">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 2
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+         &lt;div class="col-12 col-lg-4">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 3
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+      &lt;/div>
+
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Mega Menu : 4 Columns
+</h3>
+
+<a href="#C_12" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_12" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- 
+
+   Mega 4Col
+   .dropdown-menu-invert   class used
+
+-->
+&lt;li class="nav-item dropdown">
+
+   &lt;a href="#" id="navDD11" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      4Col
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD11" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-menu-invert dropdown-mega-xxl">
+
+      &lt;!-- 
+         optional line column separator 
+         .col-border-lg 
+      -->
+      &lt;div class="row">
+
+         &lt;div class="col-12 col-lg-3">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 1
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+         &lt;div class="col-12 col-lg-3">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 2
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+         &lt;div class="col-12 col-lg-3">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 3
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+         &lt;div class="col-12 col-lg-3">
+            &lt;ul class="list-unstyled">
+               &lt;li class="dropdown-item">
+                  &lt;h3 class="h6 px-3 my-3 text-muted text-uppercase fs-6 mb-3">
+                     Column 4
+                  &lt;/h3>
+               &lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 1&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 2&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 3&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 4&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 5&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 6&lt;/a>&lt;/li>
+               &lt;li class="dropdown-item">&lt;a class="dropdown-link" href="#">Option 7&lt;/a>&lt;/li>
+            &lt;/ul>
+         &lt;/div>
+
+      &lt;/div>
+
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Mega Menu : Full Width
+</h3>
+
+<a href="#C_13" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_13" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- 
+
+   Full Mega Menu
+
+-->
+&lt;li class="nav-item dropdown dropdown-mega">
+
+   &lt;a href="#" id="navDD12" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Full
+   &lt;/a>
+
+   &lt;div aria-labelledby="navDD12" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean dropdown-fadeinup">
+
+      &lt;!-- 
+         optional line column separator 
+         .col-border-lg 
+      -->
+        &lt;div class="row"> 
+
+            &lt;div class="col-12 col-lg-3">
+
+                &lt;h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+                  Shop Homepage
+                &lt;/h3>
+
+                &lt;ul class="prefix-link-icon prefix-icon-dot">
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-index-1.html">Shop Home 1&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-index-2.html">Shop Home 2&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-index-3.html">Shop Home 3&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-index-4.html">Shop Home 4&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-index-christmas.html">
+                           &lt;span class="badge bg-secondary float-end">new&lt;/span>
+                           Shop : Christmas
+                        &lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link disabled" href="#">More : Soon&lt;/a>
+                    &lt;/li>
+
+                &lt;/ul>
+
+            &lt;/div>
+
+            &lt;div class="col-12 col-lg-3">
+
+                &lt;h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+                  Shop Category
+                &lt;/h3>
+
+                &lt;ul class="prefix-link-icon prefix-icon-dot">
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-category-1.html">Category 1&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-category-2.html">Category 2&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-category-3.html">Category 3&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-category-4.html">Category 4&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-category-lazyload.html">Using Lazyload&lt;/a>
+                    &lt;/li>
+
+                &lt;/ul>
+
+            &lt;/div>
+
+            &lt;div class="col-12 col-lg-3">
+
+                &lt;h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+                  Shop Cart
+                &lt;/h3>
+
+                &lt;ul class="prefix-link-icon prefix-icon-dot">
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-cart-1.html">Cart&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-cart-2.html">Cart Empty&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-checkout-success.html">Checkout Success&lt;/a>
+                    &lt;/li>
+
+                &lt;/ul>
+
+                &lt;h3 class="h6 text-muted text-uppercase fs-6 mb-3 mt-5">
+                  Shop Product
+                &lt;/h3>
+
+                &lt;ul class="prefix-link-icon prefix-icon-dot">
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-product-1.html">Product Page 1&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-product-2.html">Product Page 2&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-product-3.html">Product Page 3&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-product-4.html">Product Page 4&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="shop-page-product-5.html">Product Page 5&lt;/a>
+                    &lt;/li>
+
+                &lt;/ul>
+
+            &lt;/div>
+
+            &lt;div class="col-12 col-lg-3">
+
+                &lt;h3 class="h6 text-muted text-uppercase fs-6 mb-3">
+                  Blog Pages
+                &lt;/h3>
+
+                &lt;ul class="prefix-link-icon prefix-icon-line">
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="blog-page-sidebar.html">With Sidebar&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="blog-page-sidebar-no.html">Without Sidebar&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="blog-page-article-sidebar.html">Article With Sidebar&lt;/a>
+                    &lt;/li>
+
+                    &lt;li class="dropdown-item">
+                        &lt;a class="dropdown-link" href="blog-page-article-sidebar-no.html">Article Without Sidebar&lt;/a>
+                    &lt;/li>
+
+                &lt;/ul>
+
+                &lt;div class="mt-4">
+                    &lt;img width="600" height="600" class="img-fluid" src="demo.files/svg/artworks/undraw_wireframing_nxyi.svg" alt="...">
+                &lt;/div>
+
+            &lt;/div>
+
+        &lt;/div>
+
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+<h3 class="h5 fw-normal mb-3">
+	Open on click
+</h3>
+
+<a href="#C_3" class="scroll-to btn btn-sm btn-warning bg-warning-soft" data-bs-toggle="collapse">
+	<i class="fi fi-code"></i> 
+	View Code
+</a>
+
+<div id="C_3" class="collapse">
+<pre class="language-html"><code>
+&lt;!-- Click -->
+&lt;li class="nav-item dropdown">
+
+   &lt;a href="#" id="navDD0" class="nav-link dropdown-toggle nav-link-caret-hide" 
+      data-bs-toggle="dropdown" 
+      aria-haspopup="true" 
+      aria-expanded="false">
+      Click
+   &lt;/a>
+
+   &lt;!-- .dropdown-menu-hover - open on hover -->
+   &lt;div aria-labelledby="navDD0" class="dropdown-menu dropdown-menu-clean">
+       &lt;ul class="list-unstyled m-0 p-0">
+
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 1&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">&lt;a href="#" class="dropdown-link">Option 2&lt;/a>&lt;/li>
+           &lt;li class="dropdown-item">
+            &lt;a href="#" class="dropdown-link">
+               &lt;span class="badge bg-success float-end">new&lt;/span>
+               Option 3
+            &lt;/a>
+           &lt;/li>
+
+       &lt;/ul>
+   &lt;/div>
+
+&lt;/li>
+</code></pre>
+</div>
+
+						</div>
+
+
+
+
+
+						<div class="col-12 col-md-6 mb-7">
+
+
+							<div class="p-3 bg-light rounded">
+
+								<h3 class="h5 fw-normal mb-4">
+									Example using as buttons inside content.
+								</h3>
+
+
+								<!-- Fade Up -->
+								<div class="d-inline-block dropdown mb-3 px-1">
+
+									<a  href="#" id="ddFadeUp" class="btn btn-sm btn-primary bg-gradient-primary" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+											<i class="fi fi-arrow-up"></i>
+											Fade Up
+									</a>
+
+									<div aria-labelledby="ddFadeUp" class="dropdown-menu dropdown-menu-clean dropdown-fadeinup">
+										<ul class="list-unstyled m-0 p-0">
+
+											<li class="dropdown-item">
+												<span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+													Animation: Fade Up
+												</span>
+											</li>
+											<li class="dropdown-divider"></li>
+
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+
+										</ul>
+									</div>
+
+								</div>
+
+
+
+								<!-- Fade Down -->
+								<div class="d-inline-block dropdown mb-3 px-1">
+
+									<a  href="#" id="ddFadeDown" class="btn btn-sm btn-success bg-gradient-success" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+											<i class="fi fi-arrow-down"></i> 
+											Fade Down
+									</a>
+
+									<div aria-labelledby="ddFadeDown" class="dropdown-menu dropdown-menu-clean dropdown-fadeindown">
+										<ul class="list-unstyled m-0 p-0">
+
+											<li class="dropdown-item">
+												<span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+													Animation: Fade Down
+												</span>
+											</li>
+											<li class="dropdown-divider"></li>
+
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+
+										</ul>
+									</div>
+
+								</div>
+
+
+
+								<!-- Bounce -->
+								<div class="d-inline-block dropdown mb-3 px-1">
+
+									<a  href="#" id="ddFadeBounce" class="btn btn-sm btn-warning rounded-pill bg-gradient-warning" 
+										data-bs-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+											<i class="fi fi-shape-star"></i> 
+											Bounce
+									</a>
+
+									<div aria-labelledby="ddFadeBounce" class="dropdown-menu dropdown-menu-clean dropdown-bounceinup border-3 border-warning border-top-0 border-start-0 border-end-0">
+										<ul class="list-unstyled m-0 p-0">
+
+											<li class="dropdown-item">
+												<span class="d-block text-muted px-4 pb-3 pt-2 fs-6">
+													Animation: Bounce
+												</span>
+											</li>
+											<li class="dropdown-divider"></li>
+
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 1</a></li>
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 2</a></li>
+											<li class="dropdown-item"><a href="#" class="dropdown-link">Option 3</a></li>
+
+										</ul>
+									</div>
+
+								</div>
+
+
+
+								<hr>
+								Documentation: <br>
+
+								<a href="documentation/components-dropdowns.html" class="link-muted text-primary-hover">
+									Dropdowns
+								</a> 
+
+								and 
+
+								<a href="documentation/plugins-sow-dropdown.html" class="link-muted text-primary-hover">
+									SOW Ajax Dropdown
+								</a>
+
+							</div>
+
+
+						</div>
+
+					</div>
+
+
+
+
+
+
+<pre class="language-html mt-7"><code>&lt;!--
+   Available Classes
+-->
+
+&lt;!-- Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)  -->
+.dropdown-menu-dark       - dark dropdown (desktop only, will be white on mobile)
+.dropdown-menu-hover     - open on hover
+.dropdown-menu-clean     - no background color on hover
+.dropdown-menu-uppercase   - uppercase text (font-size is scalled down to 13px)
+.dropdown-click-ignore     - keep dropdown open on inside click (useful on forms inside dropdown)
+
+
+&lt;!-- Repositioning long dropdown childs -->
+.dropdown-menu-invert     - open dropdown in opposite direction (example: 2Col, 3Col, 4Col)
+.dropdown-menu-up-n100     - open up with top: -100px
+.dropdown-menu-up-n100     - open up with top: -150px
+.dropdown-menu-up-n180     - open up with top: -180px
+.dropdown-menu-up-n220     - open up with top: -220px
+.dropdown-menu-up-n250     - open up with top: -250px
+.dropdown-menu-up       - open up without negative class
+
+
+&lt;!-- Dropdown prefix icon (optional, if enabled in variables.scss) -->
+.prefix-link-icon .prefix-icon-dot     - link prefix
+.prefix-link-icon .prefix-icon-line     - link prefix
+.prefix-link-icon .prefix-icon-ico     - link prefix
+.prefix-link-icon .prefix-icon-arrow   - link prefix
+
+.nav-link.nav-link-caret-hide    - no dropdown icon indicator on main link
+.nav-item.dropdown-mega        - required ONLY on fullwidth mega menu
+</code></pre>
+
+				</div>
+			</div>
+			<!-- /PAGE TITLE -->
+
+
+
+
+
+		</div><!-- /#wrapper -->
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>
