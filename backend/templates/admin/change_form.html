@@ -1,0 +1,22 @@
+{% extends 'admin/change_form.html' %}
+
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+    {{ block.super }}
+    <script>
+        if (typeof CKEDITOR !== 'undefined') {
+            CKEDITOR.on('instanceReady', function (ev) {
+
+                var editor = ev.editor;
+
+                editor.on('insertElement', function (event) {
+                    var element = event.data;
+                    if (element.getName() === 'table') {
+                        element.addClass('table').addClass('table-bordered').addClass('border-black');
+                    }
+                });
+            });
+        }
+    </script>
+{% endblock %}
