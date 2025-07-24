@@ -1,7 +1,6 @@
 {% extends 'layout/base.html' %}
 
-{% block meta_title %}{% if category.meta_title %}{{ category.meta_title }}{% else %}{{ category.title }}
-{% endif %}{% endblock %}
+{% block meta_title %}{% if category.meta_title %}{{ category.meta_title }}{% else %}{{ category.title }}{% endif %}{% endblock %}
 {% block meta_description %}{% if category.meta_description %}{{ category.meta_description }}{% endif %}{% endblock %}
 {% block meta_keywords %}{% if category.meta_keywords %}{{ category.meta_keywords }}{% endif %}{% endblock %}
 
