@@ -1,5 +1,6 @@
 from django import template
 
+from django.conf import settings
 from apps.catalog.services import category_get_all_items_enabled_qs
 from apps.contacts.models import ContactsSettings
 
@@ -15,3 +16,8 @@ def categories() -> list[dict]:
 @register.simple_tag
 def contacts() -> list[dict]:
     return ContactsSettings.objects.all().first()
+
+
+@register.simple_tag
+def is_debug():
+    return settings.DEBUG
