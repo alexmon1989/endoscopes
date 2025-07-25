@@ -6,6 +6,7 @@ from apps.catalog.services import category_get_all_items_enabled_qs
 class StaticViewSitemap(sitemaps.Sitemap):
     priority = 1
     changefreq = "daily"
+    protocol = "https"
 
     def items(self):
         return ['home', 'about', 'delivery', 'catalog', 'contacts']
@@ -17,6 +18,7 @@ class StaticViewSitemap(sitemaps.Sitemap):
 class CategoriesSitemap(sitemaps.Sitemap):
     changefreq = "daily"
     priority = 0.5
+    protocol = "https"
 
     def items(self):
         return category_get_all_items_enabled_qs()
